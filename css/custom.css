@@ -1,10 +1,10 @@
 .navbar {
 	margin-bottom: 0;
-	letter-spacing: 3px;
+	letter-spacing: 1px;
 	opacity: 0.9;
 	margin-bottom: 50px;
 	border-radius: 0;
-	font-size: 125%;
+	font-size: 150%;
 }
 
 .nav.navbar-nav.navbar-right li a, .nav.navbar-nav.navbar-left li a{
