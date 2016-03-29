@@ -1,6 +1,6 @@
 .navbar {
 	margin-bottom: 0;
-	letter-spacing: 4px;
+	letter-spacing: 3px;
 	opacity: 0.9;
 	margin-bottom: 50px;
 	border-radius: 0;
@@ -64,9 +64,9 @@
 
 .prantar-image{
 	transform:rotate(90deg);
-	max-width:100%;
+	max-width:110%;
 	min-width:243.2px;
-	max-height:100%;
+	max-height:110%;
 	min-height:182.4px;
 	border-radius: 50%;
 	align: left;
