@@ -71,6 +71,7 @@
 	max-height:80%;
 	min-height:182.4px;
 	border-radius: 50%;
+	pointer-events: none;
 }
 
 footer {
