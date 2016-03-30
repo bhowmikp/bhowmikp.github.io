@@ -63,7 +63,7 @@
 }
 
 .prantar-image{
-	padding-top:50px;
+	padding-top:70px;
 	padding-bottom:40px;
 	transform:rotate(90deg);
 	max-width:80%;
@@ -71,6 +71,7 @@
 	max-height:80%;
 	min-height:182.4px;
 	border-radius: 50%;
+	/* blocks people copying my image */
 	pointer-events: none;
 }
 
