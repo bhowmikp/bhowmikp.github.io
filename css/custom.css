@@ -38,6 +38,9 @@
     padding-top: 75px;
     text-align: center;
 	
+	/*make full screen
+	height: 100vh;*/
+	
 	background: #23538a;
 	background: -moz-linear-gradient(45deg,  #23538a 3%, #a7cfdf 91%);
 	background: -webkit-linear-gradient(45deg,  #23538a 3%,#a7cfdf 91%);
