@@ -51,29 +51,21 @@
 .project-section{
 	height: 100%;
 	width: auto;
-	
-
 }
 
 .skills-section{
 	height: 100%;
 	width: auto;
-	
-	
 }
 
 .experience-section{
 	height: 100%;
 	width: auto;
-	
-	
 }
 
 .contact-section{
 	height: 100%;
 	width: auto;
-	
-	
 }
 
 .about-text{
@@ -105,7 +97,15 @@
 	min-height:182.4px;
 	border-radius: 50%;
 	/* blocks people copying my image */
+	/* stops drag and grop*/
 	pointer-events: none;
+	
+	/*stops selecting*/
+	-moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 footer {
