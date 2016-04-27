@@ -169,6 +169,21 @@
 
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		
+		var $attribute = $('[data-smart-affix]');
+		$attribute.each(function(){
+		  $(this).affix({
+			offset: {
+			  top: $(this).offset().top,
+			}
+		  })
+		})
+		$(window).on("resize", function(){
+		  $attribute.each(function(){
+			$(this).data('bs.affix').options.offset = $(this).offset().top
+		  })
+		})
+
 		<!--Creates footer fixed at bottom-->
 		<footer class = 'text-center'>
 			<p style="color:white;">Site created by Prantar Bhowmik</p>  
