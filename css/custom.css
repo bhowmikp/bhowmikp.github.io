@@ -1,10 +1,10 @@
 .navbar {
 	margin-bottom: 0;
-	letter-spacing: 1px;
+	letter-spacing: 0px;
 	opacity: 0.9;
 	margin-bottom: 50px;
 	border-radius: 0;
-	font-size: 182%;
+	font-size: 165%;
 	border-bottom:0px !important;
 	box-shadow:none;
 }
@@ -21,7 +21,7 @@
 
 .nav.navbar-nav.navbar-right li a:active, .nav.navbar-nav.navbar-left li a:active{
 	color: white !important;
-	background-color: #222222;
+	background-color: #222222 !important;
 }
 
 .navbar li a, .navbar .navbar-brand { 
@@ -30,6 +30,25 @@
 
 .container-fluid{
 	background-color: #606060;
+}
+
+.dropdown-menu{
+	color: white !important;
+	background-color: #606060 !important;
+	font-size: 85% !important;
+	opacity: 0.9;
+	border-bottom:0px !important;
+	margin-bottom: 50px;
+}
+
+.dropdown li a:hover{ 
+	color: white !important;
+	background-color: #222222 !important;
+}
+
+.dropdown li a:active{ 
+	color: white !important;
+	background-color: #222222 !important;
 }
 
 .about-section {
@@ -106,6 +125,20 @@
     -webkit-user-select: none;
     -o-user-select: none;
     user-select: none;
+}
+
+.carousel {
+  height: 100%;
+  width:100%;
+}
+
+.affix {
+  top: 0;
+  width: 100%;
+}
+
+.affix + .container-fluid {
+  padding-top: 70px;
 }
 
 footer {
