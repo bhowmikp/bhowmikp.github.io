@@ -150,39 +150,25 @@
 			<!-- Creates buttons in the headers-->
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-left">
-					<li><a href="#about">About Me</a></li>
+					<li><a href="/#about">About Me</a></li>
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Project
 						<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li style = 'background-color:red'><a href="#lingo">Lingo Game</a></li>
+							<li style = 'background-color:#606060'><a href="#honey_badger">Honey Badger</a></li>
+							<li style = 'background-color:#606060'><a href="/#lingo">Lingo Game</a></li>
 						</ul>
 					</li>
-					<li><a href="#skills">Skills</a></li>
-					<li><a href="#experience">Experience</a></li>
+					<li><a href="/#experience">Experience</a></li>
 				</ul>
 				 <ul class="nav navbar-nav navbar-right">
-					<li><a href="#contact">Contact</a></li>
+					<li><a href="/#contact">Contact</a></li>
 				 </ul>
 			</div>
 		</nav>
 
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-		
-		var $attribute = $('[data-smart-affix]');
-		$attribute.each(function(){
-		  $(this).affix({
-			offset: {
-			  top: $(this).offset().top,
-			}
-		  })
-		})
-		$(window).on("resize", function(){
-		  $attribute.each(function(){
-			$(this).data('bs.affix').options.offset = $(this).offset().top
-		  })
-		})
 
 		<!--Creates footer fixed at bottom-->
 		<footer class = 'text-center'>
