@@ -70,21 +70,20 @@
 .project-section{
 	height: 100%;
 	width: auto;
-}
-
-.skills-section{
-	height: 100%;
-	width: auto;
+	background: #ff8566;
 }
 
 .experience-section{
 	height: 100%;
 	width: auto;
+	background:#e6e600;
 }
 
 .contact-section{
 	height: 100%;
 	width: auto;
+	background:#ffffb3;
+	
 }
 
 .about-text{

@@ -105,13 +105,13 @@
 			<h1 class = 'section-heading'>Projects</h1>
 			<br><br>
 			<div class="table-responsive">          
-				<table class="table table-striped">
-					<thead>
+				<table class="table">
+					<!--<thead>
 						<tr>
 							<td><h2>Name</h2></td>
 							<td><h2>Description</h2></td>
 						</tr>
-					</thead>
+					</thead>-->
 					<tbody>
 						<tr>
 							<td class = 'about-text' id = 'honey_badger' style = 'padding-top:50px;'><a target="_blank" href="https://github.com/lin432/UTSC-Hackathon">Honey Badger</a></td>
@@ -131,7 +131,7 @@
 							<li>Category - Game</li>
 							<li>Languages - Java</li>
 						</ul>
-						This is a game consisting of several mini-games(Duck Hunt, Space Flight, Tron). All points earned during the games can be redeemed for in game rewards.</td>
+						This is a game consisting of several mini-games(Duck Hunt, Space Flight, Tron). All points earned during the games can be redeemed for in game rewards. Code can be found <a href='https://github.com/bhowmikp/Lingo_game'>here</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -140,19 +140,59 @@
 	</section>
 	
 	<!--Experience-->
-	<section id = 'experience' class = 'experience-section' style = 'padding-top:50px;'>
+	<section id = 'experience' class = 'experience-section' style = 'padding-top:50px;padding-bottom:30px;'>
 		<div class = 'container'>
 			<div class = 'row'>
 				<br>
 				<h1 class = 'section-heading'>Experience</h1>
-				<br>
-				<br>
+				<br><br>
+			</div>
+			<div class = 'row'>
+				<div class = 'col-xs-12 col-sm-6 col-lg-8'>
+					<div class="table-responsive">          
+						<table class="table">
+							<!--<thead>
+								<tr>
+									<td><h2>Name</h2></td>
+									<td><h2>Description</h2></td>
+								</tr>
+							</thead>-->
+							<tbody>
+								<tr>
+									<td class = 'about-text' id = '' style = 'padding-top:50px;'><h3>Hackathon</h3></td>
+									<td class = 'about-text' id = '' style = 'padding-top:50px;'><h3>2016<h3></td>
+									<td class = 'about-text' style = 'padding-top:50px; padding-left:2em;'>Objective was to prepare a product to educate people to become financially responsible.</td>
+								</tr>
+								<tr>
+									<td class = 'about-text' id = '' style = 'padding-top:50px;'><h3>St. Joseph (I.T. department)</h3></td>
+									<td class = 'about-text' id = '' style = 'padding-top:50px;'><h3>2013<h3></td>
+									<td class = 'about-text' style = 'padding-top:50px;padding-left:2em;'>Job and responsibility was to fix different problems encountered by staff both remotely or in person.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>		
+				</div>
+				
+				<div class = 'col-xs-6 col-lg-4' style='padding-left:8em;'>
+					<!--Round progress bar-->
+					<div class = 'row'>
+						<div class="c100 p25 big green">
+							<span>1 year</span>
+							<div class="slice">
+								<div class="bar"></div>
+								<div class="fill"></div>
+							</div>
+						</div>
+						<h1 style = 'padding-left:1em; color:green;'>undergrad</h1>
+					</div>
+				</div>
+				
 			</div>
 		</div>
 	</section>
 	
 	<!--Contact-->
-	<section id = 'contact' class = 'contact-section' style = 'padding-top:50px;'>
+	<section id = 'contact' class = 'contact-section' style = 'padding-top:50px;padding-bottom:50px;'>
 		<div class = 'container'>
 			<div class = 'row'>
 				<br>
@@ -161,29 +201,10 @@
 				<br>
 				<p class = 'about-text'>Feel free to contact me at <a href="mailto:prantarbhowmik@yahoo.com">prantarbhowmik@yahoo.com</a> </p>
 				<br>
-				<p class= 'about-text'>If there are any issues with the website anonymous feedback can be left <a href ='feedback.html'>here</a></p>
+				<p class= 'about-text' style = 'font-size:15px;'><i>If there are any issues with the website anonymous feedback can be left </i><a href ='feedback.html'><i>here</i></a></p>
 			</div>
 		</div>
 	</section>
-	
-	<br><br>
-    <h1>This site is currently under construction</h1>
-	<h2>More to come soon. Lines will be removed when site is completed</h2>
-	<h3> Scroll below for the button</h3>
-	
-	
-	<div class="container">
-	    <h2>Site Construction</h2>
-		<div class="progress">
-			<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width:30%">
-			30%
-			</div>
-		</div>
-	</div>
-	<br><br><br><br>
-	
-	
-	<button class = "btn btn-success" onclick="$(this).hide();">Its Working</button>
 	
 	<!--Creates footer fixed at bottom-->
 	<footer class = 'text-center'>
@@ -201,6 +222,9 @@
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css">
+	
+	<!-- Circular Progress bar -->
+	<link rel="stylesheet" href="css/circle.css">
 	
 	<!--JQuery-->
 	<script src="js/jquery.min.js"></script>
