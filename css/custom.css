@@ -127,6 +127,9 @@
     user-select: none;
 }
 
+ body {
+	 overflow-x: hidden;
+}
 .carousel {
   height: 100%;
   width:100%;
