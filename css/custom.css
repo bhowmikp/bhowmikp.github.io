@@ -149,18 +149,25 @@ body {
        -moz-box-sizing: border-box;
             box-sizing: border-box;
 }
+
 .carousel {
-  height: 100%;
-  width:100%;
+    width:100%;
+	height:100%;
 }
 
+/* affix is to make lingo navbar sticky after carousel*/
 .affix {
-  top: 0;
-  width: 100%;
+    top: 0;
+    width: 100%;
 }
 
 .affix + .container-fluid {
-  padding-top: 70px;
+    padding-top: 70px;
+}
+
+.carousel-inner img {
+	/* makes carousel image center*/
+    margin: auto;
 }
 
 footer {
