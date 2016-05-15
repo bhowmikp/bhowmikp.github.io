@@ -74,6 +74,8 @@
 			<a target="_blank"  href = "https://github.com/bhowmikp"> <img width= "40px" height="40px" src="img/github.PNG"/> </a>
 			<br><br>
 			<p style="color:white;">Site created by Prantar Bhowmik</p> 
+			<!-- Displays page modified date-->
+			<p id='lastModified' style='color:white;'> </p>
 		</footer>
 		
 		<!-- Custom CSS -->
@@ -90,5 +92,18 @@
 		
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="js/bootstrap.min.js"></script>
+		
+		<!--Script to determine date changes were made on page-->
+		<script type="text/javascript">
+			 var monthNames = ["January", "February", "March", "April", "May", "June",
+			 "July", "August", "September", "October", "November", "December"];
+
+			var pcs = document.lastModified.split(" ")[0].split("/");
+			var month = parseInt(pcs[0])-1
+			var date = monthNames[month] + '/' + pcs[1] + '/' + pcs[2];
+			onload = function(){
+				document.getElementById("lastModified").innerHTML = "Page last updated: " + date;
+			}
+		</script>
 	</body>
 </html>
