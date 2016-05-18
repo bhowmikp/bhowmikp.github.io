@@ -1,8 +1,8 @@
 User-agent: *
 Disallow: /img/facebook.PNG
 Disallow: /img/github.PNG
-Disallow: /img/linkedin.PNG
-Disallow: /img/scenery.JPG
+Disallow: /img/linkedin.png
+Disallow: /img/scenery.jpg
 Disallow: /img/lingo/duck_hunt.PNG
 Disallow: /img/lingo/duck_hunt2.PNG
 Disallow: /img/lingo/game_screen.PNG
