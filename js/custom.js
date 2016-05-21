@@ -1,3 +1,4 @@
+// last modified date for all pages
 var monthNames = ["January", "February", "March", "April", "May", "June",
 			 "July", "August", "September", "October", "November", "December"];
 
@@ -8,6 +9,7 @@ onload = function(){
 	document.getElementById("lastModified").innerHTML = "Site last updated: " + date;
 }
 
+// clicks ssction for 404 page
 var clicks = 0;
 function onClick() {
 	clicks += 1;
