@@ -3,14 +3,3 @@ Disallow: /img/facebook.PNG
 Disallow: /img/github.PNG
 Disallow: /img/linkedin.png
 Disallow: /img/scenery.jpg
-Disallow: /img/lingo/duck_hunt.PNG
-Disallow: /img/lingo/duck_hunt2.PNG
-Disallow: /img/lingo/game_screen.PNG
-Disallow: /img/lingo/game_screen2.PNG
-Disallow: /img/lingo/meteor.PNG
-Disallow: /img/lingo/meteor2.PNG
-Disallow: /img/lingo/store.PNG
-Disallow: /img/lingo/tron.PNG
-Disallow: /img/lingo/tron2.PNG
-Disallow: /img/lingo/tron3.PNG
-Disallow: /img/lingo/tron4.PNG
