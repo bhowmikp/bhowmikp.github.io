@@ -17,7 +17,7 @@ function onClick() {
 };
 
 // The ID of the extension we want to talk to.
-var editorExtensionId = "mhklkaddlabkplhnjdnimihdpofbmecp";
+var editorExtensionId = "ncikglnjhfgfjpafebocgaekhaidodlk";
 
 // Make a simple request:
 chrome.runtime.sendMessage(editorExtensionId, "Hello World",
