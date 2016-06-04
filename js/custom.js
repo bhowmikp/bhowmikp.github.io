@@ -20,7 +20,7 @@ function onClick() {
 var editorExtensionId = "mhklkaddlabkplhnjdnimihdpofbmecp";
 
 // Make a simple request:
-chrome.runtime.sendMessage(editorExtensionId, {openUrlInEditor: url},
+chrome.runtime.sendMessage(editorExtensionId, "Hello World",
   function(response) {
     if (!response.success)
       handleError(url);
