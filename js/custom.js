@@ -20,8 +20,4 @@ function onClick() {
 var editorExtensionId = "ncikglnjhfgfjpafebocgaekhaidodlk";
 
 // Make a simple request:
-chrome.runtime.sendMessage(editorExtensionId, "Hello World",
-  function(response) {
-    if (!response.success)
-      handleError(url);
-  });
+chrome.runtime.sendMessage(document.getElementsByTagName('title')[0].innerText);
