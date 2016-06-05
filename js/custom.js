@@ -15,9 +15,3 @@ function onClick() {
 	clicks += 1;
 	document.getElementById("clicks").innerHTML = clicks;
 };
-
-// The ID of the extension we want to talk to.
-var editorExtensionId = "ncikglnjhfgfjpafebocgaekhaidodlk";
-
-// Make a simple request:
-chrome.runtime.sendMessage(document.getElementsByTagName('title')[0].innerText);
