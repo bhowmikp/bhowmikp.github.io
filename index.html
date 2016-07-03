@@ -14,18 +14,8 @@
 	
 	<link rel="shortcut icon" href="img/favicon.ico" size='32x32' type='image/ico'/>
 	
-	<script>
-		// last modified date for all pages
-		var monthNames = ["January", "February", "March", "April", "May", "June",
-					 "July", "August", "September", "October", "November", "December"];
-
-		var pcs = document.lastModified.split(" ")[0].split("/");
-		var month = parseInt(pcs[0])-1
-		var date = monthNames[month] + '/' + pcs[1] + '/' + pcs[2];
-		onload = function(){
-			document.getElementById("lastModified").innerHTML = "Site last updated: " + date;
-		}
-	</script>
+	<!--Script to determine date changes were made on page-->
+	<script type="text/javascript" src="/js/custom.js">	</script>
 	
 	<!-- Google Analytics -->
     <script>
@@ -255,7 +245,7 @@
 		<br><br>
 		<p style="color:white;">Site created by Prantar Bhowmik</p>
 		<!-- Displays page modified date-->
-		<p id='lastModified' style='color:white;'> </p>
+		<p id='lastModified' style='color:white;'> Date</p>
 	</footer>
 	
 	<!-- Custom CSS -->
