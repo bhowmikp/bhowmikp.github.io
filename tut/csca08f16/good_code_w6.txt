@@ -1,0 +1,77 @@
+# Dont need to understand
+def is_float(s):
+    '''(str) -> bool
+
+    Return True iff the string represents a valid floating point number
+    (i.e., it can be converted to float without problems)
+
+    >>> is_float("3")
+    True
+    >>> is_float("-2.7")
+    True
+    >>> is_float("Two")
+    False
+
+    '''
+    try:
+        float(s)
+        return True
+    except:
+        return False
+
+
+
+
+
+#Given a PH value, output a message
+ph_input = input("Enter PH value: ")
+if(is_float(ph_input)):
+    ph = float(ph_input)
+    if(ph < 7.0):
+        if(ph > 5.0):
+            print("Your water is acidic, but you're probably okay")
+        else:
+            if(ph < 2):
+                print("RUN!")
+            else:
+                print("That's pretty acidic, I wouldn't drink it")
+    else:
+        if(ph > 7.0):
+            if(ph > 11):
+                print("RUN!")
+            else:
+                print("That's pretty basic stuff")
+        else:
+            print("Your water is neutral.")
+else:
+    print("Not a valid PH!")
+
+
+
+
+
+
+
+#A better approach
+
+# if it's not a float, tell the user
+if(is_float(ph_input)):
+    ph = float(ph_input)
+    # first deal with unrealistic ph levels
+    if((ph > 11) or (ph < 2)):
+        print("RUN!")
+    # deal with anything over 7
+    elif(ph > 7):
+        print("That's pretty basic stuff")
+    # deal with the case of it being exactly 7
+    elif(ph == 7):
+        print("Your water is neutral")
+    # deal with anything over five (and since we're using an elif, we know
+    # that it's below 7 at this point)
+    elif(ph > 5):
+        print("Your water is acidic, but you're probably okay")
+    # if we reached this point, we know that the ph is 5 or lower
+    else:
+        print("That's pretty acidic, I wouldn't drink it")
+else:
+    print("Not a valid PH!")
