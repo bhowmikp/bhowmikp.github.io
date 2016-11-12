@@ -8,10 +8,10 @@
 1-2 line summary of what the function does.
 
 Repeat for as many parameters there are -
-Parameter [insert name] is type [insert type] and [what it does]
+Parameter [insert name][what it does]
 
 Repeat for as many return parameters -
-Returns [return type] [expalin why what is being returned is important]
+Returns [expalin why what is being returned is important]
 
 
 
