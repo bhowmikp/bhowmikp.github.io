@@ -1,3 +1,7 @@
+By Harmanraj Singh Wadhwa (www.linkedin.com/in/hswadhwa)
+
+---
+
 1. What are the variables used?
 
 2. What is the data structures used?
@@ -12,3 +16,7 @@
 4.   # if i < j, i >=0, j < len(_contents), then
      #    _contents[i] is to the left of _contents[j] in the deque
      #    _contents[j] is to the right of _contents[i] in the deque
+
+---
+
+By Harmanraj Singh Wadhwa (www.linkedin.com/in/hswadhwa)
