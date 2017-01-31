@@ -37,7 +37,7 @@ PREorder : 3,15,13,5,16,21,20,18,19
 INorder :  3,5,13,15,16,18,19,20,21
 POSTorder : 5,13,19,18,20,21,16,15,3
 
-Letâ€™s just try to visit all the nodes once, and only once
+Let's just try to visit all the nodes once, and only once
 Dont worry about the order !
 Hmm. Let's use a container.
 
