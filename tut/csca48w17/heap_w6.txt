@@ -11,18 +11,18 @@ Min heap:
                        /    \
                      2        6
                    /   \     /   \
-                 2      3   6     7
-                /       /   /
-               4       7    8
+                 2      3   7     7
+                / \    /   
+               4   6   8    
 
 Max heap:
                          8
                        /    \
-                     7        7
+                     6        7
                    /   \     /   \
-                 2      3   6     6
-                /       /   /
-               1       2    4
+                 6      3   4     7
+                / \     /   
+               1   2   2    
 
 
 ___________________________________________________________________
@@ -32,55 +32,51 @@ Remove elements from a min heap:
                        /    \
                      2        6
                    /   \     /   \
-                 2      3   6     7
-                /       /   /
-               4       7    8
+                 2      3   7     7
+                / \    /  
+               4   6  8   
 -------------------------------------------------
 Remove = return 1. Tree now looks like this:
                          2
                        /    \
                      2        6
                    /   \     /   \
-                 4      3   6     7
-                        /   /
-                       7    8
+                 4      3   7     7
+                / \    
+               8  6    
 -------------------------------------------------
 Remove = return 2. Tree now looks like this:
                          2
                        /    \
                      3        6
                    /   \     /   \
-                 4      7   6     7
-                            /
-                           8
+                 4      6   7     7
+                /
+               8
 -------------------------------------------------
 Remove = return 2. Tree now looks like this:
 
                          3
                        /    \
                      4        6
-                       \     /   \
-                        7   6     7
-                            /
-                           8
+                    /  \     /   \
+                   8    6   7     7
 -------------------------------------------------
 Remove = return 3. Tree now looks like this:
 
                          4
                        /    \
-                     7        6
-                             /   \
-                            6     7
-                            /
-                           8
+                     6        6
+                   /   \      /
+                  8     7     7 
 -------------------------------------------------
 Remove = return 4. Tree now looks like this:
 
                          6
                        /    \
                      7        6
-                             /   \
-                            8     7
+                   /   \
+                  8     7
                             
 -------------------------------------------------
 Remove = return 6. Tree now looks like this:
@@ -88,22 +84,20 @@ Remove = return 6. Tree now looks like this:
                          6
                        /    \
                      7        7
-                             /   
-                            8     
+                    /   
+                   8     
 -------------------------------------------------
 Remove = return 6. Tree now looks like this:
 
                          7
-                           \
-                             7
-                             /   
-                            8     
+                        /  \ 
+                       8    7
 -------------------------------------------------
 Remove = return 7. Tree now looks like this:
 
                          7
-                           \
-                             8
+                        /
+                       8
 -------------------------------------------------
 Remove = return 7. Tree now looks like this:
 
@@ -121,12 +115,12 @@ Here are a couple interesting things:
                        /    \
                      2        6
                    /   \     /   \
-                 2      3   6     7
-                /       /   /
-               4       7    8
+                 2      3   7     7
+                / \    /  
+               4   6  8   
 
 The list representation of this heap is:
-| 1 | 2 | 6 | 2 | 3 | 6 | 7 | 4 | 7 | 8 |
+| 1 | 2 | 6 | 2 | 3 | 7 | 7 | 4 | 6 | 8 |
 
 This is made by going down each level going left to right.
 
@@ -138,9 +132,9 @@ parent = floor((i-1)/2)
 
 i represents the current node we are looking at. We start counting i from zero.
 
-For example to find the left child of the node 3:
-3 is our 4th node
+For example to find the left child of the node 6:
+6 is our 2nd node
 So:
-2(4) + 1 = 9
+2(2) + 1 = 5
 
-The 9th element is our list is 7, which is the left child of the node 3.
+The 5th element is our list is 7, which is the left child of the node 6.
