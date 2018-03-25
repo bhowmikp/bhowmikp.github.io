@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /img/facebook.PNG
-Disallow: /img/github.PNG
-Disallow: /img/linkedin.png
-Disallow: /img/scenery.jpg
-Disallow: /img/mail.png
