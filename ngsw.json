@@ -38,18 +38,18 @@
   "dataGroups": [],
   "hashTable": {
     "/inline.318b50c57b4eba3d437b.bundle.js": "998c6060446975e566fd17509558ddc68d72eec3",
-    "/assets/icons/icon-128x128.png": "ace8bb01ad0aeb225de09b3d0d00105d6a1cb76d",
+    "/assets/icons/icon-128x128.png": "31042aca75327ca858edcbf6ca0ebccbc6b72cd4",
     "/main.884d89a8196c7cefe38d.bundle.js": "6a02c0464e169521a14b205433fbe1c894799078",
-    "/assets/icons/icon-144x144.png": "9827a40b6d00fcab1d0553e514639a4a91087e2d",
+    "/assets/icons/icon-144x144.png": "b76f326f9da54f802eab34018fdebe18a73066e2",
     "/polyfills.bf95165a1d5098766b92.bundle.js": "5f49131c0c147a20f91b1e77814434e0c77bd3dc",
-    "/assets/icons/icon-152x152.png": "3fdb669ea7fc70b4ed6d49ec46e3e076167a024e",
+    "/assets/icons/icon-152x152.png": "c67ad631ffa3c2cd016a3c299f933727c5f74318",
     "/styles.ac89bfdd6de82636b768.bundle.css": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-    "/assets/icons/icon-192x192.png": "8f61fa4317885f2744bb06ee64dab85ebac0f7f7",
+    "/assets/icons/icon-192x192.png": "266d1467c7c22ef83eeccce17a41f0a711a89442",
     "/favicon.ico": "57b5b1841d2475f4922d18e040ce9bdce37bd9c0",
-    "/assets/icons/icon-384x384.png": "e05f2cb965ca43276859d11ac92b8426c62a25b3",
+    "/assets/icons/icon-384x384.png": "6eb57de9a119409011500f0b5d083dfa2d3fb19a",
     "/index.html": "1bb6577d481a1e7d71294a8225595ac035b1e415",
-    "/assets/icons/icon-512x512.png": "04aaae3f631c8aaccabfe581c6d4c4975316c59e",
-    "/assets/icons/icon-72x72.png": "df6082a67cd0b726c77186f7fbb6352e23ce15cb",
-    "/assets/icons/icon-96x96.png": "ae515674820601f0debedeff34bd50aa20a0a2fa"
+    "/assets/icons/icon-512x512.png": "fd7b58d0bdb021ca9d1eeff8896ce7fd1bf746b4",
+    "/assets/icons/icon-72x72.png": "d407dedcbeee542381dcc60dcaffa9d2ba06639b",
+    "/assets/icons/icon-96x96.png": "b4164ddba06e050ffbb286f06bea30b5c75771d5"
   }
 }
