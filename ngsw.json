@@ -1,0 +1,61 @@
+{
+  "configVersion": 1,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/assets/background.jpeg",
+        "/inline.318b50c57b4eba3d437b.bundle.js",
+        "/main.7f7967692215d2b95ae7.bundle.js",
+        "/polyfills.bf95165a1d5098766b92.bundle.js",
+        "/scripts.689bfb37cc50bb50dd94.bundle.js",
+        "/styles.8346498adb548db254ed.bundle.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/prantar.png",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png"
+      ],
+      "patterns": [
+        "https:\\/\\/fonts\\.googleapis\\.com\\/.*"
+      ]
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/inline.318b50c57b4eba3d437b.bundle.js": "998c6060446975e566fd17509558ddc68d72eec3",
+    "/assets/prantar.png": "e6de1ee09ae6ccf7d8d9b0e8a4d78b0c63488b25",
+    "/main.7f7967692215d2b95ae7.bundle.js": "1b4330db29f2783daa8b8c72c2b6d8e5c98a2e79",
+    "/assets/icons/icon-128x128.png": "ace8bb01ad0aeb225de09b3d0d00105d6a1cb76d",
+    "/polyfills.bf95165a1d5098766b92.bundle.js": "5f49131c0c147a20f91b1e77814434e0c77bd3dc",
+    "/assets/icons/icon-144x144.png": "9827a40b6d00fcab1d0553e514639a4a91087e2d",
+    "/scripts.689bfb37cc50bb50dd94.bundle.js": "8c9579931b279d4dc0bc7c1c0ffb774187d75c39",
+    "/assets/icons/icon-152x152.png": "3fdb669ea7fc70b4ed6d49ec46e3e076167a024e",
+    "/styles.8346498adb548db254ed.bundle.css": "2f80075fc8a6594aa3504c6c50b635f23ad73b8e",
+    "/assets/icons/icon-192x192.png": "8f61fa4317885f2744bb06ee64dab85ebac0f7f7",
+    "/favicon.ico": "57b5b1841d2475f4922d18e040ce9bdce37bd9c0",
+    "/assets/icons/icon-384x384.png": "e05f2cb965ca43276859d11ac92b8426c62a25b3",
+    "/index.html": "87fdf965718db812ef6edcab5f66aa2aacb24bec",
+    "/assets/icons/icon-512x512.png": "04aaae3f631c8aaccabfe581c6d4c4975316c59e",
+    "/assets/background.jpeg": "8cac60b5d293d8c3f2932f9b455b6adf71909644",
+    "/assets/icons/icon-72x72.png": "df6082a67cd0b726c77186f7fbb6352e23ce15cb",
+    "/assets/icons/icon-96x96.png": "ae515674820601f0debedeff34bd50aa20a0a2fa"
+  }
+}
