@@ -1,0 +1,19 @@
+.prantar-image{
+	border-radius: 50%;
+  float: right;
+  
+	/* blocks people copying my image */
+	/* stops drag and drop*/
+	pointer-events: none;
+
+	/*stops selecting*/
+	-moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.clearfix {
+    overflow: auto;
+}
