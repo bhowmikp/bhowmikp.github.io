@@ -70,7 +70,7 @@ var AboutComponent = /** @class */ (function () {
 /***/ "./src/app/app.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "nav{\n  border: 1px solid black;\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-columns: 2fr 8fr;\n      grid-template-columns: 2fr 8fr;\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0;\n}\n\nnav > .options {\n  border: 1px solid black;\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-columns: (1fr)[4];\n      grid-template-columns: repeat(4, 1fr);\n  justify-items: center;\n}\n\n.calendar{\n  /* background-color: rgba(255, 255, 255, 0.5); */\n}\n\n.parallax {\n    /* The image used */\n    background-image: url('background.066bdfbc45952791acda.jpeg');\n\n    /* Full height */\n    height: 100%;\n\n    /* Create the parallax scrolling effect */\n    background-attachment: fixed;\n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: cover;\n\n    display: -ms-grid;\n\n    display: grid;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    justify-items: center;\n}\n"
+module.exports = "nav{\n  border: 1px solid black;\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-columns: 2fr 8fr;\n      grid-template-columns: 2fr 8fr;\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0;\n  margin-left: -8px;\n}\n\nnav > .options {\n  border: 1px solid black;\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-columns: (1fr)[4];\n      grid-template-columns: repeat(4, 1fr);\n  justify-items: center;\n}\n\n.calendar{\n  /* background-color: rgba(255, 255, 255, 0.5); */\n}\n\n.parallax {\n  /* The image used */\n  background-image: url('background.066bdfbc45952791acda.jpeg');\n\n  /* Full height */\n  height: 100%;\n\n  /* Create the parallax scrolling effect */\n  background-attachment: fixed;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n\n  display: -ms-grid;\n\n  display: grid;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  justify-items: center;\n\n  margin-left: -8px;\n  margin-top: -8px;\n}\n"
 
 /***/ }),
 
@@ -160,7 +160,7 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */].forRoot(appRoutes, { useHash: true }),
+                __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* RouterModule */].forRoot(appRoutes),
                 __WEBPACK_IMPORTED_MODULE_3__angular_service_worker__["a" /* ServiceWorkerModule */].register('/ngsw-worker.js', { enabled: __WEBPACK_IMPORTED_MODULE_5__environments_environment__["a" /* environment */].production })
             ],
             providers: [],
