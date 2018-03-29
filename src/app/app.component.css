@@ -4,6 +4,8 @@ nav{
   grid-template-columns: 2fr 8fr;
   position: sticky;
   top: 0;
+  margin-left: -8px;
+  margin-right: -8px;
 }
 
 nav > .options {
@@ -18,19 +20,23 @@ nav > .options {
 }
 
 .parallax {
-    /* The image used */
-    background-image: url('../assets/background.jpeg');
+  /* The image used */
+  background-image: url('../assets/background.jpeg');
 
-    /* Full height */
-    height: 100%;
+  /* Full height */
+  height: 100%;
 
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-    display: grid;
-    align-items: center;
-    justify-items: center;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  margin-left: -8px;
+  margin-right: -8px;
+  margin-top: -8px;
 }
