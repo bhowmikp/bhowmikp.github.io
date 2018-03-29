@@ -18,6 +18,8 @@ import { Csca48s17Component } from './ta/csca48s17/csca48s17.component';
 import { Csca48w17Component } from './ta/csca48w17/csca48w17.component';
 import { Csca48w18Component } from './ta/csca48w18/csca48w18.component';
 
+import { VerticalTimelineModule } from 'angular-vertical-timeline';
+
 const appRoutes: Routes = [
   { path : '', component: AboutComponent },
   { path : 'experience', component: ExperienceComponent },
@@ -48,6 +50,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    VerticalTimelineModule,
     RouterModule.forRoot(appRoutes, {useHash: true}),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
