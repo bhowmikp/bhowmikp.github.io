@@ -2,7 +2,7 @@ nav{
   border: 1px solid black;
   display: grid;
   grid-template-columns: 2fr 8fr;
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   margin-left: -8px;
   margin-right: -8px;
@@ -39,4 +39,19 @@ nav > .options {
   margin-left: -8px;
   margin-right: -8px;
   margin-top: -8px;
+}
+
+.routing{
+  height: 100%;
+  margin-top: 1em;
+}
+
+.title{
+  color: black;
+  font-family: 'Trocchi', serif;
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 48px;
+  margin: 0;
+  text-align: center;
 }
