@@ -19,7 +19,7 @@ import { Csca48w17Component } from './ta/csca48w17/csca48w17.component';
 import { Csca48w18Component } from './ta/csca48w18/csca48w18.component';
 
 import { VerticalTimelineModule } from 'angular-vertical-timeline';
-import { SimpleSmoothScrollModule } from 'ng2-simple-smooth-scroll';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 const appRoutes: Routes = [
   { path : '', component: AboutComponent },
@@ -52,7 +52,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     VerticalTimelineModule,
-    SimpleSmoothScrollModule,
+    ScrollToModule.forRoot(),
     RouterModule.forRoot(appRoutes, {useHash: true}),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],

@@ -22,10 +22,10 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "@angular/service-worker": "^5.2.0",
+    "@nicky-lenaers/ngx-scroll-to": "^0.6.0",
     "angular-vertical-timeline": "^0.4.2",
     "core-js": "^2.4.1",
     "github-calendar": "^1.2.1",
-    "ng2-simple-smooth-scroll": "^0.2.1",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
