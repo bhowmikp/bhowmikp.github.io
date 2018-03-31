@@ -4,17 +4,25 @@
     <hr>
     <p class="title">Software Developer</p>
   </div>
+  <div class="arrow" SimpleSmoothScroll [scrollTo]="'nav-bar'" [showHash]="false" [easing]="linear">
+    <i class="fas fa-arrow-down fa-5x" style="background:rgba(255, 255, 255, 0.10);"></i>
+  </div>
 </div>
 
-<nav>
+
+<nav id="nav-bar">
   <div class="brand">
-    <a routerLink="" routerLinkActive="active">Prantar Bhowmik</a>
+    <a routerLink="" routerLinkActive="active" (click)="setTitle('Prantar Bhowmik - HomePage')">Prantar Bhowmik</a>
   </div>
   <div class="options">
-    <a routerLink="experience" routerLinkActive="active">Experience</a>
-    <a routerLink="ta" routerLinkActive="active">TA</a>
-    <a routerLink="projects" routerLinkActive="active">Projects</a>
-    <a routerLink="contact" routerLinkActive="active">Contact</a>
+    <a routerLink="experience" routerLinkActive="active" (click)="setTitle('Prantar Bhowmik - Experience')">Experience</a>
+    <div class="tooltip">
+      <a routerLink="ta" routerLinkActive="active" (click)="setTitle('Prantar Bhowmik - Teaching Assistant')">
+        TA<span class="tooltiptext">Teaching Assistant</span>
+      </a>
+    </div>
+    <a routerLink="projects" routerLinkActive="active" (click)="setTitle('Prantar Bhowmik - Projects')">Projects</a>
+    <a routerLink="contact" routerLinkActive="active" (click)="setTitle('Prantar Bhowmik - Contact')">Contact</a>
   </div>
 </nav>
 

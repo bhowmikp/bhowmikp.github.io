@@ -1,22 +1,62 @@
 nav{
-  border: 1px solid black;
   display: grid;
   grid-template-columns: 2fr 8fr;
   /* position: sticky; */
   top: 0;
   margin-left: -8px;
   margin-right: -8px;
+
+  background-color: #333;
+  border: 1px solid black;
+
+  padding: 10px 0px;
 }
 
 nav > .options {
-  border: 1px solid black;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
+  grid-row-gap: 0.25em;
 }
 
 .calendar{
   /* background-color: rgba(255, 255, 255, 0.5); */
+}
+
+.brand {
+  text-align: center;
+}
+
+.brand > a{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.options > a{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.tooltip > a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 430px) {
+  .brand > a{
+    font-size: 14px;
+  }
+
+  .options > a{
+    font-size: 14px;
+  }
+
+  .tooltip > a {
+    font-size: 14px;
+  }
 }
 
 .parallax {
@@ -47,6 +87,7 @@ nav > .options {
 }
 
 .title{
+  display: grid;
   color: black;
   font-family: 'Trocchi', serif;
   font-size: 50px;
@@ -54,4 +95,11 @@ nav > .options {
   line-height: 48px;
   margin: 0;
   text-align: center;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 0;
+  right: 2%;
+  cursor: pointer;
 }

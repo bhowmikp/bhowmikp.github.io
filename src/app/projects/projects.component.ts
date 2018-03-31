@@ -13,7 +13,7 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(){
     new GitHubCalendar(".calendar", "bhowmikp", {
-      responsive:true,
+      responsive: true,
       global_stats:true,
     });
   }
