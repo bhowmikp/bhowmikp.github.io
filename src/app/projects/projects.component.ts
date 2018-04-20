@@ -11,10 +11,13 @@ export class ProjectsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(){
-    new GitHubCalendar(".calendar", "bhowmikp", {
+  /*
+  * Initializes github calendar on id - 'calendar' for user - 'bhowmikp'
+  */
+  ngOnInit() {
+    GitHubCalendar('.calendar', 'bhowmikp', {
       responsive: true,
-      global_stats:true,
+      global_stats: true,
     });
   }
 

@@ -7,13 +7,19 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
 
-  constructor(private titleService: Title ){}
+  title = 'Prantar Bhowmik - HomePage';
+
+  constructor(private titleService: Title ) {}
 
   ngOnInit() { }
 
-  setTitle( newTitle: string) {
+  /*
+  * Send a string as parameter
+  *
+  * The parameter will set the title of the browser toolbar
+  */
+  setTitle(newTitle: string) {
     this.titleService.setTitle( newTitle );
   }
 }
