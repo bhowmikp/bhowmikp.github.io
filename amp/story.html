@@ -8,6 +8,8 @@
         src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
 
     <title>Prantar Story</title>
+    <link rel="manifest" href="/manifest.json">
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,6 +21,25 @@
 
     <link rel="canonical" href="https://prantar.me">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <style amp-custom>
+      h1 {
+        margin: 1rem;
+      }
+      #cover-title {
+        text-align:center;
+      }
+      #cover-job {
+        text-align:center;
+      }
+      #contact{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -43,9 +64,11 @@
             width="720" height="1280" layout="responsive">
           </amp-img>
         </amp-story-grid-layer>
-        <amp-story-grid-layer template="vertical">
-          <h1>Prantar Stories</h1>
-          <p>Software Developer</p>
+        <amp-story-grid-layer template="thirds">
+          <span grid-area="middle-third">
+            <h1 id="cover-title">Prantar Bhowmik</h1>
+            <p id="cover-job">Software Developer</p>
+          </span>
         </amp-story-grid-layer>
       </amp-story-page>
 
@@ -76,10 +99,26 @@
 
       <amp-story-page id="page4">
         <amp-story-grid-layer template="vertical">
-          <p>Contact</p>
-          <p>Github</p>
-          <p>Email</p>
-          <p>Linkedin</p>
+          <h1>Contact</h1>
+
+          <span id="contact">
+            <i class="fas fa-envelope-square fa-3x"></i>
+            <p>
+              prantar.bhowmik@mail.utoronto.ca
+            </p>
+          </span>
+          <span id="contact">
+            <i class="fab fa-github-square fa-3x"></i>
+            <p>
+              bhowmikp
+            </p>
+          </span>
+          <span id="contact">
+            <i class="fab fa-linkedin fa-3x"></i>
+            <p>
+              prantar
+            </p>
+          </span>
         </amp-story-grid-layer>
       </amp-story-page>
 
