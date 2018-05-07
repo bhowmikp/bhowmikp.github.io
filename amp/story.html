@@ -103,10 +103,10 @@
             width="720" height="1280" layout="responsive">
           </amp-img>
         </amp-story-grid-layer>
-        <amp-story-grid-layer template="horizontal">
+        <amp-story-grid-layer template="vertical">
           <div>
             <amp-img src="/assets/prantar.png"
-              height="160" width="80">
+              height="200" width="200">
             </amp-img>
           </div>
         </amp-story-grid-layer>
@@ -144,12 +144,18 @@
       </amp-story-page>
 
       <amp-story-page id="page3">
+        <amp-story-grid-layer template="fill">
+          <amp-img src="/assets/background.jpeg"
+            width="720" height="1280" layout="responsive">
+          </amp-img>
+        </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
-          <span animate-in="whoosh-in-right" animate-in-delay="0.4s">
+          <h1 id="center-text">Projects</h1>
+          <span animate-in="whoosh-in-right" animate-in-delay="0.4s" animate-in-duration="0.8s">
             <h3>Let Me Know</h3>
             <p>A news aggregator that can be found at letmeknow.news</p>
           </span>
-          <span animate-in="whoosh-in-right" animate-in-delay="0.6s">
+          <span animate-in="whoosh-in-right" animate-in-delay="0.6s" animate-in-duration="0.8s">
             <h3>Password Generator</h3>
             <p>Generates cryptographically secure passwords</p>
           </span>
