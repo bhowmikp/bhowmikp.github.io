@@ -42,6 +42,16 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
       }
+      .wrapper {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+      }
+      .banner-text {
+        text-align: center;
+        background-color: #000;
+        line-height: 2em;
+      }
     </style>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
@@ -112,12 +122,28 @@
       </amp-story-page>
 
       <amp-story-page id="page3">
-        <amp-story-grid-layer template="vertical">
-          <p>Projects</p>
-          <p>1</p>
-          <p>2</p>
-          <p>3</p>
-          <p>4</p>
+        <amp-story-grid-layer template="vertical" class="noedge">
+          <div class="wrapper">
+            <amp-img src="/assets/prantar.png"
+                width="720" height="1280"
+                layout="responsive">
+            </amp-img>
+            <amp-img src="/assets/prantar.png"
+                width="720" height="1280"
+                layout="responsive">
+            </amp-img>
+            <amp-img src="/assets/prantar.png"
+                width="720" height="1280"
+                layout="responsive">
+            </amp-img>
+            <amp-img src="/assets/prantar.png"
+                width="720" height="1280"
+                layout="responsive">
+            </amp-img>
+          </div>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="center-text">
+          <p class="banner-text">Projects</p>
         </amp-story-grid-layer>
       </amp-story-page>
 
