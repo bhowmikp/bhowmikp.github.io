@@ -9,6 +9,14 @@
 
     <title>Prantar Story</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-starturl" content="/">
+    <meta name="theme-color" content="#5945db">
+
     <link rel="canonical" href="https://prantar.me">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
@@ -28,27 +36,54 @@
   <body>
 
     <amp-story standalone bookend-config-src="bookend.json">
-         <amp-story-page id="cover">
-           <amp-story-grid-layer template="fill">
-             <amp-img src="assets/cover.jpg"
-              width="720" height="1280"
-              layout="responsive">
-          	 </amp-img>
-           </amp-story-grid-layer>
-           <amp-story-grid-layer template="vertical">
-          <h1>Prantar Stories</h1>
-        </amp-story-grid-layer>
-         </amp-story-page>
-        
-        <amp-story-page id="page1">
-          <amp-story-grid-layer template="fill">
-            <p>
-              None
-            </p>
-           </amp-story-grid-layer>
-         </amp-story-page>
-      </amp-story>
 
+      <amp-story-page id="cover">
+        <amp-story-grid-layer template="fill">
+          <amp-img src="/assets/background.jpeg"
+            width="720" height="1280" layout="responsive">
+          </amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical">
+          <h1>Prantar Stories</h1>
+          <p>Software Developer</p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <amp-story-page id="page1">
+        <amp-story-grid-layer template="vertical">
+          <p>About Me</p>
+          <p>Student at UofT</p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <amp-story-page id="page2">
+        <amp-story-grid-layer template="vertical">
+          <p>Experience</p>
+          <p>Full Stack Dev</p>
+          <p>TA</p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <amp-story-page id="page3">
+        <amp-story-grid-layer template="vertical">
+          <p>Projects</p>
+          <p>1</p>
+          <p>2</p>
+          <p>3</p>
+          <p>4</p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <amp-story-page id="page4">
+        <amp-story-grid-layer template="vertical">
+          <p>Contact</p>
+          <p>Github</p>
+          <p>Email</p>
+          <p>Linkedin</p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+    </amp-story>
 
   </body>
 </html>
