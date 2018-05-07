@@ -61,9 +61,6 @@
         background-color: #000;
         line-height: 2em;
       }
-      .main-image {
-        display: grid;
-      }
     </style>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
@@ -106,10 +103,10 @@
             width="720" height="1280" layout="responsive">
           </amp-img>
         </amp-story-grid-layer>
-        <amp-story-grid-layer template="vertical">
-          <div class="main-image">
+        <amp-story-grid-layer template="horizontal">
+          <div>
             <amp-img src="/assets/prantar.png"
-              height="160" width="80" layout="responsive">
+              height="160" width="80">
             </amp-img>
           </div>
         </amp-story-grid-layer>
@@ -147,29 +144,15 @@
       </amp-story-page>
 
       <amp-story-page id="page3">
-        <amp-story-grid-layer template="vertical" class="noedge">
-          <div class="wrapper">
-            <amp-img src="/assets/prantar.png"
-                width="720" height="1280"
-                layout="responsive">
-            </amp-img>
-            <amp-img src="/assets/prantar.png"
-                width="720" height="1280"
-                layout="responsive">
-            </amp-img>
-            <amp-img src="/assets/prantar.png"
-                width="720" height="1280"
-                layout="responsive">
-            </amp-img>
-            <amp-img src="/assets/prantar.png"
-                width="720" height="1280"
-                layout="responsive">
-            </amp-img>
-          </div>
-        </amp-story-grid-layer>
-        <amp-story-grid-layer template="vertical" class="center-text">
-          <p class="banner-text">Projects</p>
-        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical">
+          <span animate-in="whoosh-in-right" animate-in-delay="0.4s">
+            <h3>Let Me Know</h3>
+            <p>A news aggregator that can be found at letmeknow.news</p>
+          </span>
+          <span animate-in="whoosh-in-right" animate-in-delay="0.6s">
+            <h3>Password Generator</h3>
+            <p>Generates cryptographically secure passwords</p>
+          </span>
       </amp-story-page>
 
       <amp-story-page id="page4">
