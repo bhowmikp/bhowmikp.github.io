@@ -42,6 +42,12 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
       }
+      amp-story-grid-layer.noedge {
+        padding: 0px;
+      }
+      amp-story-grid-layer.center-text {
+        align-content: center;
+      }
       .wrapper {
         display: grid;
         grid-template-columns: 50% 50%;
@@ -94,7 +100,7 @@
             width="720" height="1280" layout="responsive">
           </amp-img>
         </amp-story-grid-layer>
-        <amp-story-grid-layer template="vertical" class="noedge">
+        <amp-story-grid-layer template="vertical">
           <div class="wrapper">
             <amp-img src="/assets/prantar.png"
               height="160" width="80" layout="responsive">
@@ -114,10 +120,23 @@
       </amp-story-page>
 
       <amp-story-page id="page2">
-        <amp-story-grid-layer template="vertical">
-          <p>Experience</p>
-          <p>Full Stack Dev</p>
-          <p>TA</p>
+        <amp-story-grid-layer template="fill">
+          <amp-img src="/assets/background.jpeg"
+            width="720" height="1280" layout="responsive">
+          </amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="thirds">
+          <h1 grid-area="upper-third" class="center-text">
+            Experience
+          </h1>
+          <span grid-area="middle-third" class="center-text">
+            <h3>Full-stack Dev</h3>
+            <p>I worked at the University of Toronto building a Tracking System</p>
+          </span>
+          <span grid-area="lower-third" class="center-text">
+            <h3>Teaching Assistant</h3>
+            <p>I taught Intro to Computer Science courses at the University of Toronto</p>
+          </span>
         </amp-story-grid-layer>
       </amp-story-page>
 
@@ -153,27 +172,29 @@
             width="720" height="1280" layout="responsive">
           </amp-img>
         </amp-story-grid-layer>
-        <amp-story-grid-layer template="vertical">
-          <h1>Contact</h1>
+        <amp-story-grid-layer template="thirds">
+          <h1 grid-area="upper-third" class="center-text">Contact</h1>
 
-          <span id="contact">
-            <i class="fas fa-envelope-square fa-3x"></i>
-            <p>
-              prantar.bhowmik@mail.utoronto.ca
-            </p>
-          </span>
-          <span id="contact">
-            <i class="fab fa-github-square fa-3x"></i>
-            <p>
-              bhowmikp
-            </p>
-          </span>
-          <span id="contact">
-            <i class="fab fa-linkedin fa-3x"></i>
-            <p>
-              prantar
-            </p>
-          </span>
+          <div grid-area="middle-third">
+            <span id="contact">
+              <i class="fas fa-envelope-square fa-3x"></i>
+              <p>
+                prantar.bhowmik@mail.utoronto.ca
+              </p>
+            </span>
+            <span id="contact">
+              <i class="fab fa-github-square fa-3x"></i>
+              <p>
+                bhowmikp
+              </p>
+            </span>
+            <span id="contact">
+              <i class="fab fa-linkedin fa-3x"></i>
+              <p>
+                prantar
+              </p>
+            </span>
+          </div>
         </amp-story-grid-layer>
       </amp-story-page>
 
