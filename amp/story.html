@@ -28,27 +28,26 @@
   <body>
 
     <amp-story standalone bookend-config-src="bookend.json">
-      <amp-story-page id="page1">
-        <amp-story-grid-layer template="vertical">
-          <h1>Cat</hi>
-          <p>Info about cat</p>
+         <amp-story-page id="cover">
+           <amp-story-grid-layer template="fill">
+             <amp-img src="assets/cover.jpg"
+              width="720" height="1280"
+              layout="responsive">
+          	 </amp-img>
+           </amp-story-grid-layer>
+           <amp-story-grid-layer template="vertical">
+          <h1>Prantar Stories</h1>
         </amp-story-grid-layer>
-      </amp-story-page>
-    <amp-story-page id="page2">
-      <amp-story-grid-layer template="horizontal">
-        <p>Element 1</p>
-        <p>Element 2</p>
-        <p>Element 3</p>
-      </amp-story-grid-layer>
-    </amp-story-page>
-    <amp-story-page id="page3">
-      <amp-story-grid-layer template="thirds">
-        <p grid-area="upper-third">Element 1</p>
-        <p grid-area="middle-third">Element 2</p>
-        <p grid-area="lower-third">Element 3</p>
-      </amp-story-grid-layer>
-    </amp-story-page>
-  </amp-story>
+         </amp-story-page>
+        
+        <amp-story-page id="page1">
+          <amp-story-grid-layer template="fill">
+            <p>
+              None
+            </p>
+           </amp-story-grid-layer>
+         </amp-story-page>
+      </amp-story>
 
 
   </body>
