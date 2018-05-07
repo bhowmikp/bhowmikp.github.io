@@ -32,6 +32,12 @@
       #cover-job {
         text-align:center;
       }
+      #about-title {
+        text-align:center;
+      }
+      #about-text {
+        text-align:center;
+      }
       #contact{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -73,9 +79,25 @@
       </amp-story-page>
 
       <amp-story-page id="page1">
-        <amp-story-grid-layer template="vertical">
-          <p>About Me</p>
-          <p>Student at UofT</p>
+        <amp-story-grid-layer template="fill">
+          <amp-img src="/assets/background.jpeg"
+            width="720" height="1280" layout="responsive">
+          </amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="thirds">
+          <amp-img src="/assets/prantar.png" grid-area="middle-third"
+            height="420" width="300" layout="responsive">
+          </amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="thirds">
+          <h1 grid-area="upper-third" id="about-title">About Me</h1>
+          <span grid-area="lower-third" id="about-text">
+            <p>I am a third year student at the University of Toronto, working towards a Bachelors in Science.</p>
+            <br>
+            <p>
+              I have been passionate about coding since high school and enjoy working on various projects ranging from Web Development to working with blockchain technologies.
+            </p>
+          </span>
         </amp-story-grid-layer>
       </amp-story-page>
 
@@ -98,6 +120,11 @@
       </amp-story-page>
 
       <amp-story-page id="page4">
+        <amp-story-grid-layer template="fill">
+          <amp-img src="/assets/background.jpeg"
+            width="720" height="1280" layout="responsive">
+          </amp-img>
+        </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
           <h1>Contact</h1>
 
