@@ -1,6 +1,6 @@
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  '/',
+  '/amp/*',
   '/assets/background.jpeg',
   '/assets/prantar.png',
   '/assets/Prantar-Resume.pdf'
