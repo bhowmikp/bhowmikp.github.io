@@ -45,6 +45,9 @@
       #center-text{
         text-align:center;
       }
+      #center-image {
+        align-content: center;
+      }
       amp-story-grid-layer.noedge {
         padding: 0px;
       }
@@ -103,9 +106,9 @@
             width="720" height="1280" layout="responsive">
           </amp-img>
         </amp-story-grid-layer>
-        <amp-story-grid-layer template="vertical">
+        <amp-story-grid-layer template="vertical" id="center-image">
           <div>
-            <br><br>
+            <br><br><br><br>
             <amp-img src="/assets/prantar.png"
               height="200" width="200">
             </amp-img>
@@ -152,11 +155,11 @@
         </amp-story-grid-layer>
         <amp-story-grid-layer template="vertical">
           <h1 id="center-text">Projects</h1>
-          <span animate-in="whoosh-in-right" animate-in-delay="0.2s">
+          <span animate-in="whoosh-in-right">
             <h3>Let Me Know</h3>
             <p>A news aggregator that can be found at letmeknow.news</p>
           </span>
-          <span animate-in="whoosh-in-right" animate-in-delay="0.6s" animate-in-duration="0.8s">
+          <span animate-in="whoosh-in-right" animate-in-delay="0.2s" animate-in-duration="0.8s">
             <h3>Password Generator</h3>
             <p>Generates cryptographically secure passwords</p>
           </span>
