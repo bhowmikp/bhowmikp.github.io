@@ -6,8 +6,7 @@ self.addEventListener('install', function(event) {
         '/favicon.ico',
         '/assets/background.jpeg',
         '/assets/Prantar-Resume.pdf',
-        '/assets/prantar.png',
-        '/amp/*.html'
+        '/assets/prantar.png'
       ]);
     })
   );
