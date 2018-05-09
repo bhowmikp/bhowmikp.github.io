@@ -8,6 +8,8 @@
         src="https://cdn.ampproject.org/v0/amp-story-0.1.js"></script>
     <script async custom-element="amp-install-serviceworker"
         src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+    <script async custom-element="amp-analytics"
+        src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 
     <title>Prantar Story</title>
     <link rel="manifest" href="/manifest.json">
@@ -94,6 +96,22 @@
       src="./serviceworker.js"
       layout="nodisplay">
     </amp-install-serviceworker>
+
+    <amp-analytics type="googleanalytics">
+      <script type="application/json">
+      {
+        "vars": {
+          "account": "UA-74904411-1"
+        },
+        "triggers": {
+          "trackPageview": {
+            "on": "visible",
+            "request": "pageview"
+          }
+        }
+      }
+      </script>
+    </amp-analytics>
 
     <amp-story standalone bookend-config-src="bookend.json">
 
