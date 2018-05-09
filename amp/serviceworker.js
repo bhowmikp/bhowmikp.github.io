@@ -1,18 +1,14 @@
-var CACHE_NAME = 'my-site-cache-v1';
-var urlsToCache = [
-  '/amp/*',
-  '/assets/background.jpeg',
-  '/assets/prantar.png',
-  '/assets/Prantar-Resume.pdf'
-];
-
-self.addEventListener('install', function(event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
+self.addEventListener('install', function(e) {
+  e.waitUntil(
+    caches.open('airhorner').then(function(cache) {
+      return cache.addAll([
+        '/',
+        '/favicon.ico',
+        '/assets/background.jpeg',
+        '/assets/prantar.png',
+        '/assets/Prantar-Resume.pdf',
+        '/amp/*'
+      ]);
+    })
   );
 });
