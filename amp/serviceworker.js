@@ -4,7 +4,8 @@ var filesToCache = [
   '/assets/background.jpeg',
   '/assets/Prantar-Resume.pdf',
   '/assets/prantar.png',
-  '/amp/story.html'
+  '/amp/*.html',
+  '/amp/serviceworker.js'
 ];
 
 
