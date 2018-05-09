@@ -4,7 +4,10 @@ self.addEventListener('install', function(event) {
       console.log("Created serviceworker");
       return cache.addAll([
         '/favicon.ico',
-        '/assets/background.jpeg'
+        '/assets/background.jpeg',
+        '/assets/Prantar-Resume.pdf',
+        '/assets/prantar.png',
+        '/amp/*.html'
       ]);
     })
   );
