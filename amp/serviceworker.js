@@ -4,7 +4,11 @@ var filesToCache = [
   '/assets/background.jpeg',
   '/assets/Prantar-Resume.pdf',
   '/assets/prantar.png',
-  '/amp/*.html',
+  '/amp/contact.html',
+  '/amp/experience.html',
+  '/amp/index.html',
+  '/amp/projects.html',
+  '/amp/story.html',
   '/amp/serviceworker.js'
 ];
 
