@@ -1,8 +1,7 @@
-importScripts('/cache-polyfill.js');
-
-self.addEventListener('install', function(e) {
-  e.waitUntil(
-    caches.open('airhorner').then(function(cache) {
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open('v1').then(function(cache) {
+      console.log("Created serviceworker");
       return cache.addAll([
         '/',
         '/favicon.ico',
