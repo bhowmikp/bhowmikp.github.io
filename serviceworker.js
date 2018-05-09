@@ -3,7 +3,8 @@ var filesToCache = [
   '/favicon.ico',
   '/assets/background.jpeg',
   '/assets/Prantar-Resume.pdf',
-  '/assets/prantar.png'
+  '/assets/prantar.png',
+  '/amp/story.html'
 ];
 
 
