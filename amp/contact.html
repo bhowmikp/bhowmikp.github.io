@@ -1,0 +1,138 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-install-serviceworker"
+        src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+    <script async custom-element="amp-analytics"
+        src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+    <title>Prantar Bhowmik - Contact</title>
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-starturl" content="/">
+    <meta name="theme-color" content="#5945db">
+
+    <link rel="canonical" href="https://prantar.me/#/contact">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Website",
+        "author": "Prantar Bhowmik",
+        "headline": "Welcome to Prantar Bhowmik's Contact Page. Feel free to contact me at the following social media.",
+        "datePublished": "2018-05-03T12:02:41Z",
+        "image": [
+          "https://prantar.me/favicon.ico"
+        ]
+      }
+    </script>
+    <style amp-custom>
+      .amp-sidebar-toolbar-target-shown {
+        display: none;
+      }
+      amp-sidebar > ul {
+        list-style: none;
+        padding-right:20px;
+        padding-left:20px;
+      }
+
+      .contact > div {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 1em;
+      }
+
+      @media only screen and (max-width: 360px) {
+        .contact > div {
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          grid-row-gap: 0.25em;
+        }
+      }
+      #heading {
+        text-align: center;
+      }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+
+    <amp-install-serviceworker
+      src="./serviceworker.js"
+      layout="nodisplay">
+    </amp-install-serviceworker>
+
+    <amp-analytics type="googleanalytics">
+      <script type="application/json">
+      {
+        "vars": {
+          "account": "UA-74904411-1"
+        },
+        "triggers": {
+          "trackPageview": {
+            "on": "visible",
+            "request": "pageview"
+          }
+        }
+      }
+      </script>
+    </amp-analytics>
+
+    <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
+      <ul>
+        <li><a href="https://prantar.me/amp/index.html">HomePage</a></li>
+        <li><a href="https://prantar.me/amp/experience.html">Experience</a></li>
+        <li><a href="https://prantar.me/amp/story.html">Story</a></li>
+        <li><a href="https://prantar.me/amp/projects.html">Projects</a></li>
+        <li><a href="https://prantar.me/amp/contact.html">Contact</a></li>
+      </ul>
+    </amp-sidebar>
+
+    <button class="hamburger" on='tap:sidebar1.toggle'><i class="fas fa-bars"></i></button>
+
+    <h1 id="heading">
+      Contact
+    </h1>
+
+    <div class="contact">
+      <div>
+        <p>Email:</p>
+        <p>prantar.bhowmik@mail.utoronto.ca</p>
+        <a href="mailto:prantar.bhowmik@mail.utoronto.ca"
+          title="prantar.bhowmik@mail.utoronto.ca">
+          <i class="fas fa-envelope-square fa-3x"></i>
+        </a>
+      </div>
+      <div>
+        <p>Github:</p>
+        <p>bhowmikp</p>
+        <a href="https://github.com/bhowmikp"
+          target="_blank"
+          rel="noopener"
+          title="bhowmikp">
+          <i class="fab fa-github-square fa-3x"></i>
+        </a>
+      </div>
+      <div>
+        <p>Linkedin:</p>
+        <p>prantar</p>
+        <a href="https://www.linkedin.com/in/prantar"
+          title="prantar"
+          target="_blank"
+          rel="noopener">
+          <i class="fab fa-linkedin fa-3x"></i>
+        </a>
+      </div>
+    </div>
+
+
+  </body>
+</html>
