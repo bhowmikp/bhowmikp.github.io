@@ -19,7 +19,12 @@
             "assets": [
               "src/assets",
               "src/favicon.ico",
-              "src/manifest.json"
+              "src/manifest.json",
+              "src/CNAME",
+              "src/BingSiteAuth.xml",
+              "src/amp",
+              "src/sitemap.xml",
+              "src/robots.txt"
             ],
             "styles": [
               "src/styles.css",

@@ -1,0 +1,238 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-install-serviceworker"
+        src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+    <script async custom-element="amp-analytics"
+        src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+    <title>Prantar Bhowmik - Projects</title>
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-starturl" content="/">
+    <meta name="theme-color" content="#5945db">
+
+    <!-- Apple Configuration-->
+    <meta name="apple-mobile-web-app-title" content="Prantar Bhowmik Website">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#2196f3">
+    <link rel="apple-touch-icon" href="assets/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="assets/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="assets/icons/icon-128x128.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/icon-152x152.png">
+    <link rel="apple-touch-startup-image" sizes="192x192" href="assets/icons/icon-192x192.png" />
+    <link rel="apple-touch-startup-image" sizes="384x384" href="assets/icons/icon-384x384.png" />
+    <link rel="apple-touch-startup-image" sizes="512x512" href="assets/icons/icon-512x512.png" />
+
+    <link rel="canonical" href="https://prantar.me/#/projects">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Website",
+        "author": "Prantar Bhowmik",
+        "headline": "Welcome to Prantar Bhowmik's Projects Page. Check out all the projects I have been working on.",
+        "datePublished": "2018-05-03T12:02:41Z",
+        "image": [
+          "https://prantar.me/favicon.ico"
+        ]
+      }
+    </script>
+
+    <style amp-custom>
+      .amp-sidebar-toolbar-target-shown {
+        display: none;
+      }
+      amp-sidebar > ul {
+        list-style: none;
+        padding-right:20px;
+        padding-left:20px;
+      }
+      #heading {
+        text-align: center;
+      }
+      .heading{
+        font-size: 26px;
+        margin-bottom: -10px;
+      }
+      #project > ul{
+        margin-left: -24px;
+      }
+    </style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+
+    <amp-install-serviceworker
+      src="./serviceworker.js"
+      layout="nodisplay">
+    </amp-install-serviceworker>
+
+    <amp-analytics type="googleanalytics">
+      <script type="application/json">
+      {
+        "vars": {
+          "account": "UA-74904411-1"
+        },
+        "triggers": {
+          "trackPageview": {
+            "on": "visible",
+            "request": "pageview"
+          }
+        }
+      }
+      </script>
+    </amp-analytics>
+
+    <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
+      <ul>
+        <li><a href="https://prantar.me/amp/index.html">HomePage</a></li>
+        <li><a href="https://prantar.me/amp/experience.html">Experience</a></li>
+        <li><a href="https://prantar.me/amp/story.html">Story</a></li>
+        <li><a href="https://prantar.me/amp/projects.html">Projects</a></li>
+        <li><a href="https://prantar.me/amp/contact.html">Contact</a></li>
+      </ul>
+    </amp-sidebar>
+
+    <button class="hamburger" on='tap:sidebar1.toggle'><i class="fas fa-bars"></i></button>
+
+    <h1 id="heading">
+      Projects
+    </h1>
+
+    <div id="project">
+      <p class="heading">Let Me Know</p>
+      <br>
+      <a href="https://letmeknow.news/" target="_blank" rel="noopener">Website</a>
+      <br>
+      <ul>
+        <li>
+          Led the development on an web application which relevant articles for
+          trending topics in news and congregates, analyzes, and summarizes articles,
+          shows social media reaction, and generates links for further reading
+        </li>
+        <li>
+          Finalist at MHacks8 and funded by the incubator at University of Toronto
+        </li>
+        <li>
+          Used Django in the backend, which is multi-processed to make fetching
+          relevant articles faster. Angular is used in the frontend to take load off the
+          server and make some of the processing client side
+        </li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div id="project">
+      <p class="heading">Pi Temperature</p>
+      <br>
+      <a href="https://github.com/bhowmikp/Pi_Temperature" target="_blank" rel="noopener">Code</a>
+      <br>
+      <ul>
+        <li>
+          Monitors the Raspberry Pi's(Model 3B) temperature using the onboard sensor
+          and puts the information in a file. Temperature and cpu speed are recorded
+          to determine, board usage is effecting temperrature. Intention of the
+          project was to find a co-relation between the temperature of board and
+          room temperature and then use the temperature of the board to predict
+          room temperature.
+        </li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div id="project">
+      <p class="heading">Prantar.me chrome extension</p>
+      <br>
+      <a href="https://chrome.google.com/webstore/detail/httpsprantarme/ncikglnjhfgfjpafebocgaekhaidodlk" target="_blank" rel="noopener">Extension</a>
+      <a href="https://github.com/bhowmikp/prantar.me-chrome-extension" target="_blank" rel="noopener">Code</a>
+      <br>
+      <ul>
+        <li>
+          App checks and informs users of any recent updates to personal sites
+        </li>
+        <li>
+          Used HTML, JavaScript, JSON, and became familiar with the Chrome API
+        </li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div id="project">
+      <p class="heading">Password Generator</p>
+      <br>
+      <a href="https://github.com/bhowmikp/Password_Generator" target="_blank" rel="noopener">Code</a>
+      <br>
+      <ul>
+        <li>
+          App creates and stores cryptographically secure password for accounts
+        </li>
+        <li>
+          Wrote unit testing and created a GUI to make the app user friendly
+        </li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div id="project">
+      <p class="heading">Lingo Game</p>
+      <br>
+      <a href="https://github.com/bhowmikp/Lingo_game" target="_blank" rel="noopener">Code</a>
+      <br>
+      <ul>
+        <li>
+          Game consists of several mini games
+        </li>
+        <li>
+          Java swing was used to create the games
+        </li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div id="project">
+      <p class="heading">CSEC Chatbot</p>
+      <br>
+      <a href="https://github.com/bhowmikp/CSEC_Chatbot" target="_blank" rel="noopener">Code</a>
+      <br>
+      <ul>
+        <li>
+          Facebook chatbot that replies to people's questions when they message the facebook page
+        </li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div id="project">
+      <p class="heading">Honey Badger</p>
+      <br>
+      <a href="https://github.com/bhowmikp/UTSC-Hackathon" target="_blank" rel="noopener">Code</a>
+      <br>
+      <ul>
+        <li>
+          Made website which scans a product barcode and informs user of the environmental cost
+        </li>
+        <li>
+          Utilized HTML, CSS, Python, Bloomberg API
+        </li>
+      </ul>
+    </div>
+
+  </body>
+</html>
