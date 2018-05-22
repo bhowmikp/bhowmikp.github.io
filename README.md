@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/bhowmikp/bhowmikp.github.io.svg?branch=angular)](https://travis-ci.org/bhowmikp/bhowmikp.github.io.svg?branch=angular)
+[![Build Status](https://travis-ci.org/bhowmikp/bhowmikp.github.io.svg?branch=angular)](https://travis-ci.org/bhowmikp/bhowmikp.github.io)
 
 # PersonalWebsite
 
