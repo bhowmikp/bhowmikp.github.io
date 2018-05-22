@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "10.1"
+
+before_script:
+  - npm install -g @angular/cli
+  - npm install
+
+script:
+  ng build --prod --aot --build-optimizer --named-chunks --output-hashing all
