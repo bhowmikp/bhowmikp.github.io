@@ -24,7 +24,8 @@
               "src/BingSiteAuth.xml",
               "src/amp",
               "src/sitemap.xml",
-              "src/robots.txt"
+              "src/robots.txt",
+              "src/README.md"
             ],
             "styles": [
               "src/styles.css",

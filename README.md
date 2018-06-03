@@ -1,29 +1,58 @@
 [![Build Status](https://travis-ci.org/bhowmikp/bhowmikp.github.io.svg?branch=angular)](https://travis-ci.org/bhowmikp/bhowmikp.github.io)
 
-# PersonalWebsite
+# [PersonalWebsite](https://prantar.me)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+This is my personal website. It showcases my portfolio, accomplishments etc. The website is written with Angular. It is a Progressive Web App(PWA), therefore the website can create a mobile and desktop app.
 
-## Development server
+The website also hosts an Accelerated Mobile Page(AMP) version of the [site](https://prantar.me/amp). The AMP site has PWA functionalities and therefore it is loaded faster on mobile devices.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Getting Started
 
-## Code scaffolding
+### Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+What things you need to install the software and how to install them
 
-## Build
+```sh
+# install npm
+npm install -g @angular/cli
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+### Installing
 
-## Running unit tests
+```
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Run Dev Environment
 
-## Running end-to-end tests
+```sh
+ng serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Compile
 
-## Further help
+```sh
+ng build --prod --aot
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Running the tests
+
+### And coding style tests
+
+```sh
+ng lint
+```
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
+* [Angular](https://angular.io/) - Web Framework
+
+## Authors
+
+* **Prantar Bhowmik** - *Initial work* - [bhowmikp](https://github.com/bhowmikp)
+
+See also the list of [contributors](https://github.com/bhowmikp/bhowmikp.github.io/graphs/contributors) who participated in this project.
