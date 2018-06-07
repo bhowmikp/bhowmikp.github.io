@@ -7,7 +7,7 @@ before_script:
 
 install:
   - docker pull bhowmikp/bhowmikp.github.io
-  - docker run bhowmikp/bhowmikp.github.io /bin/sh -c "$(npm bin)/ng build --prod --aot --build-optimizer"
+  - docker run bhowmikp/bhowmikp.github.io /bin/sh -c "ng build --prod --aot --build-optimizer"
 
 script:
   - ng lint
