@@ -11,5 +11,8 @@ WORKDIR /ng-app
 
 COPY . .
 
+RUN npm install
+npm install -g @angular/cli
+
 ## Build the angular app in production mode and store the artifacts in dist folder
 RUN $(npm bin)/ng build --prod --aot --build-optimizer
