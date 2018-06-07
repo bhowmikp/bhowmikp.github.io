@@ -5,6 +5,10 @@ node_js:
 before_script:
   - npm install -g @angular/cli
 
+install:
+  - docker pull bhowmikp/bhowmikp.github.io
+  - docker run bhowmikp/bhowmikp.github.io /bin/sh -c "ng build --prod --aot --build-optimizer"
+
 script:
   - ng lint
   - ng build --prod --aot --build-optimizer --named-chunks --output-hashing all

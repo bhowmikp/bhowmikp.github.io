@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/bhowmikp/bhowmikp.github.io.svg?branch=angular)](https://travis-ci.org/bhowmikp/bhowmikp.github.io)
 
-# [PersonalWebsite](https://prantar.me)
+# [Personal Website](https://prantar.me)
 
 This is my personal website. It showcases my portfolio, accomplishments etc. The website is written with Angular. It is a Progressive Web App(PWA), therefore the website can create a mobile and desktop app.
 
@@ -19,7 +19,7 @@ npm install -g @angular/cli
 
 ### Installing
 
-```
+```sh
 npm install
 ```
 
@@ -42,10 +42,6 @@ ng build --prod --aot
 ```sh
 ng lint
 ```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
