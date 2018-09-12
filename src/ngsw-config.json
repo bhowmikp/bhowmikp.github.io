@@ -23,9 +23,21 @@
         "/assets/**"
       ],
       "urls": [
-        "https://fonts.googleapis.com/**",
-        "https://ionicabizau.github.io/github-profile-languages/api.html?bhowmikp"
+        "https://fonts.googleapis.com/**"
       ]
     }
-  }]
+  }],
+  "dataGroups": [
+    {
+      "name": "languages",
+      "urls": [
+        "https://ionicabizau.github.io/github-profile-languages/api.html?bhowmikp"
+      ],
+      "cacheConfig": {
+        "maxAge": "1d",
+        "timeout": "6s",
+        "strategy": "performance"
+      }
+    }
+  ]
 }

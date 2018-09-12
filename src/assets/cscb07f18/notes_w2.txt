@@ -1,0 +1,18 @@
+Objective: Learn importance of terminal and basic commands.
+
+What is the terminal?
+- interface where we can type and execute text based commands
+
+Why do we like the terminal?
+  - lazy: can do most of the stuff from keyboard without using mouse
+  - tighter controls: unix was built terminal up, commands can be piped
+  - automation: using scripts
+
+
+Additional Commands:
+  - nano / pico → more text editors
+  - rm -rf dir → removes files recursively and forcefully, used to delete directories
+  - man command_name → to get more information about a command
+
+
+This is just an introduction, learn more about terminal in CSCB09.
