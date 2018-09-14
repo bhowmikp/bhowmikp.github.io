@@ -8,11 +8,19 @@ Why do we like the terminal?
   - tighter controls: unix was built terminal up, commands can be piped
   - automation: using scripts
 
+What are flags in terminal commands?
+The name of the command can be thought of as a verb. Flags can be thought of as
+as adjective. Flags still keep the main function of the command but just adds
+more features to it.
+
+How to remote into linux lab computers?
+PuTTy can be used to remote into the linux lab computers from windows.
+More instructions can be found at this link: https://mathlab.utsc.utoronto.ca/courses/cscb09w18/remotelogin.html
 
 Additional Commands:
   - nano / pico → more text editors
-  - rm -rf dir → removes files recursively and forcefully, used to delete directories
-  - man command_name → to get more information about a command
+  - rm -rf dir → (recursively and forcefully remove) removes files recursively and forcefully, used to delete directories
+  - man command_name → (manual) to get more information about a command
 
 
 This is just an introduction, learn more about terminal in CSCB09.
