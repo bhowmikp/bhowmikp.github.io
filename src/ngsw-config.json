@@ -25,6 +25,11 @@
       "urls": [
         "https://fonts.googleapis.com/**"
       ]
+    },
+    "cacheConfig": {
+      "maxAge": "7d",
+      "timeout": "6s",
+      "strategy": "freshness"
     }
   }],
   "dataGroups": [
