@@ -1,0 +1,5 @@
+Objective: Learn CRC cards and practice SVN.
+
+Form groups of two to work on the CRC cards. Each member should submit individually.
+
+Assignment 1 has been posted.
