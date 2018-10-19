@@ -25,7 +25,7 @@
     "@nicky-lenaers/ngx-scroll-to": "^0.6.0",
     "angular-vertical-timeline": "^0.4.2",
     "core-js": "^2.4.1",
-    "github-calendar": "^1.2.1",
+    "github-calendar": "^1.2.4",
     "jasmine": "^3.0.0",
     "rxjs": "^6.1.0",
     "rxjs-compat": "^6.1.0",
