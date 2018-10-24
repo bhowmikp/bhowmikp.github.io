@@ -1,0 +1,50 @@
+Objective:
+
+What is Polymorphism?
+
+Polymorphism is the ability of an object to take on many forms.
+It is when a parent class references a child class object.
+
+
+Why is polymorphism userful?
+
+When we build a generic framework and it takes different object with the same
+parent class, we can still use the framework as long as the object follows
+rules of its parent class.
+
+
+What is downcasting?
+
+Converting an object from its supertype to its subtype.
+
+
+How are methods called when using polymorphism?
+
+  public class Top {
+        public int value = 1;
+        public void printValue() { System.out.println(value); }
+  }
+
+  public class Mid extends Top {
+        public void printValue() { System.out.println(value); }
+  }
+
+  public class Bottom extends Mid {
+        public int value = 3;
+  }
+
+  Top myVar = new Bottom();
+  myVar.printValue();
+
+Creates an object Bottom and upcasts it to Top (upcast done automatically).
+Checks if printValue() present in Bottom and since its not goes to Mid and print 1.
+If printValue() existed in Bottom it would have printed 3.
+
+
+Example of polymorphism and downcasting.
+
+// animal can be many objects such as dog, cat etc. this is example of polymorphism
+Animal dog = new Dog();
+
+// Example of downcasting. Converting from animal to dog
+Dog newDog = (Dog) dog;
