@@ -1,0 +1,24 @@
+Objective: Learn interfaces and hashtables.
+
+What are interfaces?
+
+Interfaces are a group of methods with empty bodies. When a class implements an
+interface, all methods defined by the interface must be implemented by the class,
+this is checked in compile time.
+
+
+How are interfaces different from abstract classes?
+
+Interface is a contract, so the classes implementing it needs to implement all
+methods inside the interface. Interfaces are an empty shell and contains only method
+signatures. Consumes less CPU in creating.
+
+Abstract classes can have their own implementation for methods, but if they like
+the child to implement its own method they can create an abstract method. Consumes
+more CPU.
+
+
+What are hashtables?
+
+Hashtables are key value pairs, where the keys are used to index and find its
+associated values. It is dictionary in python. It has O(1) look up time.
