@@ -1,4 +1,4 @@
-Objective:
+Objective: Learn about polymorphism and casting.
 
 What is Polymorphism?
 
