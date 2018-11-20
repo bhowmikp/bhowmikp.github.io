@@ -1,0 +1,13 @@
+Objective: Learn Generics.
+
+What are generics?
+Allow type (both regular and user defined) to be a parameter to methods, classes,
+and interfaces. These type parameters provide a way to re-use the same code with
+different inputs.
+
+
+Why do we use generics?
+- Generics allow compile-time type safety check, makes it easier to debug code.
+- Using generics can eliminate the need of casting.
+- Enable implementing generic algorithms that work on collections of different
+  types, and are easier to customize.

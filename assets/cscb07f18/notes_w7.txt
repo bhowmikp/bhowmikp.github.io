@@ -1,20 +1,17 @@
 Objective: Learn about polymorphism and casting.
 
 What is Polymorphism?
-
 Polymorphism is the ability of an object to take on many forms.
 It is when a parent class references a child class object.
 
 
 Why is polymorphism userful?
-
 When we build a generic framework and it takes different object with the same
 parent class, we can still use the framework as long as the object follows
 rules of its parent class.
 
 
 What is downcasting?
-
 Converting an object from its supertype to its subtype.
 
 
@@ -42,7 +39,6 @@ If printValue() existed in Bottom it would have printed 3.
 
 
 Example of polymorphism and downcasting.
-
 // animal can be many objects such as dog, cat etc. this is example of polymorphism
 Animal dog = new Dog();
 
