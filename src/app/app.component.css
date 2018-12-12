@@ -5,6 +5,7 @@ nav{
   top: 0;
   margin-left: -8px;
   margin-right: -8px;
+  margin-top: -8px;
 
   background-color: #333;
   border: 1px solid black;
@@ -59,28 +60,6 @@ nav > .options {
   }
 }
 
-.parallax {
-  /* The image used */
-  background-image: url('../assets/background.jpeg');
-
-  /* Full height */
-  height: 100%;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  display: grid;
-  align-items: center;
-  justify-items: center;
-
-  margin-left: -8px;
-  margin-right: -8px;
-  margin-top: -8px;
-}
-
 .routing{
   height: 100%;
   margin-top: 1em;
@@ -95,11 +74,4 @@ nav > .options {
   line-height: 48px;
   margin: 0;
   text-align: center;
-}
-
-.arrow {
-  position: absolute;
-  bottom: 0;
-  right: 2%;
-  cursor: pointer;
 }

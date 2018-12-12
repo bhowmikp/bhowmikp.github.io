@@ -1,7 +1,7 @@
 .prantar-image{
 	border-radius: 50%;
   float: right;
-  
+
 	/* blocks people copying my image */
 	/* stops drag and drop*/
 	pointer-events: none;
@@ -16,4 +16,8 @@
 
 .clearfix {
     overflow: auto;
+}
+
+.title {
+	text-align: center;
 }
