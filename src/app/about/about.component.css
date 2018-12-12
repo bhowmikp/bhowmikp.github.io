@@ -21,3 +21,11 @@
 .title {
 	text-align: center;
 }
+
+@media only screen and (max-width: 368px) {
+	.title{
+		text-align: center;
+		font-size: 35px;
+		line-height: 1em;
+	}
+}
