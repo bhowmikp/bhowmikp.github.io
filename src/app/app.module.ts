@@ -18,6 +18,7 @@ import { Csca48s17Component } from './ta/csca48s17/csca48s17.component';
 import { Csca48w17Component } from './ta/csca48w17/csca48w17.component';
 import { Csca48w18Component } from './ta/csca48w18/csca48w18.component';
 import { Cscb07f18Component } from './ta/cscb07f18/cscb07f18.component';
+import { Cscc69w19Component } from './ta/cscc69w19/cscc69w19.component';
 
 import { VerticalTimelineModule } from 'angular-vertical-timeline';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
     { path : 'ta/csca08f17', component: Csca08f17Component },
     { path : 'ta/csca48w18', component: Csca48w18Component },
     { path : 'ta/cscb07f18', component: Cscb07f18Component },
+    { path : 'ta/cscc69w19', component: Cscc69w19Component },
   { path : 'projects', component: ProjectsComponent },
   { path : 'contact', component: ContactComponent },
   { path: '**', redirectTo: '/' },
@@ -50,7 +52,8 @@ const appRoutes: Routes = [
     Csca48s17Component,
     Csca48w17Component,
     Csca48w18Component,
-    Cscb07f18Component
+    Cscb07f18Component,
+    Cscc69w19Component
   ],
   imports: [
     BrowserModule,
