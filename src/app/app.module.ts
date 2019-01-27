@@ -1,8 +1,6 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { RouterModule, Routes } from '@angular/router';
-
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppComponent } from './app.component';
 
@@ -22,22 +20,7 @@ import { Cscc69w19Component } from './ta/cscc69w19/cscc69w19.component';
 
 import { VerticalTimelineModule } from 'angular-vertical-timeline';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
-
-const appRoutes: Routes = [
-  { path : '', component: AboutComponent },
-  { path : 'experience', component: ExperienceComponent },
-  { path : 'ta', component: TaComponent },
-    { path : 'ta/csca08f16', component: Csca08f16Component },
-    { path : 'ta/csca48w17', component: Csca48w17Component },
-    { path : 'ta/csca48s17', component: Csca48s17Component },
-    { path : 'ta/csca08f17', component: Csca08f17Component },
-    { path : 'ta/csca48w18', component: Csca48w18Component },
-    { path : 'ta/cscb07f18', component: Cscb07f18Component },
-    { path : 'ta/cscc69w19', component: Cscc69w19Component },
-  { path : 'projects', component: ProjectsComponent },
-  { path : 'contact', component: ContactComponent },
-  { path: '**', redirectTo: '/' },
-];
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -59,8 +42,8 @@ const appRoutes: Routes = [
     BrowserModule,
     VerticalTimelineModule,
     ScrollToModule.forRoot(),
-    RouterModule.forRoot(appRoutes, {useHash: true}),
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    AppRoutingModule
   ],
   providers: [
     Title

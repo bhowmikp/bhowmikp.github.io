@@ -22,3 +22,17 @@
 li{
   margin-left: -24px;
 }
+
+.padded-body{
+	margin: 25px 40px 0px 40px;
+}
+
+.round-link{
+  padding: 4px 10px 6px 10px;
+  border: 1px black solid;
+  border-radius: 12px;
+  text-decoration: none;
+  background-color: #3d3d3d;
+  color: white;
+  margin-right: 10px;
+}

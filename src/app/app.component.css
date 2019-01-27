@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 nav{
   display: grid;
   grid-template-columns: 2fr 8fr;
@@ -7,8 +9,11 @@ nav{
   margin-right: -8px;
   margin-top: -8px;
 
-  background-color: #333;
+  background-color: #2b2d30;
   border: 1px solid black;
+
+  font-family: "Quicksand", serif;
+  font-weight: 500;
 
   padding: 10px 0px;
 }

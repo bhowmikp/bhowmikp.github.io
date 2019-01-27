@@ -1,9 +1,8 @@
 var cacheName = 'myCacheVersion';
 var filesToCache = [
   '/favicon.ico',
-  '/assets/background.jpeg',
   '/assets/Prantar-Resume.pdf',
-  '/assets/prantar.png',
+  '/assets/prantar.jpg',
   '/amp/contact.html',
   '/amp/experience.html',
   '/amp/index.html',

@@ -1,6 +1,7 @@
 .prantar-image{
-	border-radius: 50%;
-  float: right;
+	border-radius: 10%;
+	float: right;
+	height: 240px;
 
 	/* blocks people copying my image */
 	/* stops drag and drop*/
@@ -11,7 +12,9 @@
   -khtml-user-select: none;
   -webkit-user-select: none;
   -o-user-select: none;
-  user-select: none;
+	user-select: none;
+
+	margin: 12px;
 }
 
 .clearfix {
@@ -22,10 +25,14 @@
 	text-align: center;
 }
 
-@media only screen and (max-width: 368px) {
+@media only screen and (max-width: 460px) {
 	.title{
 		text-align: center;
 		font-size: 35px;
 		line-height: 1em;
 	}
+}
+
+.padded-body{
+	margin: 25px 40px 0px 40px;
 }
