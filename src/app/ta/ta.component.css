@@ -5,4 +5,15 @@ ul{
 li {
   margin-top: 10px;
   margin-left: -40px;
+  padding: 15px;
+  background-color: white;
+  color: #3a3a3a;
+  text-decoration: none;
+  border-radius: 20px;
+  width: 54%;
+  border: 1px black solid;
+}
+
+.padded-body{
+	margin: 25px 40px 0px 40px;
 }

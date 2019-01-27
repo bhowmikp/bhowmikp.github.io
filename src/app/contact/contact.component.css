@@ -11,3 +11,7 @@
     grid-row-gap: 0.25em;
   }
 }
+
+.padded-body{
+	margin: 25px 40px 0px 40px;
+}
