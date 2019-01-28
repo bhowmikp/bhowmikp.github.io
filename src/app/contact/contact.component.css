@@ -1,14 +1,20 @@
-.contact > div {
+.contact {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 1em;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 2em;
 }
 
-@media only screen and (max-width: 360px) {
-  .contact > div {
+.contact-info {
+  display: grid;
+  grid-template-columns: 100px 300px 80px;
+  grid-auto-columns: auto;
+  grid-column-gap: 1em;
+}
+
+@media only screen and (max-width: 566px) {
+  .contact-info {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-row-gap: 0.25em;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 300px));
   }
 }
 

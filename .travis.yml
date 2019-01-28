@@ -11,5 +11,5 @@ install:
   - docker run bhowmikp/bhowmikp.github.io /bin/sh -c "ng build --prod --aot --build-optimizer"
 
 script:
-  - ng lint
+  - ng lint --typeCheck=true
   - ng build --prod --aot --build-optimizer --named-chunks --output-hashing all
