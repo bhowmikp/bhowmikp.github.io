@@ -110,6 +110,7 @@
         "/assets/cscc69w19/cscc69_notes.docx",
         "/assets/cscc69w19/cscc69_notes.pdf",
         "/assets/cscc69w19/kernel_programming_w2.md",
+        "/assets/cscc69w19/kernel_programming_w2.pdf",
         "/assets/cscc69w19/review_w1.md",
         "/assets/cscc69w19/review_w1.pdf",
         "/assets/icons/icon-128x128.png",
@@ -120,7 +121,7 @@
         "/assets/icons/icon-512x512.png",
         "/assets/icons/icon-72x72.png",
         "/assets/icons/icon-96x96.png",
-        "/assets/prantar.png"
+        "/assets/prantar.jpg"
       ],
       "patterns": [
         "https:\\/\\/fonts\\.googleapis\\.com\\/.*"
@@ -140,9 +141,7 @@
     }
   ],
   "hashTable": {
-    "/favicon.ico": "57b5b1841d2475f4922d18e040ce9bdce37bd9c0",
     "/assets/Prantar-Resume.pdf": "c243cf6365592193a7a475b8e300129a267a3d89",
-    "/index.html": "65d4b4a507dd46b659912cb6fd3b44985742108b",
     "/assets/csca08f16/class_w9.txt": "3acc724b775b5407c180b7b3b17eb9cda8c50244",
     "/assets/csca08f16/debug_w5.txt": "ecd6cbdacb82e75ab06721f7f17d75915d0c6271",
     "/assets/csca08f16/description_w9.txt": "5770b2fa0d07d58924d6a0f16fffd12786891bd0",
@@ -234,7 +233,8 @@
     "/assets/cscb07f18/unix_commands_w2.txt": "6003057b5e5ce35bdf03d6e3ee3136d7a8abccf6",
     "/assets/cscc69w19/cscc69_notes.docx": "859c088f223249fe63919afc5f59afd51519687a",
     "/assets/cscc69w19/cscc69_notes.pdf": "0b31ab6e0831adc5580ff3adf105faadead98c4d",
-    "/assets/cscc69w19/kernel_programming_w2.md": "a2e2c1ffc53ba149af7eeaf8bd0a7ed88b0b8423",
+    "/assets/cscc69w19/kernel_programming_w2.md": "3dbefb816a1f9765d279fc2e0f19f302a6e0ad59",
+    "/assets/cscc69w19/kernel_programming_w2.pdf": "41e0457d35be028a5455db7703d2f006947f0528",
     "/assets/cscc69w19/review_w1.md": "edc1e7cac274c598059f198d5081330c2b71d1d7",
     "/assets/cscc69w19/review_w1.pdf": "6403dfe5bb42347b4f8f81d57922953847ac6b03",
     "/assets/icons/icon-128x128.png": "ace8bb01ad0aeb225de09b3d0d00105d6a1cb76d",
@@ -245,7 +245,9 @@
     "/assets/icons/icon-512x512.png": "04aaae3f631c8aaccabfe581c6d4c4975316c59e",
     "/assets/icons/icon-72x72.png": "df6082a67cd0b726c77186f7fbb6352e23ce15cb",
     "/assets/icons/icon-96x96.png": "ae515674820601f0debedeff34bd50aa20a0a2fa",
-    "/assets/prantar.png": "e6de1ee09ae6ccf7d8d9b0e8a4d78b0c63488b25"
+    "/assets/prantar.jpg": "2970a856d5d56f197ce74b7c845cf9349fae1b22",
+    "/favicon.ico": "57b5b1841d2475f4922d18e040ce9bdce37bd9c0",
+    "/index.html": "a09e71d34d0fc3aa92ec4d1244371d5a198e1bf4"
   },
   "navigationUrls": [
     {
@@ -254,15 +256,15 @@
     },
     {
       "positive": false,
-      "regex": "^\\/(?:.+\\/)?[^\\/]*\\.[^\\/]*$"
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
     },
     {
       "positive": false,
-      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*$"
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
     },
     {
       "positive": false,
-      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*\\/.*$"
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
     }
   ]
 }
