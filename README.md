@@ -1,10 +1,12 @@
 [![Build Status](https://travis-ci.org/bhowmikp/bhowmikp.github.io.svg?branch=angular)](https://travis-ci.org/bhowmikp/bhowmikp.github.io)
 
-# [Personal Website](https://prantar.me)
+# [Personal Website](https://prantar.me) | [Android App](https://play.google.com/store/apps/details?id=xyz.appmaker.dhrcus&fbclid=IwAR0fIqlanAsnpnwH6QpzGf9AEJGvyhudwL7RmUVsivRfoGUQIaDuqOO_vBA)
 
 This is my personal website. It showcases my portfolio, accomplishments etc. The website is written with Angular. It is a Progressive Web App(PWA), therefore the website can create a mobile and desktop app.
 
 The website also hosts an Accelerated Mobile Page(AMP) version of the [site](https://prantar.me/amp). The AMP site has PWA functionalities and therefore it is loaded faster on mobile devices.
+
+Android app APK was created using [site](https://appmaker.xyz/pwa-to-apk/).
 
 ## Getting Started
 
