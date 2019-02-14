@@ -23,7 +23,6 @@
               "src/CNAME",
               "src/BingSiteAuth.xml",
               "src/amp",
-              "src/.well-known",
               "src/sitemap.xml",
               "src/robots.txt",
               "src/README.md"
