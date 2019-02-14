@@ -1,0 +1,161 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-install-serviceworker"
+        src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+    <script async custom-element="amp-analytics"
+        src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+    <title>Prantar Bhowmik - HomePage</title>
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-starturl" content="/">
+    <meta name="theme-color" content="#5945db">
+
+    <!-- Apple Configuration-->
+    <meta name="apple-mobile-web-app-title" content="Prantar Bhowmik Website">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#2196f3">
+    <link rel="apple-touch-icon" href="assets/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="assets/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="assets/icons/icon-128x128.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/icons/icon-152x152.png">
+    <link rel="apple-touch-startup-image" sizes="192x192" href="assets/icons/icon-192x192.png" />
+    <link rel="apple-touch-startup-image" sizes="384x384" href="assets/icons/icon-384x384.png" />
+    <link rel="apple-touch-startup-image" sizes="512x512" href="assets/icons/icon-512x512.png" />
+
+    <link rel="canonical" href="https://prantar.me/#/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Website",
+        "author": "Prantar Bhowmik",
+        "headline": "Welcome to Prantar Bhowmik's Homepage. Prantar is a Computer Science student at University of Toronto. Site includes resume, side projects of Prantar",
+        "datePublished": "2018-05-03T12:02:41Z",
+        "image": [
+          "https://prantar.me/favicon.ico"
+        ]
+      }
+    </script>
+
+    <style amp-custom>
+      .amp-sidebar-toolbar-target-shown {
+        display: none;
+      }
+      amp-sidebar > ul {
+        list-style: none;
+        padding-right:20px;
+        padding-left:20px;
+      }
+      #heading {
+        text-align: center;
+      }
+      .clearfix {
+        overflow: auto;
+      }
+      .prantar-image {
+      	border-radius: 50%;
+        float: right;
+
+      	/* blocks people copying my image */
+      	/* stops drag and drop*/
+      	pointer-events: none;
+
+      	/*stops selecting*/
+      	-moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+      }
+    </style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+
+    <amp-install-serviceworker
+      src="./serviceworker.js"
+      layout="nodisplay">
+    </amp-install-serviceworker>
+
+    <amp-analytics type="googleanalytics">
+      <script type="application/json">
+      {
+        "vars": {
+          "account": "UA-74904411-1"
+        },
+        "triggers": {
+          "trackPageview": {
+            "on": "visible",
+            "request": "pageview"
+          }
+        }
+      }
+      </script>
+    </amp-analytics>
+
+    <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
+      <ul>
+        <li><a href="https://prantar.me/amp/index.html">HomePage</a></li>
+        <li><a href="https://prantar.me/amp/experience.html">Experience</a></li>
+        <li><a href="https://prantar.me/amp/story.html">Story</a></li>
+        <li><a href="https://prantar.me/amp/projects.html">Projects</a></li>
+        <li><a href="https://prantar.me/amp/contact.html">Contact</a></li>
+      </ul>
+    </amp-sidebar>
+
+    <button class="hamburger" on='tap:sidebar1.toggle'><i class="fas fa-bars"></i></button>
+
+    <h1 id="heading">
+      HomePage
+    </h1>
+
+    <div class="clearfix">
+      <div>
+        <amp-img class="prantar-image" src="/assets/prantar.jpg" alt="Welcome" height="200" width="200"></amp-img>
+      </div>
+      <div>
+        <h2 class = 'title'>Prantar Bhowmik - Software Developer</h2>
+        I am a fourth-year student at the University of Toronto, working towards a
+        Bachelors in Science.
+        <br><br>
+        I have been passionate about coding since high school. I have worked on various
+        projects ranging from Web Development to working with blockchain technologies.
+        I am currently the lead developer and co-founder of a project funded over $3000,
+        which aggregates relevant articles for trending topics and congregates, analyzes,
+        and summarizes articles, shows social media reaction and generates links for
+        further reading.
+        <br><br>
+        I have worked as a full stack developer for the past year building a web app for
+        the University of Toronto to keep track of student information. I have worked as a
+        teaching assistant for the past two years teaching introductory computer science
+        course.
+        <br><br>
+        I also co-founded and acted as a lecturer for the
+        <a href="https://csec.club/" target="_blank" rel="noopener">Computer Science Enrichment Club</a>, which is
+        a student run club at the University of Toronto. The club aimed
+        to extend knowledge in algorithmic complex problems, web development, and network
+        security. The club hosted coding competitions and held monthly seminars on topics
+        such as - machine learning, chess engine programming, cryptocurrency.
+        <br><br>
+        Sometimes I like to practice competitive programming in sites like
+        <a href = 'https://open.kattis.com/users/prantar-bhowmik' target="_blank" rel="noopener">OpenKattis</a>,
+        <a href = 'https://www.hackerrank.com/prantarbhowmik' target="_blank" rel="noopener">HackerRank</a>,
+        <a href = 'https://www.topcoder.com/members/bhowmikp/' target="_blank" rel="noopener">TopCoder</a>,
+        and <a href = 'https://leetcode.com/prantarbhowmik/' target="_blank" rel="noopener">LeetCode</a>.
+      </div>
+    </div>
+	<br>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow:
+Allow: /
+
+Sitemap: https://prantar.me/sitemap.xml
