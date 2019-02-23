@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RestApiService } from '../service/rest-api.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-experience',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperienceComponent implements OnInit {
 
-  constructor() { }
+  experienceItems: Observable<any[]>;
+  recognitionItems: Observable<any[]>;
+
+  constructor(private restApiService: RestApiService) { }
 
   ngOnInit() {
+    this.experienceItems = this.restApiService.getExperience();
+    this.recognitionItems = this.restApiService.getRecognition();
   }
 
 }

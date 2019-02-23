@@ -8,39 +8,29 @@
     </a>
   </div>
   
-  <div>
-    <p class="heading">University of Toronto (2015 - Present)</p>
-    <br>
-    B.Sc. In Statistics
-    <br>
-    <p class="heading">Recognition</p>
-    <br>
-    <div class="recognition-group">
-      <p>2nd Place</p>
-      <p>Facebook University Coding Challenge</p>
-      <p>2018</p>
-    </div>
-    <div class="recognition-group">
-      <p>4th Place</p>
-      <p>UofT The Hub Startup Challenge</p>
-      <p>2017</p>
-    </div>
-    <div class="recognition-group">
-      <p>3rd Place</p>
-      <p>Microsoft University Coding Challenge</p>
-      <p>2017</p>
-    </div>
-    <div class="recognition-group">
-      <p>5th Place</p>
-      <p>University of Michigan MHacks 8</p>
-      <p>2016</p>
-    </div>
-    <div class="recognition-group">
-      <p>3rd Place</p>
-      <p>University of Toronto Finance Hacks</p>
-      <p>2016</p>
-    </div>
+  <p class="heading">University of Toronto (2015 - Present)</p>
+  <br>
+  B.Sc. In Statistics
+  <br>
+
+  <p class="heading">Recognition</p>
+  <br>
+  <div class="recognition-group" *ngFor="let item of recognitionItems | async">
+    <p>{{item.place}} Place</p>
+    <p>{{item.name}}</p>
+    <p>{{item.year}}</p>
   </div>
-  
+
   <p class="heading">Experience</p>
+  <br>
+  <div class="recognition-group" *ngFor="let item of experienceItems | async">
+    <p>{{item.employer}}:{{item.title}}</p>
+    <p>{{item.time}}</p>
+    <span>
+      <li *ngFor="let responsibility of item.responsibility">
+        {{responsibility}}
+      </li>
+    </span>
+    <br>
+  </div>
 </div>
