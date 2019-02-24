@@ -24,7 +24,7 @@
   <p class="heading">Experience</p>
   <br>
   <div class="recognition-group" *ngFor="let item of experienceItems | async">
-    <p>{{item.employer}}:{{item.title}}</p>
+    <p>{{item.employer}}: {{item.title}}</p>
     <p>{{item.time}}</p>
     <span>
       <li *ngFor="let responsibility of item.responsibility">
