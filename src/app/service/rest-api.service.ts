@@ -6,7 +6,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class RestApiService {
 
-  constructor(private db:AngularFirestore) { }
+  constructor(private db: AngularFirestore) { }
 
   getProjects() {
     return this.db.collection('projects', data => data.orderBy('order', 'desc')).valueChanges();

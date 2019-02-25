@@ -32,8 +32,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 // angular materials
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatInputModule, MatPaginatorModule, 
-  MatSortModule, MatTableModule } from "@angular/material";
+import { MatInputModule, MatPaginatorModule,
+  MatSortModule, MatTableModule, MatTooltipModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -63,7 +63,8 @@ import { MatInputModule, MatPaginatorModule,
     MatInputModule,     // input boxes. Search for table
     MatTableModule,     // core data for table
     MatPaginatorModule, // pagination module
-    MatSortModule       // sort table
+    MatSortModule,       // sort table
+    MatTooltipModule    // tooltip
   ],
   providers: [
     Title

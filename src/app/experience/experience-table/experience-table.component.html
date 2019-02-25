@@ -7,7 +7,10 @@
   
     <ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumnsExperience">
       <mat-header-cell *matHeaderCellDef mat-sort-header> {{column | uppercase}} </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element[column]}} </mat-cell>
+      <mat-cell *matCellDef="let element" matTooltip="Expand/Collapse Row" 
+        matTooltipPosition="below" matTooltipShowDelay="500">
+        {{element[column]}}
+      </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="expandedDetail">

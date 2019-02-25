@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { RestApiService } from '../../service/rest-api.service';
-import { Observable } from 'rxjs';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 
 import {animate, state, style, transition, trigger} from '@angular/animations';
@@ -33,7 +32,7 @@ export class ExperienceTableComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   dataSourceExperience: MatTableDataSource<{}> = new MatTableDataSource();
-  displayedColumnsExperience:string[] = ['employer', 'title', 'time'];
+  displayedColumnsExperience: string[] = ['employer', 'title', 'time'];
   expandedElementExperience: Experience | null;
 
   constructor(private restApiService: RestApiService) { }
