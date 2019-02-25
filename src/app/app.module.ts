@@ -23,6 +23,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatInputModule, MatPaginatorModule, 
+  MatSortModule, MatTableModule } from "@angular/material";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,9 +47,14 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFirestoreModule.enablePersistence(),
+    AngularFirestoreModule.enablePersistence(),   // database works offline
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatInputModule,     // input boxes. Search for table
+    MatTableModule,     // core data for table
+    MatPaginatorModule, // pagination module
+    MatSortModule       // sort table
   ],
   providers: [
     Title
