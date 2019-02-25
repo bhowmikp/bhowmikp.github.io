@@ -5,11 +5,15 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppComponent } from './app.component';
 
 import { environment } from '../environments/environment';
+
 import { AboutComponent } from './about/about.component';
+
 import { ExperienceComponent } from './experience/experience.component';
+import { ExperienceTableComponent } from './experience/experience-table/experience-table.component';
+
 import { ProjectsComponent } from './projects/projects.component';
+
 import { TaComponent } from './ta/ta.component';
-import { ContactComponent } from './contact/contact.component';
 import { Csca08f16Component } from './ta/csca08f16/csca08f16.component';
 import { Csca08f17Component } from './ta/csca08f17/csca08f17.component';
 import { Csca48s17Component } from './ta/csca48s17/csca48s17.component';
@@ -18,11 +22,15 @@ import { Csca48w18Component } from './ta/csca48w18/csca48w18.component';
 import { Cscb07f18Component } from './ta/cscb07f18/cscb07f18.component';
 import { Cscc69w19Component } from './ta/cscc69w19/cscc69w19.component';
 
+import { ContactComponent } from './contact/contact.component';
+
 import { AppRoutingModule } from './app-routing.module';
 
+// firestore
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+// angular materials
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatInputModule, MatPaginatorModule, 
   MatSortModule, MatTableModule } from "@angular/material";
@@ -41,7 +49,8 @@ import { MatInputModule, MatPaginatorModule,
     Csca48w17Component,
     Csca48w18Component,
     Cscb07f18Component,
-    Cscc69w19Component
+    Cscc69w19Component,
+    ExperienceTableComponent
   ],
   imports: [
     BrowserModule,

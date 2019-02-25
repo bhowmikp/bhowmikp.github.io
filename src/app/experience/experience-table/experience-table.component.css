@@ -1,0 +1,22 @@
+tr.detailed-row {
+    height: 0;
+}
+
+.unexpanded-row {
+    height: 0;
+    border-bottom-width: 0;
+}
+
+.unexpanded-row:not(.expanded-row):hover {
+    background: #f5f5f5;
+}
+
+.unexpanded-row:not(.expanded-row):active {
+    background: #efefef;
+}
+
+.expanded-content {
+    overflow: hidden;
+    display: flex;
+}
+  
