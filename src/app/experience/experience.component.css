@@ -34,14 +34,6 @@
   }
 }
 
-
-.recognition-group {
-  justify-items: center;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1em;
-}
-
 .heading{
   font-size: 26px;
   margin-bottom: -10px;
