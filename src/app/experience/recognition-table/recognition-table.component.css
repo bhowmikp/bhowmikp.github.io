@@ -1,0 +1,7 @@
+table {
+    width: 50%;
+}
+
+tr > td {
+    padding: 0.25em 0em 0.25em 0em;
+}

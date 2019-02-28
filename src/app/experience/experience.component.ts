@@ -10,7 +10,7 @@ export class ExperienceComponent implements OnInit {
   constructor() { }
 
   ngOnInit() { }
-  
+
 }
 
 function compare(a: number | string, b: number | string, isAsc: boolean) {
