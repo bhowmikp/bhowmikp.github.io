@@ -470,6 +470,14 @@ MIT
 
 @angular/material/sort
 
+@angular/fire/firestore
+MIT
+
+@angular/fire
+MIT
+
+firebase/firestore
+
 @angular/material/table
 
 @angular/material/form-field
@@ -486,14 +494,6 @@ MIT
 @angular/material/button
 
 @angular/material/paginator
-
-@angular/fire/firestore
-MIT
-
-@angular/fire
-MIT
-
-firebase/firestore
 
 @angular/service-worker
 MIT
