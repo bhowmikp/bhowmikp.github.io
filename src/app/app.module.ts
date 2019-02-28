@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 
 import { ExperienceComponent } from './experience/experience.component';
 import { ExperienceTableComponent } from './experience/experience-table/experience-table.component';
+import { RecognitionTableComponent } from './experience/recognition-table/recognition-table.component';
 
 import { ProjectsComponent } from './projects/projects.component';
 
@@ -50,7 +51,8 @@ import { MatInputModule, MatPaginatorModule,
     Csca48w18Component,
     Cscb07f18Component,
     Cscc69w19Component,
-    ExperienceTableComponent
+    ExperienceTableComponent,
+    RecognitionTableComponent
   ],
   imports: [
     BrowserModule,

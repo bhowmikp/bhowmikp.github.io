@@ -15,19 +15,7 @@
 
   <p class="heading">Recognition</p>
   <br>
-  <table matSort (matSortChange)="sortData($event)">
-    <tr>
-      <th mat-sort-header="place">Position</th>
-      <th mat-sort-header="name">Organization</th>
-      <th mat-sort-header="year">Year</th>
-    </tr>
-  
-    <tr *ngFor="let item of sortedData">
-      <td>{{item.place}} Place</td>
-      <td>{{item.name}}</td>
-      <td>{{item.year}}</td>
-    </tr>
-  </table>
+  <app-recognition-table></app-recognition-table>
 
   <p class="heading">Experience</p>
   <br>
