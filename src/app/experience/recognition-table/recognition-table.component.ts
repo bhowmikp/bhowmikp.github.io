@@ -24,7 +24,6 @@ export class RecognitionTableComponent implements OnInit {
 
   ngOnInit() {
     this.restApiService.getRecognition().subscribe(data => {
-      console.log(data.slice());
       this.sortedData = data.slice();
     });
   }
