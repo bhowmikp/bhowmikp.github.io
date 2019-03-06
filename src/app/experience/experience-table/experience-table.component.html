@@ -18,7 +18,7 @@
         <div class="expanded-content"
           [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
           <span>
-            <li *ngFor="let responsibility of element.responsibility">
+            <li *ngFor="let responsibility of element.responsibility" class="responsibility-list">
               {{responsibility}}
             </li>
           </span>

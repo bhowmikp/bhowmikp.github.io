@@ -19,4 +19,19 @@ tr.detailed-row {
     overflow: hidden;
     display: flex;
 }
-  
+ 
+mat-table {
+    font-family: 'Lato', sans-serif;
+}
+
+mat-header-cell {
+    font-size: 16px;
+}
+
+mat-cell {
+    font-size: 14px;
+}
+
+.responsibility-list {
+    padding: 10px 0px 10px 0px;
+}
