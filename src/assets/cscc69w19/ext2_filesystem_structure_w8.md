@@ -52,8 +52,11 @@ int main(int argc, char **argv) {
     exit(1);
   }
   
-  struct ext2_super_block *sb = (struct ext2_super_block *)(disk + EXT2_BLOCK_SIZE);
-  struct ext_group_desc *gd = (struct ext2_group_desc *)(disk + EXT2_BLOCK_SIZE);
+  // Task 1
+  struct ext2_super_block *sb = (struct ext2_super_block *)(disk + 1024);
+  struct ext_group_desc *gd = (struct ext2_group_desc *)(disk + EXT2_BLOCK_SIZE * 2);
+  unsigned char *block_bitmap = (char *)(disk + EXT2_BLOCK_SIZE * gd->bg_block_bitmap);
+  unsigned char *inode_bitmap = (char *)(disk + EXT2_BLOCK_SIZE * gd->bg_inode_bitmap);
 
   printf("Inodes: %d\n", sb->s_inodes_count);
   printf("Blocks: %d\n", sb->s_blocks_count);
@@ -64,6 +67,26 @@ int main(int argc, char **argv) {
   printf("\tfree blocks: %d\n", gd->bg_free_blocks_count);
   printf("\tfree inodes: %d\n", gd->bg_bree_inodes_count);
   printf("\tused_dirs: %d\n", gd->bg_used_dirs_count);
+
+  // Task 2
+  int byte, bit;
+
+  printf("Block bitmap: ");
+  for (byte = 0; byte < sb->s_blocks_count / 8; byte++) {
+    for (bit = 0; bit < 8; bit++) {
+      printf("%d", (block_bitmap[byte]& (1 << bit)) & 1);
+    }
+    printf(" ");
+  }
+  printf("\n");
+
+  printf("Inode bitmap: ");
+  for (byte = 0; byte < sb->s_inodes_count / 8, byte++) {
+    for (bit = 0; bit < 8; bit++) {
+      printf("%d", (inode_bitmap[byte]& (1 << bit)) & 1);
+    }
+    printf(" ");
+  }
 
   return 0;
 }
