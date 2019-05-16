@@ -1,5 +1,6 @@
 {
   "configVersion": 1,
+  "timestamp": 1557990218950,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -9,11 +10,11 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main.b5ae742e2d5597d4fc1d.js",
-        "/polyfills.6d2fd76db9b25f583f35.js",
-        "/runtime.b57bf819d5bdce77f1c7.js",
+        "/main.4dc0f84d21f57868e6bd.js",
+        "/polyfills.3b1b7fd13346aba9a191.js",
+        "/runtime.26209474bfa8dc87a77c.js",
         "/scripts.0223e4d0251cbe480ca5.js",
-        "/styles.f07ba3ebf7b4d8edb902.css"
+        "/styles.7326953deb3195ad613f.css"
       ],
       "patterns": []
     },
@@ -112,6 +113,10 @@
         "/assets/cscb07f18/notes_w9.txt",
         "/assets/cscb07f18/subversion_commands_w2.txt",
         "/assets/cscb07f18/unix_commands_w2.txt",
+        "/assets/cscc69s19/cscc69_notes.docx",
+        "/assets/cscc69s19/cscc69_notes.pdf",
+        "/assets/cscc69s19/review_w1.md",
+        "/assets/cscc69s19/review_w1.pdf",
         "/assets/cscc69w19/cscc69_notes.docx",
         "/assets/cscc69w19/cscc69_notes.pdf",
         "/assets/cscc69w19/ext2_filesystem_structure_w8.md",
@@ -156,7 +161,7 @@
     }
   ],
   "hashTable": {
-    "/assets/Prantar-Resume.pdf": "3044d5f323ab56d156ee4b319ee69bc82ea7d977",
+    "/assets/Prantar-Resume.pdf": "ec0905a735d8256df6d0edc0d37f3c84f2c8ee06",
     "/assets/csca08f16/class_w9.txt": "3acc724b775b5407c180b7b3b17eb9cda8c50244",
     "/assets/csca08f16/debug_w5.txt": "ecd6cbdacb82e75ab06721f7f17d75915d0c6271",
     "/assets/csca08f16/description_w9.txt": "5770b2fa0d07d58924d6a0f16fffd12786891bd0",
@@ -246,6 +251,10 @@
     "/assets/cscb07f18/notes_w9.txt": "a511be3588f6e91b75817a4fecf18c9d350acee1",
     "/assets/cscb07f18/subversion_commands_w2.txt": "f6f06d2a8c3dc71e7c2f7b4a554f163e97c24b02",
     "/assets/cscb07f18/unix_commands_w2.txt": "6003057b5e5ce35bdf03d6e3ee3136d7a8abccf6",
+    "/assets/cscc69s19/cscc69_notes.docx": "859c088f223249fe63919afc5f59afd51519687a",
+    "/assets/cscc69s19/cscc69_notes.pdf": "0b31ab6e0831adc5580ff3adf105faadead98c4d",
+    "/assets/cscc69s19/review_w1.md": "edc1e7cac274c598059f198d5081330c2b71d1d7",
+    "/assets/cscc69s19/review_w1.pdf": "6403dfe5bb42347b4f8f81d57922953847ac6b03",
     "/assets/cscc69w19/cscc69_notes.docx": "859c088f223249fe63919afc5f59afd51519687a",
     "/assets/cscc69w19/cscc69_notes.pdf": "0b31ab6e0831adc5580ff3adf105faadead98c4d",
     "/assets/cscc69w19/ext2_filesystem_structure_w8.md": "d6bddb7d16a6318298b2c023d39647aa5beadbf9",
@@ -272,12 +281,12 @@
     "/assets/icons/icon-96x96.png": "ae515674820601f0debedeff34bd50aa20a0a2fa",
     "/assets/prantar.jpg": "2970a856d5d56f197ce74b7c845cf9349fae1b22",
     "/favicon.ico": "57b5b1841d2475f4922d18e040ce9bdce37bd9c0",
-    "/index.html": "d6905a7d2abb5f0922d11828195a2c4766f270a4",
-    "/main.b5ae742e2d5597d4fc1d.js": "de1ad08f5c652c41177bbfe29df9c9dc745b2352",
-    "/polyfills.6d2fd76db9b25f583f35.js": "4f7d0f63b906aa376eb9c7bc6f0abfae545593a0",
-    "/runtime.b57bf819d5bdce77f1c7.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
+    "/index.html": "cde12ea6337afa7ace3286ede5581601b77aef76",
+    "/main.4dc0f84d21f57868e6bd.js": "70a846f158eb1e00c1795601490b05533b6826d8",
+    "/polyfills.3b1b7fd13346aba9a191.js": "4f7d0f63b906aa376eb9c7bc6f0abfae545593a0",
+    "/runtime.26209474bfa8dc87a77c.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
     "/scripts.0223e4d0251cbe480ca5.js": "c00c2c7a1718d43650fc5b999f642f512cdf6154",
-    "/styles.f07ba3ebf7b4d8edb902.css": "c755200908dd05ad7bd413eb8746c154cbad8699"
+    "/styles.7326953deb3195ad613f.css": "46dcfdb4e7c15d644c2d9afbda26994a6cc7dc29"
   },
   "navigationUrls": [
     {
