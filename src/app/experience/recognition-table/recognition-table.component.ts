@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestApiService } from '../../service/rest-api.service';
 import { Observable } from 'rxjs';
-import { Sort } from '@angular/material';
+import { Sort } from '@angular/material/sort';
 
 export interface Recognition {
   name: string;

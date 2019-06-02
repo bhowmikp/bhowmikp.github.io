@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { RestApiService } from '../../service/rest-api.service';
-import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
@@ -28,8 +30,8 @@ export interface Experience {
 })
 export class ExperienceTableComponent implements OnInit {
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   dataSourceExperience: MatTableDataSource<{}> = new MatTableDataSource();
   displayedColumnsExperience: string[] = ['employer', 'title', 'time'];

@@ -34,8 +34,11 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 // angular materials
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatInputModule, MatPaginatorModule,
-  MatSortModule, MatTableModule, MatTooltipModule } from '@angular/material';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
