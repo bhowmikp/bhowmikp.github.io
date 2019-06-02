@@ -34,7 +34,7 @@ ng serve
 ### Compile
 
 ```sh
-ng build --prod --aot
+ng build --prod --aot --build-optimizer --named-chunks --output-hashing all
 ```
 
 ## Running the tests
