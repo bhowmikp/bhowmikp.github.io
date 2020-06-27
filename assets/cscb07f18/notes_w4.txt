@@ -1,6 +1,0 @@
-Objective: Practice coding in Java
-
-Assignment 1 team registrations open Friday. Find your partner before then. They
-do NOT need to be in the same tutorial or lecture session as you.
-
-Fix repository file structure as specified in handout.
