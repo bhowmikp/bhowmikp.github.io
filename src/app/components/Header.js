@@ -1,0 +1,16 @@
+import Link from "next/link";
+
+const Header = ({ pathname }) => {
+  return (
+    <header>
+      <Link href="/">
+        <a className={pathname === "/" && "is-active"}>Home</a>
+      </Link>{" "}
+      <Link href="/about">
+        <a className={pathname === "/about" && "is-active"}>About</a>
+      </Link>
+    </header>
+  );
+};
+
+export default Header;
