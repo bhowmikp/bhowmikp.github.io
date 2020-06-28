@@ -1,4 +1,5 @@
 import Header from "./Header";
+import MetaTag from "./MetaTag";
 import { ReactNode } from "react";
 
 type Props = {
@@ -6,10 +7,11 @@ type Props = {
 };
 
 const App = ({ children }: Props) => (
-  <main>
+  <>
+    <MetaTag />
     <Header />
     {children}
-  </main>
+  </>
 );
 
 export default App;
