@@ -1,10 +1,10 @@
-import { database } from "../../database";
+import { database } from "../../firebase";
 import { FirestoreServiceModel } from "./firestoreService";
 
 export const FirestoreService = {
   getExperience: async (): Promise<FirestoreServiceModel.IExperience[]> => {
     const data = [];
-    const experienceRef = await database()
+    const experienceRef = await database
       .collection("experience")
       .orderBy("end", "desc")
       .get();
@@ -18,7 +18,7 @@ export const FirestoreService = {
 
   getProjects: async (): Promise<FirestoreServiceModel.IProjects[]> => {
     const data = [];
-    const projectsRef = await database()
+    const projectsRef = await database
       .collection("projects")
       .orderBy("order", "desc")
       .get();
@@ -32,7 +32,7 @@ export const FirestoreService = {
 
   getRecognition: async (): Promise<FirestoreServiceModel.IRecognition[]> => {
     const data = [];
-    const recognitionRef = await database()
+    const recognitionRef = await database
       .collection("recognition")
       .orderBy("year", "desc")
       .get();
