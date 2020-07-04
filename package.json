@@ -1,7 +1,7 @@
 {
-  "name": "with-firebase-hosting",
+  "name": "prantar-bhowmik-website",
   "version": "5.0.0",
-  "description": "Host Next.js SSR app on Firebase Cloud Functions with Firebase Hosting redirects.",
+  "description": "Personal website for Prantar Bhowmik",
   "engines": {
     "node": "10"
   },
@@ -16,6 +16,7 @@
     "logs": "firebase functions:log"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "firebase": "^7.15.5",
     "firebase-admin": "^8.9.0",
     "firebase-functions": "^3.3.0",
