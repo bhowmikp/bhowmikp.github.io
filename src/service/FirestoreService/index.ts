@@ -42,5 +42,16 @@ export const FirestoreService = {
     });
 
     return data;
+  },
+
+  getAbout: async (): Promise<FirestoreServiceModel.IAbout> => {
+    const data: FirestoreServiceModel.IAbout = {};
+    const aboutRef = await database.collection("about").get();
+
+    aboutRef.forEach(aboutData => {
+      data[aboutData.id] = aboutData.data();
+    });
+
+    return data;
   }
 };

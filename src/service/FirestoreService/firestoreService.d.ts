@@ -29,4 +29,10 @@ export declare namespace FirestoreServiceModel {
     year: string;
     name: string;
   }
+
+  interface IAbout {
+    aboutText?: {
+      text?: string[];
+    };
+  }
 }
