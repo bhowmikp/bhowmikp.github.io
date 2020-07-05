@@ -14,8 +14,6 @@ export default ({
 
   const projects: FirestoreServiceModel.IProjects[] = JSON.parse(projectsJson);
 
-  console.log(projects);
-
   return (
     <App>
       <Head>
