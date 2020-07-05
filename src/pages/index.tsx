@@ -21,7 +21,7 @@ export default ({
         {isAmp || <link rel="amphtml" href="/index?amp=1" />}
       </Head>
 
-      <p>Index Page</p>
+      <p>Home Page</p>
       {isAmp ? (
         <amp-img
           src={profilePicture}
@@ -37,8 +37,8 @@ export default ({
         />
       )}
 
-      {about.aboutText.text.map((text, index) => {
-        return <p key={index}>{text}</p>;
+      {about.aboutText.text.map((entry, index) => {
+        return <p key={index}>{entry}</p>;
       })}
     </App>
   );
