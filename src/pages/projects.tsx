@@ -4,15 +4,19 @@ import Head from "next/head";
 import { InferGetServerSidePropsType } from "next";
 import { FirestoreService } from "../service/FirestoreService";
 import { FirestoreServiceModel } from "../service/FirestoreService/firestoreService";
+import { GithubService } from "../service/GithubService";
+import GithubLanguageGraph from "../components/GithubLanguageGraph";
 
 export const config = { amp: "hybrid" };
 
 export default ({
-  projectsJson
+  projectsJson,
+  githubLanguagesJson
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const isAmp = useAmp();
 
   const projects: FirestoreServiceModel.IProjects[] = JSON.parse(projectsJson);
+  const githubLanguages = JSON.parse(githubLanguagesJson);
 
   return (
     <App>
@@ -22,6 +26,7 @@ export default ({
       </Head>
 
       <p>Projects Page</p>
+      <GithubLanguageGraph data={githubLanguages} />
 
       {projects.map((project, index) => {
         return (
@@ -58,9 +63,13 @@ export const getServerSideProps = async () => {
   const projects: FirestoreServiceModel.IProjects[] = await FirestoreService.getProjects();
   const projectsJson = JSON.stringify(projects);
 
+  const githubLanguages = await GithubService.getGithubLanguages();
+  const githubLanguagesJson = JSON.stringify(githubLanguages);
+
   return {
     props: {
-      projectsJson
+      projectsJson,
+      githubLanguagesJson
     }
   };
 };
