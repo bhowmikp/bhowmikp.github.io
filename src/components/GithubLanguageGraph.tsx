@@ -44,9 +44,7 @@ const createChartConfig = (data: object) => {
       ]
     },
     options: {
-      legend: {
-        position: "right"
-      },
+      legend: {},
       title: {
         display: true,
         fontSize: 14,

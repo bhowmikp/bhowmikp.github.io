@@ -26,7 +26,7 @@ export default ({
       </Head>
 
       <p>Projects Page</p>
-      <GithubLanguageGraph data={githubLanguages} />
+      {isAmp || <GithubLanguageGraph data={githubLanguages} />}
 
       {projects.map((project, index) => {
         return (
