@@ -8,11 +8,11 @@ import { InferGetStaticPropsType } from "next";
 
 export const config = { amp: "hybrid" };
 
-export default function Experience({
+export default ({
   resumeLink,
   experienceJson,
   recognitionJson
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const isAmp = useAmp();
 
   const experience: FirestoreServiceModel.IExperience[] = JSON.parse(
@@ -62,7 +62,7 @@ export default function Experience({
       })}
     </App>
   );
-}
+};
 
 export const getStaticProps = async () => {
   const resumeLink = await FireStorageService.getResume();

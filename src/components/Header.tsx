@@ -28,6 +28,16 @@ const Header = () => {
           <a>Experience</a>
         </Link>
       )}
+
+      {isAmp ? (
+        <Link href="/projects?amp=1">
+          <a>Projects</a>
+        </Link>
+      ) : (
+        <Link href="/projects">
+          <a>Projects</a>
+        </Link>
+      )}
     </header>
   );
 };
