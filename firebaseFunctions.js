@@ -15,5 +15,6 @@ const nextjsServer = next({
 const nextjsHandle = nextjsServer.getRequestHandler();
 
 exports.nextjsFunc = https.onRequest((req, res) => {
+  res.set("Cache-Control", "public, max-age=43200, s-maxage=604800");
   return nextjsServer.prepare().then(() => nextjsHandle(req, res));
 });
