@@ -1,4 +1,3 @@
-import App from "next/app";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
@@ -24,8 +23,12 @@ function MyApp({ Component, pageProps }) {
         content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
       /> */}
 
-        {/* <link rel='apple-touch-icon' sizes='180x180' href='/static/icons/apple-touch-icon.png' />
-<link rel='icon' type='image/png' sizes='32x32' href='/static/icons/favicon-32x32.png' />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/icons/icon-192x192.png"
+        />
+        {/* <link rel='icon' type='image/png' sizes='32x32' href='/static/icons/favicon-32x32.png' />
 <link rel='icon' type='image/png' sizes='16x16' href='/static/icons/favicon-16x16.png' /> */}
         <link rel="manifest" href="/manifest.json" />
         {/* <link rel='mask-icon' href='/static/icons/safari-pinned-tab.svg' color='#5bbad5' /> */}
@@ -39,7 +42,10 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:url" content={APP_WEBSITE} />
         <meta name="twitter:title" content={APP_NAME} />
         <meta name="twitter:description" content={APP_DESCRIPTION} />
-        {/* <meta name='twitter:image' content='https://yourdomain.com/static/icons/android-chrome-192x192.png' /> */}
+        <meta
+          name="twitter:image"
+          content="https://prantar.com/icons/icon-192x192.png"
+        />
         <meta name="twitter:creator" content="@bhowmikp" />
 
         <meta property="og:type" content="website" />
@@ -47,7 +53,10 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:description" content={APP_DESCRIPTION} />
         <meta property="og:site_name" content={APP_NAME} />
         <meta property="og:url" content={APP_WEBSITE} />
-        {/* <meta property='og:image' content='https://yourdomain.com/static/icons/apple-touch-icon.png' /> */}
+        <meta
+          property="og:image"
+          content="https://prantar.com/icons/icon-192x192.png"
+        />
 
         <title>Prantar Bhowmik - Homepage</title>
       </Head>
