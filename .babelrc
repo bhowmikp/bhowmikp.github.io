@@ -13,12 +13,6 @@
                     "@Components": "./components"
                 }
             }
-        ],
-        [
-            "babel-plugin-styled-components",
-            {
-                "ssr": true
-            }
         ]
     ]
 }
