@@ -2,7 +2,7 @@ import AppLayout from '@Components/AppLayout';
 import { GetStaticProps } from 'next';
 import { homepageSerializer } from '@Serializers/homepageSerializer'
 import BlockContent from '@sanity/block-content-to-react';
-import { getHomepageData } from "./api/homepage"
+import { getHomepageData } from "@Api/index";
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await getHomepageData();
