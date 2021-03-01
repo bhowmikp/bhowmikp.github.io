@@ -2,13 +2,14 @@ import AppLayout from '@Components/AppLayout';
 import { GetStaticProps } from 'next';
 import { homepageSerializer } from '@Serializers/homepageSerializer'
 import BlockContent from '@sanity/block-content-to-react';
+import { getHomepageData } from "./api/homepage"
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(process.env.NEXT_PUBLIC_HOST_URL + '/api/homepage');
+  const res = await getHomepageData();
 
   return {
     props: {
-      homepageData: await res.json()
+      homepageData: res
     },
     revalidate: 86400
   }
