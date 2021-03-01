@@ -10,7 +10,11 @@
                     "./"
                 ],
                 "alias": {
-                    "@Components": "./components"
+                    "@Api": "./pages/api",
+                    "@Clients": "./clients",
+                    "@Components": "./components",
+                    "@Serializers": "./serializers",
+                    "@Service": "./service"
                 }
             }
         ]

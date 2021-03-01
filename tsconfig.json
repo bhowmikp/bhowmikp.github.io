@@ -19,8 +19,20 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
+      "@Api/*": [
+        "pages/api/*"
+      ],
+      "@Clients/*": [
+        "clients/*"
+      ],
       "@Components/*": [
         "components/*"
+      ],
+      "@Serializers/*": [
+        "serializers/*"
+      ],
+      "@Service/*": [
+        "service/*"
       ]
     }
   },
