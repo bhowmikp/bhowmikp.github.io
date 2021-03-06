@@ -6,6 +6,8 @@ import { getHomepageData } from '@Api/homepage';
 import { IHomepageData } from '@Interfaces/homepage';
 import React, { FC } from 'react';
 
+export const config = { amp: 'hybrid' };
+
 export const getStaticProps: GetStaticProps = async () => ({
     props: {
         homepageData: await getHomepageData()
