@@ -1,32 +1,32 @@
 import AppLayout from '@Components/AppLayout';
 import { GetStaticProps } from 'next';
-import { homepageSerializer } from '@Serializers/homepageSerializer'
+import homepageSerializer from '@Serializers/homepageSerializer';
 import BlockContent from '@sanity/block-content-to-react';
-import { getHomepageData } from "@Api/index";
+import { getHomepageData } from '@Api/homepage';
+import { IHomepageData } from '@Interfaces/homepage';
+import React, { FC } from 'react';
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await getHomepageData();
+    const res = await getHomepageData();
 
-  return {
-    props: {
-      homepageData: res
-    },
-    revalidate: 86400
-  }
-}
+    return {
+        props: {
+            homepageData: res
+        },
+        revalidate: 86400
+    };
+};
 
-const Homepage = ({ homepageData }: { homepageData: any }) => {
-  return (
-    <AppLayout title="Homepage">
-      {homepageData.map((entry) => {
-        return (
-          <>
-            <BlockContent blocks={entry.body} serializers={homepageSerializer} />
-          </>
-        )
-      })}
-    </AppLayout >
-  )
-}
+const Homepage: FC<{ homepageData: IHomepageData[] }> = ({ homepageData }) => (
+    <>
+        <AppLayout title="Homepage">
+            {homepageData.map((entry) => (
+                <>
+                    <BlockContent blocks={entry.body} serializers={homepageSerializer} />
+                </>
+            ))}
+        </AppLayout>
+    </>
+);
 
 export default Homepage;
