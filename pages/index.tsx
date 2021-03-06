@@ -6,16 +6,12 @@ import { getHomepageData } from '@Api/homepage';
 import { IHomepageData } from '@Interfaces/homepage';
 import React, { FC } from 'react';
 
-export const getStaticProps: GetStaticProps = async () => {
-    const res = await getHomepageData();
-
-    return {
-        props: {
-            homepageData: res
-        },
-        revalidate: 86400
-    };
-};
+export const getStaticProps: GetStaticProps = async () => ({
+    props: {
+        homepageData: await getHomepageData()
+    },
+    revalidate: 86400
+});
 
 const Homepage: FC<{ homepageData: IHomepageData[] }> = ({ homepageData }) => (
     <>
