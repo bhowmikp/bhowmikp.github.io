@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React, { FC } from 'react';
+import ThemeChanger from '@Components/ThemeChanger';
 
 const AppLayout: FC<{ children: React.ReactNode; title: string }> = ({ children, title }) => (
     <>
@@ -8,6 +9,7 @@ const AppLayout: FC<{ children: React.ReactNode; title: string }> = ({ children,
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
+        <ThemeChanger />
         {children}
     </>
 );

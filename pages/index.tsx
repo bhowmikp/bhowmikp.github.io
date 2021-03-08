@@ -25,11 +25,13 @@ const Homepage: FC<{ homepageData: IHomepageData[] }> = ({ homepageData }) => (
                     <BlockContent blocks={entry.body} serializers={homepageSerializer} />
                 </>
             ))}
+
             <button
                 onClick={() => {
-                    event({ name: 'customEvent', category: 'categoryTest', label: 'labelTest', value: 'valueTest' });
+                    event({ name: 'homepageEvent', category: 'button', label: 'Test GTM', value: '' });
                 }}
                 type="button"
+                className="regular-button"
             >
                 Test GTM
             </button>
