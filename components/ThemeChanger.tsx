@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { event } from '@Service/googleService';
 
 const ThemeChanger: FC = () => {
-    const { theme, setTheme } = useTheme();
+    const { resolvedTheme, setTheme } = useTheme();
 
     return (
         <div>
@@ -11,17 +11,17 @@ const ThemeChanger: FC = () => {
                 aria-label="change theme"
                 type="button"
                 onClick={() => {
-                    setTheme(theme === 'dark' ? 'light' : 'dark');
+                    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
                     event({
                         name: 'menuEvent',
                         category: 'button',
-                        label: theme === 'light' ? 'Change to dark mode' : 'Change to light mode',
+                        label: resolvedTheme === 'light' ? 'Change to dark mode' : 'Change to light mode',
                         value: ''
                     });
                 }}
                 className="regular-button"
             >
-                {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+                {resolvedTheme === 'light' ? 'Dark Mode' : 'Light Mode'}
             </button>
         </div>
     );
