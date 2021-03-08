@@ -1,5 +1,6 @@
 import { useTheme } from 'next-themes';
 import React, { FC } from 'react';
+import { event } from '@Service/googleService';
 
 const ThemeChanger: FC = () => {
     const { theme, setTheme } = useTheme();
@@ -7,9 +8,17 @@ const ThemeChanger: FC = () => {
     return (
         <div>
             <button
-                aria-label="Toggle Dark Mode"
+                aria-label="change theme"
                 type="button"
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                onClick={() => {
+                    setTheme(theme === 'dark' ? 'light' : 'dark');
+                    event({
+                        name: 'menuEvent',
+                        category: 'button',
+                        label: theme === 'light' ? 'Change to dark mode' : 'Change to light mode',
+                        value: ''
+                    });
+                }}
                 className="regular-button"
             >
                 {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
