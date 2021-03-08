@@ -3,8 +3,7 @@ import React, { FC } from 'react';
 import { event } from '@Service/googleService';
 
 const ThemeChanger: FC = () => {
-    const { setTheme } = useTheme();
-    const { resolvedTheme } = useTheme();
+    const { resolvedTheme, setTheme } = useTheme();
 
     return (
         <div>
