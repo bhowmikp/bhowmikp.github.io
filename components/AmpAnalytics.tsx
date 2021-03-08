@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { FC } from 'react';
+import React, { FC, ReactElement } from 'react';
 
 export const AmpIncludeCustomElement: FC<{ name: string; version: string }> = ({ name, version }) => (
     <Head>
@@ -7,7 +7,7 @@ export const AmpIncludeCustomElement: FC<{ name: string; version: string }> = ({
     </Head>
 );
 
-const AmpAnalytics: FC<{ type: string; script: string }> = ({ type, script }) => (
+const AmpAnalytics: FC<{ type: string; script: { vars: any; triggers: any } }> = ({ type, script }) => (
     <>
         <AmpIncludeCustomElement name="amp-analytics" version="0.1" />
         <amp-analytics type={type}>
