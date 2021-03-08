@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { FC, ReactElement } from 'react';
+import React, { FC } from 'react';
 
 export const AmpIncludeCustomElement: FC<{ name: string; version: string }> = ({ name, version }) => (
     <Head>

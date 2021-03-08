@@ -26,6 +26,6 @@ export const event = ({
     window.gtag('event', name, {
         event_category: category,
         event_label: label,
-        value
+        event_value: value
     });
 };

@@ -1,8 +1,11 @@
-// import 'tailwindcss/tailwind.css';
+import 'tailwindcss/tailwind.css';
+import '../styles/globals.css';
+
 import React, { useEffect, FC } from 'react';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import * as gtag from '@Service/googleService';
+import { ThemeProvider } from 'next-themes';
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
     const router = useRouter();
@@ -16,7 +19,11 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
         };
     }, [router.events]);
 
-    return <Component {...pageProps} />;
+    return (
+        <ThemeProvider attribute="class" defaultTheme="system">
+            <Component {...pageProps} />
+        </ThemeProvider>
+    );
 };
 
 export default MyApp;
