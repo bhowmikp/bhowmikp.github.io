@@ -1,5 +1,5 @@
 import AppLayout from '@Components/AppLayout';
-import AdBanner from '@Components/test';
+import AdBanner from '@Components/AdBanner';
 import { GetStaticProps } from 'next';
 import homepageSerializer from '@Serializers/homepageSerializer';
 import BlockContent from '@sanity/block-content-to-react';
