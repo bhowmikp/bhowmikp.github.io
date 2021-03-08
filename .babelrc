@@ -1,0 +1,23 @@
+{
+    "presets": [
+        "next/babel"
+    ],
+    "plugins": [
+        [
+            "module-resolver",
+            {
+                "root": [
+                    "./"
+                ],
+                "alias": {
+                    "@Api": "./pages/api",
+                    "@Clients": "./clients",
+                    "@Components": "./components",
+                    "@Interfaces": "./interfaces",
+                    "@Serializers": "./serializers",
+                    "@Service": "./service"
+                }
+            }
+        ]
+    ]
+}
