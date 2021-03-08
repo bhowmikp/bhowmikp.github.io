@@ -25,7 +25,6 @@ const Homepage: FC<{ homepageData: IHomepageData[] }> = ({ homepageData }) => (
                     <BlockContent blocks={entry.body} serializers={homepageSerializer} />
                 </>
             ))}
-            <AdBanner />
         </AppLayout>
     </>
 );
