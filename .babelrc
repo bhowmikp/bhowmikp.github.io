@@ -15,7 +15,8 @@
                     "@Components": "./components",
                     "@Interfaces": "./interfaces",
                     "@Serializers": "./serializers",
-                    "@Service": "./service"
+                    "@Service": "./service",
+                    "@Styles": "./styles"
                 }
             }
         ]
