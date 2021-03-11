@@ -1,40 +1,44 @@
 import Head from 'next/head';
 import React, { FC } from 'react';
 import ThemeChanger from '@Components/ThemeChanger';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { event } from '@Service/googleService';
 
-const AppLayout: FC<{ children: React.ReactNode; title: string }> = ({ children, title }) => {
-    const router = useRouter();
-    return (
-        <>
-            <Head>
-                <title>Prantar Bhowmik - {title}</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+const AppLayout: FC<{ children: React.ReactNode; title: string }> = ({ children, title }) => (
+    <>
+        <Head>
+            <title>Prantar Bhowmik - {title}</title>
+            <link rel="icon" href="/favicon.ico" />
+        </Head>
 
+        <Link href="/">
             <a
-                href="/"
-                onClick={(e) => {
-                    e.preventDefault();
-                    router.push('/');
+                className="text-black dark:text-white mx-5"
+                onClick={() => {
+                    event({ name: 'menuItem', category: 'link', label: 'homepage' });
                 }}
+                aria-hidden="true"
             >
                 Homepage
             </a>
+        </Link>
+
+        <Link href="/archieve">
             <a
-                href="/archieve"
-                onClick={(e) => {
-                    e.preventDefault();
-                    router.push('/archieve');
+                className="text-black dark:text-white"
+                onClick={() => {
+                    event({ name: 'menuItem', category: 'link', label: 'archieve' });
                 }}
+                aria-hidden="true"
             >
                 Archieve
             </a>
-            <ThemeChanger />
+        </Link>
 
-            {children}
-        </>
-    );
-};
+        <ThemeChanger />
+
+        {children}
+    </>
+);
 
 export default AppLayout;

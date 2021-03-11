@@ -1,0 +1,22 @@
+By Harmanraj Singh Wadhwa (www.linkedin.com/in/hswadhwa)
+
+---
+
+1. What are the variables used?
+
+2. What is the data structures used?
+
+3. What are the things inside the data structure?
+
+4. What is the arrangement of the items inside the data structure?
+
+# Representation invariant:
+1.2. # _contents is a list of object.
+3.   # _contents[:] are the objects in the deque.
+4.   # if i < j, i >=0, j < len(_contents), then
+     #    _contents[i] is to the left of _contents[j] in the deque
+     #    _contents[j] is to the right of _contents[i] in the deque
+
+---
+
+By Harmanraj Singh Wadhwa (www.linkedin.com/in/hswadhwa)

@@ -1,0 +1,19 @@
+def is_palindrome(word: 'Deque') -> 'bool':
+    status = True
+    
+    while (word.is_empty() == False):
+        left = word.dequeue_left()
+        
+        # if the Deque is of even length
+        try:
+            right = word.dequeue_right()
+        # if it is not of even length
+        except EmptyQueueError:
+            right = left
+        
+        # anytime the right and the left side doesnt match
+        # its not a palindrome
+        if (left != right):
+            return False
+        
+    return True

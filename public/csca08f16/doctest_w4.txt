@@ -1,0 +1,41 @@
+def add(x, y):
+    '''
+    (int, int) -> int
+
+    Returns addition of two integers
+
+    REQ -> none
+
+    >>> add(2,3)
+    5
+    >>> add(51, 29)
+    80
+    >>> add(1,5)
+    6
+    >>> add(96, 2)
+    98
+    '''
+    return x+y
+
+
+def double_number(x):
+    '''
+    (int) -> int
+
+    Doubles the value of the number entered
+
+    REQ -> none
+
+    >>> double_number(3)
+    6
+    >>> double_number(21)
+    42
+    >>> double_number(100)
+    200
+    '''
+    return x*2
+
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()

@@ -1,0 +1,21 @@
+@layer components {
+    .archieve-options {
+        @apply mb-4 rounded-full py-3 px-6 border-2 border-gray-600 dark:border-white;
+    }
+
+    .tutorial-header {
+        @apply text-5xl text-center text-primary mb-5;
+    }
+
+    .tutorial-default-spacing {
+        @apply mb-2;
+    }
+
+    .tutorial-list-style {
+        @apply list-disc ml-5;
+    }
+
+    .tutorial-link {
+        @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600 dark:text-pink-300 dark:hover:text-pink-200 dark:visited:text-blue-300;
+    }
+}

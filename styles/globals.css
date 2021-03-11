@@ -1,3 +1,5 @@
+@import './archieve.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,6 +22,9 @@
 
 @layer base {
     p {
+        @apply text-primary;
+    },
+    li {
         @apply text-primary;
     }
 }

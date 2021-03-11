@@ -4,7 +4,7 @@ import urlFor from '@Service/sanityImageService';
 import React, { ReactElement } from 'react';
 import { IHomepageImage } from '@Interfaces/homepage';
 import { useAmp } from 'next/amp';
-import Img from 'next/image';
+import Image from 'next/image';
 import { useNextSanityImage } from 'next-sanity-image';
 import client from '@Clients/sanityClient';
 
@@ -31,11 +31,14 @@ const homepageSerializer = {
                             <p>{props.node.caption}</p>
                         </div>
                     ) : (
-                        <figure>
-                            <Img {...imageProps} height="600" />
-                            <figcaption>{props.node.caption}</figcaption>
-                        </figure>
-                    )}
+                            <figure>
+                                <div className="w-9/12">
+                                    <Image {...imageProps} />
+                                </div>
+
+                                <figcaption>{props.node.caption}</figcaption>
+                            </figure>
+                        )}
                 </>
             );
         }
