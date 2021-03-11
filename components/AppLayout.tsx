@@ -14,10 +14,11 @@ const AppLayout: FC<{ children: React.ReactNode; title: string }> = ({ children,
         <Link href="/">
             <a
                 className="text-black dark:text-white mx-5"
-                onClick={() => {
+                onMouseDown={() => {
                     event({ name: 'menuItem', category: 'link', label: 'homepage' });
                 }}
-                aria-hidden="true"
+                role="link"
+                tabIndex={0}
             >
                 Homepage
             </a>
@@ -26,10 +27,11 @@ const AppLayout: FC<{ children: React.ReactNode; title: string }> = ({ children,
         <Link href="/archieve">
             <a
                 className="text-black dark:text-white"
-                onClick={() => {
+                onMouseDown={() => {
                     event({ name: 'menuItem', category: 'link', label: 'archieve' });
                 }}
-                aria-hidden="true"
+                role="link"
+                tabIndex={0}
             >
                 Archieve
             </a>

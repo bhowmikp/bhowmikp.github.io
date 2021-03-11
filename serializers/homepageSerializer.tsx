@@ -4,9 +4,6 @@ import urlFor from '@Service/sanityImageService';
 import React, { ReactElement } from 'react';
 import { IHomepageImage } from '@Interfaces/homepage';
 import { useAmp } from 'next/amp';
-import Image from 'next/image';
-import { useNextSanityImage } from 'next-sanity-image';
-import client from '@Clients/sanityClient';
 
 export const config = { amp: 'hybrid' };
 
@@ -16,7 +13,6 @@ const homepageSerializer = {
         figure: (props: { node: IHomepageImage }): ReactElement => {
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const isAmp = useAmp();
-            const imageProps = useNextSanityImage(client, props.node.image);
 
             return (
                 <>
@@ -32,9 +28,7 @@ const homepageSerializer = {
                         </div>
                     ) : (
                             <figure>
-                                {/* <div className="w-9/12"> */}
-                                <Image {...imageProps} alt={props.node.alt} width="600" />
-                                {/* </div> */}
+                                <img src={urlFor(props.node.image).url()} alt={props.node.alt} className="w-2/4" />
 
                                 <figcaption>{props.node.caption}</figcaption>
                             </figure>
