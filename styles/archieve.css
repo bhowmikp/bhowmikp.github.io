@@ -15,7 +15,8 @@
         @apply list-disc ml-5;
     }
 
-    .tutorial-link {
-        @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600 dark:text-pink-300 dark:hover:text-pink-200 dark:visited:text-blue-300;
+    .tutorial-hr-style {
+        @apply bg-gray-300 dark:bg-gray-900;
+        height: 2px;
     }
 }

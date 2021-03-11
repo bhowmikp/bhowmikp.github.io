@@ -13,7 +13,7 @@ const ThemeChanger: FC = () => {
                 onClick={() => {
                     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
                     event({
-                        name: 'menuEvent',
+                        name: 'menuItem',
                         category: 'button',
                         label: resolvedTheme === 'light' ? 'Change to dark mode' : 'Change to light mode',
                         value: ''

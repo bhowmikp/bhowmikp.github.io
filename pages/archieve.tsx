@@ -1,21 +1,96 @@
 import React, { FC } from 'react';
 import AppLayout from '@Components/AppLayout';
+import CustomLink from '@Components/CustomLink';
 
 export const config = { amp: 'hybrid' };
 
+const CustomLinkLocal: FC<{
+    link: string;
+    label: string;
+    labelGtm?: string;
+    newTab?: boolean;
+    className?: string;
+}> = ({ link, label, labelGtm, newTab = false, className = '' }) => (
+    <CustomLink
+        link={link}
+        label={label}
+        labelGtm={labelGtm}
+        newTab={newTab}
+        name="archieve"
+        className={`link-primary ${className}`}
+    />
+);
+
 const Archieve: FC = () => (
     <AppLayout title="Archieve">
-        <div className="mx-5">
+        <div className="mx-5 mb-10">
             <p className="archieve-options mt-3">CSCD01 2020 Winter (Engineering Large Software Systems)</p>
-            <p className="archieve-options">CSCC69 2019 Summer (Operating Systems)</p>
-            <p className="archieve-options">CSCC69 2019 Winter (Operating Systems)</p>
+
+            <div className="archieve-options">
+                <CustomLinkLocal
+                    link="/archieve/cscc69s19"
+                    label="CSCC69 2019 Summer (Operating Systems)"
+                    labelGtm="cscc69s19"
+                />
+            </div>
+
+            <div className="archieve-options">
+                <CustomLinkLocal
+                    link="/archieve/cscc69w19"
+                    label="CSCC69 2019 Winter (Operating Systems)"
+                    labelGtm="cscc69w19"
+                />
+            </div>
+
             <p className="archieve-options">CSCA08 2019 Fall (Introduction to Computer Science I)</p>
-            <p className="archieve-options">CSCB07 2018 Fall (Software Design)</p>
-            <p className="archieve-options">CSCA48 2018 Winter (Introduction to Computer Programming II)</p>
-            <p className="archieve-options">CSCA08 2017 Fall (Introduction to Computer Science I)</p>
-            <p className="archieve-options">CSCA48 2017 Summer (Introduction to Computer Programming II)</p>
-            <p className="archieve-options">CSCA48 2017 Winter (Introduction to Computer Programming II)</p>
-            <p className="archieve-options">CSCA08 2016 Fall (Introduction to Computer Science I)</p>
+
+            <div className="archieve-options">
+                <CustomLinkLocal
+                    link="/archieve/cscb07f18"
+                    label="CSCB07 2018 Fall (Software Design)"
+                    labelGtm="cscb07f18"
+                />
+            </div>
+
+            <div className="archieve-options">
+                <CustomLinkLocal
+                    link="/archieve/csca48w18"
+                    label="CSCA48 2018 Winter (Introduction to Computer Programming II)"
+                    labelGtm="csca48w18"
+                />
+            </div>
+
+            <div className="archieve-options">
+                <CustomLinkLocal
+                    link="/archieve/csca08f17"
+                    label="CSCA08 2017 Fall (Introduction to Computer Science I)"
+                    labelGtm="csca08f17"
+                />
+            </div>
+
+            <div className="archieve-options">
+                <CustomLinkLocal
+                    link="/archieve/csca48s17"
+                    label="CSCA48 2017 Summer (Introduction to Computer Programming II)"
+                    labelGtm="csca48s17"
+                />
+            </div>
+
+            <div className="archieve-options">
+                <CustomLinkLocal
+                    link="/archieve/csca48w17"
+                    label="CSCA48 2017 Winter (Introduction to Computer Programming II)"
+                    labelGtm="csca48w17"
+                />
+            </div>
+
+            <div className="archieve-options">
+                <CustomLinkLocal
+                    link="/archieve/csca08f16"
+                    label="CSCA08 2016 Fall (Introduction to Computer Science I)"
+                    labelGtm="csca08f16"
+                />
+            </div>
         </div>
     </AppLayout>
 );

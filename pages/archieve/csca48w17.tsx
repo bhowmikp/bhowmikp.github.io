@@ -16,17 +16,17 @@ const CustomLinkLocal: FC<{
         label={label}
         labelGtm={labelGtm}
         newTab={newTab}
-        name="csca08f16"
+        name="csca48w17"
         className={`link-primary ${className}`}
     />
 );
 
-const Csca08f16: FC = () => (
+const Csca48w17: FC = () => (
     <AppLayout title="CSCA08f16">
         <div className="mx-5 mb-10">
-            <h1 className="tutorial-header">Welcome to CSCA08</h1>
+            <h1 className="tutorial-header">Welcome to CSCA48</h1>
             <p className="tutorial-default-spacing">
-                <b>Tutorial 30</b>: Wednesday, 10:00 AM - 11:00 AM, at IC326.
+                <b>Tutorial 0002</b>: Monday, 10:00 AM - 11:00 AM, at IC 208.
             </p>
             <p className="tutorial-default-spacing">
                 <b>TA name</b>: Prantar Bhowmik
@@ -35,9 +35,9 @@ const Csca08f16: FC = () => (
                 I will update this website on a weekly basis. All code written in class will be made available here.
             </p>
             <p className="mb-10">There may or may not be quiz held in the tutorial so please be on time.</p>
-            <p className="tutorial-default-spacing">You can attend any practical held by any CSCA08 TA. I'll be at: </p>
+            <p className="tutorial-default-spacing">You can attend any practical held by any CSCA48 TA. I'll be at: </p>
             <p className="tutorial-default-spacing">
-                <b>Practical 002</b>: Monday, 4:00 PM - 5:00 PM, at BV471.
+                <b>Practical 004</b>: Wednesday, 4:00 PM - 5:00 PM, at BV 471.
             </p>
             <hr className="tutorial-default-spacing tutorial-hr-style" />
             <p className="tutorial-default-spacing">
@@ -53,14 +53,14 @@ const Csca08f16: FC = () => (
                 />
                 . I will be checking my email every night. But before you email me, consider attending a practical or
                 post the question on{' '}
-                <CustomLinkLocal link="https://piazza.com/mail.utoronto.ca/fall2016/csca08" label="Piazza" /> as you
+                <CustomLinkLocal link="https://piazza.com/mail.utoronto.ca/winter2017/csca48" label="Piazza" /> as you
                 will get a much faster response there.
             </p>
             <p className="tutorial-default-spacing">
                 If you email me, use your utoronto email, any other email address will go directly to spam.
             </p>
             <p className="tutorial-default-spacing">
-                Also, in the subject write "CSCA08" to increase my chances of responding.
+                Also, in the subject write "CSCA48" to increase my chances of responding.
             </p>
             <hr className="tutorial-default-spacing tutorial-hr-style" />
             <p className="tutorial-default-spacing">
@@ -72,201 +72,178 @@ const Csca08f16: FC = () => (
                 I always like to know how you feel about my teaching style. Feel free to leave anonymous feedback{' '}
                 <CustomLinkLocal link="/feedback" label="here" labelGtm="feedback" newTab={false} />
             </p>
-
             <hr className="tutorial-default-spacing tutorial-hr-style" />
             <p className="tutorial-default-spacing">
                 <b>
-                    <u>Week 12: November 30, 2016</u>
-                </b>
-            </p>
-            <ul className="tutorial-default-spacing tutorial-list-style">
-                <li>Discussed importance of unit testing</li>
-            </ul>
-            <hr className="tutorial-default-spacing tutorial-hr-style" />
-            <p className="tutorial-default-spacing">
-                <b>
-                    <u>Week 11: November 23, 2016</u>
-                </b>
-            </p>
-            <ul className="tutorial-default-spacing tutorial-list-style">
-                <li>Discussed UML diagrams</li>
-            </ul>
-            <hr className="tutorial-default-spacing tutorial-hr-style" />
-            <p className="tutorial-default-spacing">
-                <b>
-                    <u>Week 10: November 16, 2016</u>
+                    <u>Week 11: March 20, 2017</u>
                 </b>
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca08f16/inheritance_w10.txt" label="Inheritance" />
+                    <CustomLinkLocal link="/csca48w17/insertion_sort_w11.txt" label="Insertion Sort" />
+                </li>
+                <li>Worst case runtime for Insertion Sort: O(n)^2</li>
+                <li className="mb-3">Best case runtime for Insertion Sort: O(n)</li>
+                <li>
+                    <CustomLinkLocal
+                        link="https://www.utsc.utoronto.ca/~csec/slides/W6_Complexity.pdf"
+                        label="More detail on complexity"
+                    />
                 </li>
             </ul>
             <hr className="tutorial-default-spacing tutorial-hr-style" />
             <p className="tutorial-default-spacing">
                 <b>
-                    <u>Week 9: November 9, 2016</u>
+                    <u>Week 10: March 13, 2017</u>
+                </b>
+            </p>
+            <ul className="tutorial-default-spacing tutorial-list-style">
+                <li>
+                    <CustomLinkLocal link="/csca48w17/tree_algo_w10.txt" label="Tree Algo" />
+                </li>
+            </ul>
+            <hr className="tutorial-default-spacing tutorial-hr-style" />
+            <p className="tutorial-default-spacing">
+                <b>
+                    <u>Week 9: March 5, 2017</u>
+                </b>
+            </p>
+            <ul className="tutorial-default-spacing tutorial-list-style">
+                <li>
+                    <CustomLinkLocal link="/csca48w17/binary_search_w9.txt" label="Binary Search" />
+                </li>
+                <li>Worst case runtime for Binary search: O(logn)</li>
+                <li className="mb-3">Best case runtime for Binary search: O(1)</li>
+                <li>Worst case runtime for Binary search: O(n)</li>
+                <li>Best case runtime for Binary search: O(1)</li>
+            </ul>
+            <hr className="tutorial-default-spacing tutorial-hr-style" />
+            <p className="tutorial-default-spacing">
+                <b>
+                    <u>Week 8: February 27, 2017</u>
+                </b>
+            </p>
+            <ul className="tutorial-default-spacing tutorial-list-style">
+                <li>
+                    <CustomLinkLocal link="/csca48w17/same_string_w8.txt" label="Same String" />
+                </li>
+            </ul>
+            <hr className="tutorial-default-spacing tutorial-hr-style" />
+            <p className="tutorial-default-spacing">
+                <b>
+                    <u>Week 7: February 13, 2017</u>
                 </b>
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li className="mb-3">
-                    <CustomLinkLocal link="/csca08f16/class_w9.txt" label="Class" />
+                    <CustomLinkLocal link="/csca48w17/fib_w7.txt" label="Fibonacci Sequence" />
                 </li>
                 <li>
-                    <CustomLinkLocal
-                        link="/csca08f16/description_w9.txt"
-                        label="Template on how to write descriptions in docstring"
-                    />
+                    <CustomLinkLocal link="/csca48w17/visualize_fib_w7.txt" label="Visualize Fib" />
                 </li>
                 <li>
-                    <b>
-                        Remember to write rest of the docstring. You don't have to follow the template exactly, treat it
-                        more like a guideline
-                    </b>
+                    <CustomLinkLocal link="http://pythontutor.com/" label="Python Tutor" /> is a good resource to use to
+                    visualize the memory model. Choose "render all objects", "use text labels for references", and
+                    Python 3.3 to look a version of the memory model we are accustomed with.
                 </li>
             </ul>
             <hr className="tutorial-default-spacing tutorial-hr-style" />
             <p className="tutorial-default-spacing">
                 <b>
-                    <u>Week 8: November 2, 2016</u>
+                    <u>Week 6: February 6, 2017</u>
                 </b>
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca08f16/dict_w8.txt" label="Dictionary" />
+                    <CustomLinkLocal link="/assets/csca48w17/bst_w6.txt" label="Binary Search Trees" />
                 </li>
-                <li>
-                    My code to explain what dictionaries are. This is bad code. Only wrote{' '}
-                    <CustomLinkLocal link="/csca08f16/my_code_dict_w8.txt" label="this" labelGtm="dictionary demo" />{' '}
-                    for demo purposes
-                </li>
-            </ul>
-            <hr className="tutorial-default-spacing tutorial-hr-style" />
-            <p className="tutorial-default-spacing">
-                <b>
-                    <u>Week 7: October 26, 2016</u>
-                </b>
-            </p>
-            <ul className="tutorial-default-spacing tutorial-list-style">
-                <li>
-                    <CustomLinkLocal link="/csca08f16/memory_model_w7.txt" label="Memory Model" />
-                </li>
-                <li>
-                    <CustomLinkLocal link="https://pythontutor.com/" label="Python Tutor" />
-                </li>
-            </ul>
-            <hr className="tutorial-default-spacing tutorial-hr-style" />
-            <p className="tutorial-default-spacing">
-                <b>
-                    <u>Week 6: October 19, 2016</u>
-                </b>
-            </p>
-            <ul className="tutorial-default-spacing tutorial-list-style">
                 <li className="mb-3">
-                    <CustomLinkLocal link="/csca08f16/good_code_w6.txt" label="Good/Bad Code" />
-                </li>
-                <li>Return Midterm</li>
-                <ul className="tutorial-default-spacing tutorial-list-style">
-                    <li>IF there are any issues, write it in the front page of the exam and return back to TA</li>
-                    <li>IF test leaves room with you, mark is set</li>
-                </ul>
-            </ul>
-            <hr className="tutorial-default-spacing tutorial-hr-style" />
-            <p className="tutorial-default-spacing">
-                <b>
-                    <u>Week 5: October 5, 2016</u>
-                </b>
-            </p>
-            <ul className="tutorial-default-spacing tutorial-list-style">
-                <li>IMPORTANT CONCEPTS FOR MIDTERM</li>
-                <ul className="tutorial-default-spacing tutorial-list-style">
-                    <li>
-                        Memory Model -- <CustomLinkLocal link="https://pythontutor.com/" label="Python Tutor" />
-                    </li>
-                    <li>Functions</li>
-                    <li>Design Recipe</li>
-                    <li>Boolean Logic</li>
-                </ul>
-                <li>
-                    Import:
+                    A visualization of BST can be found{' '}
                     <CustomLinkLocal
-                        link="/csca08f16/import_a_w5.txt"
-                        label="Example 1"
-                        labelGtm="import example 1"
-                        className="mx-2"
+                        link="https://www.cs.usfca.edu/~galles/visualization/BST.html"
+                        label="here"
+                        labelGtm="BST visualization"
                     />
-                    <CustomLinkLocal link="/csca08f16/import_b_w5.txt" label="Example 2" labelGtm="import example 2" />
+                    . The only problem with this is that if two nodes are equal it picks the left child instead of the
+                    right. But otherwise I think it does a pretty good job.
                 </li>
                 <li>
-                    <CustomLinkLocal link="/csca08f16/debug_w5.txt" label="Debugger" />
+                    <CustomLinkLocal link="/assets/csca48w17/heap_w6.txt" label="Heaps" />
+                </li>
+                <li>
+                    A visualization of min heap can be found{' '}
+                    <CustomLinkLocal
+                        link="https://www.cs.usfca.edu/~galles/visualization/Heap.html"
+                        label="here"
+                        labelGtm="Heap visualization"
+                    />
+                    .
                 </li>
             </ul>
             <hr className="tutorial-default-spacing tutorial-hr-style" />
             <p className="tutorial-default-spacing">
                 <b>
-                    <u>Week 4: September 28, 2016</u>
+                    <u>Week 5: January 30, 2017</u>
                 </b>
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca08f16/documenting_w4.txt" label="Documenting" />
-                </li>
-                <li>
-                    <CustomLinkLocal link="/csca08f16/doctest_w4.txt" label="Doctest" />
-                </li>
-                <li>
-                    <CustomLinkLocal link="http://pep8online.com/" label="PEP8" />
-                </li>
-                <li>
-                    Code written in class for documenting{' '}
-                    <CustomLinkLocal link="/csca08f16/documenting_w4_1.txt" label="demo" />
+                    <CustomLinkLocal link="/csca48w17/trees_w5.txt" label="Binary Search Trees" />
                 </li>
             </ul>
             <hr className="tutorial-default-spacing tutorial-hr-style" />
             <p className="tutorial-default-spacing">
                 <b>
-                    <u>Week 3: September 21, 2016</u>
+                    <u>Week 4: January 23, 2017</u>
                 </b>
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    Memory Model:
+                    <CustomLinkLocal link="/csca48w17/dll_w4.txt" label="Doubly Linked List" />
+                </li>
+            </ul>
+            <hr className="tutorial-default-spacing tutorial-hr-style" />
+            <p className="tutorial-default-spacing">
+                <b>
+                    <u>Week 3: January 16, 2017</u>
+                </b>
+            </p>
+            <ul className="tutorial-default-spacing tutorial-list-style">
+                <li>
+                    <CustomLinkLocal link="/csca48w17/deque_w3.txt" label="Deque ADT" />
+                </li>
+                <li className="mb-3">
+                    <CustomLinkLocal link="/csca48w17/deque_dict_w3.txt" label="Deque Dict ADT" />
+                </li>
+                <li>
+                    <CustomLinkLocal link="/csca48w17/is_palindrome_w3.txt" label="Use of Deque" />
+                </li>
+                <li>
                     <CustomLinkLocal
-                        link="/csca08f16/memory_model_w3_1.txt"
-                        label="Example 1"
-                        labelGtm="memory model example 1"
-                        className="mx-2"
-                    />
-                    <CustomLinkLocal
-                        link="/csca08f16/memory_model_w3_2.txt"
-                        label="Example 2"
-                        labelGtm="memory model example 2"
-                        className="mr-2"
-                    />
-                    <CustomLinkLocal
-                        link="/csca08f16/memory_model_w3_3.txt"
-                        label="Example 3"
-                        labelGtm="memory model example 3"
+                        link="/csca48w17/representation_invariant_maker_w3.txt"
+                        label="How to make representation invariant"
                     />
                 </li>
             </ul>
             <hr className="tutorial-default-spacing tutorial-hr-style" />
             <p className="tutorial-default-spacing">
                 <b>
-                    <u>Week 2: September 14, 2016</u>
+                    <u>Week 2: January 9, 2017</u>
                 </b>
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
-                <li>Difference between Python vs Wing</li>
-                <li>Python version</li>
-                <li>Difference between shell and writing file</li>
                 <li>
-                    Code I wrote to determine if the version of python is acceptable:{' '}
-                    <CustomLinkLocal link="/csca08f16/python_version_w2.txt" label="python-version" />
+                    <CustomLinkLocal link="/assets/csca48w17/queue_w2.txt" label="Queue ADT" />
+                </li>
+                <li>
+                    <CustomLinkLocal link="/csca48w17/stack_w2.txt" label="Stack ADT" />
+                </li>
+                <li>
+                    <CustomLinkLocal link="/csca48w17/binary_w2.txt" label="Decimal to Binary" />
                 </li>
             </ul>
         </div>
     </AppLayout>
 );
 
-export default Csca08f16;
+export default Csca48w17;
