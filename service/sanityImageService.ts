@@ -1,7 +1,9 @@
-import urlBuilder from "@sanity/image-url";
+import urlBuilder from '@sanity/image-url';
 
-export const urlFor = source =>
+const urlFor = (source: string): any =>
     urlBuilder({
-        projectId: process.env.SANITY_PROJECT_ID,
-        dataset: process.env.SANITY_DATASET,
+        projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+        dataset: process.env.NEXT_PUBLIC_SANITY_DATASET
     }).image(source);
+
+export default urlFor;
