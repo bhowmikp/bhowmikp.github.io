@@ -32,9 +32,9 @@ const homepageSerializer = {
                         </div>
                     ) : (
                             <figure>
-                                <div className="w-9/12">
-                                    <Image {...imageProps} />
-                                </div>
+                                {/* <div className="w-9/12"> */}
+                                <Image {...imageProps} alt={props.node.alt} width="600" />
+                                {/* </div> */}
 
                                 <figcaption>{props.node.caption}</figcaption>
                             </figure>

@@ -20,7 +20,7 @@ const CustomLink: FC<ICustomLink> = ({ link, label, labelGtm, newTab = false, na
             <a
                 target={newTab && isAmp === false ? '_blank' : '_self'}
                 rel={newTab ? 'noopener noreferrer' : ''}
-                onClick={() => {
+                onMouseDown={() => {
                     event({
                         name,
                         category: 'link',
@@ -28,7 +28,8 @@ const CustomLink: FC<ICustomLink> = ({ link, label, labelGtm, newTab = false, na
                         value: link
                     });
                 }}
-                aria-hidden="true"
+                role="link"
+                tabIndex={0}
                 className={isEmpty(className) ? 'link-primary' : className}
             >
                 {label}
