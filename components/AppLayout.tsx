@@ -24,16 +24,16 @@ const AppLayout: FC<{ children: React.ReactNode; title: string }> = ({ children,
             </a>
         </Link>
 
-        <Link href="/archieve">
+        <Link href="/archive">
             <a
                 className="text-black dark:text-white"
                 onMouseDown={() => {
-                    event({ name: 'menuItem', category: 'link', label: 'archieve' });
+                    event({ name: 'menuItem', category: 'link', label: 'archive' });
                 }}
                 role="link"
                 tabIndex={0}
             >
-                Archieve
+                Archive
             </a>
         </Link>
 

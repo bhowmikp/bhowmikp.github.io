@@ -16,77 +16,77 @@ const CustomLinkLocal: FC<{
         label={label}
         labelGtm={labelGtm}
         newTab={newTab}
-        name="archieve"
+        name="archive"
         className={`link-primary ${className}`}
     />
 );
 
-const Archieve: FC = () => (
-    <AppLayout title="Archieve">
+const archive: FC = () => (
+    <AppLayout title="archive">
         <div className="mx-5 mb-10">
-            <p className="archieve-options mt-3">CSCD01 2020 Winter (Engineering Large Software Systems)</p>
+            <p className="archive-options mt-3">CSCD01 2020 Winter (Engineering Large Software Systems)</p>
 
-            <div className="archieve-options">
+            <div className="archive-options">
                 <CustomLinkLocal
-                    link="/archieve/cscc69s19"
+                    link="/archive/cscc69s19"
                     label="CSCC69 2019 Summer (Operating Systems)"
                     labelGtm="cscc69s19"
                 />
             </div>
 
-            <div className="archieve-options">
+            <div className="archive-options">
                 <CustomLinkLocal
-                    link="/archieve/cscc69w19"
+                    link="/archive/cscc69w19"
                     label="CSCC69 2019 Winter (Operating Systems)"
                     labelGtm="cscc69w19"
                 />
             </div>
 
-            <p className="archieve-options">CSCA08 2019 Fall (Introduction to Computer Science I)</p>
+            <p className="archive-options">CSCA08 2019 Fall (Introduction to Computer Science I)</p>
 
-            <div className="archieve-options">
+            <div className="archive-options">
                 <CustomLinkLocal
-                    link="/archieve/cscb07f18"
+                    link="/archive/cscb07f18"
                     label="CSCB07 2018 Fall (Software Design)"
                     labelGtm="cscb07f18"
                 />
             </div>
 
-            <div className="archieve-options">
+            <div className="archive-options">
                 <CustomLinkLocal
-                    link="/archieve/csca48w18"
+                    link="/archive/csca48w18"
                     label="CSCA48 2018 Winter (Introduction to Computer Programming II)"
                     labelGtm="csca48w18"
                 />
             </div>
 
-            <div className="archieve-options">
+            <div className="archive-options">
                 <CustomLinkLocal
-                    link="/archieve/csca08f17"
+                    link="/archive/csca08f17"
                     label="CSCA08 2017 Fall (Introduction to Computer Science I)"
                     labelGtm="csca08f17"
                 />
             </div>
 
-            <div className="archieve-options">
+            <div className="archive-options">
                 <CustomLinkLocal
-                    link="/archieve/csca48s17"
+                    link="/archive/csca48s17"
                     label="CSCA48 2017 Summer (Introduction to Computer Programming II)"
                     labelGtm="csca48s17"
                 />
             </div>
 
-            <div className="archieve-options">
+            <div className="archive-options">
                 <CustomLinkLocal
-                    link="/archieve/csca48w17"
+                    link="/archive/csca48w17"
                     label="CSCA48 2017 Winter (Introduction to Computer Programming II)"
                     labelGtm="csca48w17"
                 />
             </div>
 
-            <div className="archieve-options">
+            <div className="archive-options">
                 <CustomLinkLocal
-                    link="/archieve/csca08f16"
+                    link="/archive/csca08f16"
                     label="CSCA08 2016 Fall (Introduction to Computer Science I)"
                     labelGtm="csca08f16"
                 />
@@ -95,4 +95,4 @@ const Archieve: FC = () => (
     </AppLayout>
 );
 
-export default Archieve;
+export default archive;

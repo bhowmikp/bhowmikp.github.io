@@ -1,5 +1,5 @@
 @layer components {
-    .archieve-options {
+    .archive-options {
         @apply mb-4 rounded-full py-3 px-6 border-2 border-gray-600 dark:border-white;
     }
 
