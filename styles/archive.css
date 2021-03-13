@@ -1,0 +1,22 @@
+@layer components {
+    .archive-options {
+        @apply mb-4 rounded-full py-3 px-6 border-2 border-gray-600 dark:border-white;
+    }
+
+    .tutorial-header {
+        @apply text-5xl text-center text-primary mb-5;
+    }
+
+    .tutorial-default-spacing {
+        @apply mb-2;
+    }
+
+    .tutorial-list-style {
+        @apply list-disc ml-5;
+    }
+
+    .tutorial-hr-style {
+        @apply bg-gray-300 dark:bg-gray-900;
+        height: 2px;
+    }
+}

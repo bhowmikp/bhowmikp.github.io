@@ -1,5 +1,5 @@
 import 'tailwindcss/tailwind.css';
-import '../styles/globals.css';
+import '@Styles/globals.css';
 
 import React, { useEffect, FC } from 'react';
 import type { AppProps } from 'next/app';

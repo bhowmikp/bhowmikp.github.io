@@ -1,0 +1,77 @@
+class EmptyQueueError(Exception):
+    '''An error to be raised when someone tries to
+    dequeue from an empty queue'''
+
+
+class Deque_Dict():
+    '''A double ended queue'''
+
+    def __init__(self: 'Deque_Dict') -> None:
+        # _left and _right are ints
+        # _contents is a dictionary of int: object
+        # if _contents is not empty, then
+        #     _contents[_left], … , _contents[_right] are the
+        #             objects in the deque
+        #     _left is the leftmost object in the deque
+        #     _right is the rightmost object in the deque
+        # if i<j, i>= _left, j <= right, then
+        #     _contents[i] is to the left of _contents[j] in the deque
+
+        self._contents = {}
+        self._left = 1
+        self._right = 0
+
+    def enqueue_left(self: 'Deque_Dict', item: 'object') -> None:
+        '''
+        Add item onto the left side of the deque
+        '''
+        self._left -= 1
+        self._contents[self._left] = item
+
+    def enqueue_right(self: 'Deque_Dict', item: 'object') -> None:
+        '''
+        Add item onto the right side of the deque
+        '''
+        self._right += 1
+        self._contents[self._right] = item
+
+    def dequeue_left(self: 'Deque_Dict') -> object:
+        '''
+        Remove and return the leftmost item in the deque
+        '''
+        if(self.is_empty()):
+            raise EmptyQueueError("Can't dequeue from an empty queue")
+        else:
+            holder = self._contents[self._left]
+            self._left += 1
+            return holder
+
+    def dequeue_right(self: 'Deque') -> object:
+        '''
+        Remove and return the rightmost item in the deque
+        '''
+        if(self.is_empty()):
+            raise EmptyQueueError("Can't dequeue from an empty queue")
+        else:
+            holder = self._contents[self._right]
+            self._right -= 1
+            return holder
+
+    def is_empty(self: 'Deque') -> bool:
+        '''
+        Return True iff this deque is empty
+        '''
+        return (self._left > self._right)
+
+if(__name__ == "__main__"):
+    dq = Deque_Dict()
+    dq.enqueue_left('A')
+    dq.enqueue_left('B')
+    dq.enqueue_left('C')
+    dq.enqueue_right('D')
+    dq.enqueue_right('E')
+    dq.enqueue_right('F')
+    dq.enqueue_left('G')
+    while(not dq.is_empty()):
+        print(dq.dequeue_right())
+        print(dq.dequeue_left())

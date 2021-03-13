@@ -1,0 +1,25 @@
+d = {"Bill":{20, 40}, "Angela":40}
+
+print (d["Bill"])
+
+for i in d:
+    print (d[i])
+    
+d.update({"Mary":12})
+print (d)
+
+#d.update({"Bill":12})
+#print (d)
+
+name = "Bill"
+
+if name in d:
+    d[name].add(12)
+    
+d[name].add(12)
+
+print (d)
+
+b = {"Hi" : [1,2], "Bye" : [2]}
+b["Hi"].append(2)
+print (b)

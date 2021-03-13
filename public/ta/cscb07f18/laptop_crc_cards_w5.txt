@@ -1,0 +1,108 @@
+Class name: Laptop
+Responsibilities:
+* compute
+* display content
+* take user input
+Collaborators:
+* Input
+* Output
+
+
+Class name: Input
+Subclass (if any): Webcam, Keyboard, Pointer devices
+Responsibilities:
+* take user input
+Collaborators:
+* Display
+
+
+Class name: Webcam
+Parent class (if any): Input
+Responsibilities:
+* take video
+* capture image
+
+
+Class name: Keyboard
+Parent class (if any): Input
+Responsibilities:
+* take input from keys
+
+
+Class name: Pointer devices
+Parent class (if any): Input
+Subclass (if any): Mouse, TouchPad
+Responsibilities:
+* interact with GUI
+Collaborators:
+* Pointer controls
+
+
+Class name: Mouse
+Parent class (if any): Pointer devices
+Responsibilities:
+* control pointer
+
+
+Class name: TouchPad
+Parent class (if any): Pointer devices
+Responsibilities:
+* control pointer
+
+
+Class name: Output
+Subclass (if any): Output ports, Display
+Responsibilities:
+* display contents to user
+
+
+Class name: Output Ports
+Parent class (if any): Output
+Subclass (if any): HDMI, VGA
+Responsibilities:
+* connects another display
+Collaborators:
+* Display
+
+
+Class name: Display
+Parent class (if any): Output
+Responsibilities:
+* shows content to use
+
+
+Class name: HDMI
+Parent class (if any): Output Ports
+Responsibilities:
+* connect display
+
+
+Class name: VGA
+Parent class (if any): Output Ports
+Responsibilities:
+* connect display
+
+
+Class name: Pointer Controls
+Subclass (if any): Left Button, Scroll, Right Button
+Responsibilities:
+* change pointer on screen
+* enter user input
+
+
+Class name: Left Button
+Parent class (if any): Pointer controls
+Responsibilities:
+* execture program
+
+
+Class name: Scroll
+Parent class (if any): Pointer controls
+Responsibilities:
+* scroll window
+
+
+Class name: Right Button
+Parent class (if any): Pointer controls
+Responsibilities:
+* view options

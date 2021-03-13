@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Prantar Bhowmik - CSCA48 Calculator</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Simple calculator to calculate marks for A48.">
+	<meta name="keywords" content="Prantar, Bhowmik, Prantar Bhowmik, Toronto, Computer, Science">
+	<meta name="author" content="Prantar Bhowmik">
+	
+	<meta http-equiv="Cache-control" content="max-age=2592000, public">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	
+	<style>
+		.txt-style{
+			font-size: 18px;
+		}
+	</style>
+	<!--code for tab colour chrome mobile-->
+	<meta name="theme-color" content="#5945db">
+	
+	<link rel="shortcut icon" href="img/favicon.ico" size='32x32' type='image/ico'/>
+	
+	<style>
+		#form-labels {
+		  display: inline-block;
+		  width: 180px;
+		  text-align: right;
+		  padding-bottom: 15px;
+		}​
+		
+		input[type=text] {
+		}
+
+		input[type=text]:focus {
+			background-color: lightblue;
+		}
+	</style>
+		
+	<script language = "javascript" type = "text/javascript">
+		var MARK_TYPE = {0: "Exercise", 1:"Quiz", 2: "A0", 3:"A1", 4:"Term Test I", 5: "Term Test II", 6: "Final"};
+		var EXERCISE = 0.10;
+		var QUIZ = 0.05;
+		var ASSIGNMENT = 0.075;
+		var TERM_TEST = 0.125;
+		var FINAL = 0.45;
+		
+		
+		function check_validity(marks){
+			for (i in marks) {
+				// check that each of the values are numbers
+				if (!(isNaN(marks[i])) && (marks[i] != "")){
+					// check that the value of numbers in acceptable range
+					if (marks[i] < 0 || marks[i] > 100){
+						return [false, i];
+					}
+				}
+				else{
+					return [false, i];
+				}
+			}
+			
+			return [true, 0];
+		}
+	
+		function calculate(){
+			var result = ""
+			var total = 0;
+			
+			// get all the values from the text box
+			var exercise = document.getElementById("exercise").value;
+			var quiz = document.getElementById("quiz").value;
+			var a0 = document.getElementById("a0").value;
+			var a1 = document.getElementById("a1").value;
+			var tt1 = document.getElementById("tt1").value;
+			var tt2 = document.getElementById("tt2").value;
+			var fm = document.getElementById("fm").value;
+			
+			var marks = new Array(exercise, quiz, a0, a1, tt1, tt2, fm);
+			
+			// check if the values are numbers and range is correct
+			var status = check_validity(marks);
+			
+			if (status[0] == false){
+				result = "Incorrect value at: " + MARK_TYPE[status[1]] + " mark";
+			}
+			else{
+				var exercise_percent = exercise * EXERCISE;
+				var quiz_percent = quiz * QUIZ;
+				var a0_percent = a0 * ASSIGNMENT;
+				var a1_percent = a1 * ASSIGNMENT;
+				var tt1_percent = tt1 * TERM_TEST;
+				var tt2_percent = tt2 * TERM_TEST;
+				var final_percent = fm * FINAL;
+				
+				var total = exercise_percent + quiz_percent + a0_percent + a1_percent + tt1_percent + tt2_percent + final_percent;
+				
+				if (fm >= 40 && total >= 50){
+					result = "Success";
+				}
+				else{
+					result = "Fail";
+				}
+			}
+			
+			document.getElementById("result").innerHTML = result;
+			document.getElementById("total").innerHTML = "Course mark: " + total.toFixed(2);
+			
+			return true;
+		}
+	</script>
+	
+	<noscript>
+		<h3>Enable Javascript</h3>
+	</noscript>
+		
+	<!-- Google Analytics -->
+    <script>
+    	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+		ga('create', 'UA-74904411-1', 'auto');
+		ga('require', 'linkid');
+		ga('send', 'pageview');
+	
+    </script>
+  </head>
+  
+  <body style="background-color: #E8D6CB;">
+		<div>
+			<p style="font-size: 30px; text-align: center; color: black; letter-spacing: 3px;padding-top:20px; padding-bottom: 5px;">CSCA48 MARK CALCULATOR</p>
+			
+			<form id = "marks" style="text-align: center;">
+				<label id= "form-labels">Exercise mark:</label>
+				<input type = "text" id="exercise" placeholder= "10 percent"></input>
+				<label id= "form-labels">(10 percent of course)</label><br>
+				
+				<label id= "form-labels">Quiz mark:</label>
+				<input type = "text" id="quiz" placeholder= "5 percent"></input>
+				<label id= "form-labels">(5 percent of course)</label><br>
+				
+				<label id= "form-labels">A0 mark:</label>
+				<input type = "text" id = "a0" placeholder= "7.5 percent"></input>
+				<label id= "form-labels">(7.5 percent of course)</label><br>
+				
+				<label id= "form-labels">A1 mark:</label>
+				<input type = "text" id = "a1" placeholder= "7.5 percent"></input>
+				<label id= "form-labels">(7.5 percent of course)</label><br>
+				
+				<label id= "form-labels">Term test I:</label>
+				<input type = "text" id = "tt1" placeholder= "12.5 percent"></input>
+				<label id= "form-labels">(12.5 percent of course)</label><br>
+				
+				<label id= "form-labels">Term test II:</label>
+				<input type = "text" id = "tt2" placeholder= "12.5 percent"></input>
+				<label id= "form-labels">(12.5 percent of course)</label><br>
+				
+				<label id= "form-labels">Final Mark:</label>
+				<input type = "text" id = "fm" placeholder= "45 percent"></input>
+				<label id= "form-labels">(45 percent of course)</label><br>
+				
+				<input type= "button" class="btn btn-success" value = "Submit" onClick = "calculate();"></input>
+			</form>
+			
+			<p id = "result" style="text-align: center;padding-top: 15px;">Enter all marks as numerical percentages out of 100</p>
+			<p id = "total" style="text-align: center; padding-bottom:50%"></p>
+		</div>
+	
+			
+		</div>
+		
+		<!--Creates footer fixed at bottom-->
+		<footer class="container-fluid text-center navbar-bottom">
+			<p style="color:white;">Site created by Prantar Bhowmik</p> 
+			<!-- Displays page modified date-->
+			<p id='lastModified' style='color:white;'> </p>
+		</footer>
+		
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="../../css/custom.css" type="text/css">
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="../../css/bootstrap-theme.min.css" type="text/css">
+		
+		<!--JQuery-->
+		<script src="../../js/jquery.min.js"></script>
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="../../js/bootstrap.min.js"></script>
+		
+		<!--Script to determine date changes were made on page-->
+		<script type="text/javascript" src="../../js/custom.js"></script>
+  </body>
+</html>
