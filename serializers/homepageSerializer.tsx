@@ -27,12 +27,12 @@ const homepageSerializer = {
                             <p>{props.node.caption}</p>
                         </div>
                     ) : (
-                            <figure>
-                                <img src={urlFor(props.node.image).url()} alt={props.node.alt} className="w-2/4" />
+                        <figure>
+                            <img src={urlFor(props.node.image).url()} alt={props.node.alt} className="w-2/4" />
 
-                                <figcaption>{props.node.caption}</figcaption>
-                            </figure>
-                        )}
+                            <figcaption>{props.node.caption}</figcaption>
+                        </figure>
+                    )}
                 </>
             );
         }
