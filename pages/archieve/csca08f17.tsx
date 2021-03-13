@@ -114,7 +114,7 @@ const Csca08f17: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca08f17/calendar_w9.txt" label="Object Oriented Programming" />
+                    <CustomLinkLocal link="/ta/csca08f17/calendar_w9.txt" label="Object Oriented Programming" />
                 </li>
             </ul>
 
@@ -126,7 +126,7 @@ const Csca08f17: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca08f17/invert_dict_w8.txt" label="Invert Dictionary" />
+                    <CustomLinkLocal link="/ta/csca08f17/invert_dict_w8.txt" label="Invert Dictionary" />
                 </li>
             </ul>
 
@@ -138,7 +138,7 @@ const Csca08f17: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca08f17/mutability_tracing_w7.txt" label="Memory Model" />
+                    <CustomLinkLocal link="/ta/csca08f17/mutability_tracing_w7.txt" label="Memory Model" />
                 </li>
                 <li>
                     <CustomLinkLocal link="http://pythontutor.com" label="Python Tutor" />: change settings to Python
@@ -156,12 +156,16 @@ const Csca08f17: FC = () => (
                 <li>
                     Import:
                     <CustomLinkLocal
-                        link="/csca08f17/import_a_w6.txt"
+                        link="/ta/csca08f17/import_a_w6.txt"
                         label="Example 1"
                         labelGtm="import example 1"
                         className="mx-2"
                     />
-                    <CustomLinkLocal link="/csca08f17/import_b_w6.txt" label="Example 2" labelGtm="import example 2" />
+                    <CustomLinkLocal
+                        link="/ta/csca08f17/import_b_w6.txt"
+                        label="Example 2"
+                        labelGtm="import example 2"
+                    />
                 </li>
                 <li>Debugger</li>
             </ul>
@@ -174,7 +178,7 @@ const Csca08f17: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca08f17/selection_w5.txt" label="Good/Bad code" />
+                    <CustomLinkLocal link="/ta/csca08f17/selection_w5.txt" label="Good/Bad code" />
                 </li>
             </ul>
 
@@ -186,7 +190,7 @@ const Csca08f17: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca08f17/design_recipe_w4.txt" label="Design Recipe and Doctest" />
+                    <CustomLinkLocal link="/ta/csca08f17/design_recipe_w4.txt" label="Design Recipe and Doctest" />
                 </li>
                 <li>
                     <CustomLinkLocal link="http://pep8online.com/" label="PEP8" />
@@ -203,19 +207,19 @@ const Csca08f17: FC = () => (
                 <li>
                     Memory Model:
                     <CustomLinkLocal
-                        link="/csca08f17/memory_model_w3_1.txt"
+                        link="/ta/csca08f17/memory_model_w3_1.txt"
                         label="Example 1"
                         labelGtm="memory model example 1"
                         className="mx-2"
                     />
                     <CustomLinkLocal
-                        link="/csca08f17/memory_model_w3_2.txt"
+                        link="/ta/csca08f17/memory_model_w3_2.txt"
                         label="Example 2"
                         labelGtm="memory model example 2"
                         className="mr-2"
                     />
                     <CustomLinkLocal
-                        link="/csca08f17/memory_model_w3_3.txt"
+                        link="/ta/csca08f17/memory_model_w3_3.txt"
                         label="Example 3"
                         labelGtm="memory model example 3"
                     />
@@ -239,7 +243,7 @@ const Csca08f17: FC = () => (
                 <li className="mb-3">Difference between shell and writing file</li>
                 <li>
                     Code I wrote to determine if the version of python is acceptable:{' '}
-                    <CustomLinkLocal link="/csca08f17/python_version_w2.txt" label="python-version" />
+                    <CustomLinkLocal link="/ta/csca08f17/python_version_w2.txt" label="python-version" />
                 </li>
             </ul>
         </div>

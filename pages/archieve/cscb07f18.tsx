@@ -81,7 +81,7 @@ const Cscb07f18: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/cscb07f18/notes_w12.txt" label="Notes" labelGtm="w12_notes" />
+                    <CustomLinkLocal link="/ta/cscb07f18/notes_w12.txt" label="Notes" labelGtm="w12_notes" />
                 </li>
             </ul>
 
@@ -93,7 +93,7 @@ const Cscb07f18: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/cscb07f18/notes_w11.txt" label="Notes" labelGtm="w11_notes" />
+                    <CustomLinkLocal link="/ta/cscb07f18/notes_w11.txt" label="Notes" labelGtm="w11_notes" />
                 </li>
             </ul>
 
@@ -105,7 +105,7 @@ const Cscb07f18: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/cscb07f18/notes_w10.txt" label="Notes" labelGtm="w10_notes" />
+                    <CustomLinkLocal link="/ta/cscb07f18/notes_w10.txt" label="Notes" labelGtm="w10_notes" />
                 </li>
             </ul>
 
@@ -117,7 +117,7 @@ const Cscb07f18: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/cscb07f18/notes_w9.txt" label="Notes" labelGtm="w9_notes" />
+                    <CustomLinkLocal link="/ta/cscb07f18/notes_w9.txt" label="Notes" labelGtm="w9_notes" />
                 </li>
             </ul>
 
@@ -129,7 +129,7 @@ const Cscb07f18: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/cscb07f18/notes_w8.txt" label="Notes" labelGtm="w8_notes" />
+                    <CustomLinkLocal link="/ta/cscb07f18/notes_w8.txt" label="Notes" labelGtm="w8_notes" />
                 </li>
             </ul>
 
@@ -141,7 +141,7 @@ const Cscb07f18: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/cscb07f18/notes_w7.txt" label="Notes" labelGtm="w7_notes" />
+                    <CustomLinkLocal link="/ta/cscb07f18/notes_w7.txt" label="Notes" labelGtm="w7_notes" />
                 </li>
             </ul>
 
@@ -153,7 +153,7 @@ const Cscb07f18: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/cscb07f18/notes_w6.txt" label="Notes" labelGtm="w6_notes" />
+                    <CustomLinkLocal link="/ta/cscb07f18/notes_w6.txt" label="Notes" labelGtm="w6_notes" />
                 </li>
             </ul>
 
@@ -165,15 +165,15 @@ const Cscb07f18: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/cscb07f18/notes_w5.txt" label="Notes" labelGtm="w5_notes" />
+                    <CustomLinkLocal link="/ta/cscb07f18/notes_w5.txt" label="Notes" labelGtm="w5_notes" />
                 </li>
 
                 <li>
-                    <CustomLinkLocal link="/cscb07f18/laptop_uml_w5.png" label="UML" labelGtm="w5_uml" />
+                    <CustomLinkLocal link="/ta/cscb07f18/laptop_uml_w5.png" label="UML" labelGtm="w5_uml" />
                 </li>
                 <li>
                     <CustomLinkLocal
-                        link="/cscb07f18/laptop_crc_cards_w5.txt"
+                        link="/ta/cscb07f18/laptop_crc_cards_w5.txt"
                         label="CRC Cards"
                         labelGtm="w5_crc_cards"
                     />
@@ -188,7 +188,7 @@ const Cscb07f18: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/cscb07f18/notes_w4.txt" label="Notes" labelGtm="w4_notes" />
+                    <CustomLinkLocal link="/ta/cscb07f18/notes_w4.txt" label="Notes" labelGtm="w4_notes" />
                 </li>
             </ul>
 
@@ -200,7 +200,7 @@ const Cscb07f18: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/cscb07f18/notes_w3.txt" label="Notes" labelGtm="w3_notes" />
+                    <CustomLinkLocal link="/ta/cscb07f18/notes_w3.txt" label="Notes" labelGtm="w3_notes" />
                 </li>
             </ul>
 
@@ -212,18 +212,18 @@ const Cscb07f18: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/cscb07f18/notes_w2.txt" label="Notes" labelGtm="w2_notes" />
+                    <CustomLinkLocal link="/ta/cscb07f18/notes_w2.txt" label="Notes" labelGtm="w2_notes" />
                 </li>
                 <li>
                     <CustomLinkLocal
-                        link="/cscb07f18/unix_commands_w2.txt"
+                        link="/ta/cscb07f18/unix_commands_w2.txt"
                         label="Unix Commands"
                         labelGtm="w2_unix_commands"
                     />
                 </li>
                 <li>
                     <CustomLinkLocal
-                        link="/cscb07f18/subversion_commands_w2.txt"
+                        link="/ta/cscb07f18/subversion_commands_w2.txt"
                         label="Subversion Commands"
                         labelGtm="w2_svn"
                     />

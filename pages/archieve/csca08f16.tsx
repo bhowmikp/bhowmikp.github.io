@@ -99,7 +99,7 @@ const Csca08f16: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca08f16/inheritance_w10.txt" label="Inheritance" />
+                    <CustomLinkLocal link="/ta/csca08f16/inheritance_w10.txt" label="Inheritance" />
                 </li>
             </ul>
             <hr className="tutorial-default-spacing tutorial-hr-style" />
@@ -110,11 +110,11 @@ const Csca08f16: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li className="mb-3">
-                    <CustomLinkLocal link="/csca08f16/class_w9.txt" label="Class" />
+                    <CustomLinkLocal link="/ta/csca08f16/class_w9.txt" label="Class" />
                 </li>
                 <li>
                     <CustomLinkLocal
-                        link="/csca08f16/description_w9.txt"
+                        link="/ta/csca08f16/description_w9.txt"
                         label="Template on how to write descriptions in docstring"
                     />
                 </li>
@@ -133,11 +133,11 @@ const Csca08f16: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca08f16/dict_w8.txt" label="Dictionary" />
+                    <CustomLinkLocal link="/ta/csca08f16/dict_w8.txt" label="Dictionary" />
                 </li>
                 <li>
                     My code to explain what dictionaries are. This is bad code. Only wrote{' '}
-                    <CustomLinkLocal link="/csca08f16/my_code_dict_w8.txt" label="this" labelGtm="dictionary demo" />{' '}
+                    <CustomLinkLocal link="/ta/csca08f16/my_code_dict_w8.txt" label="this" labelGtm="dictionary demo" />{' '}
                     for demo purposes
                 </li>
             </ul>
@@ -149,7 +149,7 @@ const Csca08f16: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca08f16/memory_model_w7.txt" label="Memory Model" />
+                    <CustomLinkLocal link="/ta/csca08f16/memory_model_w7.txt" label="Memory Model" />
                 </li>
                 <li>
                     <CustomLinkLocal link="https://pythontutor.com/" label="Python Tutor" />
@@ -163,7 +163,7 @@ const Csca08f16: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li className="mb-3">
-                    <CustomLinkLocal link="/csca08f16/good_code_w6.txt" label="Good/Bad Code" />
+                    <CustomLinkLocal link="/ta/csca08f16/good_code_w6.txt" label="Good/Bad Code" />
                 </li>
                 <li>Return Midterm</li>
                 <ul className="tutorial-default-spacing tutorial-list-style">
@@ -190,15 +190,19 @@ const Csca08f16: FC = () => (
                 <li>
                     Import:
                     <CustomLinkLocal
-                        link="/csca08f16/import_a_w5.txt"
+                        link="/ta/csca08f16/import_a_w5.txt"
                         label="Example 1"
                         labelGtm="import example 1"
                         className="mx-2"
                     />
-                    <CustomLinkLocal link="/csca08f16/import_b_w5.txt" label="Example 2" labelGtm="import example 2" />
+                    <CustomLinkLocal
+                        link="/ta/csca08f16/import_b_w5.txt"
+                        label="Example 2"
+                        labelGtm="import example 2"
+                    />
                 </li>
                 <li>
-                    <CustomLinkLocal link="/csca08f16/debug_w5.txt" label="Debugger" />
+                    <CustomLinkLocal link="/ta/csca08f16/debug_w5.txt" label="Debugger" />
                 </li>
             </ul>
             <hr className="tutorial-default-spacing tutorial-hr-style" />
@@ -209,17 +213,17 @@ const Csca08f16: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca08f16/documenting_w4.txt" label="Documenting" />
+                    <CustomLinkLocal link="/ta/csca08f16/documenting_w4.txt" label="Documenting" />
                 </li>
                 <li>
-                    <CustomLinkLocal link="/csca08f16/doctest_w4.txt" label="Doctest" />
+                    <CustomLinkLocal link="/ta/csca08f16/doctest_w4.txt" label="Doctest" />
                 </li>
                 <li>
                     <CustomLinkLocal link="http://pep8online.com/" label="PEP8" />
                 </li>
                 <li>
                     Code written in class for documenting{' '}
-                    <CustomLinkLocal link="/csca08f16/documenting_w4_1.txt" label="demo" />
+                    <CustomLinkLocal link="/ta/csca08f16/documenting_w4_1.txt" label="demo" />
                 </li>
             </ul>
             <hr className="tutorial-default-spacing tutorial-hr-style" />
@@ -232,19 +236,19 @@ const Csca08f16: FC = () => (
                 <li>
                     Memory Model:
                     <CustomLinkLocal
-                        link="/csca08f16/memory_model_w3_1.txt"
+                        link="/ta/csca08f16/memory_model_w3_1.txt"
                         label="Example 1"
                         labelGtm="memory model example 1"
                         className="mx-2"
                     />
                     <CustomLinkLocal
-                        link="/csca08f16/memory_model_w3_2.txt"
+                        link="/ta/csca08f16/memory_model_w3_2.txt"
                         label="Example 2"
                         labelGtm="memory model example 2"
                         className="mr-2"
                     />
                     <CustomLinkLocal
-                        link="/csca08f16/memory_model_w3_3.txt"
+                        link="/ta/csca08f16/memory_model_w3_3.txt"
                         label="Example 3"
                         labelGtm="memory model example 3"
                     />
@@ -262,7 +266,7 @@ const Csca08f16: FC = () => (
                 <li>Difference between shell and writing file</li>
                 <li>
                     Code I wrote to determine if the version of python is acceptable:{' '}
-                    <CustomLinkLocal link="/csca08f16/python_version_w2.txt" label="python-version" />
+                    <CustomLinkLocal link="/ta/csca08f16/python_version_w2.txt" label="python-version" />
                 </li>
             </ul>
         </div>

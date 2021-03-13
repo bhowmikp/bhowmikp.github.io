@@ -80,7 +80,7 @@ const Csca48w17: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca48w17/insertion_sort_w11.txt" label="Insertion Sort" />
+                    <CustomLinkLocal link="/ta/csca48w17/insertion_sort_w11.txt" label="Insertion Sort" />
                 </li>
                 <li>Worst case runtime for Insertion Sort: O(n)^2</li>
                 <li className="mb-3">Best case runtime for Insertion Sort: O(n)</li>
@@ -99,7 +99,7 @@ const Csca48w17: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca48w17/tree_algo_w10.txt" label="Tree Algo" />
+                    <CustomLinkLocal link="/ta/csca48w17/tree_algo_w10.txt" label="Tree Algo" />
                 </li>
             </ul>
             <hr className="tutorial-default-spacing tutorial-hr-style" />
@@ -110,7 +110,7 @@ const Csca48w17: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca48w17/binary_search_w9.txt" label="Binary Search" />
+                    <CustomLinkLocal link="/ta/csca48w17/binary_search_w9.txt" label="Binary Search" />
                 </li>
                 <li>Worst case runtime for Binary search: O(logn)</li>
                 <li className="mb-3">Best case runtime for Binary search: O(1)</li>
@@ -125,7 +125,7 @@ const Csca48w17: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca48w17/same_string_w8.txt" label="Same String" />
+                    <CustomLinkLocal link="/ta/csca48w17/same_string_w8.txt" label="Same String" />
                 </li>
             </ul>
             <hr className="tutorial-default-spacing tutorial-hr-style" />
@@ -136,10 +136,10 @@ const Csca48w17: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li className="mb-3">
-                    <CustomLinkLocal link="/csca48w17/fib_w7.txt" label="Fibonacci Sequence" />
+                    <CustomLinkLocal link="/ta/csca48w17/fib_w7.txt" label="Fibonacci Sequence" />
                 </li>
                 <li>
-                    <CustomLinkLocal link="/csca48w17/visualize_fib_w7.txt" label="Visualize Fib" />
+                    <CustomLinkLocal link="/ta/csca48w17/visualize_fib_w7.txt" label="Visualize Fib" />
                 </li>
                 <li>
                     <CustomLinkLocal link="http://pythontutor.com/" label="Python Tutor" /> is a good resource to use to
@@ -188,7 +188,7 @@ const Csca48w17: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca48w17/trees_w5.txt" label="Binary Search Trees" />
+                    <CustomLinkLocal link="/ta/csca48w17/trees_w5.txt" label="Binary Search Trees" />
                 </li>
             </ul>
             <hr className="tutorial-default-spacing tutorial-hr-style" />
@@ -199,7 +199,7 @@ const Csca48w17: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca48w17/dll_w4.txt" label="Doubly Linked List" />
+                    <CustomLinkLocal link="/ta/csca48w17/dll_w4.txt" label="Doubly Linked List" />
                 </li>
             </ul>
             <hr className="tutorial-default-spacing tutorial-hr-style" />
@@ -210,17 +210,17 @@ const Csca48w17: FC = () => (
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/csca48w17/deque_w3.txt" label="Deque ADT" />
+                    <CustomLinkLocal link="/ta/csca48w17/deque_w3.txt" label="Deque ADT" />
                 </li>
                 <li className="mb-3">
-                    <CustomLinkLocal link="/csca48w17/deque_dict_w3.txt" label="Deque Dict ADT" />
+                    <CustomLinkLocal link="/ta/csca48w17/deque_dict_w3.txt" label="Deque Dict ADT" />
                 </li>
                 <li>
-                    <CustomLinkLocal link="/csca48w17/is_palindrome_w3.txt" label="Use of Deque" />
+                    <CustomLinkLocal link="/ta/csca48w17/is_palindrome_w3.txt" label="Use of Deque" />
                 </li>
                 <li>
                     <CustomLinkLocal
-                        link="/csca48w17/representation_invariant_maker_w3.txt"
+                        link="/ta/csca48w17/representation_invariant_maker_w3.txt"
                         label="How to make representation invariant"
                     />
                 </li>
@@ -236,10 +236,10 @@ const Csca48w17: FC = () => (
                     <CustomLinkLocal link="/assets/csca48w17/queue_w2.txt" label="Queue ADT" />
                 </li>
                 <li>
-                    <CustomLinkLocal link="/csca48w17/stack_w2.txt" label="Stack ADT" />
+                    <CustomLinkLocal link="/ta/csca48w17/stack_w2.txt" label="Stack ADT" />
                 </li>
                 <li>
-                    <CustomLinkLocal link="/csca48w17/binary_w2.txt" label="Decimal to Binary" />
+                    <CustomLinkLocal link="/ta/csca48w17/binary_w2.txt" label="Decimal to Binary" />
                 </li>
             </ul>
         </div>

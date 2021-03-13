@@ -16,29 +16,26 @@ const CustomLinkLocal: FC<{
         label={label}
         labelGtm={labelGtm}
         newTab={newTab}
-        name="csca48w18"
+        name="cscc69w19"
         className={`link-primary ${className}`}
     />
 );
 
-const Csca48w18: FC = () => (
-    <AppLayout title="CSCA48w18">
+const Cscc69w19: FC = () => (
+    <AppLayout title="CSCC69w19">
         <div className="mx-5 mb-10">
-            <p className="tutorial-header">Welcome to CSCA48</p>
+            <p className="tutorial-header">Welcome to CSCC69</p>
             <p className="tutorial-default-spacing">
-                <b>Tutorial 0011</b>: Thursday, 10:00 AM - 11:00 AM, at IC 120.
+                <b>Tutorial 0003</b>: Friday, 02:00 PM - 03:00 PM, at HW 308.
+            </p>
+            <p className="tutorial-default-spacing">
+                <b>Office hours</b>: Thursday, 02:00 PM - 03:00 PM, at IC 400A.
             </p>
             <p className="tutorial-default-spacing">
                 <b>TA name</b>: Prantar Bhowmik
             </p>
             <p className="tutorial-default-spacing">
                 I will update this website on a weekly basis. All code written in class will be made available here.
-            </p>
-            <p className="mb-10">There may or may not be quiz held in the tutorial so please be on time.</p>
-
-            <p className="tutorial-default-spacing">You can attend any practical held by any CSCA48 TA. I'll be at: </p>
-            <p className="tutorial-default-spacing">
-                <b>Practical 005</b>: Wednesday, 5:00 PM - 6:00 PM, at BV 471.
             </p>
             <hr className="tutorial-default-spacing tutorial-hr-style" />
             <p className="tutorial-default-spacing">
@@ -52,16 +49,14 @@ const Csca48w18: FC = () => (
                     link="mailto:prantar.bhowmik@mail.utoronto.ca"
                     label="prantar.bhowmik@mail.utoronto.ca"
                 />
-                . I will be checking my email every night. But before you email me, consider attending a practical or
-                post the question on{' '}
-                <CustomLinkLocal link="https://piazza.com/mail.utoronto.ca/winter2018/csca48" label="Piazza" /> as you
-                will get a much faster response there.
+                . I will be checking my email every night. But before you email me, consider posting the question on
+                quercus discussion board as you will get a much faster response there.
             </p>
             <p className="tutorial-default-spacing">
                 If you email me, use your utoronto email, any other email address will go directly to spam.
             </p>
             <p className="tutorial-default-spacing">
-                Also, in the subject write "CSCA48" to increase my chances of responding.
+                Also, in the subject write "CSCC69" to increase my chances of responding.
             </p>
             <hr className="tutorial-default-spacing tutorial-hr-style" />
             <p className="tutorial-default-spacing">
@@ -77,103 +72,20 @@ const Csca48w18: FC = () => (
             <hr className="tutorial-default-spacing tutorial-hr-style" />
             <p className="tutorial-default-spacing">
                 <b>
-                    <u>Week 12: April 5, 2018</u>
-                </b>
-            </p>
-            <ul className="tutorial-default-spacing tutorial-list-style">
-                <li>Sorting Algorithms and Time Complexity</li>
-                <ul className="tutorial-default-spacing tutorial-list-style">
-                    <li>Bubble Sort</li>
-                    <li>Selection Sort</li>
-                    <li>Insertion Sort</li>
-                    <li>Quick Sort</li>
-                    <li>Merge Sort</li>
-                    <li>Heap Sort</li>
-                </ul>
-            </ul>
-
-            <hr className="tutorial-default-spacing tutorial-hr-style" />
-            <p className="tutorial-default-spacing">
-                <b>
-                    <u>Week 11: March 29, 2018</u>
-                </b>
-            </p>
-            <ul className="tutorial-default-spacing tutorial-list-style">
-                <li>Recursion and Time Complexity</li>
-                <ul className="tutorial-default-spacing tutorial-list-style">
-                    <li>
-                        <CustomLinkLocal link="/ta/csca48w18/same_string_w11.txt" label="Same string" />
-                    </li>
-                </ul>
-            </ul>
-
-            <hr className="tutorial-default-spacing tutorial-hr-style" />
-            <p className="tutorial-default-spacing">
-                <b>
-                    <u>Week 10: March 22, 2018</u>
-                </b>
-            </p>
-            <ul className="tutorial-default-spacing tutorial-list-style">
-                <li>Big O</li>
-                <ul className="tutorial-default-spacing tutorial-list-style">
-                    <li>
-                        <CustomLinkLocal link="http://bigocheatsheet.com/" label="Big O cheatsheet" />
-                    </li>
-                </ul>
-            </ul>
-
-            <hr className="tutorial-default-spacing tutorial-hr-style" />
-            <p className="tutorial-default-spacing">
-                <b>
-                    <u>Week 9: March 15, 2018</u>
-                </b>
-            </p>
-            <ul className="tutorial-default-spacing tutorial-list-style">
-                <li>More recursion</li>
-                <ul className="tutorial-default-spacing tutorial-list-style">
-                    <li>
-                        <CustomLinkLocal link="/ta/csca48w18/htree_w9.txt" label="HTree" />
-                    </li>
-                    <li>
-                        <CustomLinkLocal link="/ta/csca48w18/graphics_w9.txt" label="Graphics.py" />
-                    </li>
-                </ul>
-            </ul>
-
-            <hr className="tutorial-default-spacing tutorial-hr-style" />
-            <p className="tutorial-default-spacing">
-                <b>
-                    <u>Week 8: March 8, 2018</u>
-                </b>
-            </p>
-            <ul className="tutorial-default-spacing tutorial-list-style">
-                <li>Recursion</li>
-                <ul className="tutorial-default-spacing tutorial-list-style">
-                    <li>
-                        <CustomLinkLocal link="/ta/csca48w18/vowel_count_w8.txt" label="Vowel Count" />
-                    </li>
-                </ul>
-            </ul>
-
-            <hr className="tutorial-default-spacing tutorial-hr-style" />
-            <p className="tutorial-default-spacing">
-                <b>
-                    <u>Week 7: March 1, 2018</u>
+                    <u>Personal Notes</u>
                 </b>
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    Heap:
                     <CustomLinkLocal
-                        link="/ta/csca48w18/heap_w7.txt"
-                        label="Example 1"
-                        labelGtm="heap example 1"
-                        className="mx-2"
+                        link="/ta/cscc69w19/cscc69_notes.pdf"
+                        label="Notes I made when I took the course PDF"
                     />
+                </li>
+                <li>
                     <CustomLinkLocal
-                        link="/ta/csca48w18/more_heap_w7.txt"
-                        label="Example 2"
-                        labelGtm="heap example 2"
+                        link="/ta/cscc69w19/cscc69_notes.docx"
+                        label="Notes I made when I took the course docx"
                     />
                 </li>
             </ul>
@@ -181,84 +93,186 @@ const Csca48w18: FC = () => (
             <hr className="tutorial-default-spacing tutorial-hr-style" />
             <p className="tutorial-default-spacing">
                 <b>
-                    <u>Week 6: February 15, 2018</u>
+                    <u>Week 11: April 5, 2019</u>
                 </b>
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
-                <li>Binary Trees</li>
-                <ul className="tutorial-default-spacing tutorial-list-style">
-                    <li>
-                        Difference between TNode(points to child only) and BTNode(points to child and child points back
-                        to parent)
-                    </li>
-                    <li>Traversals: Pre-order(VLR), In-order(LVR), Post-order(LVR)</li>
-                    <li>How to delete node from BST</li>
-                </ul>
+                <li>Take up Assignment 3 questions</li>
             </ul>
 
             <hr className="tutorial-default-spacing tutorial-hr-style" />
             <p className="tutorial-default-spacing">
                 <b>
-                    <u>Week 5: February 8, 2018</u>
+                    <u>Week 10: March 29, 2019</u>
                 </b>
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
-                <li>
-                    <CustomLinkLocal link="/ta/csca48w18/DLL_Node_List_w5.txt" label="DLL Node and List" />
-                </li>
-                <li>
-                    <CustomLinkLocal link="/ta/csca48w18/index_dll_w5.txt" label="DLL insert and remove methods" />
-                </li>
+                <li>Take up Assignment 3 questions</li>
             </ul>
 
             <hr className="tutorial-default-spacing tutorial-hr-style" />
             <p className="tutorial-default-spacing">
                 <b>
-                    <u>Week 4: February 1, 2018</u>
+                    <u>Week 9: March 22, 2019</u>
                 </b>
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
-                <li>
-                    <CustomLinkLocal link="/ta/csca48w18/dequeue_w4.txt" label="Dequeue ADT" />
-                </li>
+                <li>Take up Assignment 3 questions</li>
+                <li>Continue with last weeks tasks</li>
             </ul>
 
             <hr className="tutorial-default-spacing tutorial-hr-style" />
             <p className="tutorial-default-spacing">
                 <b>
-                    <u>Week 3: January 25, 2018</u>
+                    <u>Week 8: March 15, 2019</u>
                 </b>
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    How to make{' '}
                     <CustomLinkLocal
-                        link="/ta/csca48w18/representation_invariant_maker_w3.txt"
-                        label="representation invariant"
+                        link="/ta/cscc69w19/ext2_filesystem_structure_w8.pdf"
+                        label="Notes PDF"
+                        labelGtm="w8_notes_pdf"
                     />
                 </li>
-
                 <li>
-                    <CustomLinkLocal link="/ta/csca48w18/stack_w3.txt" label="Stack ADT" />
-                </li>
-                <li>
-                    <CustomLinkLocal link="/ta/csca48w18/decimal_to_binary_w3.txt" label="Decimal to Binary" />
+                    <CustomLinkLocal
+                        link="/ta/cscc69w19/ext2_filesystem_structure_w8.md"
+                        label="Notes Markdown"
+                        labelGtm="w8_notes_md"
+                    />
                 </li>
             </ul>
 
             <hr className="tutorial-default-spacing tutorial-hr-style" />
             <p className="tutorial-default-spacing">
                 <b>
-                    <u>Week 2: January 18, 2018</u>
+                    <u>Week 7: March 8, 2019</u>
+                </b>
+            </p>
+            <ul className="tutorial-default-spacing tutorial-list-style">
+                <li>Go over Assignment 1</li>
+            </ul>
+
+            <hr className="tutorial-default-spacing tutorial-hr-style" />
+            <p className="tutorial-default-spacing">
+                <b>
+                    <u>Week 6: March 1, 2019</u>
                 </b>
             </p>
             <ul className="tutorial-default-spacing tutorial-list-style">
                 <li>
-                    <CustomLinkLocal link="/ta/csca48w18/vector_w2.txt" label="Vector ADT" />
+                    <CustomLinkLocal link="/ta/cscc69w19/memory_w6.pdf" label="Notes PDF" labelGtm="w6_notes_pdf" />
+                </li>
+                <li>
+                    <CustomLinkLocal link="/ta/cscc69w19/memory_w6.md" label="Notes Markdown" labelGtm="w6_notes_md" />
+                </li>
+            </ul>
+
+            <hr className="tutorial-default-spacing tutorial-hr-style" />
+            <p className="tutorial-default-spacing">
+                <b>
+                    <u>Week 5: February 15, 2019</u>
+                </b>
+            </p>
+            <ul className="tutorial-default-spacing tutorial-list-style">
+                <li>
+                    <CustomLinkLocal
+                        link="/ta/cscc69w19/page_table_replacement_w5.pdf"
+                        label="Notes PDF"
+                        labelGtm="w5_notes_pdf"
+                    />
+                </li>
+                <li>
+                    <CustomLinkLocal
+                        link="/ta/cscc69w19/page_table_replacement_w5.md"
+                        label="Notes Markdown"
+                        labelGtm="w5_notes_md"
+                    />
+                </li>
+            </ul>
+
+            <hr className="tutorial-default-spacing tutorial-hr-style" />
+            <p className="tutorial-default-spacing">
+                <b>
+                    <u>Week 4: February 8, 2019</u>
+                </b>
+            </p>
+            <ul className="tutorial-default-spacing tutorial-list-style">
+                <li>
+                    <CustomLinkLocal link="/ta/cscc69w19/scheduling_w4.pdf" label="Notes PDF" labelGtm="w4_notes_pdf" />
+                </li>
+                <li>
+                    <CustomLinkLocal
+                        link="/ta/cscc69w19/scheduling_w4.md"
+                        label="Notes Markdown"
+                        labelGtm="w4_notes_md"
+                    />
+                </li>
+            </ul>
+
+            <hr className="tutorial-default-spacing tutorial-hr-style" />
+            <p className="tutorial-default-spacing">
+                <b>
+                    <u>Week 3: February 1, 2019</u>
+                </b>
+            </p>
+            <ul className="tutorial-default-spacing tutorial-list-style">
+                <li>
+                    <CustomLinkLocal
+                        link="/ta/cscc69w19/synchronization_primitives_w3.pdf"
+                        label="Notes PDF"
+                        labelGtm="w3_notes_pdf"
+                    />
+                </li>
+                <li>
+                    <CustomLinkLocal
+                        link="/ta/cscc69w19/synchronization_primitives_w3.md"
+                        label="Notes Markdown"
+                        labelGtm="w3_notes_md"
+                    />
+                </li>
+            </ul>
+
+            <hr className="tutorial-default-spacing tutorial-hr-style" />
+            <p className="tutorial-default-spacing">
+                <b>
+                    <u>Week 2: January 25, 2019</u>
+                </b>
+            </p>
+            <ul className="tutorial-default-spacing tutorial-list-style">
+                <li>
+                    <CustomLinkLocal
+                        link="/ta/cscc69w19/kernel_programming_w2.pdf"
+                        label="Notes PDF"
+                        labelGtm="w2_notes_pdf"
+                    />
+                </li>
+                <li>
+                    <CustomLinkLocal
+                        link="/ta/cscc69w19/kernel_programming_w2.md"
+                        label="Notes Markdown"
+                        labelGtm="w2_notes_md"
+                    />
+                </li>
+            </ul>
+
+            <hr className="tutorial-default-spacing tutorial-hr-style" />
+            <p className="tutorial-default-spacing">
+                <b>
+                    <u>Week 1: January 18, 2019</u>
+                </b>
+            </p>
+            <ul className="tutorial-default-spacing tutorial-list-style">
+                <li>
+                    <CustomLinkLocal link="/ta/cscc69w19/review_w1.pdf" label="Notes PDF" labelGtm="w1_notes_pdf" />
+                </li>
+                <li>
+                    <CustomLinkLocal link="/ta/cscc69w19/review_w1.md" label="Notes Markdown" labelGtm="w1_notes_md" />
                 </li>
             </ul>
         </div>
     </AppLayout>
 );
 
-export default Csca48w18;
+export default Cscc69w19;
