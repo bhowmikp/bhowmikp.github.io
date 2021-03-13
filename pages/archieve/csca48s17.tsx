@@ -54,7 +54,7 @@ const Csca48s17: FC = () => (
                 />
                 . I will be checking my email every night. But before you email me, consider attending a practical or
                 post the question on{' '}
-                <CustomLinkLocal link="https://piazza.com/mail.utoronto.ca/fall2016/csca08" label="Piazza" /> as you
+                <CustomLinkLocal link="https://piazza.com/mail.utoronto.ca/summer2017/csca48" label="Piazza" /> as you
                 will get a much faster response there.
             </p>
             <p className="tutorial-default-spacing">
