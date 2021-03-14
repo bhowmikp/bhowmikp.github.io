@@ -1,12 +1,10 @@
 import AppLayout from '@Components/AppLayout';
-import AdBanner from '@Components/AdBanner';
 import { GetStaticProps } from 'next';
 import homepageSerializer from '@Serializers/homepageSerializer';
 import BlockContent from '@sanity/block-content-to-react';
 import { getHomepageData } from '@Api/homepage';
 import { IHomepageData } from '@Interfaces/homepage';
 import React, { FC } from 'react';
-import { event } from '@Service/googleService';
 
 export const config = { amp: 'hybrid' };
 
@@ -25,15 +23,6 @@ const Homepage: FC<{ homepageData: IHomepageData[] }> = ({ homepageData }) => (
                     <BlockContent blocks={entry.body} serializers={homepageSerializer} />
                 </>
             ))}
-            <button
-                onClick={() => {
-                    event({ name: 'customEvent', category: 'categoryTest', label: 'labelTest', value: 'valueTest' });
-                }}
-                type="button"
-            >
-                Test GTM
-            </button>
-            <AdBanner />
         </AppLayout>
     </>
 );

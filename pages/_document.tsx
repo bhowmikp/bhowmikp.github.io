@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
                 <Head>
                     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js" />
                 </Head>
-                <body>
+                <body className="bg-primary">
                     <Main />
                     <NextScript />
 
@@ -57,12 +57,12 @@ export default class MyDocument extends Document {
                                 <script
                                     dangerouslySetInnerHTML={{
                                         __html: `
-                      window.dataLayer = window.dataLayer || [];
-                      function gtag(){dataLayer.push(arguments);}
-                      gtag('js', new Date());
+                                            window.dataLayer = window.dataLayer || [];
+                                            function gtag(){dataLayer.push(arguments);}
+                                            gtag('js', new Date());
 
-                      gtag('config', '${GA_TRACKING_ID}');
-                    `
+                                            gtag('config', '${GA_TRACKING_ID}');
+                                            `
                                     }}
                                 />
                             </>

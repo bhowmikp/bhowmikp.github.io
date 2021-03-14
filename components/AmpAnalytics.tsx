@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { FC, ReactElement } from 'react';
+import React, { FC } from 'react';
 
 export const AmpIncludeCustomElement: FC<{ name: string; version: string }> = ({ name, version }) => (
     <Head>
@@ -14,6 +14,7 @@ const AmpAnalytics: FC<{ type: string; script: { vars: any; triggers: any } }> =
             {script && (
                 <script
                     type="application/json"
+                    // eslint-disable-next-line react/no-danger
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify(script)
                     }}

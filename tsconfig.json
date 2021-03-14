@@ -37,6 +37,9 @@
       ],
       "@Service/*": [
         "service/*"
+      ],
+      "@tyles/*": [
+        "styles/*"
       ]
     }
   },

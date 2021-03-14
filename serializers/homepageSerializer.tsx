@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/destructuring-assignment */
-import { urlFor } from '@Service/sanityImageService';
+import urlFor from '@Service/sanityImageService';
 import React, { ReactElement } from 'react';
 import { IHomepageImage } from '@Interfaces/homepage';
 import { useAmp } from 'next/amp';
@@ -26,11 +27,12 @@ const homepageSerializer = {
                             <p>{props.node.caption}</p>
                         </div>
                     ) : (
-                        <figure>
-                            <img src={urlFor(props.node.image).width(600).url()} alt={props.node.alt} />
-                            <figcaption>{props.node.caption}</figcaption>
-                        </figure>
-                    )}
+                            <figure>
+                                <img src={urlFor(props.node.image).url()} alt={props.node.alt} className="w-2/4" />
+
+                                <figcaption>{props.node.caption}</figcaption>
+                            </figure>
+                        )}
                 </>
             );
         }
