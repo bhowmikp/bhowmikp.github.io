@@ -41,4 +41,8 @@
     .react-icons-color-primary {
         @apply fill-current text-black dark:text-white;
     }
+
+    .test > a {
+        @apply text-red-400 font-bold;
+    }
 }
