@@ -23,7 +23,7 @@
         @apply text-sm font-bold my-2 text-black dark:text-white;
     }
 
-    .blog-text > a {
+    .blog-link {
         @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600 dark:text-blue-300 dark:hover:text-pink-200 dark:visited:text-pink-300;
     }
 
