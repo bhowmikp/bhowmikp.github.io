@@ -28,10 +28,7 @@ const blogSerializer = {
             switch (props.node.style) {
                 case 'h1':
                     return (
-                        <h1
-                            className="text-3xl font-bold my-2 text-black dark:text-white"
-                            id={props.children[0].replace(/\s/g, '-')}
-                        >
+                        <h1 className="blog-h1" id={props.children[0].replace(/\s/g, '-')}>
                             {props.children}
                         </h1>
                     );
