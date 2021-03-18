@@ -42,4 +42,12 @@
     .blog-blockquote {
         @apply text-black dark:text-white border-l-2 pl-5 py-3 my-3 text-xl;
     }
+
+    .blog-image {
+        @apply my-5 text-center;
+    }
+
+    .blog-image-caption {
+        @apply text-black dark:text-white;
+    }
 }
