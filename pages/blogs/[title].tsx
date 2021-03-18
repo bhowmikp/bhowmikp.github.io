@@ -1,15 +1,34 @@
+/* eslint-disable no-underscore-dangle */
 import AppLayout from '@Components/AppLayout';
-import { GetServerSideProps } from 'next';
 import { getBlog } from '@Api/getBlog';
-import IBlogsCategory from '@Interfaces/blogsCategory';
+import { getBlogsByCategory } from '@Api/blogsCategory';
+import IBlogs from '@Interfaces/blogs';
 import React, { FC } from 'react';
 import BlockContent from '@sanity/block-content-to-react';
 import blogSerializer from '@Serializers/blogSerializer';
+import concat from 'lodash/concat';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
 export const config = { amp: 'hybrid' };
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-    const id = String(ctx.query.title).split('_')[1];
+export const getStaticPaths: GetStaticPaths = async () => {
+    const getBlogPathsOfCategory = async (category) =>
+        (await getBlogsByCategory(category)).map((entry) => ({
+            params: { title: `${entry.title.replace(/\s/g, '-')}_${entry._id}` }
+        }));
+
+    const firstTenProgrammingBlogPaths = (await getBlogPathsOfCategory('programming')).slice(0, 10);
+    const firstTenInvestingBlogPaths = (await getBlogPathsOfCategory('investing')).slice(0, 10);
+    const firstTenMiscellaneousBlogPaths = (await getBlogPathsOfCategory('miscellaneous')).slice(0, 10);
+
+    return {
+        paths: concat(firstTenProgrammingBlogPaths, firstTenInvestingBlogPaths, firstTenMiscellaneousBlogPaths),
+        fallback: false
+    };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+    const id = String(params.title).split('_')[1];
 
     return {
         props: {
@@ -18,7 +37,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     };
 };
 
-const Post: FC<{ blogData: IBlogsCategory[] }> = ({ blogData }) => {
+const Post: FC<{ blogData: IBlogs[] }> = ({ blogData }) => {
     const data = blogData[0];
 
     return (

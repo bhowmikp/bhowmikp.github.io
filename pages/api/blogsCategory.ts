@@ -1,7 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import client from '@Clients/sanityClient';
+import { IBlogsCategory } from '@Interfaces/blogs';
 
-export const getBlogsByCategory = async (category?: string): Promise<void> => {
+export const getBlogsByCategory = async (category?: string): Promise<IBlogsCategory[]> => {
     const postQuery = `
     *[_type=="blog" ${
         category === '' || category === undefined ? `` : `&& category == '${category}'`

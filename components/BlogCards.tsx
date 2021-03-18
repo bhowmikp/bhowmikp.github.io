@@ -1,11 +1,11 @@
 /* eslint-disable no-underscore-dangle */
-import IBlogsCategory from '@Interfaces/blogsCategory';
+import IBlogs from '@Interfaces/blogs';
 import React, { FC } from 'react';
 import { useRouter } from 'next/router';
 
 export const config = { amp: 'hybrid' };
 
-const BlogCard: FC<{ blogData: IBlogsCategory }> = ({ blogData }) => {
+const BlogCard: FC<{ blogData: IBlogs }> = ({ blogData }) => {
     const router = useRouter();
 
     return (
@@ -31,7 +31,7 @@ const BlogCard: FC<{ blogData: IBlogsCategory }> = ({ blogData }) => {
     );
 };
 
-const BlogCards: FC<{ blogsData: IBlogsCategory[] }> = ({ blogsData }) => (
+const BlogCards: FC<{ blogsData: IBlogs[] }> = ({ blogsData }) => (
     <>
         {blogsData.length === 0 ? (
             <>

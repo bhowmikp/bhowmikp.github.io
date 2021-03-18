@@ -1,7 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import client from '@Clients/sanityClient';
+import IBlogs from '@Interfaces/blogs';
 
-export const getBlog = async (id: string): Promise<void> => {
+export const getBlog = async (id: string): Promise<IBlogs> => {
     const postQuery = `*[_type=="blog" && _id == '${id}'] { ... } `;
     const params = { minSeats: 2 };
 
