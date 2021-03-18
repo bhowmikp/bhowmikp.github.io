@@ -34,7 +34,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return {
         props: {
             blogData: await getBlog(id)
-        }
+        },
+        revalidate: 86400
     };
 };
 
