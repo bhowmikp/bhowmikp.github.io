@@ -18,12 +18,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
             params: { title: `${entry.title.replace(/\s/g, '-')}_${entry._id}` }
         }));
 
-    // const firstTenProgrammingBlogPaths = (await getBlogPathsOfCategory('programming')).slice(0, 10);
+    // these are first 10 at build time
+    const firstTenProgrammingBlogPaths = (await getBlogPathsOfCategory('programming')).slice(0, 10);
     const firstTenInvestingBlogPaths = (await getBlogPathsOfCategory('investing')).slice(0, 10);
     const firstTenMiscellaneousBlogPaths = (await getBlogPathsOfCategory('miscellaneous')).slice(0, 10);
 
     return {
-        paths: concat(firstTenInvestingBlogPaths, firstTenMiscellaneousBlogPaths),
+        paths: concat(firstTenProgrammingBlogPaths, firstTenInvestingBlogPaths, firstTenMiscellaneousBlogPaths),
         fallback: true
     };
 };
