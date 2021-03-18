@@ -1,6 +1,17 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/display-name */
-import React from 'react';
+import React, { ReactElement } from 'react';
 import BlockContent from '@sanity/block-content-to-react';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import { coyWithoutShadows } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import urlFor from '@Service/sanityImageService';
+import { IHomepageImage } from '@Interfaces/homepage';
+import { useAmp } from 'next/amp';
+import Image from 'next/image';
+
+import { useTheme } from 'next-themes';
 
 const blogSerializer = {
     list: (props) => {
@@ -60,8 +71,51 @@ const blogSerializer = {
                     return BlockContent.defaultSerializers.types.block(props);
             }
         },
-        code: (props) => <p>Hello world</p>,
-        figure: (props) => <p>Image</p>
+        code: (props) => {
+            // eslint-disable-next-line react-hooks/rules-of-hooks
+            const { resolvedTheme } = useTheme();
+            return (
+                <SyntaxHighlighter
+                    language={props.node.language}
+                    showLineNumbers
+                    wrapLongLines
+                    style={resolvedTheme === 'dark' ? a11yDark : coyWithoutShadows}
+                >
+                    {props.node.code}
+                </SyntaxHighlighter>
+            );
+        },
+        figure: (props: { node: IHomepageImage }): ReactElement => {
+            // eslint-disable-next-line react-hooks/rules-of-hooks
+            const isAmp = useAmp();
+
+            return (
+                <>
+                    {isAmp ? (
+                        <div>
+                            <amp-img
+                                width={props.node.width}
+                                height={props.node.height}
+                                src={urlFor(props.node.image).url()}
+                                alt={props.node.alt}
+                            />
+                            <p>{props.node.caption}</p>
+                        </div>
+                    ) : (
+                        <figure className="flex justify-center">
+                            <Image
+                                src={urlFor(props.node.image).url()}
+                                alt={props.node.alt}
+                                width={props.node.width}
+                                height={props.node.height}
+                            />
+
+                            <figcaption>{props.node.caption}</figcaption>
+                        </figure>
+                    )}
+                </>
+            );
+        }
     }
 };
 export default blogSerializer;
