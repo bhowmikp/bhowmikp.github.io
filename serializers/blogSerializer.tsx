@@ -10,6 +10,7 @@ import urlFor from '@Service/sanityImageService';
 import { IHomepageImage } from '@Interfaces/homepage';
 import { useAmp } from 'next/amp';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { useTheme } from 'next-themes';
 
@@ -23,6 +24,13 @@ const blogSerializer = {
         return <ol className="blog-ol">{props.children}</ol>;
     },
     listItem: (props) => <li>{props.children}</li>,
+    marks: {
+        link: (props) => (
+            <Link href={props.mark.href}>
+                <a className="blog-link">{props.children[0]}</a>
+            </Link>
+        )
+    },
     types: {
         block: (props) => {
             switch (props.node.style) {
@@ -102,17 +110,17 @@ const blogSerializer = {
                             <p>{props.node.caption}</p>
                         </div>
                     ) : (
-                        <figure className="blog-image">
-                            <Image
-                                src={urlFor(props.node.image).url()}
-                                alt={props.node.alt}
-                                width={props.node.width}
-                                height={props.node.height}
-                            />
+                            <figure className="blog-image">
+                                <Image
+                                    src={urlFor(props.node.image).url()}
+                                    alt={props.node.alt}
+                                    width={props.node.width}
+                                    height={props.node.height}
+                                />
 
-                            <figcaption className="blog-image-caption">{props.node.caption}</figcaption>
-                        </figure>
-                    )}
+                                <figcaption className="blog-image-caption">{props.node.caption}</figcaption>
+                            </figure>
+                        )}
                 </>
             );
         }
