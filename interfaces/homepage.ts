@@ -3,6 +3,8 @@ export interface IHomepageImage {
     alt: string;
     caption?: string;
     image: any;
+    height: number;
+    width: number;
 }
 
 export interface IHomepageData {

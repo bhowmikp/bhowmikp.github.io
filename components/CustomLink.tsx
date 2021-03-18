@@ -20,13 +20,23 @@ const CustomLink: FC<ICustomLink> = ({ link, label, labelGtm, newTab = false, na
             <a
                 target={newTab && isAmp === false ? '_blank' : '_self'}
                 rel={newTab ? 'noopener noreferrer' : ''}
-                onMouseDown={() => {
+                onClick={() => {
                     event({
                         name,
                         category: 'link',
                         label: isEmpty(labelGtm) ? label : labelGtm,
                         value: link
                     });
+                }}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                        event({
+                            name,
+                            category: 'link',
+                            label: isEmpty(labelGtm) ? label : labelGtm,
+                            value: link
+                        });
+                    }
                 }}
                 role="link"
                 tabIndex={0}

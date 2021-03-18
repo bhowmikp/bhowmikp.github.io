@@ -22,7 +22,7 @@ const CustomLinkLocal: FC<{
 );
 
 const archive: FC = () => (
-    <AppLayout title="archive">
+    <AppLayout title="Archive">
         <div className="mx-5 mb-10">
             <p className="archive-options mt-3">CSCD01 2020 Winter (Engineering Large Software Systems)</p>
 
