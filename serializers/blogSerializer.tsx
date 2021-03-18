@@ -110,17 +110,17 @@ const blogSerializer = {
                             <p>{props.node.caption}</p>
                         </div>
                     ) : (
-                            <figure className="blog-image">
-                                <Image
-                                    src={urlFor(props.node.image).url()}
-                                    alt={props.node.alt}
-                                    width={props.node.width}
-                                    height={props.node.height}
-                                />
+                        <figure className="blog-image">
+                            <Image
+                                src={urlFor(props.node.image).url()}
+                                alt={props.node.alt}
+                                width={props.node.width}
+                                height={props.node.height}
+                            />
 
-                                <figcaption className="blog-image-caption">{props.node.caption}</figcaption>
-                            </figure>
-                        )}
+                            <figcaption className="blog-image-caption">{props.node.caption}</figcaption>
+                        </figure>
+                    )}
                 </>
             );
         }
