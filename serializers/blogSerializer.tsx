@@ -28,7 +28,10 @@ const blogSerializer = {
             switch (props.node.style) {
                 case 'h1':
                     return (
-                        <h1 className="blog-h1" id={props.children[0].replace(/\s/g, '-')}>
+                        <h1
+                            className="text-3xl font-bold my-2 text-black dark:text-white"
+                            id={props.children[0].replace(/\s/g, '-')}
+                        >
                             {props.children}
                         </h1>
                     );
@@ -102,17 +105,17 @@ const blogSerializer = {
                             <p>{props.node.caption}</p>
                         </div>
                     ) : (
-                        <figure className="flex justify-center">
-                            <Image
-                                src={urlFor(props.node.image).url()}
-                                alt={props.node.alt}
-                                width={props.node.width}
-                                height={props.node.height}
-                            />
+                            <figure className="flex justify-center">
+                                <Image
+                                    src={urlFor(props.node.image).url()}
+                                    alt={props.node.alt}
+                                    width={props.node.width}
+                                    height={props.node.height}
+                                />
 
-                            <figcaption>{props.node.caption}</figcaption>
-                        </figure>
-                    )}
+                                <figcaption>{props.node.caption}</figcaption>
+                            </figure>
+                        )}
                 </>
             );
         }
