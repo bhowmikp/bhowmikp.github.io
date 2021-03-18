@@ -25,11 +25,8 @@ const Post: FC<{ blogData: IBlogsCategory[] }> = ({ blogData }) => {
         <AppLayout title={data.title}>
             <div className="mx-5 mb-10">
                 <p>Title: {data.title}</p>
-                {data.body.map((entry) => (
-                    <>
-                        <BlockContent blocks={entry} serializers={blogSerializer} />
-                    </>
-                ))}
+
+                <BlockContent blocks={data.body} serializers={blogSerializer} />
             </div>
         </AppLayout>
     );
