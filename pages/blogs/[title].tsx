@@ -7,6 +7,7 @@ import React, { FC } from 'react';
 import BlockContent from '@sanity/block-content-to-react';
 import blogSerializer from '@Serializers/blogSerializer';
 import concat from 'lodash/concat';
+import isEmpty from 'lodash/isEmpty';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 
@@ -31,10 +32,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const id = String(params.title).split('_')[1];
+    const blogData = await getBlog(id);
+
+    if (isEmpty(blogData)) {
+        return {
+            notFound: true
+        };
+    }
 
     return {
         props: {
-            blogData: await getBlog(id)
+            blogData
         },
         revalidate: 86400
     };
@@ -47,7 +55,31 @@ const Post: FC<{ blogData: IBlogs[] }> = ({ blogData }) => {
         return (
             <AppLayout title="Loading...">
                 <div className="mx-5 mb-10">
-                    <p>Loading...</p>
+                    <div className="h-screen flex justify-center items-center">
+                        <div className="relative flex justify-center items-center h-3">
+                            <svg
+                                className="animate-spin -ml-1 mr-3 h-10 w-10 text-black dark:text-white"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                            >
+                                <circle
+                                    className="opacity-25"
+                                    cx="12"
+                                    cy="12"
+                                    r="10"
+                                    stroke="currentColor"
+                                    strokeWidth="4"
+                                />
+                                <path
+                                    className="opacity-75"
+                                    fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                />
+                            </svg>
+                            <p className="text-2xl">Loading...</p>
+                        </div>
+                    </div>
                 </div>
             </AppLayout>
         );
