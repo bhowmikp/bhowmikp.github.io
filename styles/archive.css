@@ -33,23 +33,23 @@
         @apply text-black dark:text-white;
     }
 
-    .recognition-table .MuiDataGrid-root {
+    .MuiDataGrid-root {
         border: 0px solid rgba(224, 224, 224, 1) !important;
     }
 
-    .recognition-table .MuiIconButton-label {
+    .MuiIconButton-label {
         @apply text-black dark:text-white !important;
     }
 
-    .recognition-table .MuiDataGrid-columnsContainer {
+    .MuiDataGrid-columnsContainer {
         border: 0px solid rgba(224, 224, 224, 1) !important;
     }
 
-    .recognition-table .MuiDataGrid-cell {
+    .MuiDataGrid-cell {
         border: 0px solid rgba(224, 224, 224, 1) !important;
     }
 
-    .recognition-table .MuiDataGrid-columnSeparator {
+    .MuiDataGrid-columnSeparator {
         display: none !important;
     }
 }
