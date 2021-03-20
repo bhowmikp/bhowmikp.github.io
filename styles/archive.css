@@ -19,4 +19,37 @@
         @apply bg-gray-300 dark:bg-gray-900;
         height: 2px;
     }
+
+    .recognition-table {
+        @apply max-w-6xl;
+    }
+
+    .recognition-table-header {
+        @apply text-lg text-black dark:text-white my-2;
+        font-weight: 900 !important;
+    }
+
+    .recognition-table-cell {
+        @apply text-black dark:text-white;
+    }
+
+    .recognition-table .MuiDataGrid-root {
+        border: 0px solid rgba(224, 224, 224, 1) !important;
+    }
+
+    .recognition-table .MuiIconButton-label {
+        @apply text-black dark:text-white !important;
+    }
+
+    .recognition-table .MuiDataGrid-columnsContainer {
+        border: 0px solid rgba(224, 224, 224, 1) !important;
+    }
+
+    .recognition-table .MuiDataGrid-cell {
+        border: 0px solid rgba(224, 224, 224, 1) !important;
+    }
+
+    .recognition-table .MuiDataGrid-columnSeparator {
+        display: none !important;
+    }
 }

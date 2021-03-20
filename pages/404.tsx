@@ -18,11 +18,11 @@ const Homepage: FC = () => {
                     </p>
                     {isAmp ? (
                         <a href="https://www.vecteezy.com/free-vector/cute" rel="noopener noreferrer">
-                            <amp-img width="600" height="600" src="/hang-in-there.png" alt="404 Image" />
+                            <amp-img width="600" height="600" src="/hang-in-there.svg" alt="404 Image" />
                         </a>
                     ) : (
                         <Image
-                            src="/hang-in-there.png"
+                            src="/hang-in-there.svg"
                             alt="404 Image"
                             width={500}
                             height={500}
