@@ -19,7 +19,7 @@ const rows = [
 ];
 
 const archive: FC = () => (
-    <AppLayout title="Archive">
+    <AppLayout title="Recognition">
         <div className="mx-5 mb-10">
             <p className="text-2xl font-extrabold">Recognition</p>
 
