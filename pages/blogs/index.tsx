@@ -4,6 +4,8 @@ import { GetStaticProps } from 'next';
 import { getBlogsByCategory } from '@Api/blogsCategory';
 import IBlogs from '@Interfaces/blogs';
 import React, { FC, useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { event as gtmEvent } from '@Service/googleService';
 
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
@@ -47,12 +49,13 @@ const Blogs: FC<{ investingBlogsData: IBlogs[]; programmingBlogsData: IBlogs[]; 
     programmingBlogsData,
     miscellaneousBlogsData
 }) => {
-    const [value, setValue] = useState(0);
+    const [tab, setTab] = useState(0);
     const [screenSize, setScreenSize] = useState(1000);
+    const router = useRouter();
 
     // eslint-disable-next-line @typescript-eslint/ban-types
     const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
-        setValue(newValue);
+        setTab(newValue);
     };
 
     useEffect(() => {
@@ -60,31 +63,68 @@ const Blogs: FC<{ investingBlogsData: IBlogs[]; programmingBlogsData: IBlogs[]; 
         setScreenSize(screen.width);
     }, []);
 
+    useEffect(() => {
+        switch (router.query.category) {
+            case 'programming':
+                setTab(0);
+                break;
+            case 'investing':
+                setTab(1);
+                break;
+            case 'miscellaneous':
+                setTab(2);
+                break;
+            default:
+                break;
+        }
+    }, [router.query]);
+
     return (
         <>
             <AppLayout title="Blogs">
                 <div className="mx-5 mb-10">
                     <AppBar position="static" className="mt-3">
                         <Tabs
-                            value={value}
+                            value={tab}
                             onChange={handleChange}
                             aria-label="simple tabs example"
                             variant={screenSize > 640 ? 'fullWidth' : 'scrollable'}
                             scrollButtons="on"
                             className=" bg-purple-600 dark:bg-blue-900 text-white"
                         >
-                            <Tab label="Programming" {...a11yProps(0)} />
-                            <Tab label="Investing" {...a11yProps(1)} />
-                            <Tab label="Miscellaneous" {...a11yProps(2)} />
+                            <Tab
+                                label="Programming"
+                                {...a11yProps(0)}
+                                onClick={() => {
+                                    router.push('/blogs', '/blogs?category=programming', { shallow: true });
+                                    gtmEvent({ name: 'blogItem', category: 'tab', label: 'programming' });
+                                }}
+                            />
+                            <Tab
+                                label="Investing"
+                                {...a11yProps(1)}
+                                onClick={() => {
+                                    router.push('/blogs', '/blogs?category=investing', { shallow: true });
+                                    gtmEvent({ name: 'blogItem', category: 'tab', label: 'investing' });
+                                }}
+                            />
+                            <Tab
+                                label="Miscellaneous"
+                                {...a11yProps(2)}
+                                onClick={() => {
+                                    router.push('/blogs', '/blogs?category=miscellaneous', { shallow: true });
+                                    gtmEvent({ name: 'blogItem', category: 'tab', label: 'miscellaneous' });
+                                }}
+                            />
                         </Tabs>
                     </AppBar>
-                    <TabPanel value={value} index={0}>
+                    <TabPanel value={tab} index={0}>
                         <BlogCards blogsData={programmingBlogsData} />
                     </TabPanel>
-                    <TabPanel value={value} index={1}>
+                    <TabPanel value={tab} index={1}>
                         <BlogCards blogsData={investingBlogsData} />
                     </TabPanel>
-                    <TabPanel value={value} index={2}>
+                    <TabPanel value={tab} index={2}>
                         <BlogCards blogsData={miscellaneousBlogsData} />
                     </TabPanel>
                 </div>
