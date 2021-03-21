@@ -25,31 +25,11 @@
     }
 
     .recognition-table-header {
-        @apply text-lg text-black dark:text-white my-2;
+        @apply text-lg text-black dark:text-white;
         font-weight: 900 !important;
     }
 
     .recognition-table-cell {
         @apply text-black dark:text-white;
-    }
-
-    .MuiDataGrid-root {
-        border: 0px solid rgba(224, 224, 224, 1) !important;
-    }
-
-    .MuiIconButton-label {
-        @apply text-black dark:text-white !important;
-    }
-
-    .MuiDataGrid-columnsContainer {
-        border: 0px solid rgba(224, 224, 224, 1) !important;
-    }
-
-    .MuiDataGrid-cell {
-        border: 0px solid rgba(224, 224, 224, 1) !important;
-    }
-
-    .MuiDataGrid-columnSeparator {
-        display: none !important;
     }
 }

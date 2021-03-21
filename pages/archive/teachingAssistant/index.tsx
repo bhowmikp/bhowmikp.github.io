@@ -24,7 +24,7 @@ const CustomLinkLocal: FC<{
 const teachingAssistant: FC = () => (
     <AppLayout title="Teaching Assistant">
         <div className="mx-5 mb-10">
-            <p className="text-2xl font-extrabold">Teaching Assistants</p>
+            <p className="text-2xl font-extrabold">Teaching Assistant Experience</p>
 
             <p className="archive-options">CSCD01 2020 Winter (Engineering Large Software Systems)</p>
 

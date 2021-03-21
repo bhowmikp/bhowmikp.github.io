@@ -50,7 +50,7 @@ const AppLayout: FC<{ children: React.ReactNode; title: string }> = ({ children,
                     </a>
                 </Link>
 
-                <Link href="/blogs/programming">
+                <Link href="/blogs">
                     <a
                         className="text-black dark:text-white"
                         onClick={() => {
