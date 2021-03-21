@@ -19,4 +19,17 @@
         @apply bg-gray-300 dark:bg-gray-900;
         height: 2px;
     }
+
+    .recognition-table {
+        @apply max-w-6xl;
+    }
+
+    .recognition-table-header {
+        @apply text-lg text-black dark:text-white;
+        font-weight: 900 !important;
+    }
+
+    .recognition-table-cell {
+        @apply text-black dark:text-white;
+    }
 }
