@@ -22,7 +22,7 @@ const CustomLinkLocal: FC<{
 );
 
 const teachingAssistant: FC = () => (
-    <AppLayout title="Teaching Assistant">
+    <AppLayout title="Teaching Assistant Experience">
         <div className="mx-5 mb-10">
             <p className="text-2xl font-extrabold">Teaching Assistant Experience</p>
 

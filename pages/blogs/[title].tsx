@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import AppLayout from '@Components/AppLayout';
-import { getBlog } from '@Api/getBlog';
+import { getBlog } from '@Api/blog';
 import { getBlogsByCategory } from '@Api/blogsCategory';
 import IBlogs from '@Interfaces/blogs';
 import React, { FC } from 'react';
@@ -19,7 +19,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
             params: { title: `${entry.title.replace(/\s/g, '-')}_${entry._id}` }
         }));
 
-    // these are first 10 at build time
+    // first 10 blogs by category at build time
     const firstTenProgrammingBlogPaths = (await getBlogPathsOfCategory('programming')).slice(0, 10);
     const firstTenInvestingBlogPaths = (await getBlogPathsOfCategory('investing')).slice(0, 10);
     const firstTenMiscellaneousBlogPaths = (await getBlogPathsOfCategory('miscellaneous')).slice(0, 10);
@@ -48,41 +48,36 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     };
 };
 
+const PostLoading = () => (
+    <AppLayout title="Loading...">
+        <div className="mx-5 mb-10">
+            <div className="h-screen flex justify-center items-center">
+                <div className="relative flex justify-center items-center h-3">
+                    <svg
+                        className="animate-spin -ml-1 mr-3 h-10 w-10 text-black dark:text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                    >
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        />
+                    </svg>
+                    <p className="text-2xl">Loading...</p>
+                </div>
+            </div>
+        </div>
+    </AppLayout>
+);
+
 const Post: FC<{ blogData: IBlogs[] }> = ({ blogData }) => {
     const router = useRouter();
 
     if (router.isFallback) {
-        return (
-            <AppLayout title="Loading...">
-                <div className="mx-5 mb-10">
-                    <div className="h-screen flex justify-center items-center">
-                        <div className="relative flex justify-center items-center h-3">
-                            <svg
-                                className="animate-spin -ml-1 mr-3 h-10 w-10 text-black dark:text-white"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                            >
-                                <circle
-                                    className="opacity-25"
-                                    cx="12"
-                                    cy="12"
-                                    r="10"
-                                    stroke="currentColor"
-                                    strokeWidth="4"
-                                />
-                                <path
-                                    className="opacity-75"
-                                    fill="currentColor"
-                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                />
-                            </svg>
-                            <p className="text-2xl">Loading...</p>
-                        </div>
-                    </div>
-                </div>
-            </AppLayout>
-        );
+        return <PostLoading />;
     }
 
     const data = blogData[0];
