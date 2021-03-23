@@ -1,4 +1,7 @@
 @layer components {
+    .blog-card-area-min-height {
+        min-height: 300px;
+    }
     .blog-h1 {
         @apply text-3xl font-bold my-2 text-black dark:text-white;
     }

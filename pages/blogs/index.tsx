@@ -2,10 +2,12 @@ import AppLayout from '@Components/AppLayout';
 import BlogCards from '@Components/BlogCards';
 import { GetStaticProps } from 'next';
 import { getBlogsByCategory } from '@Api/blogsCategory';
+import { getNumberOfBlogs } from '@Api/numberOfBlogs';
 import IBlogs from '@Interfaces/blogs';
 import React, { FC, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { event as gtmEvent } from '@Service/googleService';
+import BlogsTab from '@Components/BlogsTab';
 
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
@@ -15,9 +17,12 @@ export const config = { amp: 'hybrid' };
 
 export const getStaticProps: GetStaticProps = async () => ({
     props: {
-        investingBlogsData: await getBlogsByCategory('investing'),
-        programmingBlogsData: await getBlogsByCategory('programming'),
-        miscellaneousBlogsData: await getBlogsByCategory('miscellaneous')
+        investingBlogsDataSSR: await getBlogsByCategory('investing'),
+        investingBlogsCount: await getNumberOfBlogs('investing'),
+        programmingBlogsDataSSR: await getBlogsByCategory('programming'),
+        programmingBlogsCount: await getNumberOfBlogs('programming'),
+        miscellaneousBlogsDataSSR: await getBlogsByCategory('miscellaneous'),
+        miscellaneousBlogsCount: await getNumberOfBlogs('miscellaneous')
     },
     revalidate: 3600
 });
@@ -44,17 +49,28 @@ const TabPanel = (props: { children: React.ReactNode; index: any; value: any }) 
     );
 };
 
-const Blogs: FC<{ investingBlogsData: IBlogs[]; programmingBlogsData: IBlogs[]; miscellaneousBlogsData: IBlogs[] }> = ({
-    investingBlogsData,
-    programmingBlogsData,
-    miscellaneousBlogsData
+const Blogs: FC<{
+    investingBlogsDataSSR: IBlogs[];
+    investingBlogsCount: number;
+    programmingBlogsDataSSR: IBlogs[];
+    programmingBlogsCount: number;
+    miscellaneousBlogsDataSSR: IBlogs[];
+    miscellaneousBlogsCount: number;
+}> = ({
+    investingBlogsDataSSR,
+    investingBlogsCount,
+    programmingBlogsDataSSR,
+    programmingBlogsCount,
+    miscellaneousBlogsDataSSR,
+    miscellaneousBlogsCount
 }) => {
-    const [tab, setTab] = useState(0);
-    const [screenSize, setScreenSize] = useState(1000);
     const router = useRouter();
 
+    const [tab, setTab] = useState(0);
+    const [screenSize, setScreenSize] = useState(1000);
+
     // eslint-disable-next-line @typescript-eslint/ban-types
-    const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
+    const handleTabChange = (event: React.ChangeEvent<{}>, newValue: number) => {
         setTab(newValue);
     };
 
@@ -86,11 +102,11 @@ const Blogs: FC<{ investingBlogsData: IBlogs[]; programmingBlogsData: IBlogs[]; 
                     <AppBar position="static" className="mt-3">
                         <Tabs
                             value={tab}
-                            onChange={handleChange}
+                            onChange={handleTabChange}
                             aria-label="simple tabs example"
                             variant={screenSize > 640 ? 'fullWidth' : 'scrollable'}
                             scrollButtons="on"
-                            className=" bg-purple-600 dark:bg-blue-900 text-white"
+                            className="bg-purple-600 dark:bg-blue-900 text-white"
                         >
                             <Tab
                                 label="Programming"
@@ -119,13 +135,25 @@ const Blogs: FC<{ investingBlogsData: IBlogs[]; programmingBlogsData: IBlogs[]; 
                         </Tabs>
                     </AppBar>
                     <TabPanel value={tab} index={0}>
-                        <BlogCards blogsData={programmingBlogsData} />
+                        <BlogsTab
+                            blogsDataSSR={programmingBlogsDataSSR}
+                            blogsCount={programmingBlogsCount}
+                            categoryOfBlog="programming"
+                        />
                     </TabPanel>
                     <TabPanel value={tab} index={1}>
-                        <BlogCards blogsData={investingBlogsData} />
+                        <BlogsTab
+                            blogsDataSSR={investingBlogsDataSSR}
+                            blogsCount={investingBlogsCount}
+                            categoryOfBlog="investing"
+                        />
                     </TabPanel>
                     <TabPanel value={tab} index={2}>
-                        <BlogCards blogsData={miscellaneousBlogsData} />
+                        <BlogsTab
+                            blogsDataSSR={miscellaneousBlogsDataSSR}
+                            blogsCount={miscellaneousBlogsCount}
+                            categoryOfBlog="miscellaneous"
+                        />
                     </TabPanel>
                 </div>
             </AppLayout>
