@@ -7,7 +7,8 @@ import Boom from '@hapi/boom';
 
 const schema = Joi.object({
     category: Joi.string().valid('programming', 'investing', 'miscellaneous').optional(),
-    page: Joi.number().min(0).optional()
+    page: Joi.number().min(0).optional(),
+    blogCount: Joi.number().valid(10, 25, 50, 100).optional()
 });
 
 const validate = async (req: NextApiRequest): Promise<any> => {
@@ -20,8 +21,9 @@ const validate = async (req: NextApiRequest): Promise<any> => {
     return '';
 };
 
-export const getBlogsByCategory = async (category: string, page = 0): Promise<IBlogsCategory[]> => {
-    const range = `[${0 + 20 * page}..${19 + 20 * page}]`;
+export const getBlogsByCategory = async (category: string, page = 0, blogCount = 10): Promise<IBlogsCategory[]> => {
+    const range = `[${blogCount * page}..${blogCount * page + blogCount - 1}]`;
+
     const postQuery = `
     *[_type=="blog" ${
         category === 'undefined' ? `` : `&& category == '${category}'`
@@ -39,5 +41,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
     }
 
     const page = req.query.page === undefined ? 1 : parseInt(String(req.query.page), 10);
-    res.send(await getBlogsByCategory(String(req.query.category), page));
+    const blogCount = req.query.blogCount === undefined ? 10 : parseInt(String(req.query.blogCount), 10);
+
+    res.send(await getBlogsByCategory(String(req.query.category), page, blogCount));
 };
