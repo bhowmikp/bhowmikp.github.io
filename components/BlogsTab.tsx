@@ -5,7 +5,6 @@ import TablePagination from '@material-ui/core/TablePagination';
 import IBlogs from '@Interfaces/blogs';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import { useTheme } from 'next-themes';
-import { red } from '@material-ui/core/colors';
 
 const BlogsTab: FC<{
     blogsCount: number;
@@ -30,7 +29,7 @@ const BlogsTab: FC<{
             }
             return fetchBlogs(categoryOfBlog, page, rowsPerPage);
         },
-        { keepPreviousData: true }
+        { keepPreviousData: true, refetchOnWindowFocus: false }
     );
 
     const handleChangePage = (event: React.MouseEvent<HTMLButtonElement> | null, newPage: number) => {
