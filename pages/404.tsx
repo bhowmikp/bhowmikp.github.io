@@ -24,16 +24,16 @@ const Homepage: FC = () => {
                             <amp-img width="600" height="600" src="/hangInThereLight.svg" alt="404 Image" />
                         </a>
                     ) : (
-                            <Image
-                                src={resolvedTheme === 'light' ? '/hangInThereLight.svg' : '/hangInThereDark.svg'}
-                                alt="404 Image"
-                                width={500}
-                                height={500}
-                                onClick={() => {
-                                    window.open('https://www.vecteezy.com/free-vector/cute', '_ blank');
-                                }}
-                            />
-                        )}
+                        <Image
+                            src={resolvedTheme === 'light' ? '/hangInThereLight.svg' : '/hangInThereDark.svg'}
+                            alt="404 Image"
+                            width={500}
+                            height={500}
+                            onClick={() => {
+                                window.open('https://www.vecteezy.com/free-vector/cute', '_ blank');
+                            }}
+                        />
+                    )}
                     <p className="text-center mt-10 text-xl font-bold my-2 text-black dark:text-white">
                         Try the{' '}
                         <Link href="/">
