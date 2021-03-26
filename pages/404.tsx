@@ -3,11 +3,14 @@ import React, { FC } from 'react';
 import { useAmp } from 'next/amp';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
 
 export const config = { amp: 'hybrid' };
 
 const Homepage: FC = () => {
     const isAmp = useAmp();
+
+    const { resolvedTheme } = useTheme();
 
     return (
         <AppLayout title="404">
@@ -18,11 +21,11 @@ const Homepage: FC = () => {
                     </p>
                     {isAmp ? (
                         <a href="https://www.vecteezy.com/free-vector/cute" rel="noopener noreferrer">
-                            <amp-img width="600" height="600" src="/hang-in-there.svg" alt="404 Image" />
+                            <amp-img width="600" height="600" src="/hangInThereLight.svg" alt="404 Image" />
                         </a>
                     ) : (
                         <Image
-                            src="/hang-in-there.svg"
+                            src={resolvedTheme === 'light' ? '/hangInThereLight.svg' : '/hangInThereDark.svg'}
                             alt="404 Image"
                             width={500}
                             height={500}

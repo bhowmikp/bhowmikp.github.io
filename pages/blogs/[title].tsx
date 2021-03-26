@@ -84,8 +84,8 @@ const Post: FC<{ blogData: IBlogs[] }> = ({ blogData }) => {
 
     return (
         <AppLayout title={data.title}>
-            <div className="mx-5 mb-10">
-                <p>Title: {data.title}</p>
+            <div className="mb-10 w-5/6 mx-auto">
+                <p className="text-3xl font-bold my-2 text-black dark:text-white">Title: {data.title}</p>
 
                 <BlockContent blocks={data.body} serializers={blogSerializer} />
             </div>

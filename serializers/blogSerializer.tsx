@@ -11,6 +11,8 @@ import { IHomepageImage } from '@Interfaces/homepage';
 import { useAmp } from 'next/amp';
 import Image from 'next/image';
 import Link from 'next/link';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 import { useTheme } from 'next-themes';
 
@@ -96,6 +98,7 @@ const blogSerializer = {
         figure: (props: { node: IHomepageImage }): ReactElement => {
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const isAmp = useAmp();
+            const { resolvedTheme } = useTheme();
 
             return (
                 <>
@@ -111,12 +114,14 @@ const blogSerializer = {
                         </div>
                     ) : (
                         <figure className="blog-image">
-                            <Image
-                                src={urlFor(props.node.image).url()}
-                                alt={props.node.alt}
-                                width={props.node.width}
-                                height={props.node.height}
-                            />
+                            <Zoom overlayBgColorEnd={resolvedTheme === 'dark' ? '#2d3748D9' : '#ffffffD9'}>
+                                <Image
+                                    src={urlFor(props.node.image).url()}
+                                    alt={props.node.alt}
+                                    width={props.node.width}
+                                    height={props.node.height}
+                                />
+                            </Zoom>
 
                             <figcaption className="blog-image-caption">{props.node.caption}</figcaption>
                         </figure>
