@@ -114,7 +114,12 @@ const blogSerializer = {
                         </div>
                     ) : (
                         <figure className="blog-image">
-                            <Zoom overlayBgColorEnd={resolvedTheme === 'dark' ? '#2d3748D9' : '#ffffffD9'}>
+                            <Zoom
+                                overlayBgColorStart={resolvedTheme === 'dark' ? '#2d3748D9' : '#ffffffD9'}
+                                overlayBgColorEnd={resolvedTheme === 'dark' ? '#2d3748D9' : '#ffffffD9'}
+                                closeText={`Unzoomed ${props.node.alt}`}
+                                openText={`Zoomed ${props.node.alt}`}
+                            >
                                 <Image
                                     src={urlFor(props.node.image).url()}
                                     alt={props.node.alt}
