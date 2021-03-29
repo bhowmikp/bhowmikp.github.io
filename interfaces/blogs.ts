@@ -1,3 +1,9 @@
+interface ITableOfContents {
+    sectionId: string;
+    sectionLevel: number;
+    sectionName: string;
+}
+
 interface IBlogs {
     _updatedAt: string;
     _id: string;
@@ -10,6 +16,7 @@ interface IBlogs {
     body: [];
     references: string[];
     relatedArticles: string[];
+    tableOfContents: ITableOfContents[];
 }
 
 export interface IBlogsCategory {

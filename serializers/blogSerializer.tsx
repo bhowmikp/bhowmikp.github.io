@@ -136,4 +136,5 @@ const blogSerializer = {
         }
     }
 };
+
 export default blogSerializer;
