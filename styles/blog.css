@@ -8,15 +8,15 @@
     }
 
     .blog-table-of-contents-border {
-        @apply text-black dark:text-white border-l-4 pl-3;
+        @apply text-black dark:text-white border-l-4 border-blue-500 dark:border-white pl-3;
     }
 
     .blog-table-of-contents-padding-2 {
-        @apply ml-4;
+        @apply pl-4;
     }
 
     .blog-table-of-contents-padding-3 {
-        @apply ml-8;
+        @apply pl-8;
     }
 
     .blog-h1 {
