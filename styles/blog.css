@@ -2,6 +2,23 @@
     .blog-card-area-min-height {
         min-height: 300px;
     }
+
+    .blog-table-of-contents-link {
+        @apply text-blue-600 hover:text-blue-800 dark:text-blue-300 dark:hover:text-pink-200;
+    }
+
+    .blog-table-of-contents-border {
+        @apply text-black dark:text-white border-l-4 border-blue-500 dark:border-white pl-3;
+    }
+
+    .blog-table-of-contents-padding-2 {
+        @apply pl-4;
+    }
+
+    .blog-table-of-contents-padding-3 {
+        @apply pl-8;
+    }
+
     .blog-h1 {
         @apply text-3xl font-bold my-2 text-black dark:text-white;
     }
