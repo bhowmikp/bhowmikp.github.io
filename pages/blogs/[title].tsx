@@ -98,24 +98,24 @@ const Post: FC<{ blogData: IBlogs[] }> = ({ blogData }) => {
                             {isEmpty(data.tableOfContents) ? (
                                 <p>N/A</p>
                             ) : (
-                                    data.tableOfContents.map((entry) => (
-                                        <p
-                                            key={entry.sectionId}
-                                            className={`blog-table-of-contents-padding-${entry.sectionLevel}`}
+                                data.tableOfContents.map((entry) => (
+                                    <p
+                                        key={entry.sectionId}
+                                        className={`blog-table-of-contents-padding-${entry.sectionLevel}`}
+                                    >
+                                        <a
+                                            href={`${router.query.title}#${entry.sectionId}`}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                router.push(`${router.query.title}#${entry.sectionId}`);
+                                            }}
+                                            className="blog-table-of-contents-link"
                                         >
-                                            <a
-                                                href={`${router.query.title}#${entry.sectionId}`}
-                                                onClick={(e) => {
-                                                    e.preventDefault();
-                                                    router.push(`${router.query.title}#${entry.sectionId}`);
-                                                }}
-                                                className="blog-table-of-contents-link"
-                                            >
-                                                {entry.sectionName}
-                                            </a>
-                                        </p>
-                                    ))
-                                )}
+                                            {entry.sectionName}
+                                        </a>
+                                    </p>
+                                ))
+                            )}
                         </div>
                     </div>
                 </div>
