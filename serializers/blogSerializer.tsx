@@ -25,7 +25,8 @@ const blogSerializer = {
         }
         return <ol className="blog-ol">{props.children}</ol>;
     },
-    listItem: (props) => <li>{props.children}</li>,
+    // eslint-disable-next-line no-underscore-dangle
+    listItem: (props) => <li key={props.node._key}>{props.children}</li>,
     marks: {
         link: (props) => (
             <Link href={props.mark.href}>
@@ -76,7 +77,11 @@ const blogSerializer = {
                     return <blockquote className="blog-blockquote">{props.children}</blockquote>;
                 default:
                     if (/^p/) {
-                        return <p className="blog-text">{props.children}</p>;
+                        return props.children[0] === '' ? (
+                            <p className="blog-text">&nbsp;</p>
+                        ) : (
+                            <p className="blog-text">{props.children}</p>
+                        );
                     }
                     return BlockContent.defaultSerializers.types.block(props);
             }
