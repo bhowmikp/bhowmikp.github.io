@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import AppLayout from '@Components/AppLayout';
+import TableOfContents from '@Components/TableOfContents';
 import { getBlog } from '@Api/blog';
 import { getBlogsByCategory } from '@Api/blogsCategory';
 import IBlogs from '@Interfaces/blogs';
@@ -81,46 +82,73 @@ const Post: FC<{ blogData: IBlogs[] }> = ({ blogData }) => {
     }
 
     const data = blogData[0];
+    const updatedAtDate = new Date(data._updatedAt.split('T')[0]);
 
     return (
         <AppLayout title={data.title}>
             <div className="mb-10 w-11/12 mx-auto">
                 <div className="block lg:grid lg:grid-cols-4">
                     <div className="col-span-3">
-                        <p className="text-3xl font-bold my-2 text-black dark:text-white">Title: {data.title}</p>
+                        <p className="text-4xl font-bold my-2 text-black dark:text-white">{data.title}</p>
+                        <p>
+                            {`${updatedAtDate.toLocaleString('default', {
+                                month: 'short'
+                            })} ${updatedAtDate.getDay()}, ${updatedAtDate.getFullYear()}`}{' '}
+                            · {data.readingTime} min read
+                        </p>
+                        <hr className="blog-hr-style my-2" />
 
                         <BlockContent blocks={data.body} serializers={blogSerializer} />
+
+                        {('relatedArticles' in data && data.relatedArticles.length !== 0) ||
+                            ('references' in data && data.references.length !== 0 && (
+                                <hr className="blog-hr-style mt-20 mb-5" />
+                            ))}
+
+                        {'relatedArticles' in data && data.relatedArticles.length !== 0 && (
+                            <>
+                                <p className="text-2xl">Related Articles</p>
+                                <ul className="list-disc ml-5">
+                                    {data.relatedArticles.map((entry) => (
+                                        <li key={entry._key}>
+                                            <a target={entry.target} href={entry.url} className="blog-link">
+                                                {entry.urlText}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </>
+                        )}
+
+                        {'references' in data && data.references.length !== 0 && (
+                            <div
+                                className={
+                                    'relatedArticles' in data && data.relatedArticles.length !== 0 ? 'mt-10' : ''
+                                }
+                            >
+                                <p className="text-2xl">References</p>
+                                <ul className="list-disc ml-5">
+                                    {data.references.map((entry) => (
+                                        <li key={entry._key}>
+                                            <a target={entry.target} href={entry.url} className="blog-link">
+                                                {entry.urlText}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
+                        <div className="mt-10">
+                            {data.tags.map((tag) => (
+                                <span key={tag} className="bg-gray-300 mr-2 p-2 rounded-md">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
                     </div>
                     <div className="hidden lg:block lg:ml-5">
-                        <div className="sticky top-5 blog-table-of-contents-border">
-                            <b className="mb-2 text-black dark:text-white">Table of Contents</b>
-
-                            {isEmpty(data.tableOfContents) ? (
-                                <p>N/A</p>
-                            ) : (
-                                data.tableOfContents.map((entry) => (
-                                    <p
-                                        key={entry.sectionId}
-                                        className={
-                                            entry.sectionLevel === 2
-                                                ? `blog-table-of-contents-padding-2`
-                                                : entry.sectionLevel === 3 && 'blog-table-of-contents-padding-3'
-                                        }
-                                    >
-                                        <a
-                                            href={`${router.query.title}#${entry.sectionId}`}
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                router.push(`${router.query.title}#${entry.sectionId}`);
-                                            }}
-                                            className="blog-table-of-contents-link"
-                                        >
-                                            {entry.sectionName}
-                                        </a>
-                                    </p>
-                                ))
-                            )}
-                        </div>
+                        <TableOfContents tableOfContents={data.tableOfContents} />
                     </div>
                 </div>
             </div>

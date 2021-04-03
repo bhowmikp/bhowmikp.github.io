@@ -16,8 +16,7 @@
     }
 
     .tutorial-hr-style {
-        @apply bg-gray-300 dark:bg-gray-900;
-        height: 2px;
+        @apply border-gray-300 dark:border-gray-600;
     }
 
     .recognition-table {

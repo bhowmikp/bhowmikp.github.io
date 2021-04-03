@@ -70,4 +70,8 @@
     .blog-image-caption {
         @apply text-black dark:text-white;
     }
+
+    .blog-hr-style {
+        @apply border-gray-300 dark:border-gray-600;
+    }
 }

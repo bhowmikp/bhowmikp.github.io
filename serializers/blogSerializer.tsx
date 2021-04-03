@@ -100,6 +100,7 @@ const blogSerializer = {
                 </SyntaxHighlighter>
             );
         },
+        horizontalRow: () => <hr className="blog-hr-style" />,
         figure: (props: { node: IHomepageImage }): ReactElement => {
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const isAmp = useAmp();
