@@ -1,10 +1,24 @@
-interface ITableOfContents {
+export interface ITableOfContents {
     sectionId: string;
     sectionLevel: number;
     sectionName: string;
 }
 
-interface IBlogs {
+export interface IRelatedArticles {
+    target: string;
+    url: string;
+    urlText: string;
+    _key: string;
+}
+
+export interface IReferences {
+    target: string;
+    url: string;
+    urlText: string;
+    _key: string;
+}
+
+export interface IBlogs {
     _updatedAt: string;
     _id: string;
 
@@ -14,8 +28,8 @@ interface IBlogs {
     readingTime: number;
     tags: string[];
     body: [];
-    references: string[];
-    relatedArticles: string[];
+    references: IReferences[];
+    relatedArticles: IRelatedArticles[];
     tableOfContents: ITableOfContents[];
 }
 
