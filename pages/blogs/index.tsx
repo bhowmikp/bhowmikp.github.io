@@ -1,5 +1,4 @@
 import AppLayout from '@Components/AppLayout';
-import BlogCards from '@Components/BlogCards';
 import { GetStaticProps } from 'next';
 import { getBlogsByCategory } from '@Api/blogsCategory';
 import { getNumberOfBlogs } from '@Api/numberOfBlogs';

@@ -96,7 +96,7 @@ const Post: FC<{ blogData: IBlogs[] }> = ({ blogData }) => {
                             })} ${updatedAtDate.getDay()}, ${updatedAtDate.getFullYear()}`}{' '}
                             · {data.readingTime} min read
                         </p>
-                        <hr className="blog-hr-style" />
+                        <hr className="blog-hr-style my-2" />
 
                         <BlockContent blocks={data.body} serializers={blogSerializer} />
 
