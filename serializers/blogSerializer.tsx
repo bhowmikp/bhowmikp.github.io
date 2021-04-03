@@ -80,8 +80,8 @@ const blogSerializer = {
                         return props.children[0] === '' ? (
                             <p className="blog-text">&nbsp;</p>
                         ) : (
-                                <p className="blog-text">{props.children}</p>
-                            );
+                            <p className="blog-text">{props.children}</p>
+                        );
                     }
                     return BlockContent.defaultSerializers.types.block(props);
             }
@@ -119,24 +119,24 @@ const blogSerializer = {
                             <p>{props.node.caption}</p>
                         </div>
                     ) : (
-                            <figure className="blog-image">
-                                <Zoom
-                                    overlayBgColorStart={resolvedTheme === 'dark' ? '#2d3748D9' : '#ffffffD9'}
-                                    overlayBgColorEnd={resolvedTheme === 'dark' ? '#2d3748D9' : '#ffffffD9'}
-                                    closeText={`Unzoomed ${props.node.alt}`}
-                                    openText={`Zoomed ${props.node.alt}`}
-                                >
-                                    <Image
-                                        src={urlFor(props.node.image).url()}
-                                        alt={props.node.alt}
-                                        width={props.node.width}
-                                        height={props.node.height}
-                                    />
-                                </Zoom>
+                        <figure className="blog-image">
+                            <Zoom
+                                overlayBgColorStart={resolvedTheme === 'dark' ? '#2d3748D9' : '#ffffffD9'}
+                                overlayBgColorEnd={resolvedTheme === 'dark' ? '#2d3748D9' : '#ffffffD9'}
+                                closeText={`Unzoomed ${props.node.alt}`}
+                                openText={`Zoomed ${props.node.alt}`}
+                            >
+                                <Image
+                                    src={urlFor(props.node.image).url()}
+                                    alt={props.node.alt}
+                                    width={props.node.width}
+                                    height={props.node.height}
+                                />
+                            </Zoom>
 
-                                <figcaption className="blog-image-caption">{props.node.caption}</figcaption>
-                            </figure>
-                        )}
+                            <figcaption className="blog-image-caption">{props.node.caption}</figcaption>
+                        </figure>
+                    )}
                 </>
             );
         }
