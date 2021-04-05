@@ -1,4 +1,5 @@
 @import './archive.css';
+@import './blog.css';
 
 @tailwind base;
 @tailwind components;

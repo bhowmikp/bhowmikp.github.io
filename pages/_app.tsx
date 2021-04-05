@@ -6,9 +6,12 @@ import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import * as gtag from '@Service/googleService';
 import { ThemeProvider } from 'next-themes';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
     const router = useRouter();
+    const queryClient = new QueryClient();
+
     useEffect(() => {
         const handleRouteChange = (url) => {
             gtag.pageview(url);
@@ -21,7 +24,9 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
 
     return (
         <ThemeProvider attribute="class" defaultTheme="system">
-            <Component {...pageProps} />
+            <QueryClientProvider client={queryClient}>
+                <Component {...pageProps} />
+            </QueryClientProvider>
         </ThemeProvider>
     );
 };

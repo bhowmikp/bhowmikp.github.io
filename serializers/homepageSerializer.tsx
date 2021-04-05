@@ -4,6 +4,7 @@ import urlFor from '@Service/sanityImageService';
 import React, { ReactElement } from 'react';
 import { IHomepageImage } from '@Interfaces/homepage';
 import { useAmp } from 'next/amp';
+import Image from 'next/image';
 
 export const config = { amp: 'hybrid' };
 
@@ -27,12 +28,12 @@ const homepageSerializer = {
                             <p>{props.node.caption}</p>
                         </div>
                     ) : (
-                            <figure>
-                                <img src={urlFor(props.node.image).url()} alt={props.node.alt} className="w-2/4" />
+                        <figure>
+                            <Image src={urlFor(props.node.image).url()} alt={props.node.alt} width={500} height={500} />
 
-                                <figcaption>{props.node.caption}</figcaption>
-                            </figure>
-                        )}
+                            <figcaption>{props.node.caption}</figcaption>
+                        </figure>
+                    )}
                 </>
             );
         }
