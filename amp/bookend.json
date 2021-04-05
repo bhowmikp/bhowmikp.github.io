@@ -1,0 +1,19 @@
+{
+  "share-providers": {
+    "facebook": true,
+    "twitter": true,
+    "linkedin": true,
+    "email": true,
+    "sms": true,
+    "whatsapp": true
+  },
+  "related-articles": {
+    "Articles": [
+      {
+        "title": "Prantar Bhowmik - Homepage",
+        "url": "https://prantar.me/amp",
+        "image": "https://prantar.me/favicon.ico"
+      }
+    ]
+  }
+}
