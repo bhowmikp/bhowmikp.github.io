@@ -1,7 +1,7 @@
 const data = {
     "data":[
        {
-          "accountNumber":"27600188",
+          "accountNumber":"12345",
           "holdings":[
              {
                 "symbol":"SE",
@@ -47,9 +47,74 @@ const data = {
                 "totalCost":6765.450003,
                 "isRealTime":false,
                 "isUnderReorg":false
-             }
+             },
+             {
+                "symbol":"SPOT23Apr21C285.00",
+                "symbolId":34915937,
+                "openQuantity":-1,
+                "closedQuantity":0,
+                "currentMarketValue":-1035,
+                "currentPrice":10.35,
+                "averageEntryPrice":4.4,
+                "dayPnl":null,
+                "closedPnl":0,
+                "openPnl":-595,
+                "totalCost":-440,
+                "isRealTime":false,
+                "isUnderReorg":false
+             },
           ]
-       }
+       },
+       {
+        "accountNumber":"23456",
+        "holdings":[
+            {
+                "symbol":"O",
+                "symbolId":33821,
+                "openQuantity":465,
+                "closedQuantity":0,
+                "currentMarketValue":31164.3,
+                "currentPrice":67.02,
+                "averageEntryPrice":61.810774,
+                "dayPnl":null,
+                "closedPnl":0,
+                "openPnl":2422.29009,
+                "totalCost":28742.00991,
+                "isRealTime":false,
+                "isUnderReorg":false
+                },
+                {
+                "symbol":"MSFT",
+                "symbolId":27426,
+                "openQuantity":79,
+                "closedQuantity":0,
+                "currentMarketValue":20598.46,
+                "currentPrice":260.74,
+                "averageEntryPrice":206.169987,
+                "dayPnl":null,
+                "closedPnl":0,
+                "openPnl":4311.031027,
+                "totalCost":16287.428973,
+                "isRealTime":false,
+                "isUnderReorg":false
+                },
+                {
+                "symbol":"MCD",
+                "symbolId":26919,
+                "openQuantity":102,
+                "closedQuantity":0,
+                "currentMarketValue":23774.16,
+                "currentPrice":233.08,
+                "averageEntryPrice":206.008235,
+                "dayPnl":null,
+                "closedPnl":0,
+                "openPnl":2761.32003,
+                "totalCost":21012.83997,
+                "isRealTime":false,
+                "isUnderReorg":false
+                }
+        ]
+     }
     ]
  }
 

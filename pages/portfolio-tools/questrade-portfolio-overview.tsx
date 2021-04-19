@@ -1,9 +1,9 @@
 import AppLayout from '@Components/AppLayout';
-import React, { FC, useContext } from 'react';
+import React, { FC, useContext, useState, useEffect } from 'react';
 import { AppContext } from '../_app';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import { useQuery } from 'react-query';
-import questradePortfolioOverviewMock from '../../mockData/questrade/questradePortfolioOverview'
+import questradePortfolioOverviewMock from '@MockData/questrade/questradePortfolioOverview';
 
 const QuestradePortfolioOverview: FC = () => {
     const router = useRouter();
@@ -27,7 +27,6 @@ const QuestradePortfolioOverview: FC = () => {
         const { data: portfolioData, isLoading: portfolioDataIsLoading, error: portfolioDataError } = useQuery(
             ['questradePortfolioOverview'],
             () => {
-                console.log("RIGHT QUERY");
                 if (process.env.NODE_ENV === "development") {
                     return questradePortfolioOverviewMock;
                 }
@@ -41,27 +40,27 @@ const QuestradePortfolioOverview: FC = () => {
             setQuestradeServer('');
         }
 
-        console.log(portfolioData)
+        const [currentPorfolioHoldinds, setCurrentPortfolioHoldings] = useState([]);
+        useEffect(() => {
+            if (portfolioData !== undefined && 'data' in portfolioData) {
+                setCurrentPortfolioHoldings(portfolioData.data[0].holdings)
+            }
+        }, [portfolioData])
 
         return (
             <AppLayout title="Questrade Portfolio Overview">
                 <div className="mx-5">
                     {portfolioDataIsLoading && <p>Loading...</p>}
-                    <p>No code</p>
-                    {console.log("HERE", portfolioData)}
+
+                    <p className="inline mr-3">Account Name:</p>
                     {portfolioData !== undefined && 'data' in portfolioData && portfolioData.data.map((portfolio) => {
-                        console.log("HERE1", portfolio);
                         return (
-                            <>
-                                <h1>{portfolio.accountNumber}</h1>
-                                {portfolio.holdings.map((holding) => {
-                                    console.log("HERE2", holding);
-                                    return (
-                                        <p>{holding.symbol}</p>
-                                    )
-                                })}
-                            </>
+                            <p key={portfolio.accountNumber} onClick={() => {setCurrentPortfolioHoldings(portfolio.holdings)}} className="inline mr-3">{portfolio.accountNumber}</p>
                         );
+                    })}
+
+                    {currentPorfolioHoldinds !== [] && currentPorfolioHoldinds.map((holdings) => {
+                        return <p key={holdings.symbol}>{holdings.symbol}</p>
                     })}
                 </div>
             </AppLayout>
