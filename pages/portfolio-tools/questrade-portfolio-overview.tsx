@@ -35,15 +35,16 @@ const QuestradePortfolioOverview: FC = () => {
             setQuestradeAccessToken('');
             setQuestradeServer('');
         }
+        console.log(portfolioData)
 
         return (
             <AppLayout title="Questrade Portfolio Overview">
                 <div className="mx-5">
                     {portfolioDataIsLoading && <p>Loading...</p>}
                     <p>No code</p>
-                    {portfolioData !== undefined && portfolioData.data.holdings.map((entry) => {
+                    {/* {portfolioData !== undefined && portfolioData.data.holdings.map((entry) => {
                         return <p>{entry.symbol}</p>
-                    })}
+                    })} */}
                 </div>
             </AppLayout>
         )
