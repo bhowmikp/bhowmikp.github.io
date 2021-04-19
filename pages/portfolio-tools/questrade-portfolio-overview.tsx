@@ -58,9 +58,10 @@ const QuestradePortfolioOverview: FC = () => {
 
         console.log(accountData);
 
-        setQuestradeAccessToken(accountData.access_token);
-        setQuestradeServer(accountData.api_server);
-
+        if (accountData !== undefined) {
+            setQuestradeAccessToken(accountData.access_token);
+            setQuestradeServer(accountData.api_server);
+        }
 
         return (
             <AppLayout title="Questrade Portfolio Overview">
