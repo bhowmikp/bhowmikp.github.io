@@ -70,7 +70,7 @@ const QuestradePortfolioOverview: FC = () => {
             <AppLayout title="Questrade Portfolio Overview">
                 <div className="mx-5">
                     <button onClick={() => {
-                        router.push(`https://login.questrade.com/oauth2/authorize?client_id=${process.env.NEXT_PUBLIC_QUESTRADE_CLIENT_ID}&response_type=code&redirect_uri=${redirect_uri}`);
+                        router.push(`https://login.questrade.com/oauth2/authorize?client_id=${process.env.NEXT_PUBLIC_QUESTRADE_CLIENT_ID}&response_type=code&redirect_uri=${redirectUri}`);
                     }}>Log in Questrade</button>
                 </div>
             </AppLayout>
