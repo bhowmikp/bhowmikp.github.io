@@ -27,12 +27,13 @@ const QuestradePortfolioOverview: FC = () => {
         const { data: portfolioData, isLoading: portfolioDataIsLoading, error: portfolioDataError } = useQuery(
             ['questradePortfolioOverview'],
             () => {
+                console.log("RIGHT QUERY");
                 if (process.env.NODE_ENV === "development") {
                     return questradePortfolioOverviewMock;
                 }
                 return getPortfolioOverview(questradeServer, questradeAccessToken);
             },
-            { keepPreviousData: true, refetchOnWindowFocus: false }
+            { refetchOnWindowFocus: false }
         );
 
         if (portfolioDataError) {
@@ -40,13 +41,15 @@ const QuestradePortfolioOverview: FC = () => {
             setQuestradeServer('');
         }
 
+        console.log(portfolioData)
+
         return (
             <AppLayout title="Questrade Portfolio Overview">
                 <div className="mx-5">
                     {portfolioDataIsLoading && <p>Loading...</p>}
                     <p>No code</p>
                     {console.log("HERE", portfolioData)}
-                    {portfolioData !== undefined && portfolioData.data.map((portfolio) => {
+                    {portfolioData !== undefined && 'data' in portfolioData && portfolioData.data.map((portfolio) => {
                         console.log("HERE1", portfolio);
                         return (
                             <>
@@ -69,7 +72,7 @@ const QuestradePortfolioOverview: FC = () => {
             () => {
                 return getQuestradeAccessInfo(String(router.query.code));
             },
-            { keepPreviousData: true, refetchOnWindowFocus: false }
+            { refetchOnWindowFocus: false }
         );
 
         if (accountData !== undefined) {
