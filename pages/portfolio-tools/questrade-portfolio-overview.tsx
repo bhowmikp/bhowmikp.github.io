@@ -20,7 +20,8 @@ const QuestradePortfolioOverview: FC = () => {
     }
 
     const getQuestradeAccessInfo = async(code: string) => {
-        const data = await getQuestradeAccessInfoServer(code, redirectUri);
+        const data = await (await fetch(`/api/questrade/questradeAccessInfo?code=${code}&redirect_uri=${redirectUri}`)).json();
+        console.log("DATA", data)
         return data;
     }
 
