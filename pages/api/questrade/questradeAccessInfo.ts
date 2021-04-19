@@ -24,6 +24,8 @@ export const getQuestradeAccessInfo = async(code: string, redirectUri: string) =
         redirect: 'follow'
     })).json();
 
+    console.log(accessInfo, `https://login.questrade.com/oauth2/token?client_id=${process.env.NEXT_PUBLIC_QUESTRADE_CLIENT_ID}&code=${code}&grant_type=authorization_code&redirect_uri=${redirectUri}`)
+
     return accessInfo;
 }
 
