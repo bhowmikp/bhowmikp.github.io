@@ -35,33 +35,43 @@ const QuestradePortfolioOverview: FC = () => {
             { refetchOnWindowFocus: false }
         );
 
+        // redirect to login page
         if (portfolioDataError) {
             setQuestradeAccessToken('');
             setQuestradeServer('');
         }
 
+        const allHoldings = (allPortfolioData) => {
+            return [].concat(...allPortfolioData.data.map((portfolio) => {
+                return portfolio.holdings;
+            }));
+        }
+
         const [currentPorfolioHoldings, setCurrentPortfolioHoldings] = useState([]);
-        useEffect(() => {
-            if (portfolioData !== undefined && 'data' in portfolioData && currentPorfolioHoldings.length === 0) {
-                setCurrentPortfolioHoldings(portfolioData.data[0].holdings)
-            }
-        }, [portfolioData])
 
         return (
             <AppLayout title="Questrade Portfolio Overview">
                 <div className="mx-5">
-                    {portfolioDataIsLoading && <p>Loading...</p>}
+                    {portfolioDataIsLoading ? <p>Loading...</p>: (
+                        <>
+                            <p className="inline mr-3">Account Name:</p>
 
-                    <p className="inline mr-3">Account Name:</p>
-                    {portfolioData !== undefined && 'data' in portfolioData && portfolioData.data.map((portfolio) => {
-                        return (
-                            <p key={portfolio.accountNumber} onClick={() => {setCurrentPortfolioHoldings(portfolio.holdings)}} className="inline mr-3">{portfolio.accountNumber}</p>
-                        );
-                    })}
+                            {portfolioData !== undefined && 'data' in portfolioData && (
+                                <>
+                                    {portfolioData.data.length > 1 && <p onClick={() => {setCurrentPortfolioHoldings(allHoldings(portfolioData))}} className="inline mr-3">All</p>}
+                                    {portfolioData.data.map((portfolio) => {
+                                        return (
+                                            <p key={portfolio.accountNumber} onClick={() => {setCurrentPortfolioHoldings(portfolio.holdings)}} className="inline mr-3">{portfolio.accountNumber}</p>
+                                        );
+                                    })}
 
-                    {currentPorfolioHoldings.map((holdings) => {
-                        return <p key={holdings.symbol}>{holdings.symbol}</p>
-                    })}
+                                    {currentPorfolioHoldings.map((holdings) => {
+                                        return <p key={holdings.symbol}>{holdings.symbol}</p>
+                                    })}
+                                </>
+                            )}
+                        </>
+                    )}
                 </div>
             </AppLayout>
         )
