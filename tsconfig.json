@@ -32,6 +32,9 @@
       "@Interfaces/*": [
         "interfaces/*"
       ],
+      "@MockData/*": [
+        "mockData/*"
+      ],
       "@Serializers/*": [
         "serializers/*"
       ],
