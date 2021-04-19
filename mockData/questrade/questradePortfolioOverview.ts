@@ -1,0 +1,57 @@
+const data = {
+    "data":[
+       {
+          "accountNumber":"27600188",
+          "holdings":[
+             {
+                "symbol":"SE",
+                "symbolId":19167746,
+                "openQuantity":45,
+                "closedQuantity":0,
+                "currentMarketValue":11358.9,
+                "currentPrice":252.42,
+                "averageEntryPrice":80.46,
+                "dayPnl":null,
+                "closedPnl":0,
+                "openPnl":7738.2,
+                "totalCost":3620.7,
+                "isRealTime":false,
+                "isUnderReorg":false
+             },
+             {
+                "symbol":"DIS",
+                "symbolId":16142,
+                "openQuantity":343,
+                "closedQuantity":0,
+                "currentMarketValue":64230.18,
+                "currentPrice":187.26,
+                "averageEntryPrice":157.855341,
+                "dayPnl":null,
+                "closedPnl":0,
+                "openPnl":10085.798037,
+                "totalCost":54144.381963,
+                "isRealTime":false,
+                "isUnderReorg":false
+             },
+             {
+                "symbol":"MMM",
+                "symbolId":38677,
+                "openQuantity":39,
+                "closedQuantity":0,
+                "currentMarketValue":7744.62,
+                "currentPrice":198.58,
+                "averageEntryPrice":173.473077,
+                "dayPnl":null,
+                "closedPnl":0,
+                "openPnl":979.169997,
+                "totalCost":6765.450003,
+                "isRealTime":false,
+                "isUnderReorg":false
+             }
+          ]
+       }
+    ]
+ }
+
+
+export default data;

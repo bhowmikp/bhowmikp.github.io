@@ -3,6 +3,7 @@ import React, { FC, useContext } from 'react';
 import { AppContext } from '../_app';
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query';
+import questradePortfolioOverviewMock from '../../mockData/questrade/questradePortfolioOverview'
 
 const QuestradePortfolioOverview: FC = () => {
     const router = useRouter();
@@ -22,10 +23,13 @@ const QuestradePortfolioOverview: FC = () => {
         return data;
     }
 
-    if (questradeAccessToken !== '') {
+    if (questradeAccessToken !== '' || process.env.NODE_ENV === "development") {
         const { data: portfolioData, isLoading: portfolioDataIsLoading, error: portfolioDataError } = useQuery(
             ['questradePortfolioOverview'],
             () => {
+                if (process.env.NODE_ENV === "development") {
+                    return questradePortfolioOverviewMock;
+                }
                 return getPortfolioOverview(questradeServer, questradeAccessToken);
             },
             { keepPreviousData: true, refetchOnWindowFocus: false }
@@ -35,19 +39,20 @@ const QuestradePortfolioOverview: FC = () => {
             setQuestradeAccessToken('');
             setQuestradeServer('');
         }
-        console.log(portfolioData)
 
         return (
             <AppLayout title="Questrade Portfolio Overview">
                 <div className="mx-5">
                     {portfolioDataIsLoading && <p>Loading...</p>}
                     <p>No code</p>
-
+                    {console.log("HERE", portfolioData)}
                     {portfolioData !== undefined && portfolioData.data.map((portfolio) => {
+                        console.log("HERE1", portfolio);
                         return (
                             <>
                                 <h1>{portfolio.accountNumber}</h1>
                                 {portfolio.holdings.map((holding) => {
+                                    console.log("HERE2", holding);
                                     return (
                                         <p>{holding.symbol}</p>
                                     )
