@@ -49,7 +49,7 @@ const QuestradePortfolioOverview: FC = () => {
         )
     } else if ('code' in router.query) {
         const { data: accountData, isLoading: accountDataIsLoading } = useQuery(
-            ['questradePortfolioOverview'],
+            ['questradeAccount'],
             () => {
                 return getQuestradeAccessInfo(String(router.query.code));
             },
