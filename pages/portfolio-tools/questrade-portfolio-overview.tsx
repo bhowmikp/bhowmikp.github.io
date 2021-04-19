@@ -24,18 +24,18 @@ const QuestradePortfolioOverview: FC = () => {
         return data;
     }
 
-    if (questradeAccessToken === '') {
+    if (questradeAccessToken !== '') {
         const { data: portfolioData, isLoading: portfolioDataIsLoading, error: portfolioDataError } = useQuery(
             ['questradePortfolioOverview'],
             () => {
-                return getPortfolioOverview('https://api02.iq.questrade.com/', 'C4eWCyXMuqyqCAxdRboBVeGishT3O-L90');
+                return getPortfolioOverview(questradeServer, questradeAccessToken);
             },
             { keepPreviousData: true, refetchOnWindowFocus: false }
         );
 
         if (portfolioDataError) {
-            setQuestradeAccessToken('asdasd');
-            setQuestradeServer('')
+            setQuestradeAccessToken('');
+            setQuestradeServer('');
         }
 
         console.log(portfolioData);
@@ -48,7 +48,7 @@ const QuestradePortfolioOverview: FC = () => {
             </AppLayout>
         )
     } else if ('code' in router.query) {
-        const { data: accountData, isLoading: accountDataIsLoading, error: accountError } = useQuery(
+        const { data: accountData, isLoading: accountDataIsLoading } = useQuery(
             ['questradePortfolioOverview'],
             () => {
                 return getQuestradeAccessInfo(String(router.query.code));
@@ -57,6 +57,10 @@ const QuestradePortfolioOverview: FC = () => {
         );
 
         console.log(accountData);
+
+        setQuestradeAccessToken(accountData.access_token);
+        setQuestradeServer(accountData.api_server);
+
 
         return (
             <AppLayout title="Questrade Portfolio Overview">
