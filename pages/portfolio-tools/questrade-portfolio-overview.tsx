@@ -21,7 +21,6 @@ const QuestradePortfolioOverview: FC = () => {
         const data = await (await fetch(`/api/questrade/questradeAccessInfo?code=${code}&redirectUri=${redirectUri}`)).json();
         return data;
     }
-    console.log("THERE", questradeServer, questradeAccessToken)
 
     if (questradeAccessToken !== '') {
         const { data: portfolioData, isLoading: portfolioDataIsLoading, error: portfolioDataError } = useQuery(
@@ -36,19 +35,20 @@ const QuestradePortfolioOverview: FC = () => {
             setQuestradeAccessToken('');
             setQuestradeServer('');
         }
-        console.log("HERE", questradeServer, questradeAccessToken)
-        console.log(portfolioData);
 
         return (
             <AppLayout title="Questrade Portfolio Overview">
                 <div className="mx-5">
                     {portfolioDataIsLoading && <p>Loading...</p>}
                     <p>No code</p>
+                    {portfolioData.data.holdings.map((entry) => {
+                        return <p>{entry.symbol}</p>
+                    })}
                 </div>
             </AppLayout>
         )
     } else if ('code' in router.query) {
-        const { data: accountData, isLoading: accountDataIsLoading } = useQuery(
+        const { data: accountData, isLoading: accountDataIsLoading, error: accountDataError } = useQuery(
             ['questradeAccount'],
             () => {
                 return getQuestradeAccessInfo(String(router.query.code));
@@ -56,11 +56,13 @@ const QuestradePortfolioOverview: FC = () => {
             { keepPreviousData: true, refetchOnWindowFocus: false }
         );
 
-        console.log(accountData);
-
         if (accountData !== undefined) {
             setQuestradeAccessToken(accountData.access_token);
             setQuestradeServer(accountData.api_server);
+        }
+
+        if (accountDataError) {
+            router.push('/portfolio-tools/questrade-portfolio-overview');
         }
 
         return (
