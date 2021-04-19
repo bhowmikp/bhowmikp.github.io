@@ -40,12 +40,11 @@ const QuestradePortfolioOverview: FC = () => {
             setQuestradeServer('');
         }
 
-        const [currentPorfolioHoldinds, setCurrentPortfolioHoldings] = useState([]);
+        const [currentPorfolioHoldings, setCurrentPortfolioHoldings] = useState([]);
         useEffect(() => {
-            console.log(portfolioData)
-            // if (portfolioData !== undefined && 'data' in portfolioData) {
-            //     setCurrentPortfolioHoldings(portfolioData.data[0].holdings)
-            // }
+            if (portfolioData !== undefined && 'data' in portfolioData && currentPorfolioHoldings.length === 0) {
+                setCurrentPortfolioHoldings(portfolioData.data[0].holdings)
+            }
         }, [portfolioData])
 
         return (
@@ -60,7 +59,7 @@ const QuestradePortfolioOverview: FC = () => {
                         );
                     })}
 
-                    {currentPorfolioHoldinds !== [] && currentPorfolioHoldinds.map((holdings) => {
+                    {currentPorfolioHoldings.map((holdings) => {
                         return <p key={holdings.symbol}>{holdings.symbol}</p>
                     })}
                 </div>
