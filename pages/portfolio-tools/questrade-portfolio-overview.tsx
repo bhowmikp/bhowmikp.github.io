@@ -10,7 +10,7 @@ const QuestradePortfolioOverview: FC = () => {
     const router = useRouter();
 
     const fetchQuestradeAccessToken = async(code: string) => {
-        const data = await fetch(`https://login.questrade.com/oauth2/token?client_id=${process.env.NEXT_PUBLIC_QUESTRADE_CLIENT_ID}&code=${code}&grant_type=authorization_code&redirect_uri=${process.env.VERCEL_URL}`);
+        const data = await fetch(`https://login.questrade.com/oauth2/token?client_id=${process.env.NEXT_PUBLIC_QUESTRADE_CLIENT_ID}&code=${code}&grant_type=authorization_code&redirect_uri=${process.env.NEXT_PUBLIC_VERCEL_URL}`);
         return data.json();
     }
     const { data: test } = useQuery(
@@ -33,7 +33,7 @@ const QuestradePortfolioOverview: FC = () => {
                 {'code' in router.query ? 
                     <p>{test}</p>
                 : <button onClick={() => {
-                    router.push(`https://login.questrade.com/oauth2/authorize?client_id=${process.env.NEXT_PUBLIC_QUESTRADE_CLIENT_ID}&response_type=code&redirect_uri=${process.env.VERCEL_URL}`);
+                    router.push(`https://login.questrade.com/oauth2/authorize?client_id=${process.env.NEXT_PUBLIC_QUESTRADE_CLIENT_ID}&response_type=code&redirect_uri=${process.env.NEXT_PUBLIC_VERCEL_URL}`);
                 }}>Log in Questrade</button>}
             </div>
         </AppLayout>
