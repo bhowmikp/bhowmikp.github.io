@@ -42,9 +42,10 @@ const QuestradePortfolioOverview: FC = () => {
 
         const [currentPorfolioHoldinds, setCurrentPortfolioHoldings] = useState([]);
         useEffect(() => {
-            if (portfolioData !== undefined && 'data' in portfolioData) {
-                setCurrentPortfolioHoldings(portfolioData.data[0].holdings)
-            }
+            console.log(portfolioData)
+            // if (portfolioData !== undefined && 'data' in portfolioData) {
+            //     setCurrentPortfolioHoldings(portfolioData.data[0].holdings)
+            // }
         }, [portfolioData])
 
         return (
