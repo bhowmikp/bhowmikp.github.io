@@ -42,9 +42,19 @@ const QuestradePortfolioOverview: FC = () => {
                 <div className="mx-5">
                     {portfolioDataIsLoading && <p>Loading...</p>}
                     <p>No code</p>
-                    {/* {portfolioData !== undefined && portfolioData.data.holdings.map((entry) => {
-                        return <p>{entry.symbol}</p>
-                    })} */}
+
+                    {portfolioData !== undefined && portfolioData.data.map((portfolio) => {
+                        return (
+                            <>
+                                <h1>{portfolio.accountNumber}</h1>
+                                {portfolio.holdings.map((holding) => {
+                                    return (
+                                        <p>{holding.symbol}</p>
+                                    )
+                                })}
+                            </>
+                        );
+                    })}
                 </div>
             </AppLayout>
         )
