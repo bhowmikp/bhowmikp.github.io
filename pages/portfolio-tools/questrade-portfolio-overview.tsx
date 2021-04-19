@@ -1,44 +1,81 @@
 import AppLayout from '@Components/AppLayout';
-import React, { FC } from 'react';
-import { useAmp } from 'next/amp';
+import React, { FC, useContext } from 'react';
+import { AppContext } from '../_app';
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query';
-
+import { getQuestradePortfolioOverview } from '@Api/questrade/questradePortfolioOverview';
+import { getQuestradeAccessInfo as getQuestradeAccessInfoServer } from '@Api/questrade/questradeAccessInfo';
 
 const QuestradePortfolioOverview: FC = () => {
-    const isAmp = useAmp();
     const router = useRouter();
-    const redirect_uri = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/portfolio-tools/questrade-portfolio-overview`;
+    const {questradeData} = useContext(AppContext);
+    const [questradeServer, setQuestradeServer] = questradeData.questradeServer;
+    const [questradeAccessToken, setQuestradeAccessToken] = questradeData.questradeAccessToken;
+    const redirectUri = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/portfolio-tools/questrade-portfolio-overview`;
 
-    const fetchQuestradeAccessToken = async(code: string) => {
-        const data = await fetch(`https://login.questrade.com/oauth2/token?client_id=${process.env.NEXT_PUBLIC_QUESTRADE_CLIENT_ID}&code=${code}&grant_type=authorization_code&redirect_uri=${redirect_uri}`);
-        return data.json();
+
+    const getPortfolioOverview = async(server: string, accessToken: string) => {
+        const data = await getQuestradePortfolioOverview(server, accessToken);
+        return data;
     }
-    const { data: test } = useQuery(
-        ['questradeAccessToken', router.query],
-        () => {
-            if ('code' in router.query) {
-                return fetchQuestradeAccessToken(router.query.code as string);
-            }
 
-            return '';
-        },
-        { keepPreviousData: true, refetchOnWindowFocus: false }
-    );
+    const getQuestradeAccessInfo = async(code: string) => {
+        const data = await getQuestradeAccessInfoServer(code, redirectUri);
+        return data;
+    }
 
-    console.log(test)
+    if (questradeAccessToken === '') {
+        const { data: portfolioData, isLoading: portfolioDataIsLoading, error: portfolioDataError } = useQuery(
+            ['questradePortfolioOverview'],
+            () => {
+                return getPortfolioOverview('https://api02.iq.questrade.com/', 'C4eWCyXMuqyqCAxdRboBVeGishT3O-L90');
+            },
+            { keepPreviousData: true, refetchOnWindowFocus: false }
+        );
 
-    return (
-        <AppLayout title="Questrade Portfolio Overview">
-            <div className="mx-5">
-                {'code' in router.query ? 
-                    <p>{test}</p>
-                : <button onClick={() => {
-                    router.push(`https://login.questrade.com/oauth2/authorize?client_id=${process.env.NEXT_PUBLIC_QUESTRADE_CLIENT_ID}&response_type=code&redirect_uri=${redirect_uri}`);
-                }}>Log in Questrade</button>}
-            </div>
-        </AppLayout>
-    );
+        if (portfolioDataError) {
+            setQuestradeAccessToken('asdasd');
+            setQuestradeServer('')
+        }
+
+        console.log(portfolioData);
+
+        return (
+            <AppLayout title="Questrade Portfolio Overview">
+                <div className="mx-5">
+                    {portfolioDataIsLoading && <p>Loading...</p>}
+                </div>
+            </AppLayout>
+        )
+    } else if ('code' in router.query) {
+        const { data: accountData, isLoading: accountDataIsLoading, error: accountError } = useQuery(
+            ['questradePortfolioOverview'],
+            () => {
+                return getQuestradeAccessInfo(String(router.query.code));
+            },
+            { keepPreviousData: true, refetchOnWindowFocus: false }
+        );
+
+        console.log(accountData);
+
+        return (
+            <AppLayout title="Questrade Portfolio Overview">
+                <div className="mx-5">
+                    {accountDataIsLoading && <p>Loading...</p>}
+                </div>
+            </AppLayout>
+        )
+    } else {
+        return (
+            <AppLayout title="Questrade Portfolio Overview">
+                <div className="mx-5">
+                    <button onClick={() => {
+                        router.push(`https://login.questrade.com/oauth2/authorize?client_id=${process.env.NEXT_PUBLIC_QUESTRADE_CLIENT_ID}&response_type=code&redirect_uri=${redirect_uri}`);
+                    }}>Log in Questrade</button>
+                </div>
+            </AppLayout>
+        )
+    }
 }
 
 export default QuestradePortfolioOverview;
