@@ -3,8 +3,6 @@ import React, { FC, useContext } from 'react';
 import { AppContext } from '../_app';
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query';
-import { getQuestradePortfolioOverview } from '@Api/questrade/questradePortfolioOverview';
-import { getQuestradeAccessInfo as getQuestradeAccessInfoServer } from '@Api/questrade/questradeAccessInfo';
 
 const QuestradePortfolioOverview: FC = () => {
     const router = useRouter();
@@ -15,15 +13,15 @@ const QuestradePortfolioOverview: FC = () => {
 
 
     const getPortfolioOverview = async(server: string, accessToken: string) => {
-        const data = await getQuestradePortfolioOverview(server, accessToken);
+        const data = await (await fetch(`/api/questrade/questradePortfolioOverview?accessToken=${accessToken}&server=${server}`)).json();
         return data;
     }
 
     const getQuestradeAccessInfo = async(code: string) => {
         const data = await (await fetch(`/api/questrade/questradeAccessInfo?code=${code}&redirectUri=${redirectUri}`)).json();
-        console.log("DATA", data)
         return data;
     }
+    console.log("THERE", questradeServer, questradeAccessToken)
 
     if (questradeAccessToken !== '') {
         const { data: portfolioData, isLoading: portfolioDataIsLoading, error: portfolioDataError } = useQuery(
@@ -38,13 +36,14 @@ const QuestradePortfolioOverview: FC = () => {
             setQuestradeAccessToken('');
             setQuestradeServer('');
         }
-
+        console.log("HERE", questradeServer, questradeAccessToken)
         console.log(portfolioData);
 
         return (
             <AppLayout title="Questrade Portfolio Overview">
                 <div className="mx-5">
                     {portfolioDataIsLoading && <p>Loading...</p>}
+                    <p>No code</p>
                 </div>
             </AppLayout>
         )
@@ -68,6 +67,7 @@ const QuestradePortfolioOverview: FC = () => {
             <AppLayout title="Questrade Portfolio Overview">
                 <div className="mx-5">
                     {accountDataIsLoading && <p>Loading...</p>}
+                    <p>Code</p>
                 </div>
             </AppLayout>
         )
