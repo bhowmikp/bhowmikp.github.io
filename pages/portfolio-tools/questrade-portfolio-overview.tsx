@@ -1,17 +1,17 @@
 import AppLayout from '@Components/AppLayout';
-import React, { FC, useContext, useState, useEffect } from 'react';
+import React, { FC, useContext } from 'react';
 import { AppContext } from '../_app';
 import { useRouter } from 'next/router';
 import { useQuery } from 'react-query';
 import questradePortfolioOverviewMock from '@MockData/questrade/questradePortfolioOverview';
+import QuestradePortfolioOverviewMain from '@Components/QuestradePortfolioOverviewMain';
 
 const QuestradePortfolioOverview: FC = () => {
     const router = useRouter();
     const {questradeData} = useContext(AppContext);
     const [questradeServer, setQuestradeServer] = questradeData.questradeServer;
     const [questradeAccessToken, setQuestradeAccessToken] = questradeData.questradeAccessToken;
-    const redirectUri = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/portfolio-tools/questrade-portfolio-overview`;
-
+    const redirectUri = `https://${process.env.NEXT_PUBLIC_HOST_URL === undefined || process.env.NEXT_PUBLIC_HOST_URL === "" ? process.env.NEXT_PUBLIC_VERCEL_URL: process.env.NEXT_PUBLIC_HOST_URL}/portfolio-tools/questrade-portfolio-overview`;
 
     const getPortfolioOverview = async(server: string, accessToken: string) => {
         const data = await (await fetch(`/api/questrade/questradePortfolioOverview?accessToken=${accessToken}&server=${server}`)).json();
@@ -41,37 +41,10 @@ const QuestradePortfolioOverview: FC = () => {
             setQuestradeServer('');
         }
 
-        const allHoldings = (allPortfolioData) => {
-            return [].concat(...allPortfolioData.data.map((portfolio) => {
-                return portfolio.holdings;
-            }));
-        }
-
-        const [currentPorfolioHoldings, setCurrentPortfolioHoldings] = useState([]);
-
         return (
             <AppLayout title="Questrade Portfolio Overview">
                 <div className="mx-5">
-                    {portfolioDataIsLoading ? <p>Loading...</p>: (
-                        <>
-                            <p className="inline mr-3">Account Name:</p>
-
-                            {portfolioData !== undefined && 'data' in portfolioData && (
-                                <>
-                                    {portfolioData.data.length > 1 && <p onClick={() => {setCurrentPortfolioHoldings(allHoldings(portfolioData))}} className="inline mr-3">All</p>}
-                                    {portfolioData.data.map((portfolio) => {
-                                        return (
-                                            <p key={portfolio.accountNumber} onClick={() => {setCurrentPortfolioHoldings(portfolio.holdings)}} className="inline mr-3">{portfolio.accountNumber}</p>
-                                        );
-                                    })}
-
-                                    {currentPorfolioHoldings.map((holdings) => {
-                                        return <p key={holdings.symbol}>{holdings.symbol}</p>
-                                    })}
-                                </>
-                            )}
-                        </>
-                    )}
+                    {portfolioDataIsLoading ? <p>Loading...</p>: portfolioData !== undefined && 'data' in portfolioData && <QuestradePortfolioOverviewMain portfolioData={portfolioData} />}
                 </div>
             </AppLayout>
         )
