@@ -18,11 +18,7 @@ export const getStaticProps: GetStaticProps = async () => ({
 const Homepage: FC<{ homepageData: IHomepageData[] }> = ({ homepageData }) => (
     <>
         <AppLayout title="Homepage">
-            {homepageData.map((entry) => (
-                <>
-                    <BlockContent blocks={entry.body} serializers={homepageSerializer} />
-                </>
-            ))}
+            <BlockContent blocks={homepageData[0].body} serializers={homepageSerializer} />
         </AppLayout>
     </>
 );

@@ -26,8 +26,8 @@ export const getBlogsByCategory = async (category: string, page = 0, blogCount =
 
     const postQuery = `
     *[_type=="blog" ${
-        category === 'undefined' ? `` : `&& category == '${category}'`
-    }] | order(_createdAt desc) | ${range} { title, description, readingTime, tags, category, _updatedAt, _id } `;
+        category === 'undefined' ? `` : `&& category == "${category}"`
+    }] | order(_createdAt desc)${range} { title, description, readingTime, tags, category, _updatedAt, _id } `;
     const params = { minSeats: 2 };
 
     return client.fetch(postQuery, params);
