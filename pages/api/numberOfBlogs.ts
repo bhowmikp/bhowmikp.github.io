@@ -20,7 +20,7 @@ const validate = async (req: NextApiRequest): Promise<any> => {
 };
 
 export const getNumberOfBlogs = async (category?: string): Promise<IBlogs> => {
-    const postQuery = `count(*[_type=="blog" ${category === 'undefined' ? '' : `&& category == '${category}'`}])`;
+    const postQuery = `count(*[_type=="blog" ${category === 'undefined' ? '' : `&& category == "${category}"`}])`;
     const params = { minSeats: 2 };
 
     return client.fetch(postQuery, params);

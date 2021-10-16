@@ -20,7 +20,7 @@ const validate = async (req: NextApiRequest): Promise<any> => {
 };
 
 export const getBlog = async (id: string): Promise<IBlogs> => {
-    const postQuery = `*[_type=="blog" && _id == '${id}'] { ... } `;
+    const postQuery = `*[_type=="blog" && _id == "${id}"] {...}`;
     const params = { minSeats: 2 };
 
     return client.fetch(postQuery, params);

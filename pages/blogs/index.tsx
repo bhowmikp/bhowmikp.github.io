@@ -8,11 +8,11 @@ import { useRouter } from 'next/router';
 import { event as gtmEvent } from '@Service/googleService';
 import BlogsTab from '@Components/BlogsTab';
 
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import AppBar from '@mui/material/AppBar';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 
-export const config = { amp: 'hybrid' };
+// export const config = { amp: 'hybrid' };
 
 export const getStaticProps: GetStaticProps = async () => ({
     props: {
@@ -43,7 +43,7 @@ const TabPanel = (props: { children: React.ReactNode; index: any; value: any }) 
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...other}
         >
-            {value === index && <p>{children}</p>}
+            {value === index && <div>{children}</div>}
         </div>
     );
 };
@@ -104,7 +104,6 @@ const Blogs: FC<{
                             onChange={handleTabChange}
                             aria-label="simple tabs example"
                             variant={screenSize > 640 ? 'fullWidth' : 'scrollable'}
-                            scrollButtons="on"
                             className="bg-purple-600 dark:bg-blue-900 text-white"
                         >
                             <Tab

@@ -22,6 +22,9 @@
 }
 
 @layer base {
+    h1 {
+        @apply text-primary;
+    },
     p {
         @apply text-primary;
     },
