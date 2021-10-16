@@ -7,7 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-export const config = { amp: 'hybrid' };
+// export const config = { amp: 'hybrid' };
 
 const rows = [
     { id: 1, position: '1st Place', organization: 'RBC Amplify', year: 2019 },
