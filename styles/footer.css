@@ -1,0 +1,21 @@
+@layer components {
+    .footer-contact-me-text {
+        font-family: Poppins;
+        font-style: normal;
+        line-height: 72px;
+
+        @apply text-5xl font-medium;
+    }
+
+    .footer-icons {
+        @apply fill-current text-button;
+    }
+
+    .footer-icon-text {
+        @apply ml-3 mt-1 align-text-bottom text-xl hover:underline;
+    }
+
+    .footer-icon-spacing {
+        @apply mx-0 mb-5 md:mr-24 md:mb-0;
+    }
+}
