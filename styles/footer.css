@@ -12,7 +12,7 @@
     }
 
     .footer-icon-text {
-        @apply ml-3 mt-1 align-text-bottom text-xl hover:underline;
+        @apply ml-3 mt-1 align-text-bottom text-xl hover:underline cursor-pointer;
     }
 
     .footer-icon-spacing {
