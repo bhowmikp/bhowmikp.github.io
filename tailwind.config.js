@@ -10,7 +10,8 @@ module.exports = {
             textColor: {
                 accent: 'var(--color-text-accent)',
                 primary: 'var(--color-text-primary)',
-                secondary: 'var(--color-text-secondary)'
+                secondary: 'var(--color-text-secondary)',
+                button: 'var(--color-button)'
             }
         }
     },

@@ -18,7 +18,9 @@ export const getStaticProps: GetStaticProps = async () => ({
 const Homepage: FC<{ homepageData: IHomepageData[] }> = ({ homepageData }) => (
     <>
         <AppLayout title="Homepage">
-            <BlockContent blocks={homepageData[0].body} serializers={homepageSerializer} />
+            <div className="bg-secondary">
+                <BlockContent blocks={homepageData[0].body} serializers={homepageSerializer} />
+            </div>
         </AppLayout>
     </>
 );
