@@ -29,6 +29,9 @@
       "@Components/*": [
         "components/*"
       ],
+      "@Hooks/*": [
+        "hooks/*"
+      ],
       "@Interfaces/*": [
         "interfaces/*"
       ],
@@ -43,6 +46,9 @@
       ],
       "@Styles/*": [
         "styles/*"
+      ],
+      "@Utils/*": [
+        "utils/*"
       ]
     }
   },

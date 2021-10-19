@@ -10,8 +10,8 @@ const LINKEDIN_URL = 'https://www.linkedin.com/in/prantar/';
 const EMAIL = 'mailto:prantar.bhowmik@mail.utoronto.ca';
 
 const Footer: FC = () => (
-    <div className="w-3/4 h-80 bg-primary mx-auto">
-        <p className="footer-contact-me-text pt-10 pb-8 md:pt-20 md:pb-16">Contact Me</p>
+    <div className="my-16 mx-5 w-100 md:mx-auto md:w-3/4">
+        <p className="footer-contact-me-text pb-8 md:pb-14">Contact Me</p>
 
         <div className="flex flex-col md:flex-row">
             <div className="flex-grow">

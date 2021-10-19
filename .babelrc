@@ -13,11 +13,13 @@
                     "@Api": "./pages/api",
                     "@Clients": "./clients",
                     "@Components": "./components",
+                    "@Hooks": "./hooks",
                     "@Interfaces": "./interfaces",
                     "@MockData": "./mockData",
                     "@Serializers": "./serializers",
                     "@Service": "./service",
-                    "@Styles": "./styles"
+                    "@Styles": "./styles",
+                    "@Utils": "./utils"
                 }
             }
         ]
