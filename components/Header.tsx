@@ -61,14 +61,6 @@ const NavBar: FC = () => {
                                     src="/profilePic.png"
                                     alt="Profile Pic"
                                     className="bg-white rounded-full"
-                                    onClick={() => {
-                                        event({ name: 'menuItem', category: 'link', label: 'homepage' });
-                                    }}
-                                    onKeyDown={(e) => {
-                                        if (e.key === 'Enter') {
-                                            event({ name: 'menuItem', category: 'link', label: 'homepage' });
-                                        }
-                                    }}
                                 />
                             ) : (
                                 <Image
