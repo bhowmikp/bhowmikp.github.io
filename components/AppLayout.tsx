@@ -3,7 +3,11 @@ import React, { FC } from 'react';
 import NavBar from '@Components/Header';
 import Footer from '@Components/Footer';
 
-const AppLayout: FC<{ children: React.ReactNode; title: string }> = ({ children, title }) => (
+const AppLayout: FC<{ children: React.ReactNode; title: string; className?: string }> = ({
+    children,
+    title,
+    className
+}) => (
     <>
         <Head>
             <title>Prantar Bhowmik - {title}</title>
@@ -15,7 +19,7 @@ const AppLayout: FC<{ children: React.ReactNode; title: string }> = ({ children,
                 <NavBar />
             </header>
 
-            <main className="flex-grow">{children}</main>
+            <main className={`flex-grow ${className}`}>{children}</main>
 
             <footer className="bg-primary">
                 <Footer />

@@ -51,7 +51,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 const PostLoading = () => (
     <AppLayout title="Loading...">
-        <div className="mx-5 mb-10">
+        <div className="mx-5 mb-10 bg-secondary">
             <div className="h-screen flex justify-center items-center">
                 <div className="relative flex justify-center items-center h-3">
                     <svg
@@ -85,7 +85,7 @@ const Post: FC<{ blogData: IBlogs[] }> = ({ blogData }) => {
     const updatedAtDate = new Date(data._updatedAt.split('T')[0]);
 
     return (
-        <AppLayout title={data.title}>
+        <AppLayout title={data.title} className="bg-secondary">
             <div className="mb-10 w-11/12 mx-auto">
                 <div className="block lg:grid lg:grid-cols-4">
                     <div className="col-span-3">

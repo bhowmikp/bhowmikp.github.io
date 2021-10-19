@@ -1,4 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
+import { useAmp } from 'next/amp';
 import Link from 'next/link';
 import { event } from '@Service/googleService';
 import Image from 'next/image';
@@ -13,6 +14,8 @@ import { isBrowser } from '@Utils/isBrowser';
 import { useWindowSize } from '@Hooks/useWindowSize';
 
 const NavBar: FC = () => {
+    const isAmp = useAmp();
+
     const [menuStatus, setMenuStatus] = useState(false);
     const { resolvedTheme, setTheme } = useTheme();
     const mobileScreenWidth = 768;
@@ -34,7 +37,7 @@ const NavBar: FC = () => {
     }, [screenWidth]);
 
     return (
-        <nav className={`w-full py-4 z-10 bg-primary ${menuStatus ? 'absolute h-full' : ''}`}>
+        <nav className={`w-full my-4 z-10 bg-primary ${menuStatus ? 'absolute h-full' : ''}`}>
             <div className="flex flex-wrap items-center justify-between w-full px-5 md:w-3/4 md:mx-auto">
                 <div>
                     <Link href="/">
@@ -51,21 +54,39 @@ const NavBar: FC = () => {
                             role="link"
                             tabIndex={0}
                         >
-                            <Image
-                                src="/profilePic.png"
-                                alt="Profile Pic"
-                                width="50"
-                                height="50"
-                                className="bg-white rounded-full"
-                                onClick={() => {
-                                    event({ name: 'menuItem', category: 'link', label: 'homepage' });
-                                }}
-                                onKeyDown={(e) => {
-                                    if (e.key === 'Enter') {
+                            {isAmp ? (
+                                <amp-img
+                                    width="50"
+                                    height="50"
+                                    src="/profilePic.png"
+                                    alt="Profile Pic"
+                                    className="bg-white rounded-full"
+                                    onClick={() => {
                                         event({ name: 'menuItem', category: 'link', label: 'homepage' });
-                                    }
-                                }}
-                            />
+                                    }}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter') {
+                                            event({ name: 'menuItem', category: 'link', label: 'homepage' });
+                                        }
+                                    }}
+                                />
+                            ) : (
+                                <Image
+                                    src="/profilePic.png"
+                                    alt="Profile Pic"
+                                    width="50"
+                                    height="50"
+                                    className="bg-white rounded-full"
+                                    onClick={() => {
+                                        event({ name: 'menuItem', category: 'link', label: 'homepage' });
+                                    }}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter') {
+                                            event({ name: 'menuItem', category: 'link', label: 'homepage' });
+                                        }
+                                    }}
+                                />
+                            )}
                         </a>
                     </Link>
                 </div>
