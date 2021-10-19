@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import React, { FC } from 'react';
-import NavBar from '@Components/Header';
+import NavBar from '@Components/NavBar';
 import Footer from '@Components/Footer';
 
 const AppLayout: FC<{ children: React.ReactNode; title: string; className?: string }> = ({
