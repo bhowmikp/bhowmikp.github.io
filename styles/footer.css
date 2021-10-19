@@ -4,15 +4,15 @@
         font-style: normal;
         line-height: 72px;
 
-        @apply text-5xl font-medium;
+        @apply text-4xl font-medium;
     }
 
     .footer-icons {
-        @apply fill-current text-button;
+        @apply fill-current text-nav;
     }
 
     .footer-icon-text {
-        @apply ml-3 mt-1 align-text-bottom text-xl hover:underline;
+        @apply ml-3 mt-1 align-text-bottom text-lg hover:underline cursor-pointer;
     }
 
     .footer-icon-spacing {

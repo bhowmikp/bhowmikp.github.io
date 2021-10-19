@@ -18,7 +18,7 @@ export default class MyDocument extends Document {
                 <Head>
                     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js" />
                 </Head>
-                <body className="bg-primary">
+                <body>
                     <Main />
                     <NextScript />
 

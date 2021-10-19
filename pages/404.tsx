@@ -13,7 +13,7 @@ const Homepage: FC = () => {
     const { resolvedTheme } = useTheme();
 
     return (
-        <AppLayout title="404">
+        <AppLayout title="404" className="bg-secondary">
             <div className="flex h-screen">
                 <div className="m-auto">
                     <p className="text-center mb-10 text-3xl font-bold my-2 text-black dark:text-white">
@@ -40,7 +40,7 @@ const Homepage: FC = () => {
                             <a className="link-primary">homepage</a>
                         </Link>{' '}
                         or{' '}
-                        <Link href="/blogs/programming">
+                        <Link href="/blog">
                             <a className="link-primary">blog</a>
                         </Link>{' '}
                         instead
