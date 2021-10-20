@@ -37,7 +37,7 @@ const NavBar: FC = () => {
     }, [screenWidth]);
 
     return (
-        <nav className={`w-full my-4 z-10 bg-primary ${menuStatus ? 'absolute h-full' : ''}`}>
+        <nav className={`w-full z-10 bg-primary ${menuStatus ? 'absolute h-full my-0 py-4' : 'my-4'}`}>
             <div className="flex flex-wrap items-center justify-between w-full px-5 md:w-3/4 md:mx-auto">
                 <div>
                     <Link href="/">

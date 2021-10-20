@@ -35,7 +35,7 @@ const Homepage: FC = () => {
                         />
                     )}
                     <p className="text-center mt-10 text-xl font-bold my-2 text-black dark:text-white">
-                        Try the{' '}
+                        Try{' '}
                         <Link href="/">
                             <a className="link-primary">homepage</a>
                         </Link>{' '}
