@@ -26,6 +26,9 @@
       "@Clients/*": [
         "clients/*"
       ],
+      "@Constants": [
+        "constants.ts"
+      ],
       "@Components/*": [
         "components/*"
       ],

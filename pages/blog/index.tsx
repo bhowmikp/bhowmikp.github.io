@@ -1,7 +1,7 @@
 import AppLayout from '@Components/AppLayout';
 import { GetStaticProps } from 'next';
-import { getBlogsByCategory } from '@Api/blogsCategory';
-import { getNumberOfBlogs } from '@Api/numberOfBlogs';
+import { getBlogsByCategory } from '@Api/blog/blogsCategory';
+import { getNumberOfBlogs } from '@Api/blog/numberOfBlogs';
 import IBlogs from '@Interfaces/blogs';
 import React, { FC, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
@@ -11,6 +11,8 @@ import BlogsTab from '@Components/BlogsTab';
 import AppBar from '@mui/material/AppBar';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+
+import { time as timeConstants } from '@Constants';
 
 // export const config = { amp: 'hybrid' };
 
@@ -23,7 +25,7 @@ export const getStaticProps: GetStaticProps = async () => ({
         miscellaneousBlogsDataSSR: await getBlogsByCategory('miscellaneous'),
         miscellaneousBlogsCount: await getNumberOfBlogs('miscellaneous')
     },
-    revalidate: 3600
+    revalidate: timeConstants.oneHourInSeconds
 });
 
 const a11yProps = (index: any) => ({

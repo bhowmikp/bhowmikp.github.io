@@ -3,11 +3,11 @@ import React, { FC } from 'react';
 import NavBar from '@Components/NavBar';
 import Footer from '@Components/Footer';
 
-const AppLayout: FC<{ children: React.ReactNode; title: string; className?: string }> = ({
-    children,
-    title,
-    className
-}) => (
+const AppLayout: FC<{
+    children: React.ReactNode;
+    title: string;
+    className?: string;
+}> = ({ children, title, className }) => (
     <>
         <Head>
             <title>Prantar Bhowmik - {title}</title>

@@ -2,7 +2,7 @@
 import AppLayout from '@Components/AppLayout';
 import TableOfContents from '@Components/TableOfContents';
 import { getBlog } from '@Api/blog';
-import { getBlogsByCategory } from '@Api/blogsCategory';
+import { getBlogsByCategory } from '@Api/blog/blogsCategory';
 import IBlogs from '@Interfaces/blogs';
 import React, { FC } from 'react';
 import BlockContent from '@sanity/block-content-to-react';
@@ -11,6 +11,8 @@ import concat from 'lodash/concat';
 import isEmpty from 'lodash/isEmpty';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
+
+import {time as timeConstants} from '@Constants';
 
 export const config = { amp: 'hybrid' };
 
@@ -45,7 +47,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         props: {
             blogData
         },
-        revalidate: 86400
+        revalidate: timeConstants.oneDayInSeconds
     };
 };
 

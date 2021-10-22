@@ -13,6 +13,7 @@
                     "@Api": "./pages/api",
                     "@Clients": "./clients",
                     "@Components": "./components",
+                    "@Constants": "./constants.ts",
                     "@Hooks": "./hooks",
                     "@Interfaces": "./interfaces",
                     "@MockData": "./mockData",

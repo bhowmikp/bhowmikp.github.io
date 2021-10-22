@@ -2,9 +2,12 @@ import AppLayout from '@Components/AppLayout';
 import { GetStaticProps } from 'next';
 import homepageSerializer from '@Serializers/homepageSerializer';
 import BlockContent from '@sanity/block-content-to-react';
-import { getHomepageData } from '@Api/homepage';
-import { IHomepageData } from '@Interfaces/homepage';
 import React, { FC } from 'react';
+
+import { getHomepageData } from '@Api/pages/homepage';
+import { IHomepageData } from '@Interfaces/homepage';
+
+import { time as timeConstants } from '@Constants';
 
 export const config = { amp: 'hybrid' };
 
@@ -12,7 +15,7 @@ export const getStaticProps: GetStaticProps = async () => ({
     props: {
         homepageData: await getHomepageData()
     },
-    revalidate: 86400
+    revalidate: timeConstants.oneDayInSeconds
 });
 
 const Homepage: FC<{ homepageData: IHomepageData[] }> = ({ homepageData }) => (

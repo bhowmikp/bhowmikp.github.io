@@ -13,12 +13,15 @@ import { isBrowser } from '@Utils/isBrowser';
 
 import { useWindowSize } from '@Hooks/useWindowSize';
 
+import { screenWidthBreakpoint as screenWidthBreakpointConstants } from '@Constants';
+
 const NavBar: FC = () => {
     const isAmp = useAmp();
 
     const [menuStatus, setMenuStatus] = useState(false);
     const { resolvedTheme, setTheme } = useTheme();
-    const mobileScreenWidth = 768;
+
+    const mobileScreenWidth = screenWidthBreakpointConstants.md;
 
     if (isBrowser()) {
         if (menuStatus) {
@@ -34,7 +37,7 @@ const NavBar: FC = () => {
         if (screenWidth >= mobileScreenWidth) {
             setMenuStatus(false);
         }
-    }, [screenWidth]);
+    }, [screenWidth, mobileScreenWidth]);
 
     return (
         <nav className={`w-full z-10 bg-primary ${menuStatus ? 'absolute h-full my-0 py-4' : 'my-4'}`}>
