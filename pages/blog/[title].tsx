@@ -12,7 +12,7 @@ import isEmpty from 'lodash/isEmpty';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 
-import {time as timeConstants} from '@Constants';
+import { time as timeConstants } from '@Constants';
 
 export const config = { amp: 'hybrid' };
 
