@@ -7,7 +7,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { coyWithoutShadows } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import urlFor from '@Service/sanityImageService';
-import { IHomepageImage } from '@Interfaces/homepage';
+import { IImage } from '@Interfaces/image';
 import { useAmp } from 'next/amp';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -101,7 +101,7 @@ const blogSerializer = {
             );
         },
         horizontalRow: () => <hr className="blog-hr-style" />,
-        figure: (props: { node: IHomepageImage }): ReactElement => {
+        figure: (props: { node: IImage }): ReactElement => {
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const isAmp = useAmp();
             const { resolvedTheme } = useTheme();
