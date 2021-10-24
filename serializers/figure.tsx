@@ -2,16 +2,16 @@
 /* eslint-disable react/destructuring-assignment */
 import urlFor from '@Service/sanityImageService';
 import React, { ReactElement } from 'react';
-import { IHomepageImage } from '@Interfaces/homepage';
+import { IImage } from '@Interfaces/image';
 import { useAmp } from 'next/amp';
 import Image from 'next/image';
 
 export const config = { amp: 'hybrid' };
 
-const homepageSerializer = {
+export const figureSerializer = {
     types: {
         // eslint-disable-next-line react/display-name
-        figure: (props: { node: IHomepageImage }): ReactElement => {
+        figure: (props: { node: IImage }): ReactElement => {
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const isAmp = useAmp();
 
@@ -20,8 +20,8 @@ const homepageSerializer = {
                     {isAmp ? (
                         <div>
                             <amp-img
-                                width="600"
-                                height="600"
+                                width={props.node.width}
+                                height={props.node.height}
                                 src={urlFor(props.node.image).url()}
                                 alt={props.node.alt}
                             />
@@ -29,7 +29,12 @@ const homepageSerializer = {
                         </div>
                     ) : (
                         <figure>
-                            <Image src={urlFor(props.node.image).url()} alt={props.node.alt} width={500} height={500} />
+                            <Image
+                                src={urlFor(props.node.image).url()}
+                                alt={props.node.alt}
+                                width={props.node.width}
+                                height={props.node.height}
+                            />
 
                             <figcaption>{props.node.caption}</figcaption>
                         </figure>
@@ -40,4 +45,4 @@ const homepageSerializer = {
     }
 };
 
-export default homepageSerializer;
+export default figureSerializer;
