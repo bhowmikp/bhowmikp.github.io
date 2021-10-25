@@ -10,7 +10,7 @@ const LINKEDIN_URL = 'https://www.linkedin.com/in/prantar/';
 const EMAIL = 'mailto:prantar.bhowmik@mail.utoronto.ca';
 
 const Footer: FC = () => (
-    <div className="my-16 mx-5 w-100 md:mx-auto md:w-3/4">
+    <div className="my-16 mx-9 w-100 md:mx-auto md:w-9/12 lg:w-7/12">
         <p className="footer-contact-me-text pb-8 md:pb-14">Contact Me</p>
 
         <div className="flex flex-col md:flex-row">
@@ -29,9 +29,9 @@ const Footer: FC = () => (
                         rel="noopener noreferrer"
                         target="_blank"
                     >
-                        <div className="flex flex-row footer-icon-spacing" style={{ marginLeft: '0px' }}>
+                        <div className="flex flex-row footer-element-spacing">
                             <MdEmail size={40} className="footer-icons" title="Email" />
-                            <p className="footer-icon-text">me@prantar.com</p>
+                            <p className="footer-icon-text flex-grow">me@prantar.com</p>
                         </div>
                     </a>
                 </Link>
@@ -52,7 +52,7 @@ const Footer: FC = () => (
                         rel="noopener noreferrer"
                         target="_blank"
                     >
-                        <div className="flex flex-row footer-icon-spacing">
+                        <div className="flex flex-row footer-element-spacing md:justify-center">
                             <AiFillGithub size={40} className="footer-icons" title="Github" />
                             <p className="footer-icon-text">Github</p>
                         </div>
@@ -75,7 +75,7 @@ const Footer: FC = () => (
                         rel="noopener noreferrer"
                         target="_blank"
                     >
-                        <div className="flex flex-row footer-icon-spacing" style={{ marginRight: '0px' }}>
+                        <div className="flex flex-row footer-element-spacing md:justify-end">
                             <AiFillLinkedin size={40} className="footer-icons" title="Linkedin" />
                             <p className="footer-icon-text">Linkedin</p>
                         </div>

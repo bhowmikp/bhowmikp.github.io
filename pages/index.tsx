@@ -34,12 +34,12 @@ const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
 
     return (
         <>
-            <AppLayout title="Homepage">
+            <AppLayout title="Homepage" className="bg-primary">
                 <div className="bg-primary md:py-20">
-                    <div className="flex flex-col mx-auto md:flex-row md:w-2/3">
-                        <div className="mx-3 sm:w-3/4 sm:mx-auto lg:w-5/12 md:pr-4">
+                    <div className="flex flex-col mx-auto md:flex-row md:w-9/12 lg:px-14">
+                        <div className="mx-5 sm:w-9/12 sm:mx-auto md:pr-2 lg:pr-0 lg:w-5/12">
                             <p className="font-bold text-4xl md:text-6xl">{homepageData.heading.header}</p>
-                            <p className="text-xl my-5 pb-5 md:pb-10">{homepageData.heading.description}</p>
+                            <p className="text-3xl my-5 pb-5 md:pb-10">{homepageData.heading.description}</p>
                             {homepageData.heading.cta.map((cta: ICta) => (
                                 <Link href={cta.url} key={cta._key}>
                                     <a target={cta.target} className="regular-button">
@@ -57,6 +57,22 @@ const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
                         </div>
                     </div>
                 </div>
+
+                {homepageData.paragraphs.map((paragraphData, index) => (
+                    <div key={paragraphData._key} className={`${index % 2 !== 0 ? 'bg-primary' : 'bg-secondary'}`}>
+                        <p>{paragraphData.paragraphTitle}</p>
+                        <p>{paragraphData.paragraphHeading}</p>
+                        <p>{paragraphData.paragraphDescription}</p>
+                        <BlockContent blocks={paragraphData.image} serializers={figureSerializer} />
+                        {paragraphData.cta.map((cta: ICta) => (
+                            <Link href={cta.url} key={cta._key}>
+                                <a target={cta.target} className="regular-button">
+                                    {cta.urlText}
+                                </a>
+                            </Link>
+                        ))}
+                    </div>
+                ))}
             </AppLayout>
         </>
     );

@@ -8,7 +8,16 @@ export interface IHomepageHeading {
     profilePic: IImage;
 }
 
+export interface IParagraphs {
+    cta: ICta[];
+    image: IImage;
+    paragraphDescription: string;
+    paragraphHeading: string;
+    paragraphTitle: string;
+    _key: string;
+}
+
 export interface IHomepageData {
     heading: IHomepageHeading;
-    paragraphs: any[];
+    paragraphs: IParagraphs[];
 }

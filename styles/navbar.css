@@ -1,6 +1,6 @@
 @layer components {
     .navbar-element {
-        @apply mt-7 border-b border-button md:border-0 md:mt-0 md:p-4 lg:pr-8 py-2 block;
+        @apply mt-7 border-b border-button md:border-0 md:mt-0 md:p-4 lg:pr-12 py-2 block;
     }
 
     .navbar-element-last {
@@ -8,6 +8,6 @@
     }
 
     .navbar-text {
-        @apply text-primary md:text-nav text-2xl hover:no-underline md:hover:underline;
+        @apply text-primary md:text-nav text-xl hover:no-underline md:hover:underline;
     }
 }

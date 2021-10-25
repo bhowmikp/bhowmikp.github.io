@@ -40,8 +40,8 @@ const NavBar: FC = () => {
     }, [screenWidth, mobileScreenWidth]);
 
     return (
-        <nav className={`w-full z-10 bg-primary ${menuStatus ? 'absolute h-full my-0 py-4' : 'my-4'}`}>
-            <div className="flex flex-wrap items-center justify-between w-full px-5 md:w-10/12 lg:w-3/4 md:mx-auto">
+        <nav className={`w-full z-10 bg-primary ${menuStatus ? 'absolute h-full my-0 py-12' : 'mt-12 mb-4'}`}>
+            <div className="flex flex-wrap items-center justify-between w-full px-5 md:px-0 sm:w-10/12 md:w-9/12 lg:w-8/12 mx-auto">
                 <div>
                     <Link href="/">
                         <a
@@ -59,8 +59,8 @@ const NavBar: FC = () => {
                         >
                             {isAmp ? (
                                 <amp-img
-                                    width="60"
-                                    height="60"
+                                    width="80"
+                                    height="80"
                                     src="/profilePic.png"
                                     alt="Profile Pic"
                                     className="bg-white rounded-full"
@@ -69,8 +69,8 @@ const NavBar: FC = () => {
                                 <Image
                                     src="/profilePic.png"
                                     alt="Profile Pic"
-                                    width="60"
-                                    height="60"
+                                    width="80"
+                                    height="80"
                                     className="bg-white rounded-full"
                                     onClick={() => {
                                         event({ name: 'menuItem', category: 'link', label: 'homepage' });
