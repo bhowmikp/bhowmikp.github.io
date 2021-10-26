@@ -1,10 +1,12 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import isEmpty from 'lodash/isEmpty';
 import { useRouter } from 'next/router';
 import { ITableOfContents } from '@Interfaces/blogs';
+import { BlogContext } from '@Contexts/blogContext';
 
 const TableOfContents: FC<{ tableOfContents: ITableOfContents[] }> = ({ tableOfContents }) => {
     const router = useRouter();
+    const blogContext = useContext(BlogContext);
 
     return (
         <div className="sticky top-5 blog-table-of-contents-border">
@@ -17,6 +19,7 @@ const TableOfContents: FC<{ tableOfContents: ITableOfContents[] }> = ({ tableOfC
                     <p
                         key={entry.sectionId}
                         className={`
+                            ${blogContext.state.id === entry.sectionId ? 'font-bold' : ''}
                             ${
                                 entry.sectionLevel === 2
                                     ? `blog-table-of-contents-padding-2`

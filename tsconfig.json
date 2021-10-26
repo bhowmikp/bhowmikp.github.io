@@ -29,6 +29,9 @@
       "@Constants": [
         "constants.ts"
       ],
+      "@Contexts/*": [
+        "contexts/*"
+      ],
       "@Components/*": [
         "components/*"
       ],

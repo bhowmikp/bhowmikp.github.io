@@ -14,7 +14,7 @@ const Homepage: FC = () => {
 
     return (
         <AppLayout title="404" className="bg-secondary">
-            <div className="flex h-screen">
+            <div className="flex py-10">
                 <div className="m-auto">
                     <p className="text-center mb-10 text-3xl font-bold my-2 text-black dark:text-white">
                         Oops! Page not found

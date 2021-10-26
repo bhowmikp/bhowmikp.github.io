@@ -14,6 +14,7 @@
                     "@Clients": "./clients",
                     "@Components": "./components",
                     "@Constants": "./constants.ts",
+                    "@Contexts": "./contexts",
                     "@Hooks": "./hooks",
                     "@Interfaces": "./interfaces",
                     "@MockData": "./mockData",
