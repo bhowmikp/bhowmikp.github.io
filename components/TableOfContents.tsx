@@ -20,11 +20,9 @@ const TableOfContents: FC<{ tableOfContents: ITableOfContents[] }> = ({ tableOfC
                         key={entry.sectionId}
                         className={`
                             ${blogContext.state.id === entry.sectionId ? 'font-bold' : ''}
-                            ${
-                                entry.sectionLevel === 2
-                                    ? `blog-table-of-contents-padding-2`
-                                    : entry.sectionLevel === 3 && 'blog-table-of-contents-padding-3'
-                            }`}
+                            ${entry.sectionLevel === 2 ? `blog-table-of-contents-padding-2` : ''}
+                            ${entry.sectionLevel === 3 ? `blog-table-of-contents-padding-3` : ''}
+                        `}
                     >
                         <a
                             href={`${router.query.title}#${entry.sectionId}`}

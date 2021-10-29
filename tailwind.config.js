@@ -15,7 +15,8 @@ module.exports = {
                 nav: 'var(--color-text-nav)'
             },
             borderColor: {
-                button: 'var(--color-bg-button)'
+                button: 'var(--color-bg-button)',
+                experienceSection: 'var(--color-bg-experience-section)'
             }
         }
     },

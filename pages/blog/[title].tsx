@@ -102,7 +102,7 @@ const Post: FC<{ blogData: IBlogs[] }> = ({ blogData }) => {
                             <p>
                                 {`${updatedAtDate.toLocaleString('default', {
                                     month: 'short'
-                                })} ${updatedAtDate.getDay()}, ${updatedAtDate.getFullYear()}`}{' '}
+                                })} ${updatedAtDate.getDate()}, ${updatedAtDate.getFullYear()}`}{' '}
                                 · {data.readingTime} min read
                             </p>
                             <hr className="blog-hr-style my-2" />

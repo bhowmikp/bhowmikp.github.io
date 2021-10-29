@@ -1,9 +1,11 @@
-import AppLayout from '@Components/AppLayout';
+import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
+import Link from 'next/link';
 import { figureSerializer } from '@Serializers/figure';
 import BlockContent from '@sanity/block-content-to-react';
-import React, { FC } from 'react';
-import Link from 'next/link';
+
+import AppLayout from '@Components/AppLayout';
+import { ExperienceSection } from '@Components/ExperienceSection';
 
 import { getHomepageData } from '@Api/pages/homepage';
 import { IHomepageData } from '@Interfaces/homepage';
@@ -42,7 +44,7 @@ const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
                             <p className="text-3xl my-5 pb-5 md:pb-10">{homepageData.heading.description}</p>
                             {homepageData.heading.cta.map((cta: ICta) => (
                                 <Link href={cta.url} key={cta._key}>
-                                    <a target={cta.target} className="regular-button">
+                                    <a target={cta.target} className="regular-button" rel="noopener noreferrer">
                                         {cta.urlText}
                                     </a>
                                 </Link>
@@ -59,19 +61,11 @@ const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
                 </div>
 
                 {homepageData.paragraphs.map((paragraphData, index) => (
-                    <div key={paragraphData._key} className={`${index % 2 !== 0 ? 'bg-primary' : 'bg-secondary'}`}>
-                        <p>{paragraphData.paragraphTitle}</p>
-                        <p>{paragraphData.paragraphHeading}</p>
-                        <p>{paragraphData.paragraphDescription}</p>
-                        <BlockContent blocks={paragraphData.image} serializers={figureSerializer} />
-                        {paragraphData.cta.map((cta: ICta) => (
-                            <Link href={cta.url} key={cta._key}>
-                                <a target={cta.target} className="regular-button">
-                                    {cta.urlText}
-                                </a>
-                            </Link>
-                        ))}
-                    </div>
+                    <ExperienceSection
+                        data={paragraphData}
+                        className={`${index % 2 !== 0 ? 'bg-primary' : 'bg-secondary'}`}
+                        key={paragraphData._key}
+                    />
                 ))}
             </AppLayout>
         </>

@@ -14,6 +14,7 @@ module.exports = {
     },
     plugins: ['@typescript-eslint', 'react', 'prettier'],
     extends: [
+        'plugin:@next/next/recommended',
         'airbnb',
         'airbnb/hooks',
         'plugin:@typescript-eslint/recommended',
@@ -41,13 +42,17 @@ module.exports = {
     },
     settings: {
         'import/resolver': {
-            'babel-module': {
-                extensions: ['.js', '.jsx', '.ts', '.tsx']
-            },
             node: {
                 extensions: ['.js', '.jsx', '.ts', '.tsx'],
                 paths: ['src']
+            },
+            typescript: {
+                alwaysTryTypes: true,
+                paths: './tsconfig.json'
             }
+        },
+        'import/parsers': {
+            '@typescript-eslint/parser': ['.ts', '.tsx']
         }
     }
 };

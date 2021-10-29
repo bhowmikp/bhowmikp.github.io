@@ -16,6 +16,7 @@
     --color-text-accent: #81e6d9;
     --color-text-nav: #63E7DD;
     --color-bg-button: #63E7DD;
+    --color-bg-experience-section: #3D8882;
 }
 
 .light {
@@ -26,6 +27,7 @@
     --color-text-accent: #2b6cb0;
     --color-text-nav: #0268CA;
     --color-bg-button: #0268CA;
+    --color-bg-experience-section:#0400C6;
 }
 
 @layer base {
