@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { figureSerializer } from '@Serializers/figure';
@@ -35,40 +35,38 @@ const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
     };
 
     return (
-        <>
-            <AppLayout title="Homepage" mainClassName="bg-primary" footerClassName="bg-secondary">
-                <div className="bg-primary py-20 md:py-40">
-                    <div className="flex flex-col mx-auto md:flex-row md:w-9/12 lg:px-14 justify-between">
-                        <div className="w-9/12 mx-auto lg:w-5/12">
-                            <p className="font-bold text-4xl md:text-6xl">{homepageData.heading.header}</p>
-                            <p className="text-3xl my-5 pb-5 md:pb-10">{homepageData.heading.description}</p>
-                            {homepageData.heading.cta.map((cta: ICta) => (
-                                <Link href={cta.url} key={cta._key}>
-                                    <a target={cta.target} className="regular-button" rel="noopener noreferrer">
-                                        {cta.urlText}
-                                    </a>
-                                </Link>
-                            ))}
-                        </div>
-                        <div
-                            className={`${determineImagePosition(
-                                homepageData.heading.profilePic.alignment
-                            )} text-center my-10 md:my-0 mx-auto w-6/12 sm:w-5/12 xl:w-3/12`}
-                        >
-                            <BlockContent blocks={homepageData.heading.profilePic} serializers={figureSerializer} />
-                        </div>
+        <AppLayout title="Homepage" mainClassName="bg-primary" footerClassName="bg-secondary">
+            <div className="bg-primary py-20 md:py-40">
+                <div className="flex flex-col mx-auto md:flex-row md:w-9/12 lg:px-14 justify-between">
+                    <div className="w-9/12 mx-auto lg:w-5/12">
+                        <p className="font-bold text-4xl md:text-6xl">{homepageData.heading.header}</p>
+                        <p className="text-3xl my-5 pb-5 md:pb-10">{homepageData.heading.description}</p>
+                        {homepageData.heading.cta.map((cta: ICta) => (
+                            <Link href={cta.url} key={cta._key}>
+                                <a target={cta.target} className="regular-button" rel="noopener noreferrer">
+                                    {cta.urlText}
+                                </a>
+                            </Link>
+                        ))}
+                    </div>
+                    <div
+                        className={`${determineImagePosition(
+                            homepageData.heading.profilePic.alignment
+                        )} text-center my-10 md:my-0 mx-auto w-6/12 sm:w-5/12 xl:w-3/12`}
+                    >
+                        <BlockContent blocks={homepageData.heading.profilePic} serializers={figureSerializer} />
                     </div>
                 </div>
+            </div>
 
-                {homepageData.paragraphs.map((paragraphData, index) => (
-                    <ExperienceSection
-                        data={paragraphData}
-                        className={`${index % 2 !== 0 ? 'bg-primary' : 'bg-secondary'}`}
-                        key={paragraphData._key}
-                    />
-                ))}
-            </AppLayout>
-        </>
+            {homepageData.paragraphs.map((paragraphData, index) => (
+                <ExperienceSection
+                    data={paragraphData}
+                    className={`${index % 2 !== 0 ? 'bg-primary' : 'bg-secondary'}`}
+                    key={paragraphData._key}
+                />
+            ))}
+        </AppLayout>
     );
 };
 

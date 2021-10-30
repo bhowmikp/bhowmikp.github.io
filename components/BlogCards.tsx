@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import IBlogs from '@Interfaces/blogs';
+import { IBlogs } from '@Interfaces/blogs';
 import React, { FC } from 'react';
 import { useRouter } from 'next/router';
 

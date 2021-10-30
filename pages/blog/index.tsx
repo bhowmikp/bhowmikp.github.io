@@ -2,7 +2,7 @@ import AppLayout from '@Components/AppLayout';
 import { GetStaticProps } from 'next';
 import { getBlogsByCategory } from '@Api/blog/blogsCategory';
 import { getNumberOfBlogs } from '@Api/blog/numberOfBlogs';
-import IBlogs from '@Interfaces/blogs';
+import { IBlogs } from '@Interfaces/blogs';
 import React, { FC, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { event as gtmEvent } from '@Service/googleService';

@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { useQuery } from 'react-query';
 import BlogCards from '@Components/BlogCards';
 import TablePagination from '@mui/material/TablePagination';
-import IBlogs from '@Interfaces/blogs';
+import { IBlogs } from '@Interfaces/blogs';
 
 const BlogsTab: FC<{
     blogsCount: number;

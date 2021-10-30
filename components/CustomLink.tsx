@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
 import { event } from '@Service/googleService';
-import isEmpty from 'lodash/isEmpty';
+import { isEmpty } from 'lodash/isEmpty';
 import { useAmp } from 'next/amp';
 
 interface ICustomLink {
