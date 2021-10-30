@@ -1,5 +1,5 @@
 import React, { FC, useContext } from 'react';
-import { isEmpty } from 'lodash/isEmpty';
+import isEmpty from 'lodash/isEmpty';
 import { useRouter } from 'next/router';
 import { ITableOfContents } from '@Interfaces/blogs';
 import { BlogContext } from '@Contexts/blogContext';

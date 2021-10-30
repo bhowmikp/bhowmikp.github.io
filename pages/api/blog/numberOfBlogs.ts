@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import client from '@Clients/sanityClient';
-import IBlogs from '@Interfaces/blogs';
+import { IBlogs } from '@Interfaces/blogs';
 
 import Joi from 'joi';
 import Boom from '@hapi/boom';
