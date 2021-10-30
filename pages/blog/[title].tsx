@@ -93,7 +93,7 @@ const Post: FC<{ blogData: IBlogs[] }> = ({ blogData }) => {
     const updatedAtDate = new Date(data._updatedAt.split('T')[0]);
 
     return (
-        <AppLayout title={data.title} className="bg-secondary">
+        <AppLayout title={data.title} mainClassName="bg-secondary">
             <BlogContext.Provider value={{ state: blogContextData, setState: setBlogContextData }}>
                 <div className="mb-10 w-11/12 mx-auto">
                     <div className="block lg:grid lg:grid-cols-4">

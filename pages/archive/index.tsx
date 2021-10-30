@@ -22,7 +22,7 @@ const CustomLinkLocal: FC<{
 );
 
 const archive: FC = () => (
-    <AppLayout title="Archive" className="bg-secondary">
+    <AppLayout title="Archive" mainClassName="bg-secondary">
         <div className="mx-5 py-10">
             <p className="text-2xl font-extrabold">Archive</p>
 

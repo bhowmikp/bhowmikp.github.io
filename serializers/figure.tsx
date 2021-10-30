@@ -34,6 +34,7 @@ export const figureSerializer = {
                                 alt={props.node.alt}
                                 width={props.node.width}
                                 height={props.node.height}
+                                layout="responsive"
                             />
 
                             <figcaption>{props.node.caption}</figcaption>

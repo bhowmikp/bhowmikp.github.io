@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { figureSerializer } from '@Serializers/figure';
@@ -36,10 +36,10 @@ const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
 
     return (
         <>
-            <AppLayout title="Homepage" className="bg-primary">
+            <AppLayout title="Homepage" mainClassName="bg-primary" footerClassName="bg-secondary">
                 <div className="bg-primary md:py-20">
-                    <div className="flex flex-col mx-auto md:flex-row md:w-9/12 lg:px-14">
-                        <div className="mx-5 sm:w-9/12 sm:mx-auto md:pr-2 lg:pr-0 lg:w-5/12">
+                    <div className="flex flex-col mx-auto md:flex-row md:w-9/12 lg:px-14 justify-between">
+                        <div className="w-9/12 mx-auto lg:w-5/12">
                             <p className="font-bold text-4xl md:text-6xl">{homepageData.heading.header}</p>
                             <p className="text-3xl my-5 pb-5 md:pb-10">{homepageData.heading.description}</p>
                             {homepageData.heading.cta.map((cta: ICta) => (
@@ -53,7 +53,7 @@ const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
                         <div
                             className={`${determineImagePosition(
                                 homepageData.heading.profilePic.alignment
-                            )} text-center my-10 md:my-0 mx-auto`}
+                            )} text-center my-10 md:my-0 mx-auto w-6/12 sm:w-5/12 xl:w-3/12`}
                         >
                             <BlockContent blocks={homepageData.heading.profilePic} serializers={figureSerializer} />
                         </div>

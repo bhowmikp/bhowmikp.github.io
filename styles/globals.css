@@ -47,6 +47,10 @@
         @apply bg-button rounded-3xl px-4 py-3 hover:bg-primary dark:text-black text-white dark:hover:text-primary hover:text-primary font-semibold border-button border;
     }
 
+    .link-button {
+        @apply underline text-nav cursor-pointer my-auto align-text-bottom pt-2;
+    }
+
     .link-primary {
         @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600 dark:text-blue-300 dark:hover:text-pink-200 dark:visited:text-pink-300;
     }

@@ -6,8 +6,9 @@ import Footer from '@Components/Footer';
 const AppLayout: FC<{
     children: React.ReactNode;
     title: string;
-    className?: string;
-}> = ({ children, title, className }) => (
+    mainClassName?: string;
+    footerClassName?: string;
+}> = ({ children, title, mainClassName, footerClassName }) => (
     <>
         <Head>
             <title>Prantar Bhowmik - {title}</title>
@@ -19,9 +20,11 @@ const AppLayout: FC<{
                 <NavBar />
             </header>
 
-            <main className={`flex-grow ${className}`}>{children}</main>
+            <main className={`flex-grow ${mainClassName === undefined ? 'bg-primary' : mainClassName}`}>
+                {children}
+            </main>
 
-            <footer className="bg-primary">
+            <footer className={`${footerClassName === undefined ? 'bg-primary' : footerClassName}`}>
                 <Footer />
             </footer>
         </div>
