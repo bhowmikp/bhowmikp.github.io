@@ -37,7 +37,7 @@ const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
     return (
         <>
             <AppLayout title="Homepage" mainClassName="bg-primary" footerClassName="bg-secondary">
-                <div className="bg-primary md:py-20">
+                <div className="bg-primary py-20 md:py-40">
                     <div className="flex flex-col mx-auto md:flex-row md:w-9/12 lg:px-14 justify-between">
                         <div className="w-9/12 mx-auto lg:w-5/12">
                             <p className="font-bold text-4xl md:text-6xl">{homepageData.heading.header}</p>

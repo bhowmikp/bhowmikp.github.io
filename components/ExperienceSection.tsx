@@ -28,7 +28,7 @@ export const ExperienceSection: FC<{ data: IParagraphs; className: string }> = (
     };
 
     return (
-        <div className={`${className} py-10 md:py-40`}>
+        <div className={`${className} py-20 md:py-40`}>
             <div className="mx-auto w-10/12 md:w-9/12 lg:px-14">
                 <p className="text-nav border-b-2 border-experienceSection font-medium mb-4">{data.paragraphHeading}</p>
 
