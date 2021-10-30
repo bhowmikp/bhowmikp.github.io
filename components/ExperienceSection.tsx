@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { IParagraphs } from '@Interfaces/homepage';
 import { ICta } from '@Interfaces/cta';
-import figureSerializer from '@Serializers/figure';
+import { figureSerializer } from '@Serializers/figure';
 import Link from 'next/link';
 
 import BlockContent from '@sanity/block-content-to-react';

@@ -3,7 +3,7 @@ import AppLayout from '@Components/AppLayout';
 import TableOfContents from '@Components/TableOfContents';
 import { getBlog } from '@Api/blog';
 import { getBlogsByCategory } from '@Api/blog/blogsCategory';
-import IBlogs from '@Interfaces/blogs';
+import { IBlogs } from '@Interfaces/blogs';
 import React, { FC, useState } from 'react';
 import BlockContent from '@sanity/block-content-to-react';
 import blogSerializer from '@Serializers/blogSerializer';
