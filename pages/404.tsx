@@ -13,8 +13,8 @@ const Homepage: FC = () => {
     const { resolvedTheme } = useTheme();
 
     return (
-        <AppLayout title="404" className="bg-secondary">
-            <div className="flex h-screen">
+        <AppLayout title="404" mainClassName="bg-secondary">
+            <div className="flex py-10">
                 <div className="m-auto">
                     <p className="text-center mb-10 text-3xl font-bold my-2 text-black dark:text-white">
                         Oops! Page not found
@@ -35,7 +35,7 @@ const Homepage: FC = () => {
                         />
                     )}
                     <p className="text-center mt-10 text-xl font-bold my-2 text-black dark:text-white">
-                        Try the{' '}
+                        Try{' '}
                         <Link href="/">
                             <a className="link-primary">homepage</a>
                         </Link>{' '}

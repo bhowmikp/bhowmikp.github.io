@@ -22,7 +22,7 @@ const CustomLinkLocal: FC<{
 );
 
 const Csca08f16: FC = () => (
-    <AppLayout title="CSCA08f16" className="bg-secondary">
+    <AppLayout title="CSCA08f16" mainClassName="bg-secondary">
         <div className="mx-5 mb-10">
             <p className="tutorial-header">Welcome to CSCA08</p>
             <p className="tutorial-default-spacing">

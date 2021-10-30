@@ -8,14 +8,14 @@
     }
 
     .footer-icons {
-        @apply fill-current text-nav;
+        @apply fill-current text-nav lg:mr-5;
     }
 
     .footer-icon-text {
         @apply ml-3 mt-1 align-text-bottom text-lg hover:underline cursor-pointer;
     }
 
-    .footer-icon-spacing {
-        @apply mx-0 mb-5 md:mr-24 md:mb-0;
+    .footer-element-spacing {
+        @apply mx-0 mb-5 md:mb-0;
     }
 }

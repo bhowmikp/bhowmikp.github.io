@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import client from '@Clients/sanityClient';
 
 export const getHomepageData = async (): Promise<void> => {
-    const postQuery = '*[_type=="homepage"] | order(paragraphOrder) {body, figure}';
+    const postQuery = '*[_type=="homepage"][0]';
     const params = { minSeats: 2 };
 
     return client.fetch(postQuery, params);

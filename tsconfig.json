@@ -26,6 +26,12 @@
       "@Clients/*": [
         "clients/*"
       ],
+      "@Constants": [
+        "constants.ts"
+      ],
+      "@Contexts/*": [
+        "contexts/*"
+      ],
       "@Components/*": [
         "components/*"
       ],
@@ -50,7 +56,8 @@
       "@Utils/*": [
         "utils/*"
       ]
-    }
+    },
+    "incremental": true
   },
   "exclude": [
     "node_modules"

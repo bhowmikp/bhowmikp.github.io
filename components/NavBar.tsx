@@ -13,12 +13,15 @@ import { isBrowser } from '@Utils/isBrowser';
 
 import { useWindowSize } from '@Hooks/useWindowSize';
 
+import { screenWidthBreakpoint as screenWidthBreakpointConstants } from '@Constants';
+
 const NavBar: FC = () => {
     const isAmp = useAmp();
 
     const [menuStatus, setMenuStatus] = useState(false);
     const { resolvedTheme, setTheme } = useTheme();
-    const mobileScreenWidth = 768;
+
+    const mobileScreenWidth = screenWidthBreakpointConstants.md;
 
     if (isBrowser()) {
         if (menuStatus) {
@@ -34,11 +37,11 @@ const NavBar: FC = () => {
         if (screenWidth >= mobileScreenWidth) {
             setMenuStatus(false);
         }
-    }, [screenWidth]);
+    }, [screenWidth, mobileScreenWidth]);
 
     return (
-        <nav className={`w-full my-4 z-10 bg-primary ${menuStatus ? 'absolute h-full' : ''}`}>
-            <div className="flex flex-wrap items-center justify-between w-full px-5 md:w-3/4 md:mx-auto">
+        <nav className={`w-full z-10 bg-primary ${menuStatus ? 'absolute h-full my-0 py-12' : 'mt-12 mb-4'}`}>
+            <div className="flex flex-wrap items-center justify-between w-full px-5 md:px-0 sm:w-10/12 md:w-9/12 lg:w-8/12 mx-auto">
                 <div>
                     <Link href="/">
                         <a
@@ -56,8 +59,8 @@ const NavBar: FC = () => {
                         >
                             {isAmp ? (
                                 <amp-img
-                                    width="50"
-                                    height="50"
+                                    width="80"
+                                    height="80"
                                     src="/profilePic.png"
                                     alt="Profile Pic"
                                     className="bg-white rounded-full"
@@ -66,8 +69,8 @@ const NavBar: FC = () => {
                                 <Image
                                     src="/profilePic.png"
                                     alt="Profile Pic"
-                                    width="50"
-                                    height="50"
+                                    width="80"
+                                    height="80"
                                     className="bg-white rounded-full"
                                     onClick={() => {
                                         event({ name: 'menuItem', category: 'link', label: 'homepage' });
@@ -105,15 +108,15 @@ const NavBar: FC = () => {
 
                 <div
                     className={`w-full md:flex md:items-center md:justify-between md:w-auto ${
-                        menuStatus ? '' : 'hidden'
+                        menuStatus ? 'mt-7' : 'hidden'
                     }`}
                 >
-                    <ul className="pt-4 md:flex md:justify-center md:pt-0">
+                    <ul className="md:flex md:justify-center">
                         {['Projects', 'Experience', 'About', 'Blog'].map((entry: string) => (
-                            <li className="md:p-4 py-2 block" key={entry}>
+                            <li className="navbar-element" key={entry}>
                                 <Link href={`/${entry.toLowerCase()}`}>
                                     <a
-                                        className="text-nav hover:underline"
+                                        className="navbar-text"
                                         onClick={() => {
                                             event({ name: 'menuItem', category: 'link', label: entry.toLowerCase() });
                                         }}
@@ -153,29 +156,27 @@ const NavBar: FC = () => {
                                     value: ''
                                 });
                             }}
-                            className="md:p-4 py-2 block"
+                            className="navbar-element-last"
                             role="presentation"
                         >
                             {screenWidth >= mobileScreenWidth ? (
                                 <>
                                     {resolvedTheme === 'light' ? (
                                         <BsFillMoonFill
-                                            size={25}
+                                            size={35}
                                             className="cursor-pointer text-nav"
                                             title="Night Mode"
                                         />
                                     ) : (
                                         <BsFillSunFill
-                                            size={30}
+                                            size={35}
                                             className="cursor-pointer text-nav"
                                             title="Light Mode"
                                         />
                                     )}
                                 </>
                             ) : (
-                                <p className="text-nav hover:underline">
-                                    {resolvedTheme === 'light' ? 'Night Mode' : 'Light Mode'}
-                                </p>
+                                <p className="navbar-text">{resolvedTheme === 'light' ? 'Night Mode' : 'Light Mode'}</p>
                             )}
                         </li>
                     </ul>

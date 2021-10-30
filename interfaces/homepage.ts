@@ -1,13 +1,23 @@
-export interface IHomepageImage {
-    alignment: string;
-    alt: string;
-    caption?: string;
-    image: any;
-    height: number;
-    width: number;
+import { ICta } from '@Interfaces/cta';
+import { IImage } from '@Interfaces/image';
+
+export interface IHomepageHeading {
+    cta: ICta[];
+    description: any[];
+    header: string;
+    profilePic: IImage;
+}
+
+export interface IParagraphs {
+    cta: ICta[];
+    image: IImage;
+    paragraphDescription: string;
+    paragraphHeading: string;
+    paragraphTitle: string;
+    _key: string;
 }
 
 export interface IHomepageData {
-    body: [];
-    figure?: IHomepageImage;
+    heading: IHomepageHeading;
+    paragraphs: IParagraphs[];
 }

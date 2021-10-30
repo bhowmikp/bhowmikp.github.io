@@ -53,7 +53,7 @@ const BlogsTab: FC<{
                 rowsPerPage={rowsPerPage}
                 onRowsPerPageChange={handleChangeRowsPerPage}
                 rowsPerPageOptions={[10, 25, 50]}
-                className="text-black dark:text-white gra"
+                className="text-black dark:text-white"
             />
         </>
     );
