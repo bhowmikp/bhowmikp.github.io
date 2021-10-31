@@ -17,7 +17,7 @@ export const ExperienceSection: FC<{ data: IParagraphs; className: string }> = (
 
     const determineImagePosition = (alignment: string): string => {
         if (screenWidth < mobileScreenWidth) {
-            return 'order-last';
+            return 'order-first';
         }
 
         if (alignment === 'left') {
@@ -28,15 +28,17 @@ export const ExperienceSection: FC<{ data: IParagraphs; className: string }> = (
     };
 
     return (
-        <div className={`${className} py-20 md:py-40`}>
+        <div className={`${className} py-10 md:py-40`}>
             <div className="mx-auto w-10/12 md:w-9/12 lg:px-14">
                 <p className="text-nav border-b-2 border-experienceSection font-medium mb-4">{data.paragraphHeading}</p>
 
                 <div className="flex flex-col md:flex-row md:justify-between">
-                    <div className="w-full md:w-6/12">
-                        <p className="text-4xl font-medium mb-2">{data.paragraphTitle}</p>
-                        <p className="text-2xl">{data.paragraphDescription}</p>
-                        <div className="mt-5 mb-10 md:mb-0 flex flex-row flex-wrap">
+                    <div className="w-full md:w-6/12 lg:w-6/12 xl:w-5/12 mt-5 md:mt-0 flex flex-col justify-between xl:mr-28">
+                        <div>
+                            <p className="text-4xl md:text-5xl font-medium mb-4">{data.paragraphTitle}</p>
+                            <p className="text-xl md:text-2xl text-secondary">{data.paragraphDescription}</p>
+                        </div>
+                        <div className="md:mb-3 flex flex-row flex-wrap">
                             {data.cta.map((cta: ICta) => (
                                 <Link href={cta.url} key={cta._key}>
                                     <a target={cta.target} className={`${cta.style} mr-10 md:mr-6 lg:mr-10 mt-3`}>
@@ -46,9 +48,9 @@ export const ExperienceSection: FC<{ data: IParagraphs; className: string }> = (
                             ))}
                         </div>
                     </div>
-                    <div className={`grid w-full md:w-6/12 ${determineImagePosition(data.image.alignment)}`}>
+                    <div className={`grid w-full md:w-5/12 ${determineImagePosition(data.image.alignment)}`}>
                         <div
-                            className={`mx-auto md:mx-0 w-11/12 ${
+                            className={`mx-auto md:mx-0 w-full ${
                                 data.image.alignment === 'right' && 'md:justify-self-end'
                             }`}
                         >

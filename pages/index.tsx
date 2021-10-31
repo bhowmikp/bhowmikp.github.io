@@ -36,14 +36,20 @@ const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
 
     return (
         <AppLayout title="Homepage" mainClassName="bg-primary" footerClassName="bg-secondary">
-            <div className="bg-primary py-20 md:py-40">
+            <div className="bg-primary pb-10 md:py-40">
                 <div className="flex flex-col mx-auto md:flex-row md:w-9/12 lg:px-14 justify-between">
-                    <div className="w-9/12 mx-auto lg:w-5/12">
-                        <p className="font-bold text-4xl md:text-6xl">{homepageData.heading.header}</p>
-                        <p className="text-3xl my-5 pb-5 md:pb-10">{homepageData.heading.description}</p>
+                    <div className="w-10/12 mx-auto lg:w-5/12">
+                        <p className="font-bold text-5xl md:text-6xl">{homepageData.heading.header}</p>
+                        <p className="text-2xl md:text-3xl mb-5 mt-5 md:mt-10 pb-5 md:pb-10 text-secondary">
+                            {homepageData.heading.description}
+                        </p>
                         {homepageData.heading.cta.map((cta: ICta) => (
                             <Link href={cta.url} key={cta._key}>
-                                <a target={cta.target} className="regular-button" rel="noopener noreferrer">
+                                <a
+                                    target={cta.target}
+                                    className="bg-button rounded-full text-xl px-3 py-2 md:px-4 md:py-3 hover:bg-primary dark:text-black text-white dark:hover:text-primary hover:text-primary font-semibold border-button border"
+                                    rel="noopener noreferrer"
+                                >
                                     {cta.urlText}
                                 </a>
                             </Link>
@@ -52,7 +58,7 @@ const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
                     <div
                         className={`${determineImagePosition(
                             homepageData.heading.profilePic.alignment
-                        )} text-center my-10 md:my-0 mx-auto w-6/12 sm:w-5/12 xl:w-3/12`}
+                        )} text-center my-10 md:my-0 mx-auto w-8/12 sm:w-5/12 xl:w-3/12`}
                     >
                         <BlockContent blocks={homepageData.heading.profilePic} serializers={figureSerializer} />
                     </div>
