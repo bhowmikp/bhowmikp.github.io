@@ -5,7 +5,7 @@ module.exports = {
             './components/**/*.{js,ts,jsx,tsx}',
             './serializers/**/*.{js,ts,jsx,tsx}'
         ],
-        safelist: ['link-button']
+        safelist: ['link-button', 'regular-button']
     },
     darkMode: 'class', // or 'media' or 'class'
     theme: {
