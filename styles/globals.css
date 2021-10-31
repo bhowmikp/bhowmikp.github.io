@@ -1,27 +1,39 @@
 @import './archive.css';
 @import './blog.css';
+@import './footer.css';
+@import './navbar.css';
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .dark {
-    --color-bg-primary: #2d3748;
-    --color-bg-secondary: #283141;
-    --color-text-primary: #f7fafc;
+    --color-bg-primary: #0B0C10;
+    --color-bg-secondary: #1c1e27;
+    --color-text-primary: #FFFFFF;
     --color-text-secondary: #e2e8f0;
     --color-text-accent: #81e6d9;
+    --color-text-nav: #63E7DD;
+    --color-bg-button: #63E7DD;
+    --color-bg-experience-section: #3D8882;
 }
 
 .light {
-    --color-bg-primary: #ffffff;
-    --color-bg-secondary: #edf2f7;
+    --color-bg-primary: #FBFCFF;
+    --color-bg-secondary: #F1F8FF;;
     --color-text-primary: #2d3748;
     --color-text-secondary: #4a5568;
     --color-text-accent: #2b6cb0;
+    --color-text-nav: #0268CA;
+    --color-bg-button: #0268CA;
+    --color-bg-experience-section:#0400C6;
 }
 
 @layer base {
+    h1 {
+        @apply text-primary;
+    },
     p {
         @apply text-primary;
     },
@@ -32,14 +44,14 @@
 
 @layer components {
     .regular-button {
-        @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full dark:bg-gray-500 dark:hover:bg-gray-700;
+        @apply bg-button rounded-3xl px-4 py-3 hover:bg-primary dark:text-black text-white dark:hover:text-primary hover:text-primary font-semibold border-button border;
+    }
+
+    .link-button {
+        @apply underline text-nav cursor-pointer my-auto align-text-bottom pt-2;
     }
 
     .link-primary {
         @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600 dark:text-blue-300 dark:hover:text-pink-200 dark:visited:text-pink-300;
-    }
-
-    .react-icons-color-primary {
-        @apply fill-current text-black dark:text-white;
     }
 }

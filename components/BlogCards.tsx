@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import IBlogs from '@Interfaces/blogs';
+import { IBlogs } from '@Interfaces/blogs';
 import React, { FC } from 'react';
 import { useRouter } from 'next/router';
 
@@ -12,13 +12,13 @@ const BlogCard: FC<{ blogData: IBlogs }> = ({ blogData }) => {
         <div
             className="bg-gray-300 dark:bg-gray-600 mb-5 p-3"
             onClick={() => {
-                router.push(`/blogs/${blogData.title.replaceAll(' ', '-')}_${blogData._id}`);
+                router.push(`/blog/${blogData.title.replaceAll(' ', '-')}_${blogData._id}`);
             }}
             key={blogData.title}
             role="link"
             onKeyDown={(e) => {
                 if (e.key === 'Enter') {
-                    router.push(`/blogs/${blogData.title.replaceAll(' ', '-')}_${blogData._id}`);
+                    router.push(`/blog/${blogData.title.replaceAll(' ', '-')}_${blogData._id}`);
                 }
             }}
             tabIndex={0}

@@ -26,11 +26,23 @@
       "@Clients/*": [
         "clients/*"
       ],
+      "@Constants": [
+        "constants.ts"
+      ],
+      "@Contexts/*": [
+        "contexts/*"
+      ],
       "@Components/*": [
         "components/*"
       ],
+      "@Hooks/*": [
+        "hooks/*"
+      ],
       "@Interfaces/*": [
         "interfaces/*"
+      ],
+      "@MockData/*": [
+        "mockData/*"
       ],
       "@Serializers/*": [
         "serializers/*"
@@ -40,8 +52,12 @@
       ],
       "@Styles/*": [
         "styles/*"
+      ],
+      "@Utils/*": [
+        "utils/*"
       ]
-    }
+    },
+    "incremental": true
   },
   "exclude": [
     "node_modules"
