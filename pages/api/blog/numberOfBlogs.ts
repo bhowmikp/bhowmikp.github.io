@@ -3,7 +3,7 @@ import client from '@Clients/sanityClient';
 import { IBlogs } from '@Interfaces/blogs';
 
 import Joi from 'joi';
-import Boom from '@hapi/boom';
+import { badRequest } from '@hapi/boom';
 
 const schema = Joi.object({
     category: Joi.string().valid('programming', 'investing', 'miscellaneous').optional()
@@ -14,7 +14,7 @@ const validate = async (req: NextApiRequest): Promise<any> => {
     const { error } = schema.validate(req.query);
 
     if (error) {
-        return Boom.badRequest(error.message).output.payload;
+        return badRequest(error.message).output.payload;
     }
 
     return '';
