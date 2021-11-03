@@ -7,6 +7,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
+import type { ReactNode, ReactElement } from 'react';
+
 // export const config = { amp: 'hybrid' };
 
 const rows = [
@@ -18,45 +20,49 @@ const rows = [
     { id: 6, position: '3rd Place', organization: 'University of Toronto Finance Hacks', year: 2016 }
 ];
 
-const archive: FC = () => (
-    <AppLayout title="Recognition">
-        <div className="mx-5 mb-10">
-            <p className="text-2xl font-extrabold">Recognition</p>
+const Recognition: FC & { getLayout: ReactNode } = () => (
+    <div className="mx-5 mb-10">
+        <p className="text-2xl font-extrabold">Recognition</p>
 
-            <TableContainer className="recognition-table">
-                <Table aria-label="simple table">
-                    <TableHead>
-                        <TableRow>
+        <TableContainer className="recognition-table">
+            <Table aria-label="simple table">
+                <TableHead>
+                    <TableRow>
+                        <TableCell>
+                            <span className="recognition-table-header">Position</span>
+                        </TableCell>
+                        <TableCell className="recognition-table-header">
+                            <span className="recognition-table-header">Organization</span>
+                        </TableCell>
+                        <TableCell className="recognition-table-header">
+                            <span className="recognition-table-header">Year</span>
+                        </TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {rows.map((row) => (
+                        <TableRow key={row.id}>
                             <TableCell>
-                                <span className="recognition-table-header">Position</span>
+                                <span className="recognition-table-cell">{row.position}</span>
                             </TableCell>
-                            <TableCell className="recognition-table-header">
-                                <span className="recognition-table-header">Organization</span>
+                            <TableCell>
+                                <span className="recognition-table-cell">{row.organization}</span>
                             </TableCell>
-                            <TableCell className="recognition-table-header">
-                                <span className="recognition-table-header">Year</span>
+                            <TableCell>
+                                <span className="recognition-table-cell">{row.year}</span>
                             </TableCell>
                         </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {rows.map((row) => (
-                            <TableRow key={row.id}>
-                                <TableCell>
-                                    <span className="recognition-table-cell">{row.position}</span>
-                                </TableCell>
-                                <TableCell>
-                                    <span className="recognition-table-cell">{row.organization}</span>
-                                </TableCell>
-                                <TableCell>
-                                    <span className="recognition-table-cell">{row.year}</span>
-                                </TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </div>
+                    ))}
+                </TableBody>
+            </Table>
+        </TableContainer>
+    </div>
+);
+
+Recognition.getLayout = (page: ReactElement) => (
+    <AppLayout title="Recognition" mainClassName="bg-secondary">
+        {page}
     </AppLayout>
 );
 
-export default archive;
+export default Recognition;
