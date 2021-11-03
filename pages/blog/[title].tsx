@@ -12,6 +12,8 @@ import isEmpty from 'lodash/isEmpty';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 
+import type { ReactNode, ReactElement } from 'react';
+
 import { time as timeConstants } from '@Constants';
 import { BlogContext, IBlogContextState } from '@Contexts/blogContext';
 
@@ -77,7 +79,7 @@ const PostLoading = () => (
     </AppLayout>
 );
 
-const Post: FC<{ blogData: IBlogs[] }> = ({ blogData }) => {
+const Post: FC<{ blogData: IBlogs[] }> & { getLayout: ReactNode } = ({ blogData }) => {
     const router = useRouter();
 
     const [blogContextData, setBlogContextData] = useState<IBlogContextState>({
@@ -93,75 +95,83 @@ const Post: FC<{ blogData: IBlogs[] }> = ({ blogData }) => {
     const updatedAtDate = new Date(data._updatedAt.split('T')[0]);
 
     return (
-        <AppLayout title={data.title} mainClassName="bg-secondary">
-            <BlogContext.Provider value={{ state: blogContextData, setState: setBlogContextData }}>
-                <div className="mb-10 w-11/12 mx-auto">
-                    <div className="block lg:grid lg:grid-cols-4">
-                        <div className="col-span-3">
-                            <p className="text-4xl font-bold my-2 text-black dark:text-white">{data.title}</p>
-                            <p>
-                                {`${updatedAtDate.toLocaleString('default', {
-                                    month: 'short'
-                                })} ${updatedAtDate.getDate()}, ${updatedAtDate.getFullYear()}`}{' '}
-                                · {data.readingTime} min read
-                            </p>
-                            <hr className="blog-hr-style my-2" />
+        <BlogContext.Provider value={{ state: blogContextData, setState: setBlogContextData }}>
+            <div className="mb-10 w-11/12 mx-auto">
+                <div className="block lg:grid lg:grid-cols-4">
+                    <div className="col-span-3">
+                        <p className="text-4xl font-bold my-2 text-black dark:text-white">{data.title}</p>
+                        <p>
+                            {`${updatedAtDate.toLocaleString('default', {
+                                month: 'short'
+                            })} ${updatedAtDate.getDate()}, ${updatedAtDate.getFullYear()}`}{' '}
+                            · {data.readingTime} min read
+                        </p>
+                        <hr className="blog-hr-style my-2" />
 
-                            <BlockContent blocks={data.body} serializers={blogSerializer} />
+                        <BlockContent blocks={data.body} serializers={blogSerializer} />
 
-                            {('relatedArticles' in data && data.relatedArticles.length !== 0) ||
-                                ('references' in data && data.references.length !== 0 && (
-                                    <hr className="blog-hr-style mt-20 mb-5" />
-                                ))}
+                        {('relatedArticles' in data && data.relatedArticles.length !== 0) ||
+                            ('references' in data && data.references.length !== 0 && (
+                                <hr className="blog-hr-style mt-20 mb-5" />
+                            ))}
 
-                            {'relatedArticles' in data && data.relatedArticles.length !== 0 && (
-                                <>
-                                    <p className="text-2xl">Related Articles</p>
-                                    <ul className="list-disc ml-5">
-                                        {data.relatedArticles.map((entry) => (
-                                            <li key={entry._key}>
-                                                <a target={entry.target} href={entry.url} className="blog-link">
-                                                    {entry.urlText}
-                                                </a>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </>
-                            )}
+                        {'relatedArticles' in data && data.relatedArticles.length !== 0 && (
+                            <>
+                                <p className="text-2xl">Related Articles</p>
+                                <ul className="list-disc ml-5">
+                                    {data.relatedArticles.map((entry) => (
+                                        <li key={entry._key}>
+                                            <a target={entry.target} href={entry.url} className="blog-link">
+                                                {entry.urlText}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </>
+                        )}
 
-                            {'references' in data && data.references.length !== 0 && (
-                                <div
-                                    className={
-                                        'relatedArticles' in data && data.relatedArticles.length !== 0 ? 'mt-10' : ''
-                                    }
-                                >
-                                    <p className="text-2xl">References</p>
-                                    <ul className="list-disc ml-5">
-                                        {data.references.map((entry) => (
-                                            <li key={entry._key}>
-                                                <a target={entry.target} href={entry.url} className="blog-link">
-                                                    {entry.urlText}
-                                                </a>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-
-                            <div className="mt-10">
-                                {data.tags.map((tag) => (
-                                    <span key={tag} className="bg-gray-300 mr-2 p-2 rounded-md">
-                                        {tag}
-                                    </span>
-                                ))}
+                        {'references' in data && data.references.length !== 0 && (
+                            <div
+                                className={
+                                    'relatedArticles' in data && data.relatedArticles.length !== 0 ? 'mt-10' : ''
+                                }
+                            >
+                                <p className="text-2xl">References</p>
+                                <ul className="list-disc ml-5">
+                                    {data.references.map((entry) => (
+                                        <li key={entry._key}>
+                                            <a target={entry.target} href={entry.url} className="blog-link">
+                                                {entry.urlText}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
-                        </div>
-                        <div className="hidden lg:block lg:ml-5">
-                            <TableOfContents tableOfContents={data.tableOfContents} />
+                        )}
+
+                        <div className="mt-10">
+                            {data.tags.map((tag) => (
+                                <span key={tag} className="bg-gray-300 mr-2 p-2 rounded-md">
+                                    {tag}
+                                </span>
+                            ))}
                         </div>
                     </div>
+                    <div className="hidden lg:block lg:ml-5">
+                        <TableOfContents tableOfContents={data.tableOfContents} />
+                    </div>
                 </div>
-            </BlogContext.Provider>
+            </div>
+        </BlogContext.Provider>
+    );
+};
+
+Post.getLayout = (page: ReactElement) => {
+    const data = page.props.blogData[0];
+
+    return (
+        <AppLayout title={data.title} mainClassName="bg-secondary">
+            {page}
         </AppLayout>
     );
 };
