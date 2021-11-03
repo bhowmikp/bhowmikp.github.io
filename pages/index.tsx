@@ -8,7 +8,7 @@ import AppLayout from '@Components/AppLayout';
 import { ExperienceSection } from '@Components/ExperienceSection';
 
 import { getPageData } from '@Api/pages/[page]';
-import { IHomepageData } from '@Interfaces/homepage';
+import { IHomepageData } from '@Interfaces/pages/homepage';
 import { ICta } from '@Interfaces/cta';
 
 import { time as timeConstants } from '@Constants';

@@ -4,7 +4,7 @@ import Script from 'next/script';
 
 export const AmpIncludeCustomElement: FC<{ name: string; version: string }> = ({ name, version }) => (
     <Head>
-        <Script async custom-element={name} src={`https://cdn.ampproject.org/v0/${name}-${version}.js`} key={name} />
+        <script async custom-element={name} src={`https://cdn.ampproject.org/v0/${name}-${version}.js`} key={name} />
     </Head>
 );
 

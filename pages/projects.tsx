@@ -5,7 +5,7 @@ import AppLayout from '@Components/AppLayout';
 import { ExperienceSection } from '@Components/ExperienceSection';
 
 import { getPageData } from '@Api/pages/[page]';
-import { IProjectsData } from '@Interfaces/projects';
+import { IProjectsData } from '@Interfaces/pages/projects';
 
 import { time as timeConstants } from '@Constants';
 
