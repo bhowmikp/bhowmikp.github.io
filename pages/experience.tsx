@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 
+import type { ReactNode, ReactElement } from 'react';
+
 import AppLayout from '@Components/AppLayout';
 import { ExperienceSection } from '@Components/ExperienceSection';
 
@@ -16,12 +18,8 @@ export const getStaticProps: GetStaticProps = async () => ({
     revalidate: timeConstants.oneDayInSeconds
 });
 
-const ExperiencePage: FC<{ experienceData: IExperienceData }> = ({ experienceData }) => (
-    <AppLayout
-        title="Experience"
-        mainClassName="bg-primary"
-        footerClassName={`${experienceData.paragraphs.length % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
-    >
+const ExperiencePage: FC<{ experienceData: IExperienceData }> & { getLayout: ReactNode } = ({ experienceData }) => (
+    <>
         <div className="bg-primary pb-10 md:py-40">
             <div className="text-center mx-auto px-3 py-2 md:px-0 md:py-0 md:w-8/12 lg:px-14">
                 <p className="font-bold text-5xl md:text-6xl">{experienceData.heading.header}</p>
@@ -38,7 +36,21 @@ const ExperiencePage: FC<{ experienceData: IExperienceData }> = ({ experienceDat
                 key={paragraphData._key}
             />
         ))}
-    </AppLayout>
+    </>
 );
+
+ExperiencePage.getLayout = (page: ReactElement) => {
+    const data = page.props.experienceData;
+
+    return (
+        <AppLayout
+            title="Experience"
+            mainClassName="bg-primary"
+            footerClassName={`${data.paragraphs.length % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
+        >
+            {page}
+        </AppLayout>
+    );
+};
 
 export default ExperiencePage;

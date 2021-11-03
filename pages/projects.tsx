@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 
+import type { ReactNode, ReactElement } from 'react';
+
 import AppLayout from '@Components/AppLayout';
 import { ExperienceSection } from '@Components/ExperienceSection';
 
@@ -16,12 +18,8 @@ export const getStaticProps: GetStaticProps = async () => ({
     revalidate: timeConstants.oneDayInSeconds
 });
 
-const ProjectsPage: FC<{ projectsData: IProjectsData }> = ({ projectsData }) => (
-    <AppLayout
-        title="Projects"
-        mainClassName="bg-primary"
-        footerClassName={`${projectsData.paragraphs.length % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
-    >
+const ProjectsPage: FC<{ projectsData: IProjectsData }> & { getLayout: ReactNode } = ({ projectsData }) => (
+    <>
         <div className="bg-primary pb-10 md:py-40">
             <div className="text-center mx-auto px-3 py-2 md:px-0 md:py-0 md:w-8/12 lg:px-14">
                 <p className="font-bold text-5xl md:text-6xl">{projectsData.heading.header}</p>
@@ -38,7 +36,21 @@ const ProjectsPage: FC<{ projectsData: IProjectsData }> = ({ projectsData }) => 
                 key={paragraphData._key}
             />
         ))}
-    </AppLayout>
+    </>
 );
+
+ProjectsPage.getLayout = (page: ReactElement) => {
+    const data = page.props.projectsData;
+
+    return (
+        <AppLayout
+            title="Projects"
+            mainClassName="bg-primary"
+            footerClassName={`${data.paragraphs.length % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
+        >
+            {page}
+        </AppLayout>
+    );
+};
 
 export default ProjectsPage;

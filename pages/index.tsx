@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { figureSerializer } from '@Serializers/figure';
 import BlockContent from '@sanity/block-content-to-react';
 
+import type { ReactNode, ReactElement } from 'react';
+
 import AppLayout from '@Components/AppLayout';
 import { ExperienceSection } from '@Components/ExperienceSection';
 
@@ -22,7 +24,7 @@ export const getStaticProps: GetStaticProps = async () => ({
     revalidate: timeConstants.oneDayInSeconds
 });
 
-const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
+const Homepage: FC<{ homepageData: IHomepageData }> & { getLayout: ReactNode } = ({ homepageData }) => {
     const determineImagePosition = (alignment: string): string => {
         if (alignment === 'left') {
             return 'order-first';
@@ -35,11 +37,7 @@ const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
     };
 
     return (
-        <AppLayout
-            title="Homepage"
-            mainClassName="bg-primary"
-            footerClassName={`${homepageData.paragraphs.length % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
-        >
+        <>
             <div className="bg-primary pb-10 md:py-40">
                 <div className="flex flex-col mx-auto md:flex-row md:w-9/12 lg:px-14 justify-between">
                     <div className="w-10/12 mx-auto lg:w-5/12">
@@ -76,6 +74,20 @@ const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
                     key={paragraphData._key}
                 />
             ))}
+        </>
+    );
+};
+
+Homepage.getLayout = (page: ReactElement) => {
+    const data = page.props.homepageData;
+
+    return (
+        <AppLayout
+            title="Homepage"
+            mainClassName="bg-primary"
+            footerClassName={`${data.paragraphs.length % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
+        >
+            {page}
         </AppLayout>
     );
 };

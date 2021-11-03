@@ -1,16 +1,29 @@
 import 'tailwindcss/tailwind.css';
 import '@Styles/globals.css';
 
-import React, { useEffect, FC } from 'react';
-import type { AppProps } from 'next/app';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as gtag from '@Service/googleService';
 import { ThemeProvider } from 'next-themes';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+import type { ReactElement, ReactNode } from 'react';
+import type { NextPage } from 'next';
+import type { AppProps } from 'next/app';
+
+type NextPageWithLayout = NextPage & {
+    getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+    Component: NextPageWithLayout;
+};
+
+const MyApp: ReactNode = ({ Component, pageProps }: AppPropsWithLayout) => {
     const router = useRouter();
     const queryClient = new QueryClient();
+
+    const getLayout = Component.getLayout ?? ((page: ReactNode) => page);
 
     useEffect(() => {
         const handleRouteChange = (url) => {
@@ -24,9 +37,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
 
     return (
         <ThemeProvider attribute="class" defaultTheme="system">
-            <QueryClientProvider client={queryClient}>
-                <Component {...pageProps} />
-            </QueryClientProvider>
+            <QueryClientProvider client={queryClient}>{getLayout(<Component {...pageProps} />)}</QueryClientProvider>
         </ThemeProvider>
     );
 };

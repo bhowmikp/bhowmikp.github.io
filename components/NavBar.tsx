@@ -34,6 +34,10 @@ const NavBar: FC = () => {
     const { screenWidth } = useWindowSize();
 
     useEffect(() => {
+        console.log('HERE');
+    }, []);
+
+    useEffect(() => {
         if (screenWidth >= mobileScreenWidth) {
             setMenuStatus(false);
         }
