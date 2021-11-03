@@ -7,8 +7,8 @@ import BlockContent from '@sanity/block-content-to-react';
 import AppLayout from '@Components/AppLayout';
 import { ExperienceSection } from '@Components/ExperienceSection';
 
-import { getHomepageData } from '@Api/pages/homepage';
-import { IHomepageData } from '@Interfaces/homepage';
+import { getPageData } from '@Api/pages/[page]';
+import { IHomepageData } from '@Interfaces/pages/homepage';
 import { ICta } from '@Interfaces/cta';
 
 import { time as timeConstants } from '@Constants';
@@ -17,7 +17,7 @@ export const config = { amp: 'hybrid' };
 
 export const getStaticProps: GetStaticProps = async () => ({
     props: {
-        homepageData: await getHomepageData()
+        homepageData: await getPageData('homepage')
     },
     revalidate: timeConstants.oneDayInSeconds
 });
@@ -35,7 +35,11 @@ const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
     };
 
     return (
-        <AppLayout title="Homepage" mainClassName="bg-primary" footerClassName="bg-secondary">
+        <AppLayout
+            title="Homepage"
+            mainClassName="bg-primary"
+            footerClassName={`${homepageData.paragraphs.length % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
+        >
             <div className="bg-primary pb-10 md:py-40">
                 <div className="flex flex-col mx-auto md:flex-row md:w-9/12 lg:px-14 justify-between">
                     <div className="w-10/12 mx-auto lg:w-5/12">
