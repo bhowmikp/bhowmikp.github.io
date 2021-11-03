@@ -28,11 +28,13 @@ export const getStaticProps: GetStaticProps = async () => ({
     revalidate: timeConstants.oneHourInSeconds
 });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const a11yProps = (index: any) => ({
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`
 });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const TabPanel = (props: { children: React.ReactNode; index: any; value: any }) => {
     const { children, value, index, ...other } = props;
 

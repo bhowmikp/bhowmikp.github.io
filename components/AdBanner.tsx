@@ -11,6 +11,7 @@ const AdBanner: FC = () => {
         try {
             (window.adsbygoogle = window.adsbygoogle || []).push({});
         } catch (err) {
+            // eslint-disable-next-line no-console
             console.log(err);
         }
     }, []);

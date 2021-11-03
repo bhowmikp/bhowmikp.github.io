@@ -11,6 +11,7 @@ const schema = Joi.object({
     blogCount: Joi.number().valid(10, 25, 50, 100).optional()
 });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const validate = async (req: NextApiRequest): Promise<any> => {
     const { error } = schema.validate(req.query);
 

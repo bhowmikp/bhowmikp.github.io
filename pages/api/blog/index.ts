@@ -9,6 +9,7 @@ const schema = Joi.object({
     id: Joi.string().length(36).required()
 });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const validate = async (req: NextApiRequest): Promise<any> => {
     const { error } = schema.validate(req.query);
 
