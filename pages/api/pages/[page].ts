@@ -1,12 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+
 import client from '@Clients/sanityClient';
-import ISiteSettings from '@Interfaces/siteSettings';
 
 import Joi from 'joi';
 import Boom from '@hapi/boom';
 
 const schema = Joi.object({
-    field: Joi.string().max(100)
+    page: Joi.string().alphanum().max(100).required()
 });
 
 const validate = async (req: NextApiRequest): Promise<any> => {
@@ -19,9 +19,8 @@ const validate = async (req: NextApiRequest): Promise<any> => {
     return '';
 };
 
-export const getSiteSettings = async (field?: string): Promise<ISiteSettings> => {
-    const postQuery = `*[_type=="siteSettings"][0] ${field === 'undefined' ? `` : `{${field}}`}`;
-
+export const getPageData = async (page: string): Promise<void> => {
+    const postQuery = `*[_type=="${page}"][0]`;
     const params = { minSeats: 2 };
 
     return client.fetch(postQuery, params);
@@ -34,5 +33,6 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
         return;
     }
 
-    res.send(await getSiteSettings(String(req.query.field)));
+    const { page } = req.query;
+    res.send(await getPageData(page as string));
 };

@@ -7,7 +7,7 @@ import BlockContent from '@sanity/block-content-to-react';
 import AppLayout from '@Components/AppLayout';
 import { ExperienceSection } from '@Components/ExperienceSection';
 
-import { getHomepageData } from '@Api/pages/homepage';
+import { getPageData } from '@Api/pages/[page]';
 import { IHomepageData } from '@Interfaces/homepage';
 import { ICta } from '@Interfaces/cta';
 
@@ -17,7 +17,7 @@ export const config = { amp: 'hybrid' };
 
 export const getStaticProps: GetStaticProps = async () => ({
     props: {
-        homepageData: await getHomepageData()
+        homepageData: await getPageData('homepage')
     },
     revalidate: timeConstants.oneDayInSeconds
 });
