@@ -6,7 +6,7 @@ import type { ReactNode, ReactElement } from 'react';
 import AppLayout from '@Components/AppLayout';
 import { ExperienceSection } from '@Components/ExperienceSection';
 
-import { getPageData } from '@Api/pages/[page]';
+import { getPageData } from '@Api/page/[page]';
 import { IExperienceData } from '@Interfaces/pages/experience';
 
 import { time as timeConstants } from '@Constants';
