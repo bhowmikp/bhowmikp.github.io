@@ -9,9 +9,8 @@ import type { ReactNode, ReactElement } from 'react';
 import AppLayout from '@Components/AppLayout';
 import { ExperienceSection } from '@Components/ExperienceSection';
 
-import { getPageData } from '@Api/pages/[page]';
+import { getPageData } from '@Api/page/[page]';
 import { IHomepageData } from '@Interfaces/pages/homepage';
-import { ICta } from '@Interfaces/cta';
 
 import { time as timeConstants } from '@Constants';
 
@@ -45,17 +44,15 @@ const Homepage: FC<{ homepageData: IHomepageData }> & { getLayout: ReactNode } =
                         <p className="text-2xl md:text-3xl mb-5 mt-5 md:mt-10 pb-5 md:pb-10 text-secondary">
                             {homepageData.heading.description}
                         </p>
-                        {homepageData.heading.cta.map((cta: ICta) => (
-                            <Link href={cta.url} key={cta._key}>
-                                <a
-                                    target={cta.target}
-                                    className="bg-button rounded-full text-xl px-3 py-2 md:px-4 md:py-3 hover:bg-primary dark:text-black text-white dark:hover:text-primary hover:text-primary font-semibold border-button border"
-                                    rel="noopener noreferrer"
-                                >
-                                    {cta.urlText}
-                                </a>
-                            </Link>
-                        ))}
+                        <Link href="/api/page/siteSettings/resume">
+                            <a
+                                target="_blank"
+                                className="bg-button rounded-full text-xl px-3 py-2 md:px-4 md:py-3 hover:bg-primary dark:text-black text-white hover:shadow-xl dark:hover:text-primary hover:text-primary font-semibold border-button border"
+                                rel="noopener noreferrer"
+                            >
+                                {homepageData.heading.resumeButtonText}
+                            </a>
+                        </Link>
                     </div>
                     <div
                         className={`${determineImagePosition(
