@@ -13,11 +13,11 @@ export const getResume = async (): Promise<{ url: string }> => {
     return client.fetch(postQuery, params);
 };
 
-export default async (req: NextApiRequest, res: NextApiResponse): Promise<any> => {
+export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
     res.setHeader('Cache-Control', `max-age=0, s-maxage=${timeConstants.oneDayInSeconds}`);
     const resumeUrl = (await getResume()).url;
 
-    return get(resumeUrl, (stream) => {
+    get(resumeUrl, (stream) => {
         stream.pipe(res);
         stream.on('end', () => {
             res.end();
