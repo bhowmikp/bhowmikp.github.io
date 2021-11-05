@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { IParagraphs } from '@Interfaces/paragraph';
 import { ICta } from '@Interfaces/cta';
-import { figureSerializer } from '@Serializers/figure';
+import { figureSerializer } from '@Sanity/serializers/figure';
 import Link from 'next/link';
 
 import BlockContent from '@sanity/block-content-to-react';
@@ -16,7 +16,7 @@ const serializers = {
     }
 };
 
-export const ExperienceSection: FC<{ data: IParagraphs; className: string }> = ({ data, className }) => {
+export const Experience: FC<{ data: IParagraphs; className: string }> = ({ data, className }) => {
     const mobileScreenWidth = screenWidthBreakpointConstants.md;
 
     const { screenWidth } = useWindowSize();
@@ -77,4 +77,4 @@ export const ExperienceSection: FC<{ data: IParagraphs; className: string }> = (
     );
 };
 
-export default ExperienceSection;
+export default Experience;

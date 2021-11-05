@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { get } from 'https';
 
-import client from '@Clients/sanityClient';
+import client from '@Sanity/sanityClient';
 import { time as timeConstants } from '@Constants';
 
 export const getResume = async (): Promise<{ url: string }> => {

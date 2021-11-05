@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import client from '@Clients/sanityClient';
+import client from '@Sanity/sanityClient';
 import { IBlogsCategory } from '@Interfaces/blogs';
 
 import Joi from 'joi';

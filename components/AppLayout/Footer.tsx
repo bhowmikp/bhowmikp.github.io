@@ -9,7 +9,7 @@ const GITHUB_URL = 'https://github.com/bhowmikp';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/prantar/';
 const EMAIL = 'mailto:prantar.bhowmik@mail.utoronto.ca';
 
-const Footer: FC = () => (
+export const Footer: FC = () => (
     <div className="my-8 mx-9 w-100 md:mx-auto md:w-9/12 lg:w-7/12">
         <p className="footer-contact-me-text pb-8 md:pb-14">Contact Me</p>
 

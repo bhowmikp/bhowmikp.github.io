@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import AppLayout from '@Components/AppLayout';
+import { AppLayout } from '@Components/AppLayout';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';

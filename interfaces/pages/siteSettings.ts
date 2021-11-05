@@ -1,17 +1,14 @@
+import { IPageCover } from '@Interfaces/pageCover';
+
 export interface IFooter {
     footerLink: string;
     footerText: string;
     footerType: string;
 }
 
-export interface IHeader {
-    headerLink: string;
-    headerText: string;
-}
-
 interface ISiteSettings {
     footer?: IFooter[];
-    header?: IHeader[];
+    header?: IPageCover[];
 }
 
 export default ISiteSettings;

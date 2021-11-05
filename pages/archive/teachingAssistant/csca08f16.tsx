@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import AppLayout from '@Components/AppLayout';
+import { AppLayout } from '@Components/AppLayout';
 import CustomLink from '@Components/CustomLink';
 
 import type { ReactNode, ReactElement } from 'react';

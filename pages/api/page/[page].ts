@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import client from '@Clients/sanityClient';
+import client from '@Sanity/sanityClient';
 
 import Joi from 'joi';
 import { badRequest } from '@hapi/boom';

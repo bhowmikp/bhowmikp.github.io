@@ -1,12 +1,12 @@
 /* eslint-disable no-underscore-dangle */
-import AppLayout from '@Components/AppLayout';
-import TableOfContents from '@Components/TableOfContents';
+import { AppLayout } from '@Components/AppLayout';
+import { TableOfContents } from '@Components/Blog/TableOfContents';
 import { getBlog } from '@Api/blog';
 import { getBlogsByCategory } from '@Api/blog/blogsCategory';
 import { IBlogs } from '@Interfaces/blogs';
 import React, { FC, useState } from 'react';
 import BlockContent from '@sanity/block-content-to-react';
-import blogSerializer from '@Serializers/blogSerializer';
+import blogSerializer from '@Sanity/serializers/blogSerializer';
 import concat from 'lodash/concat';
 import isEmpty from 'lodash/isEmpty';
 import { GetStaticPaths, GetStaticProps } from 'next';
