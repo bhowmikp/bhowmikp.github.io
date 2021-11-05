@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { figureSerializer } from '@Serializers/figure';
+import { figureSerializer } from '@Sanity/serializers/figure';
 import BlockContent from '@sanity/block-content-to-react';
 
 import type { ReactNode, ReactElement } from 'react';
 
-import AppLayout from '@Components/AppLayout';
-import { ExperienceSection } from '@Components/ExperienceSection';
+import { AppLayout } from '@Components/AppLayout';
+import { Experience } from '@Components/Common/Experience';
 
 import { getPageData } from '@Api/page/[page]';
 import { IHomepageData } from '@Interfaces/pages/homepage';
@@ -65,7 +65,7 @@ const Homepage: FC<{ homepageData: IHomepageData }> & { getLayout: ReactNode } =
             </div>
 
             {homepageData.paragraphs.map((paragraphData, index) => (
-                <ExperienceSection
+                <Experience
                     data={paragraphData}
                     className={`${index % 2 !== 0 ? 'bg-primary' : 'bg-secondary'}`}
                     key={paragraphData._key}

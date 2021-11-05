@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import React, { FC } from 'react';
-import NavBar from '@Components/NavBar';
-import Footer from '@Components/Footer';
+import { NavBar } from '@Components/AppLayout/NavBar';
+import { Footer } from '@Components/AppLayout/Footer';
 
-const AppLayout: FC<{
+export const AppLayout: FC<{
     children: React.ReactNode;
     title: string;
     mainClassName?: string;

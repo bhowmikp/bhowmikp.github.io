@@ -15,7 +15,7 @@ import { useWindowSize } from '@Hooks/useWindowSize';
 
 import { screenWidthBreakpoint as screenWidthBreakpointConstants } from '@Constants';
 
-const NavBar: FC = () => {
+export const NavBar: FC = () => {
     const isAmp = useAmp();
 
     const [menuStatus, setMenuStatus] = useState(false);

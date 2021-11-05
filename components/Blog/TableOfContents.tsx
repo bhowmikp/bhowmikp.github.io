@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { ITableOfContents } from '@Interfaces/blogs';
 import { BlogContext } from '@Contexts/blogContext';
 
-const TableOfContents: FC<{ tableOfContents: ITableOfContents[] }> = ({ tableOfContents }) => {
+export const TableOfContents: FC<{ tableOfContents: ITableOfContents[] }> = ({ tableOfContents }) => {
     const router = useRouter();
     const blogContext = useContext(BlogContext);
 

@@ -3,8 +3,9 @@ import { GetStaticProps } from 'next';
 
 import type { ReactNode, ReactElement } from 'react';
 
-import AppLayout from '@Components/AppLayout';
-import { ExperienceSection } from '@Components/ExperienceSection';
+import { AppLayout } from '@Components/AppLayout';
+import { PageCover } from '@Components/Common/PageCover';
+import { Experience } from '@Components/Common/Experience';
 
 import { getPageData } from '@Api/page/[page]';
 import { IProjectsData } from '@Interfaces/pages/projects';
@@ -20,17 +21,10 @@ export const getStaticProps: GetStaticProps = async () => ({
 
 const ProjectsPage: FC<{ projectsData: IProjectsData }> & { getLayout: ReactNode } = ({ projectsData }) => (
     <>
-        <div className="bg-primary pb-10 md:py-40">
-            <div className="text-center mx-auto px-3 py-2 md:px-0 md:py-0 md:w-8/12 lg:px-14">
-                <p className="font-bold text-5xl md:text-6xl">{projectsData.heading.header}</p>
-                <p className="text-2xl md:text-3xl mb-5 mt-5 md:mt-10 pb-5 md:pb-10 text-secondary">
-                    {projectsData.heading.description}
-                </p>
-            </div>
-        </div>
+        <PageCover pageCoverData={projectsData.heading} />
 
         {projectsData.paragraphs.map((paragraphData, index) => (
-            <ExperienceSection
+            <Experience
                 data={paragraphData}
                 className={`${index % 2 !== 0 ? 'bg-primary' : 'bg-secondary'}`}
                 key={paragraphData._key}

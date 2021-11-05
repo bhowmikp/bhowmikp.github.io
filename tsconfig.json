@@ -23,9 +23,6 @@
       "@Api/*": [
         "pages/api/*"
       ],
-      "@Clients/*": [
-        "clients/*"
-      ],
       "@Constants": [
         "constants.ts"
       ],
@@ -41,11 +38,8 @@
       "@Interfaces/*": [
         "interfaces/*"
       ],
-      "@MockData/*": [
-        "mockData/*"
-      ],
-      "@Serializers/*": [
-        "serializers/*"
+      "@Sanity/*": [
+        "sanity/*"
       ],
       "@Service/*": [
         "service/*"

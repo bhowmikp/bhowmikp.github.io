@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import client from '@Clients/sanityClient';
+import client from '@Sanity/sanityClient';
 import { time as timeConstants } from '@Constants';
 
 const PAGE = 'siteSettings';

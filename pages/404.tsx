@@ -1,4 +1,4 @@
-import AppLayout from '@Components/AppLayout';
+import { AppLayout } from '@Components/AppLayout';
 import React, { FC } from 'react';
 import { useAmp } from 'next/amp';
 import Image from 'next/image';
