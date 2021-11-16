@@ -73,10 +73,12 @@ export const NavBar: FC = () => {
                                     height="70"
                                     className="bg-white rounded-full"
                                     onClick={() => {
+                                        setMenuStatus(false);
                                         event({ name: 'menuItem', category: 'link', label: 'homepage' });
                                     }}
                                     onKeyDown={(e) => {
                                         if (e.key === 'Enter') {
+                                            setMenuStatus(false);
                                             event({ name: 'menuItem', category: 'link', label: 'homepage' });
                                         }
                                     }}
@@ -118,10 +120,12 @@ export const NavBar: FC = () => {
                                     <a
                                         className="navbar-text"
                                         onClick={() => {
+                                            setMenuStatus(false);
                                             event({ name: 'menuItem', category: 'link', label: entry.toLowerCase() });
                                         }}
                                         onKeyDown={(e) => {
                                             if (e.key === 'Enter') {
+                                                setMenuStatus(false);
                                                 event({
                                                     name: 'menuItem',
                                                     category: 'link',
@@ -140,6 +144,7 @@ export const NavBar: FC = () => {
                         <li
                             onClick={() => {
                                 setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
+                                setMenuStatus(false);
                                 event({
                                     name: 'menuItem',
                                     category: 'button',
@@ -147,14 +152,18 @@ export const NavBar: FC = () => {
                                     value: ''
                                 });
                             }}
-                            onKeyDown={() => {
-                                setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
-                                event({
-                                    name: 'menuItem',
-                                    category: 'button',
-                                    label: resolvedTheme === 'light' ? 'Change to dark mode' : 'Change to light mode',
-                                    value: ''
-                                });
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
+                                    setMenuStatus(false);
+                                    event({
+                                        name: 'menuItem',
+                                        category: 'button',
+                                        label:
+                                            resolvedTheme === 'light' ? 'Change to dark mode' : 'Change to light mode',
+                                        value: ''
+                                    });
+                                }
                             }}
                             className="navbar-element-last"
                             role="presentation"
