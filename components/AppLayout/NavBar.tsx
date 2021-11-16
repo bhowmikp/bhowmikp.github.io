@@ -15,7 +15,7 @@ import { useWindowSize } from '@Hooks/useWindowSize';
 
 import { screenWidthBreakpoint as screenWidthBreakpointConstants } from '@Constants';
 
-const NavBar: FC = () => {
+export const NavBar: FC = () => {
     const isAmp = useAmp();
 
     const [menuStatus, setMenuStatus] = useState(false);
@@ -40,9 +40,7 @@ const NavBar: FC = () => {
     }, [screenWidth, mobileScreenWidth]);
 
     return (
-        <nav
-            className={`w-full z-10 bg-primary ${menuStatus ? 'absolute h-full my-0 pt-12 pb-96 mb-96' : 'mt-12 mb-4'}`}
-        >
+        <nav className={`w-full bg-primary ${menuStatus ? 'pt-12 pb-96 mb-96' : 'mt-12 mb-4'}`}>
             <div className="flex flex-wrap items-center justify-between w-full px-5 md:px-0 sm:w-10/12 md:w-9/12 lg:w-8/12 mx-auto">
                 <div>
                     <Link href="/">
@@ -75,10 +73,12 @@ const NavBar: FC = () => {
                                     height="70"
                                     className="bg-white rounded-full"
                                     onClick={() => {
+                                        setMenuStatus(false);
                                         event({ name: 'menuItem', category: 'link', label: 'homepage' });
                                     }}
                                     onKeyDown={(e) => {
                                         if (e.key === 'Enter') {
+                                            setMenuStatus(false);
                                             event({ name: 'menuItem', category: 'link', label: 'homepage' });
                                         }
                                     }}
@@ -120,10 +120,12 @@ const NavBar: FC = () => {
                                     <a
                                         className="navbar-text"
                                         onClick={() => {
+                                            setMenuStatus(false);
                                             event({ name: 'menuItem', category: 'link', label: entry.toLowerCase() });
                                         }}
                                         onKeyDown={(e) => {
                                             if (e.key === 'Enter') {
+                                                setMenuStatus(false);
                                                 event({
                                                     name: 'menuItem',
                                                     category: 'link',
@@ -142,6 +144,7 @@ const NavBar: FC = () => {
                         <li
                             onClick={() => {
                                 setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
+                                setMenuStatus(false);
                                 event({
                                     name: 'menuItem',
                                     category: 'button',
@@ -149,14 +152,18 @@ const NavBar: FC = () => {
                                     value: ''
                                 });
                             }}
-                            onKeyDown={() => {
-                                setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
-                                event({
-                                    name: 'menuItem',
-                                    category: 'button',
-                                    label: resolvedTheme === 'light' ? 'Change to dark mode' : 'Change to light mode',
-                                    value: ''
-                                });
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
+                                    setMenuStatus(false);
+                                    event({
+                                        name: 'menuItem',
+                                        category: 'button',
+                                        label:
+                                            resolvedTheme === 'light' ? 'Change to dark mode' : 'Change to light mode',
+                                        value: ''
+                                    });
+                                }
                             }}
                             className="navbar-element-last"
                             role="presentation"

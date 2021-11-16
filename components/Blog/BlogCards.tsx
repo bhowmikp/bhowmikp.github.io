@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 export const config = { amp: 'hybrid' };
 
-const BlogCard: FC<{ blogData: IBlogs }> = ({ blogData }) => {
+export const BlogCard: FC<{ blogData: IBlogs }> = ({ blogData }) => {
     const router = useRouter();
 
     return (
@@ -31,7 +31,7 @@ const BlogCard: FC<{ blogData: IBlogs }> = ({ blogData }) => {
     );
 };
 
-const BlogCards: FC<{ blogsData: IBlogs[] }> = ({ blogsData }) => (
+export const BlogCards: FC<{ blogsData: IBlogs[] }> = ({ blogsData }) => (
     <>
         {blogsData.length === 0 ? (
             <>

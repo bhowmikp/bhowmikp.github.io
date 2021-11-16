@@ -3,7 +3,7 @@ module.exports = {
         content: [
             './pages/**/*.{js,ts,jsx,tsx}',
             './components/**/*.{js,ts,jsx,tsx}',
-            './serializers/**/*.{js,ts,jsx,tsx}'
+            './sanity/serializers/**/*.{js,ts,jsx,tsx}'
         ],
         safelist: ['link-button', 'regular-button']
     },

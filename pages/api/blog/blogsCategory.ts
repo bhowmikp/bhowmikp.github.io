@@ -1,9 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import client from '@Clients/sanityClient';
+import client from '@Sanity/sanityClient';
 import { IBlogsCategory } from '@Interfaces/blogs';
 
 import Joi from 'joi';
-import Boom from '@hapi/boom';
+import { badRequest } from '@hapi/boom';
 
 const schema = Joi.object({
     category: Joi.string().valid('programming', 'investing', 'miscellaneous').optional(),
@@ -11,11 +11,12 @@ const schema = Joi.object({
     blogCount: Joi.number().valid(10, 25, 50, 100).optional()
 });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const validate = async (req: NextApiRequest): Promise<any> => {
     const { error } = schema.validate(req.query);
 
     if (error) {
-        return Boom.badRequest(error.message).output.payload;
+        return badRequest(error.message).output.payload;
     }
 
     return '';
