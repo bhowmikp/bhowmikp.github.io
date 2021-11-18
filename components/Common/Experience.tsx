@@ -44,7 +44,7 @@ export const Experience: FC<{ data: IParagraphs; className: string }> = ({ data,
                             data.image !== undefined && 'md:w-6/12 lg:w-6/12 xl:w-5/12'
                         } mt-5 md:mt-0 flex flex-col justify-between xl:mr-28`}
                     >
-                        <div>
+                        <div className="mb-4">
                             <p className="text-4xl md:text-5xl font-medium mb-4">{data.paragraphTitle}</p>
                             <BlockContent blocks={data.paragraphDescription} serializers={serializers} />
                         </div>

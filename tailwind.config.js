@@ -13,6 +13,7 @@ module.exports = {
             backgroundColor: {
                 primary: 'var(--color-bg-primary)',
                 secondary: 'var(--color-bg-secondary)',
+                tertiary: 'var(--color-bg-tertiary)',
                 button: 'var(--color-bg-button)'
             },
             textColor: {
