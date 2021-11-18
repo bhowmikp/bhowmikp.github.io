@@ -15,6 +15,7 @@ interface ICustomLink {
 
 const CustomLink: FC<ICustomLink> = ({ link, label, labelGtm, newTab = false, name, className = '' }) => {
     const isAmp = useAmp();
+
     return (
         <Link href={link}>
             <a

@@ -24,7 +24,7 @@ const CustomLinkLocal: FC<{
 );
 
 const Cscc69w19: FC & { getLayout: ReactNode } = () => (
-    <div className="mx-5 mb-10">
+    <div className="mx-auto w-10/12 md:w-9/12 lg:px-14 my-20">
         <p className="tutorial-header">Welcome to CSCC69</p>
         <p className="tutorial-default-spacing">
             <b>Tutorial 0003</b>: Friday, 02:00 PM - 03:00 PM, at HW 308.
