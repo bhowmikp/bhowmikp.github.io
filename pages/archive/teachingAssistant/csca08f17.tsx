@@ -24,7 +24,7 @@ const CustomLinkLocal: FC<{
 );
 
 const Csca08f17: FC & { getLayout: ReactNode } = () => (
-    <div className="mx-5 mb-10">
+    <div className="mx-auto w-10/12 md:w-9/12 lg:px-14 my-20">
         <p className="tutorial-header">Welcome to CSCA08</p>
         <p className="tutorial-default-spacing">
             <b>Tutorial 07</b>: Tuesday, 9:00 AM - 10:00 AM, at BV264.
