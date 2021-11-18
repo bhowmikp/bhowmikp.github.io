@@ -1,10 +1,10 @@
 @layer components {
     .archive-options {
-        @apply rounded-full border-2 bg-primary py-3 px-6 mb-4 border-experienceSection cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800;
+        @apply rounded-full border-2 bg-primary py-3 px-6 mb-4 border-experienceSection cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800 text-primary;
     }
 
     .archive-options-non-link {
-        @apply rounded-full border-2 bg-primary py-3 px-6 mb-4 border-experienceSection;
+        @apply rounded-full border-2 bg-primary py-3 px-6 mb-4 border-experienceSection text-primary;
     }
 
     .tutorial-header {
