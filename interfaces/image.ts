@@ -5,4 +5,5 @@ export interface IImage {
     width: number;
     image: any;
     caption?: string;
+    title: string;
 }

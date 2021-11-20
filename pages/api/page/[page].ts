@@ -35,5 +35,6 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
     }
 
     const { page } = req.query;
-    res.send(await getPageData(page as string));
+    const pageData = await getPageData(page as string);
+    res.send(pageData !== null ? pageData : { found: 'false' });
 };
