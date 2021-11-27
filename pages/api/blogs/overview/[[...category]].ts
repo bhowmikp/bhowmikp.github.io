@@ -6,7 +6,7 @@ import Joi from 'joi';
 import { badRequest } from '@hapi/boom';
 
 const schema = Joi.object({
-    page: Joi.string().alphanum().min(5).max(25).required()
+    category: Joi.array().min(1).max(1).items(Joi.string())
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -21,8 +21,25 @@ const validate = async (req: NextApiRequest): Promise<any> => {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const getPageData = async (page: string): Promise<any> => {
-    const postQuery = `*[_type=="${page}"][0]`;
+export const getBlogsOverviewData = async (category?: string): Promise<any> => {
+    const queryOrder = ` | order(_createdAt)`;
+    const queryRange = `[0..6]`;
+    const queryFields = `{
+        category,
+        description,
+        _updatedAt,
+        title,
+        _id
+      }`;
+
+    let postQuery = `*[_type == 'blog' && category == '${category}']`;
+
+    if (category === undefined) {
+        postQuery = `*[_type == 'blog']`;
+    }
+
+    postQuery += `${queryOrder} ${queryRange} ${queryFields}`;
+
     const params = { minSeats: 2 };
 
     return client.fetch(postQuery, params);
@@ -35,7 +52,9 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
         return;
     }
 
-    const { page } = req.query;
-    const pageData = await getPageData(page as string);
-    res.send(pageData !== null ? pageData : { found: 'false' });
+    const { category } = req.query;
+    const blogsOverviewData = await getBlogsOverviewData(
+        category === undefined ? (category as string) : (category[0] as string)
+    );
+    res.send(blogsOverviewData !== null ? blogsOverviewData : { found: 'false' });
 };

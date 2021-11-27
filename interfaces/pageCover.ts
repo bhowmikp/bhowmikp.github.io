@@ -1,6 +1,6 @@
 export interface IPageCoverStepper {
     stepperLabel: string;
-    stepperLink: string;
+    stepperLink?: string;
     _key: string;
 }
 

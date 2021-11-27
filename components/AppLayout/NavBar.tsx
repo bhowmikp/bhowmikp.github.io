@@ -116,7 +116,9 @@ export const NavBar: FC = () => {
                     <ul className="md:flex md:justify-center">
                         {['Projects', 'Experience', 'About', 'Blog'].map((entry: string) => (
                             <li className="navbar-element" key={entry}>
-                                <Link href={`/${entry.toLowerCase()}`}>
+                                <Link
+                                    href={entry.toLowerCase() !== 'blog' ? `/${entry.toLowerCase()}` : '/blog/category'}
+                                >
                                     <a
                                         className="navbar-text"
                                         onClick={() => {
