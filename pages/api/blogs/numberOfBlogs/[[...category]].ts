@@ -1,12 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+
 import client from '@Sanity/sanityClient';
-import { IBlogs } from '@Interfaces/blogs';
 
 import Joi from 'joi';
 import { badRequest } from '@hapi/boom';
 
 const schema = Joi.object({
-    id: Joi.string().length(36).required()
+    category: Joi.array().min(1).max(1).items(Joi.string())
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -20,8 +20,13 @@ const validate = async (req: NextApiRequest): Promise<any> => {
     return '';
 };
 
-export const getBlog = async (id: string): Promise<IBlogs> => {
-    const postQuery = `*[_type=="blog" && _id == "${id}"] {...}`;
+export const getNumberOfBlogsData = async (category: string): Promise<void> => {
+    let postQuery = `count(*[_type == 'blog' && category == '${category}'])`;
+
+    if (category === undefined) {
+        postQuery = `count(*[_type == 'blog'])`;
+    }
+
     const params = { minSeats: 2 };
 
     return client.fetch(postQuery, params);
@@ -34,5 +39,9 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
         return;
     }
 
-    res.send(await getBlog(String(req.query.id)));
+    const { category } = req.query;
+    const numberOfBlogsData = await getNumberOfBlogsData(
+        category === undefined ? (category as string) : (category[0] as string)
+    );
+    res.send(numberOfBlogsData !== null ? { numberOfBlogs: numberOfBlogsData } : { found: 'false' });
 };

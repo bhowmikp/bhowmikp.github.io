@@ -45,7 +45,6 @@ const TeachingAssistant: FC & { getLayout: ReactNode } = () => {
             },
             {
                 stepperLabel: 'Teaching Assistant',
-                stepperLink: '/archive/teachingAssistant',
                 _key: 'teachingAssistant'
             }
         ]

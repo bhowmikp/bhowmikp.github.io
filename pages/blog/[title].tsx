@@ -1,8 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 import { AppLayout } from '@Components/AppLayout';
 import { TableOfContents } from '@Components/Blog/TableOfContents';
-import { getBlog } from '@Api/blog';
-import { getBlogsByCategory } from '@Api/blog/blogsCategory';
+import { getPost } from '@Api/blogs/post/[id]';
+import { getBlogsOverviewData } from '@Api/blogs/overview/[[...category]]';
 import { IBlogs } from '@Interfaces/blogs';
 import React, { FC, useState } from 'react';
 import BlockContent from '@sanity/block-content-to-react';
@@ -21,7 +21,7 @@ export const config = { amp: 'hybrid' };
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const getBlogPathsOfCategory = async (category) =>
-        (await getBlogsByCategory(category)).map((entry) => ({
+        (await getBlogsOverviewData(category)).map((entry) => ({
             params: { title: `${entry.title.replace(/\s/g, '-')}_${entry._id}` }
         }));
 
@@ -38,7 +38,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const id = String(params.title).split('_')[1];
-    const blogData = await getBlog(id);
+    const blogData = await getPost(id);
 
     if (isEmpty(blogData)) {
         return {

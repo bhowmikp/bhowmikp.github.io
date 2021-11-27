@@ -18,9 +18,13 @@ export const PageCover: FC<{ pageCoverData: IPageCover }> = ({ pageCoverData }) 
                     {pageCoverData.pageStepper.map((entry, index) => (
                         <div key={entry._key} className="inline-block float-left">
                             <span className="text-secondary">
-                                <Link href={entry.stepperLink}>
-                                    <a>{entry.stepperLabel}</a>
-                                </Link>
+                                {entry.stepperLink === undefined ? (
+                                    <p className="inline-block">{entry.stepperLabel}</p>
+                                ) : (
+                                    <Link href={entry.stepperLink}>
+                                        <a>{entry.stepperLabel}</a>
+                                    </Link>
+                                )}
                                 {index !== pageCoverData.pageStepper.length - 1 && (
                                     <p className="inline-block">&nbsp;{'>'}&nbsp;</p>
                                 )}
