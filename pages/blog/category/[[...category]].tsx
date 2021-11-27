@@ -65,7 +65,7 @@ const Blogs: FC<{ blogPageData: IBlogPage; blogsOverviewData: IBlogsOverviewData
             <PageCover pageCoverData={blogPageData.heading} />
 
             <div className="mx-auto w-10/12 md:w-9/12 lg:px-14 py-10">
-                <div className="flex flex-nowrap overflow-x-scroll md:w-8/12 mx-auto mb-10">
+                <div className="flex flex-nowrap overflow-x-scroll md:overflow-x-hidden md:w-8/12 mx-auto mb-10">
                     {blogPageData.categories.map((category) => (
                         <Link href={`/blog/category/${category.toLowerCase()}`} key={category}>
                             <a
