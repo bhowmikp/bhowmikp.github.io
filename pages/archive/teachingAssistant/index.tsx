@@ -31,7 +31,24 @@ const TeachingAssistant: FC & { getLayout: ReactNode } = () => {
     const pageCoverData: IPageCover = {
         header: 'My Teaching Assistant Experience',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        pageStepper: [
+            {
+                stepperLabel: 'Experience',
+                stepperLink: '/experience',
+                _key: 'experience'
+            },
+            {
+                stepperLabel: 'Archive',
+                stepperLink: '/archive',
+                _key: 'archive'
+            },
+            {
+                stepperLabel: 'Teaching Assistant',
+                stepperLink: '/archive/teachingAssistant',
+                _key: 'teachingAssistant'
+            }
+        ]
     };
 
     return (
