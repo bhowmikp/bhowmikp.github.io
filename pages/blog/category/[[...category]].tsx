@@ -83,7 +83,7 @@ const Blogs: FC<{ blogPageData: IBlogPage; blogsOverviewData: IBlogsOverviewData
                 </p>
 
                 {blogsOverviewData.map((blogData) => (
-                    <Link href={`/blog/${blogData.title.replaceAll(' ', '-')}_${blogData._id}`} key={blogData._id}>
+                    <Link href={`/blog/${blogData.title.replace(/ /g, '-')}_${blogData._id}`} key={blogData._id}>
                         <a>
                             <div className="border-experienceSection border-2 p-2">
                                 <p>{blogData.title}</p>
