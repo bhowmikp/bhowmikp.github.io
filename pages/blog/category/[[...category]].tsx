@@ -1,6 +1,8 @@
-import React, { FC } from 'react';
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, { FC, useState } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import type { ReactNode, ReactElement } from 'react';
 
@@ -13,7 +15,11 @@ import { getPageData } from '@Api/page/[page]';
 import { IBlogPage } from '@Interfaces/pages/blogPage';
 import { IBlogsOverviewData } from '@Interfaces/blogs/blogsOverviewData';
 
+import { useQuery } from 'react-query';
+
 import { time as timeConstants } from '@Constants';
+
+const RECENT_PAGE = 'recent';
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const blogPageData: IBlogPage = await getPageData('blogPage');
@@ -37,7 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     if (params.category === undefined) {
         pageCategory = undefined;
-    } else if (params.category[0] === 'recent') {
+    } else if (params.category[0] === RECENT_PAGE) {
         pageCategory = undefined;
     } else {
         pageCategory = blogPageDataCategories.includes(params.category[0]) ? params.category[0] : undefined;
@@ -48,7 +54,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
             blogPageData,
             blogsOverviewData: await getBlogsOverviewData(pageCategory)
         },
-        revalidate: timeConstants.oneDayInSeconds
+        revalidate: timeConstants.fifteenMinutesInSeconds
     };
 };
 
@@ -60,6 +66,15 @@ const Blogs: FC<{ blogPageData: IBlogPage; blogsOverviewData: IBlogsOverviewData
         return <></>;
     }
 
+    const router = useRouter();
+    const [pageCategory, setPageCategory] = useState('');
+
+    const { data: blogsOverviewDataModified } = useQuery(
+        [`Blogs Overview ${pageCategory}`, pageCategory],
+        async () => (await fetch(`/api/blogs/overview/${pageCategory}`, { method: 'GET' })).json(),
+        { initialData: blogsOverviewData, refetchOnMount: false }
+    );
+
     return (
         <>
             <PageCover pageCoverData={blogPageData.heading} />
@@ -67,14 +82,18 @@ const Blogs: FC<{ blogPageData: IBlogPage; blogsOverviewData: IBlogsOverviewData
             <div className="mx-auto w-10/12 md:w-9/12 lg:px-14 py-10">
                 <div className="flex flex-nowrap overflow-x-scroll md:overflow-x-hidden md:w-8/12 mx-auto mb-10">
                     {blogPageData.categories.map((category) => (
-                        <Link href={`/blog/category/${category.toLowerCase()}`} key={category}>
-                            <a
-                                href={`/blog/category/${category.toLowerCase()}`}
-                                className="inline-block bg-button mr-5 md:mx-auto px-5 py-1 rounded-xl text-white dark:text-black font-medium"
-                            >
-                                {category}
-                            </a>
-                        </Link>
+                        <a
+                            href={`/blog/category/${category.toLowerCase()}`}
+                            className="inline-block bg-button mr-5 md:mx-auto px-5 py-1 rounded-xl text-white dark:text-black font-medium"
+                            key={category}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                router.push(category.toLowerCase(), undefined, { shallow: true });
+                                setPageCategory(category.toLowerCase() !== RECENT_PAGE ? category.toLowerCase() : '');
+                            }}
+                        >
+                            {category}
+                        </a>
                     ))}
                 </div>
 
@@ -82,7 +101,7 @@ const Blogs: FC<{ blogPageData: IBlogPage; blogsOverviewData: IBlogsOverviewData
                     {blogPageData.blogHeading}
                 </p>
 
-                {blogsOverviewData.map((blogData) => (
+                {blogsOverviewDataModified.map((blogData) => (
                     <Link href={`/blog/${blogData.title.replace(/ /g, '-')}_${blogData._id}`} key={blogData._id}>
                         <a>
                             <div className="border-experienceSection border-2 p-2">

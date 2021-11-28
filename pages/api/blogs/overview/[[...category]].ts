@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import client from '@Sanity/sanityClient';
+import { time as timeConstants } from '@Constants';
 
 import Joi from 'joi';
 import { badRequest } from '@hapi/boom';
@@ -56,5 +57,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
     const blogsOverviewData = await getBlogsOverviewData(
         category === undefined ? (category as string) : (category[0] as string)
     );
+
+    res.setHeader('Cache-Control', `max-age=0, s-maxage=${timeConstants.fifteenMinutesInSeconds}`);
     res.send(blogsOverviewData !== null ? blogsOverviewData : { found: 'false' });
 };

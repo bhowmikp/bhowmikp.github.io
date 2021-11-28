@@ -5,7 +5,9 @@ import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as gtag from '@Service/googleService';
 import { ThemeProvider } from 'next-themes';
+
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
 import type { ReactElement, ReactNode } from 'react';
 import type { NextPage } from 'next';
@@ -37,7 +39,10 @@ const MyApp: ReactNode = ({ Component, pageProps }: AppPropsWithLayout) => {
 
     return (
         <ThemeProvider attribute="class" defaultTheme="system">
-            <QueryClientProvider client={queryClient}>{getLayout(<Component {...pageProps} />)}</QueryClientProvider>
+            <QueryClientProvider client={queryClient}>
+                {getLayout(<Component {...pageProps} />)}
+                <ReactQueryDevtools initialIsOpen={false} />
+            </QueryClientProvider>
         </ThemeProvider>
     );
 };
