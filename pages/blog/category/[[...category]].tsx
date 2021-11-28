@@ -67,7 +67,11 @@ const Blogs: FC<{ blogPageData: IBlogPage; blogsOverviewData: IBlogsOverviewData
     }
 
     const router = useRouter();
-    const [pageCategory, setPageCategory] = useState('');
+    const [pageCategory, setPageCategory] = useState(
+        router.query.category !== undefined && (router.query.category[0] as string).toLowerCase() !== RECENT_PAGE
+            ? (router.query.category[0] as string).toLowerCase()
+            : ''
+    );
 
     const { data: blogsOverviewDataModified } = useQuery(
         [`Blogs Overview ${pageCategory}`, pageCategory],
