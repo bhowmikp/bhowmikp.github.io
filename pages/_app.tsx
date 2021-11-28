@@ -7,7 +7,7 @@ import * as gtag from '@Service/googleService';
 import { ThemeProvider } from 'next-themes';
 
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools'
+import { ReactQueryDevtools } from 'react-query/devtools';
 
 
 import type { ReactElement, ReactNode } from 'react';
