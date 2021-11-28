@@ -19,6 +19,8 @@ import { useQuery } from 'react-query';
 
 import { time as timeConstants } from '@Constants';
 
+const RECENT_PAGE = 'recent';
+
 export const getStaticPaths: GetStaticPaths = async () => {
     const blogPageData: IBlogPage = await getPageData('blogPage');
     let categories: { params: { category: string[] } }[] = [];
@@ -41,7 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     if (params.category === undefined) {
         pageCategory = undefined;
-    } else if (params.category[0] === 'recent') {
+    } else if (params.category[0] === RECENT_PAGE) {
         pageCategory = undefined;
     } else {
         pageCategory = blogPageDataCategories.includes(params.category[0]) ? params.category[0] : undefined;
@@ -52,7 +54,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
             blogPageData,
             blogsOverviewData: await getBlogsOverviewData(pageCategory)
         },
-        revalidate: timeConstants.oneDayInSeconds
+        revalidate: timeConstants.fifteenMinutesInSeconds
     };
 };
 
@@ -67,10 +69,10 @@ const Blogs: FC<{ blogPageData: IBlogPage; blogsOverviewData: IBlogsOverviewData
     const router = useRouter();
     const [pageCategory, setPageCategory] = useState('');
 
-    const { data: blogOverviewDataModified } = useQuery(
-        [`Blogs Overview`, pageCategory],
+    const { data: blogsOverviewDataModified } = useQuery(
+        [`Blogs Overview ${pageCategory}`, pageCategory],
         async () => (await fetch(`/api/blogs/overview/${pageCategory}`, { method: 'GET' })).json(),
-        { initialData: blogsOverviewData }
+        { initialData: blogsOverviewData, refetchOnMount: false }
     );
 
     return (
@@ -87,7 +89,7 @@ const Blogs: FC<{ blogPageData: IBlogPage; blogsOverviewData: IBlogsOverviewData
                             onClick={(e) => {
                                 e.preventDefault();
                                 router.push(category.toLowerCase(), undefined, { shallow: true });
-                                setPageCategory(category.toLowerCase() !== 'recent' ? category.toLowerCase() : '');
+                                setPageCategory(category.toLowerCase() !== RECENT_PAGE ? category.toLowerCase() : '');
                             }}
                         >
                             {category}
@@ -99,7 +101,7 @@ const Blogs: FC<{ blogPageData: IBlogPage; blogsOverviewData: IBlogsOverviewData
                     {blogPageData.blogHeading}
                 </p>
 
-                {blogOverviewDataModified.map((blogData) => (
+                {blogsOverviewDataModified.map((blogData) => (
                     <Link href={`/blog/${blogData.title.replace(/ /g, '-')}_${blogData._id}`} key={blogData._id}>
                         <a>
                             <div className="border-experienceSection border-2 p-2">
