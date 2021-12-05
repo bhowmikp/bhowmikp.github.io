@@ -11,8 +11,6 @@ import { IArchiveData } from '@Interfaces/pages/archive';
 
 import { time as timeConstants } from '@Constants';
 
-export const config = { amp: 'hybrid' };
-
 export const getStaticProps: GetStaticProps = async () => ({
     props: {
         archiveData: await getPageData('archive')

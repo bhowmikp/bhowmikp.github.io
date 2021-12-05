@@ -11,8 +11,6 @@ import { IRecognitionData } from '@Interfaces/pages/recognition';
 
 import { time as timeConstants } from '@Constants';
 
-// export const config = { amp: 'hybrid' };
-
 export const getStaticProps: GetStaticProps = async () => ({
     props: {
         recognitionData: await getPageData('recognition')

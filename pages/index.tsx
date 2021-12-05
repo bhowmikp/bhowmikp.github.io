@@ -14,8 +14,6 @@ import { IHomepageData } from '@Interfaces/pages/homepage';
 
 import { time as timeConstants } from '@Constants';
 
-export const config = { amp: 'hybrid' };
-
 export const getStaticProps: GetStaticProps = async () => ({
     props: {
         homepageData: await getPageData('homepage')

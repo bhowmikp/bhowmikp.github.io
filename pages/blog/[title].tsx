@@ -17,8 +17,6 @@ import type { ReactNode, ReactElement } from 'react';
 import { time as timeConstants } from '@Constants';
 import { BlogContext, IBlogContextState } from '@Contexts/blogContext';
 
-export const config = { amp: 'hybrid' };
-
 export const getStaticPaths: GetStaticPaths = async () => {
     const getBlogPathsOfCategory = async (category) =>
         (await getBlogsOverviewData(category)).map((entry) => ({
