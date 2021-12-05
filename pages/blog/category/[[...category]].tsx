@@ -1,13 +1,13 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { FC, useState } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import type { ReactNode, ReactElement } from 'react';
 
 import { AppLayout } from '@Components/AppLayout';
 import { PageCover } from '@Components/Common/PageCover';
+import { BlogCardsContainer } from '@Components/Common/BlogCardsContainer';
 
 import { getBlogsOverviewData } from '@Api/blogs/overview/[[...category]]';
 import { getPageData } from '@Api/page/[page]';
@@ -83,12 +83,14 @@ const Blogs: FC<{ blogPageData: IBlogPage; blogsOverviewData: IBlogsOverviewData
         <>
             <PageCover pageCoverData={blogPageData.heading} />
 
-            <div className="mx-auto w-10/12 md:w-9/12 lg:px-14 py-10">
-                <div className="flex flex-nowrap overflow-x-scroll md:overflow-x-hidden md:w-8/12 mx-auto mb-10">
-                    {blogPageData.categories.map((category) => (
+            <div className="mx-auto w-10/12 md:w-9/12 lg:w-8/12 py-10">
+                <div className="flex flex-nowrap overflow-x-scroll xl:overflow-x-hidden md:w-9/12 xl:w-7/12 mx-auto mb-10 justify-between">
+                    {blogPageData.categories.map((category, index) => (
                         <a
                             href={`/blog/category/${category.toLowerCase()}`}
-                            className="inline-block bg-button mr-5 md:mx-auto px-5 py-1 rounded-xl text-white dark:text-black font-medium"
+                            className={`inline-block bg-button ${
+                                blogPageData.categories.length - 1 !== index && 'mr-5'
+                            } px-5 py-1 rounded-xl text-white dark:text-black font-medium`}
                             key={category}
                             onClick={(e) => {
                                 e.preventDefault();
@@ -101,20 +103,11 @@ const Blogs: FC<{ blogPageData: IBlogPage; blogsOverviewData: IBlogsOverviewData
                     ))}
                 </div>
 
-                <p className="text-nav border-b-2 border-experienceSection font-medium mb-4">
+                <p className="text-nav border-b-2 border-experienceSection font-medium mb-10">
                     {blogPageData.blogHeading}
                 </p>
 
-                {blogsOverviewDataModified.map((blogData) => (
-                    <Link href={`/blog/${blogData.title.replace(/ /g, '-')}_${blogData._id}`} key={blogData._id}>
-                        <a>
-                            <div className="border-experienceSection border-2 p-2">
-                                <p>{blogData.title}</p>
-                                <p>{blogData.description}</p>
-                            </div>
-                        </a>
-                    </Link>
-                ))}
+                <BlogCardsContainer blogsData={blogsOverviewDataModified} />
             </div>
         </>
     );
