@@ -9,7 +9,6 @@ import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { coyWithoutShadows } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import urlFor from '@Service/sanityImageService';
 import { IImage } from '@Interfaces/image';
-import { useAmp } from 'next/amp';
 import Image from 'next/image';
 import Link from 'next/link';
 import Zoom from 'react-medium-image-zoom';
@@ -121,41 +120,26 @@ const blogSerializer = {
         horizontalRow: () => <hr className="blog-hr-style" />,
         figure: (props: { node: IImage }): ReactElement => {
             // eslint-disable-next-line react-hooks/rules-of-hooks
-            const isAmp = useAmp();
             const { resolvedTheme } = useTheme();
 
             return (
-                <>
-                    {isAmp ? (
-                        <div>
-                            <amp-img
-                                width={props.node.width}
-                                height={props.node.height}
-                                src={urlFor(props.node.image).url()}
-                                alt={props.node.alt}
-                            />
-                            <p>{props.node.caption}</p>
-                        </div>
-                    ) : (
-                        <figure className="blog-image">
-                            <Zoom
-                                overlayBgColorStart={resolvedTheme === 'dark' ? '#2d3748D9' : '#ffffffD9'}
-                                overlayBgColorEnd={resolvedTheme === 'dark' ? '#2d3748D9' : '#ffffffD9'}
-                                closeText={`Unzoomed ${props.node.alt}`}
-                                openText={`Zoomed ${props.node.alt}`}
-                            >
-                                <Image
-                                    src={urlFor(props.node.image).url()}
-                                    alt={props.node.alt}
-                                    width={props.node.width}
-                                    height={props.node.height}
-                                />
-                            </Zoom>
+                <figure className="blog-image">
+                    <Zoom
+                        overlayBgColorStart={resolvedTheme === 'dark' ? '#2d3748D9' : '#ffffffD9'}
+                        overlayBgColorEnd={resolvedTheme === 'dark' ? '#2d3748D9' : '#ffffffD9'}
+                        closeText={`Unzoomed ${props.node.alt}`}
+                        openText={`Zoomed ${props.node.alt}`}
+                    >
+                        <Image
+                            src={urlFor(props.node.image).url()}
+                            alt={props.node.alt}
+                            width={props.node.width}
+                            height={props.node.height}
+                        />
+                    </Zoom>
 
-                            <figcaption className="blog-image-caption">{props.node.caption}</figcaption>
-                        </figure>
-                    )}
-                </>
+                    <figcaption className="blog-image-caption">{props.node.caption}</figcaption>
+                </figure>
             );
         }
     }

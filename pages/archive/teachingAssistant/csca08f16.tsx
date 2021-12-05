@@ -4,8 +4,6 @@ import CustomLink from '@Components/CustomLink';
 
 import type { ReactNode, ReactElement } from 'react';
 
-export const config = { amp: 'hybrid' };
-
 const CustomLinkLocal: FC<{
     link: string;
     label: string;

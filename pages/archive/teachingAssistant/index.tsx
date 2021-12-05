@@ -8,8 +8,6 @@ import { IPageCover } from '@Interfaces/pageCover';
 
 import type { ReactNode, ReactElement } from 'react';
 
-export const config = { amp: 'hybrid' };
-
 const CustomLinkLocal: FC<{
     link: string;
     label: string;
