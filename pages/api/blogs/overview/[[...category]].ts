@@ -30,7 +30,8 @@ export const getBlogsOverviewData = async (category?: string): Promise<any> => {
         description,
         _updatedAt,
         title,
-        _id
+        _id,
+        blogImage
       }`;
 
     let postQuery = `*[_type == 'blog' && category == '${category}']`;
