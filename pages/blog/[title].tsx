@@ -27,11 +27,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
     // first 10 blogs by category at build time
     const firstTenProgrammingBlogPaths = (await getBlogPathsOfCategory('programming')).slice(0, 10);
-    const firstTenInvestingBlogPaths = (await getBlogPathsOfCategory('investing')).slice(0, 10);
+    const firstTenFinanceBlogPaths = (await getBlogPathsOfCategory('finance')).slice(0, 10);
     const firstTenMiscellaneousBlogPaths = (await getBlogPathsOfCategory('miscellaneous')).slice(0, 10);
 
     return {
-        paths: concat(firstTenProgrammingBlogPaths, firstTenInvestingBlogPaths, firstTenMiscellaneousBlogPaths),
+        paths: concat(firstTenProgrammingBlogPaths, firstTenFinanceBlogPaths, firstTenMiscellaneousBlogPaths),
         fallback: true
     };
 };
