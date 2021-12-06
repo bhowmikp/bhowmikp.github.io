@@ -1,3 +1,4 @@
+import { ICtaBlogs } from '@Interfaces/ctaBlogs';
 import { IImage } from '@Interfaces/image';
 import { IParagraphs } from '@Interfaces/paragraph';
 
@@ -12,4 +13,5 @@ export interface IHomepageHeading {
 export interface IHomepageData {
     heading: IHomepageHeading;
     paragraphs: IParagraphs[];
+    ctaBlogs: ICtaBlogs;
 }

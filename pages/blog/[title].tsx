@@ -1,6 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 import { AppLayout } from '@Components/AppLayout';
 import { TableOfContents } from '@Components/Blog/TableOfContents';
+import { CtaBlogs } from '@Components/Common/CtaBlogs';
+
 import { getPost } from '@Api/blogs/post/[id]';
 import { getBlogsOverviewData } from '@Api/blogs/overview/[[...category]]';
 import { IBlogs } from '@Interfaces/blogs';
@@ -154,6 +156,8 @@ const Post: FC<{ blogData: IBlogs }> & { getLayout: ReactNode } = ({ blogData })
                                     </span>
                                 ))}
                             </div>
+
+                            <CtaBlogs ctaBlogsData={blogData.ctaBlogs} className="py-10 md:py-28" widthFull />
                         </div>
                         <div className="hidden lg:block lg:ml-5">
                             <TableOfContents tableOfContents={blogData.tableOfContents} />
