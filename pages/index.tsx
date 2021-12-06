@@ -8,6 +8,7 @@ import type { ReactNode, ReactElement } from 'react';
 
 import { AppLayout } from '@Components/AppLayout';
 import { Experience } from '@Components/Common/Experience';
+import { CtaBlogs } from '@Components/Common/CtaBlogs';
 
 import { getPageData } from '@Api/page/[page]';
 import { IHomepageData } from '@Interfaces/pages/homepage';
@@ -69,6 +70,13 @@ const Homepage: FC<{ homepageData: IHomepageData }> & { getLayout: ReactNode } =
                     key={paragraphData._key}
                 />
             ))}
+
+            <CtaBlogs
+                ctaBlogsData={homepageData.ctaBlogs}
+                className={`${
+                    homepageData.paragraphs.length % 2 === 0 ? 'bg-secondary' : 'bg-primary'
+                }  py-10 md:py-28`}
+            />
         </>
     );
 };
@@ -80,7 +88,7 @@ Homepage.getLayout = (page: ReactElement) => {
         <AppLayout
             title="Homepage"
             mainClassName="bg-primary"
-            footerClassName={`${data.paragraphs.length % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
+            footerClassName={`${(data.paragraphs.length + 1) % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
         >
             {page}
         </AppLayout>

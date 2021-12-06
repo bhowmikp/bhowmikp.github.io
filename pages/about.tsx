@@ -8,6 +8,7 @@ import { figureSerializer } from '@Sanity/serializers/figure';
 
 import { AppLayout } from '@Components/AppLayout';
 import { PageCover } from '@Components/Common/PageCover';
+import { CtaBlogs } from '@Components/Common/CtaBlogs';
 
 import { getPageData } from '@Api/page/[page]';
 import { IAboutMeData } from '@Interfaces/pages/aboutMePage';
@@ -43,6 +44,7 @@ const AboutMePage: FC<{ aboutMeData: IAboutMeData }> & { getLayout: ReactNode } 
                     <BlockContent blocks={aboutMeData.paragraphDescription} serializers={serializers} />
                 </div>
             </div>
+            <CtaBlogs ctaBlogsData={aboutMeData.ctaBlogs} className="py-10 md:py-28" />
         </div>
     </>
 );

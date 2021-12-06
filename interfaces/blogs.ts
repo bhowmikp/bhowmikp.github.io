@@ -1,3 +1,5 @@
+import { ICtaBlogs } from '@Interfaces/ctaBlogs';
+
 export interface ITableOfContents {
     sectionId: string;
     sectionLevel: number;
@@ -31,6 +33,8 @@ export interface IBlogs {
     references: IReferences[];
     relatedArticles: IRelatedArticles[];
     tableOfContents: ITableOfContents[];
+
+    ctaBlogs: ICtaBlogs;
 }
 
 export interface IBlogsCategory {

@@ -17,7 +17,7 @@ export const BlogCard: FC<{ blogData: IBlogsOverviewData }> = ({ blogData }) => 
                         objectFit="cover"
                     />
                 </div>
-                <div className="px-10 py-10 h-72">
+                <div className="px-10 py-10 min-h-300">
                     <p className="text-center font-medium text-2xl text-secondary">{blogData.title}</p>
                     <p className="mt-2 text-xl text-center text-secondary">
                         <span className="capitalize">{blogData.category}</span> / {blogData._updatedAt}

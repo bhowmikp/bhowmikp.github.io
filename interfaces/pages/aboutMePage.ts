@@ -1,5 +1,6 @@
 import { IPageCover } from '@Interfaces/pageCover';
 import { IImage } from '@Interfaces/image';
+import { ICtaBlogs } from '@Interfaces/ctaBlogs';
 
 export interface IAboutMeData {
     heading: IPageCover;
@@ -7,4 +8,5 @@ export interface IAboutMeData {
     paragraphTitle: string;
     paragraphDescription: any;
     profilePic: IImage;
+    ctaBlogs: ICtaBlogs;
 }

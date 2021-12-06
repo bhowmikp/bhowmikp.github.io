@@ -22,7 +22,22 @@ const validate = async (req: NextApiRequest): Promise<any> => {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getPageData = async (page: string): Promise<any> => {
-    const postQuery = `*[_type=="${page}"][0]`;
+    const queryFields = `{
+        ...,
+        ctaBlogs {
+           ...,
+           "blog": blog[]->{
+             category,
+             description,
+             _updatedAt,
+             title,
+             _id,
+             blogImage
+           }
+        }
+      }`;
+
+    const postQuery = `*[_type=="${page}"][0] ${queryFields}`;
     const params = { minSeats: 2 };
 
     return client.fetch(postQuery, params);
