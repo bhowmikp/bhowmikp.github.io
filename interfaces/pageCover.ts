@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 export interface IPageCoverStepper {
     stepperLabel: string;
     stepperLink?: string;
@@ -8,4 +10,6 @@ export interface IPageCover {
     header: string;
     description: string;
     pageStepper?: IPageCoverStepper[];
+    elementAboveHeader?: ReactElement;
+    elementUnderDescription?: ReactElement;
 }

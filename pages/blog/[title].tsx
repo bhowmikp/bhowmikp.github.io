@@ -1,23 +1,33 @@
 /* eslint-disable no-underscore-dangle */
+import React, { FC, useState } from 'react';
+import type { ReactNode, ReactElement } from 'react';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+
 import { AppLayout } from '@Components/AppLayout';
 import { TableOfContents } from '@Components/Blog/TableOfContents';
 import { CtaBlogs } from '@Components/Common/CtaBlogs';
+import { PageCover } from '@Components/Common/PageCover';
 
 import { getPost } from '@Api/blogs/post/[id]';
 import { getBlogsOverviewData } from '@Api/blogs/overview/[[...category]]';
+
 import { IBlogs } from '@Interfaces/blogs';
-import React, { FC, useState } from 'react';
+import { IPageCover, IPageCoverStepper } from '@Interfaces/pageCover';
+
 import BlockContent from '@sanity/block-content-to-react';
 import blogSerializer from '@Sanity/serializers/blogSerializer';
-import concat from 'lodash/concat';
-import isEmpty from 'lodash/isEmpty';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { useRouter } from 'next/router';
-
-import type { ReactNode, ReactElement } from 'react';
+import urlFor from '@Service/sanityImageService';
 
 import { time as timeConstants } from '@Constants';
 import { BlogContext, IBlogContextState } from '@Contexts/blogContext';
+
+import concat from 'lodash/concat';
+import isEmpty from 'lodash/isEmpty';
+import { formatDate } from '@Utils/formatDate';
+
+import { AiFillClockCircle } from 'react-icons/ai';
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const getBlogPathsOfCategory = async (category) =>
@@ -89,22 +99,57 @@ const Post: FC<{ blogData: IBlogs }> & { getLayout: ReactNode } = ({ blogData })
         return <PostLoading />;
     }
 
-    const updatedAtDate = new Date(blogData._updatedAt.split('T')[0]);
+    const pageStepper: IPageCoverStepper[] = [
+        { _key: 'blog', stepperLabel: 'Blog', stepperLink: '/blog/category' },
+        {
+            _key: 'category',
+            stepperLabel: blogData.category[0].toUpperCase() + blogData.category.slice(1),
+            stepperLink: `/blog/category/${blogData.category}`
+        },
+        { _key: 'blogTitle', stepperLabel: blogData.title }
+    ];
+
+    const pageCoverElementAboveHeader: ReactElement = (
+        <p className="capitalize text-secondary text-2xl pb-5">{blogData.category}</p>
+    );
+
+    const pageCoverElementUnderDescription: ReactElement = (
+        <div className="pt-5">
+            <span>
+                <p className="text-secondary inline-block">{formatDate(blogData._updatedAt)}</p>
+                <p className="inline-block font-black mx-2">·</p>
+                <AiFillClockCircle className="inline-block text-secondary mr-1 pb-1" size={22} />
+                <p className="text-secondary inline-block">{blogData.readingTime} Min Read</p>
+            </span>
+        </div>
+    );
+
+    const pageCoverData: IPageCover = {
+        header: blogData.title,
+        description: blogData.description,
+        pageStepper,
+        elementAboveHeader: pageCoverElementAboveHeader,
+        elementUnderDescription: pageCoverElementUnderDescription
+    };
 
     return (
         <>
+            <PageCover pageCoverData={pageCoverData} />
+
             <BlogContext.Provider value={{ state: blogContextData, setState: setBlogContextData }}>
-                <div className="mb-10 w-11/12 mx-auto">
+                <div className="my-10 w-11/12 mx-auto">
                     <div className="block lg:grid lg:grid-cols-4">
                         <div className="col-span-3">
-                            <p className="text-4xl font-bold my-2 text-black dark:text-white">{blogData.title}</p>
-                            <p>
-                                {`${updatedAtDate.toLocaleString('default', {
-                                    month: 'short'
-                                })} ${updatedAtDate.getDate()}, ${updatedAtDate.getFullYear()}`}{' '}
-                                · {blogData.readingTime} min read
-                            </p>
-                            <hr className="blog-hr-style my-2" />
+                            <div className="text-center pb-10">
+                                <div className="border-2 border-gray-600 inline-block" style={{ lineHeight: '0px' }}>
+                                    <Image
+                                        src={urlFor(blogData.blogImage.image).url()}
+                                        alt={blogData.blogImage.alt}
+                                        width={blogData.blogImage.width}
+                                        height={blogData.blogImage.height}
+                                    />
+                                </div>
+                            </div>
 
                             <BlockContent blocks={blogData.body} serializers={blogSerializer} />
 

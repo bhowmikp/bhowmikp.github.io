@@ -12,14 +12,14 @@ export const PageCover: FC<{ pageCoverData: IPageCover }> = ({ pageCoverData }) 
     const mobileScreenWidth = screenWidthBreakpointConstants.md;
 
     return (
-        <div className="bg-primary">
+        <div className="bg-primary pb-5 md:pb-10">
             {pageCoverData.pageStepper !== undefined && screenWidth >= mobileScreenWidth && (
                 <div className="mx-auto w-10/12 md:w-9/12 lg:px-14 pt-16">
                     {pageCoverData.pageStepper.map((entry, index) => (
                         <div key={entry._key} className="inline-block float-left">
                             <span className="text-secondary">
                                 {entry.stepperLink === undefined ? (
-                                    <p className="inline-block">{entry.stepperLabel}</p>
+                                    <p className="inline-block text-secondary">{entry.stepperLabel}</p>
                                 ) : (
                                     <Link href={entry.stepperLink}>
                                         <a>{entry.stepperLabel}</a>
@@ -36,10 +36,12 @@ export const PageCover: FC<{ pageCoverData: IPageCover }> = ({ pageCoverData }) 
 
             <div className={`pb-10 ${pageCoverData.pageStepper === undefined ? 'md:py-40' : 'md:pb-40 md:pt-24'}`}>
                 <div className="text-center mx-auto px-3 py-2 md:px-0 md:py-0 md:w-8/12 lg:px-14">
+                    {pageCoverData.elementAboveHeader}
                     <p className="font-bold text-5xl md:text-6xl">{pageCoverData.header}</p>
-                    <p className="text-2xl md:text-3xl mb-5 mt-5 md:mt-10 pb-5 md:pb-10 text-secondary">
+                    <p className="text-2xl md:text-3xl mb-5 mt-5 md:mt-10 text-secondary">
                         {pageCoverData.description}
                     </p>
+                    {pageCoverData.elementUnderDescription}
                 </div>
             </div>
         </div>
