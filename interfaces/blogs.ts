@@ -1,4 +1,5 @@
 import { ICtaBlogs } from '@Interfaces/ctaBlogs';
+import { IImage } from '@Interfaces/image';
 
 export interface ITableOfContents {
     sectionId: string;
@@ -33,6 +34,7 @@ export interface IBlogs {
     references: IReferences[];
     relatedArticles: IRelatedArticles[];
     tableOfContents: ITableOfContents[];
+    blogImage: IImage;
 
     ctaBlogs: ICtaBlogs;
 }
