@@ -141,7 +141,7 @@ const Post: FC<{ blogData: IBlogs }> & { getLayout: ReactNode } = ({ blogData })
                     <div className="block lg:grid lg:grid-cols-4">
                         <div className="col-span-3">
                             <div className="text-center pb-10">
-                                <div className="border-2 border-gray-600 inline-block" style={{ lineHeight: '0px' }}>
+                                <div className="border-2 border-gray-600 inline-block leading-[0rem]">
                                     <Image
                                         src={urlFor(blogData.blogImage.image).url()}
                                         alt={blogData.blogImage.alt}
@@ -153,14 +153,11 @@ const Post: FC<{ blogData: IBlogs }> & { getLayout: ReactNode } = ({ blogData })
 
                             <BlockContent blocks={blogData.body} serializers={blogSerializer} />
 
-                            {('relatedArticles' in blogData && blogData.relatedArticles.length !== 0) ||
-                                ('references' in blogData && blogData.references.length !== 0 && (
-                                    <hr className="blog-hr-style mt-20 mb-5" />
-                                ))}
+                            <hr className="blog-hr-style mt-20 mb-5" />
 
                             {'relatedArticles' in blogData && blogData.relatedArticles.length !== 0 && (
                                 <>
-                                    <p className="text-2xl">Related Articles</p>
+                                    <p className="text-secondary text-xl">Related Articles:</p>
                                     <ul className="list-disc ml-5">
                                         {blogData.relatedArticles.map((entry) => (
                                             <li key={entry._key}>
@@ -181,7 +178,7 @@ const Post: FC<{ blogData: IBlogs }> & { getLayout: ReactNode } = ({ blogData })
                                             : ''
                                     }
                                 >
-                                    <p className="text-2xl">References</p>
+                                    <p className="text-secondary text-xl">References:</p>
                                     <ul className="list-disc ml-5">
                                         {blogData.references.map((entry) => (
                                             <li key={entry._key}>
@@ -195,8 +192,9 @@ const Post: FC<{ blogData: IBlogs }> & { getLayout: ReactNode } = ({ blogData })
                             )}
 
                             <div className="mt-10">
+                                <p className="text-secondary text-xl mb-3">Tags:</p>
                                 {blogData.tags.map((tag) => (
-                                    <span key={tag} className="bg-gray-300 mr-2 p-2 rounded-md">
+                                    <span key={tag} className="blog-tags">
                                         {tag}
                                     </span>
                                 ))}
