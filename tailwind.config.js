@@ -1,10 +1,12 @@
 module.exports = {
-    content: [
-        './pages/**/*.{js,ts,jsx,tsx}',
-        './components/**/*.{js,ts,jsx,tsx}',
-        './sanity/serializers/**/*.{js,ts,jsx,tsx}'
-    ],
-    safelist: ['link-button', 'regular-button', 'float-right', 'float-left'],
+    purge: {
+        content: [
+            './pages/**/*.{js,ts,jsx,tsx}',
+            './components/**/*.{js,ts,jsx,tsx}',
+            './sanity/serializers/**/*.{js,ts,jsx,tsx}'
+        ],
+        safelist: ['link-button', 'regular-button', 'float-right', 'float-left']
+    },
     darkMode: 'class', // or 'media' or 'class'
     theme: {
         extend: {
