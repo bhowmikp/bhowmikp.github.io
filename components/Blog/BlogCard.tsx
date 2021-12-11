@@ -19,7 +19,7 @@ export const BlogCard: FC<{ blogData: IBlogsOverviewData }> = ({ blogData }) => 
                         objectFit="cover"
                     />
                 </div>
-                <div className="px-10 py-10 min-h-300 bg-blogCard shadow-[2px_2px_6px_4px_rgba(198,179,179,0.67)] dark:shadow-[2px_2px_6px_4px_rgba(198,179,179,0.03)]">
+                <div className="px-10 py-10 min-h-[300px] bg-blogCard shadow-[2px_2px_6px_4px_rgba(198,179,179,0.67)] dark:shadow-[2px_2px_6px_4px_rgba(198,179,179,0.03)]">
                     <p className="text-center font-medium text-2xl text-secondary">{blogData.title}</p>
                     <p className="mt-2 text-xl text-center text-secondary">
                         <span className="capitalize text-nav">{blogData.category}</span> /{' '}

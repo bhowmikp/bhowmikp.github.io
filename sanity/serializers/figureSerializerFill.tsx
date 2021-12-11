@@ -5,7 +5,7 @@ import React, { ReactElement } from 'react';
 import { IImage } from '@Interfaces/image';
 import Image from 'next/image';
 
-export const figureSerializer = {
+export const figureSerializerFill = {
     types: {
         // eslint-disable-next-line react/display-name
         figure: (props: { node: IImage }): ReactElement => (
@@ -15,9 +15,9 @@ export const figureSerializer = {
                 <Image
                     src={urlFor(props.node.image).url()}
                     alt={props.node.alt}
-                    width={props.node.width}
-                    height={props.node.height}
-                    layout="responsive"
+                    layout="fill"
+                    objectFit="contain"
+                    objectPosition="top"
                 />
 
                 <figcaption>{props.node.caption}</figcaption>
@@ -26,4 +26,4 @@ export const figureSerializer = {
     }
 };
 
-export default figureSerializer;
+export default figureSerializerFill;

@@ -18,6 +18,7 @@ import { IPageCover, IPageCoverStepper } from '@Interfaces/pageCover';
 
 import BlockContent from '@sanity/block-content-to-react';
 import blogSerializer from '@Sanity/serializers/blogSerializer';
+import { figureSerializerFill } from '@Sanity/serializers/figureSerializerFill';
 import urlFor from '@Service/sanityImageService';
 
 import { time as timeConstants } from '@Constants';
@@ -140,15 +141,8 @@ const Post: FC<{ blogData: IBlogs }> & { getLayout: ReactNode } = ({ blogData })
                 <div className="my-10 w-11/12 mx-auto">
                     <div className="block lg:grid lg:grid-cols-4">
                         <div className="col-span-3">
-                            <div className="text-center pb-10">
-                                <div className="border-2 border-gray-600 inline-block leading-[0rem]">
-                                    <Image
-                                        src={urlFor(blogData.blogImage.image).url()}
-                                        alt={blogData.blogImage.alt}
-                                        width={blogData.blogImage.width}
-                                        height={blogData.blogImage.height}
-                                    />
-                                </div>
+                            <div className={`relative min-h-[${blogData.blogImage.height}px] mb-5 lg:mb-10`}>
+                                <BlockContent blocks={blogData.blogImage} serializers={figureSerializerFill} />
                             </div>
 
                             <BlockContent blocks={blogData.body} serializers={blogSerializer} />
