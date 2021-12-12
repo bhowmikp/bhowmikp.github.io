@@ -133,8 +133,9 @@ const blogSerializer = {
                         <Image
                             src={urlFor(props.node.image).url()}
                             alt={props.node.alt}
-                            width={props.node.width}
-                            height={props.node.height}
+                            layout="fill"
+                            objectFit="contain"
+                            objectPosition="top"
                         />
                     </Zoom>
 

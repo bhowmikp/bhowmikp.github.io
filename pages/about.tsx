@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next';
 import type { ReactNode, ReactElement } from 'react';
 
 import BlockContent from '@sanity/block-content-to-react';
-import { figureSerializer } from '@Sanity/serializers/figure';
+import { figureSerializerResponsive } from '@Sanity/serializers/figureSerializerResponsive';
 
 import { AppLayout } from '@Components/AppLayout';
 import { PageCover } from '@Components/Common/PageCover';
@@ -37,8 +37,8 @@ const AboutMePage: FC<{ aboutMeData: IAboutMeData }> & { getLayout: ReactNode } 
                 <div className="w-11/12 xl:w-10/12 mx-auto">
                     <p className="font-medium text-4xl mb-5">{aboutMeData.paragraphTitle}</p>
 
-                    <div className={`w-4/12 float-${aboutMeData.profilePic.alignment} mx-5`}>
-                        <BlockContent blocks={aboutMeData.profilePic} serializers={figureSerializer} />
+                    <div className={`mb-5 sm:mb-0 w-full sm:w-4/12 float-${aboutMeData.profilePic.alignment} sm:mx-5`}>
+                        <BlockContent blocks={aboutMeData.profilePic} serializers={figureSerializerResponsive} />
                     </div>
 
                     <BlockContent blocks={aboutMeData.paragraphDescription} serializers={serializers} />

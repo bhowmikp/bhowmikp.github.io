@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { figureSerializer } from '@Sanity/serializers/figure';
+import { figureSerializerFill } from '@Sanity/serializers/figureSerializerFill';
 import BlockContent from '@sanity/block-content-to-react';
 
 import type { ReactNode, ReactElement } from 'react';
@@ -56,9 +56,9 @@ const Homepage: FC<{ homepageData: IHomepageData }> & { getLayout: ReactNode } =
                     <div
                         className={`${determineImagePosition(
                             homepageData.heading.profilePic.alignment
-                        )} text-center my-10 md:my-0 mx-auto w-8/12 sm:w-5/12 xl:w-3/12`}
+                        )} text-center my-10 md:my-0 mx-auto w-8/12 sm:w-5/12 xl:w-3/12 relative min-h-[300px]`}
                     >
-                        <BlockContent blocks={homepageData.heading.profilePic} serializers={figureSerializer} />
+                        <BlockContent blocks={homepageData.heading.profilePic} serializers={figureSerializerFill} />
                     </div>
                 </div>
             </div>
