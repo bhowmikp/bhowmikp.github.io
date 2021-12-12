@@ -24,7 +24,8 @@ export const getStaticProps: GetStaticProps = async () => ({
 
 const serializers = {
     types: {
-        block: (props) => <p className="text-secondary text-xl">{props.children}</p>
+        block: (props) =>
+            props.children[0] === '' ? <p>&nbsp;</p> : <p className="text-secondary text-xl">{props.children}</p>
     }
 };
 
