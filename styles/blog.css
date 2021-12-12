@@ -74,4 +74,8 @@
     .blog-hr-style {
         @apply border-gray-300 dark:border-gray-600;
     }
+
+    .blog-tags {
+        @apply mr-5 px-2 py-1 rounded-lg text-white dark:text-black font-medium bg-button;
+    }
 }

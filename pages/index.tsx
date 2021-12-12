@@ -1,20 +1,19 @@
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { figureSerializer } from '@Sanity/serializers/figure';
+import { figureSerializerFill } from '@Sanity/serializers/figureSerializerFill';
 import BlockContent from '@sanity/block-content-to-react';
 
 import type { ReactNode, ReactElement } from 'react';
 
 import { AppLayout } from '@Components/AppLayout';
 import { Experience } from '@Components/Common/Experience';
+import { CtaBlogs } from '@Components/Common/CtaBlogs';
 
 import { getPageData } from '@Api/page/[page]';
 import { IHomepageData } from '@Interfaces/pages/homepage';
 
 import { time as timeConstants } from '@Constants';
-
-export const config = { amp: 'hybrid' };
 
 export const getStaticProps: GetStaticProps = async () => ({
     props: {
@@ -57,9 +56,9 @@ const Homepage: FC<{ homepageData: IHomepageData }> & { getLayout: ReactNode } =
                     <div
                         className={`${determineImagePosition(
                             homepageData.heading.profilePic.alignment
-                        )} text-center my-10 md:my-0 mx-auto w-8/12 sm:w-5/12 xl:w-3/12`}
+                        )} text-center my-10 md:my-0 mx-auto w-8/12 sm:w-5/12 xl:w-3/12 relative min-h-[300px]`}
                     >
-                        <BlockContent blocks={homepageData.heading.profilePic} serializers={figureSerializer} />
+                        <BlockContent blocks={homepageData.heading.profilePic} serializers={figureSerializerFill} />
                     </div>
                 </div>
             </div>
@@ -71,6 +70,13 @@ const Homepage: FC<{ homepageData: IHomepageData }> & { getLayout: ReactNode } =
                     key={paragraphData._key}
                 />
             ))}
+
+            <CtaBlogs
+                ctaBlogsData={homepageData.ctaBlogs}
+                className={`${
+                    homepageData.paragraphs.length % 2 === 0 ? 'bg-secondary' : 'bg-primary'
+                }  py-10 md:py-28`}
+            />
         </>
     );
 };
@@ -82,7 +88,7 @@ Homepage.getLayout = (page: ReactElement) => {
         <AppLayout
             title="Homepage"
             mainClassName="bg-primary"
-            footerClassName={`${data.paragraphs.length % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
+            footerClassName={`${(data.paragraphs.length + 1) % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
         >
             {page}
         </AppLayout>

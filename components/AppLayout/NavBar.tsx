@@ -1,5 +1,4 @@
 import React, { FC, useState, useEffect } from 'react';
-import { useAmp } from 'next/amp';
 import Link from 'next/link';
 import { event } from '@Service/googleService';
 import Image from 'next/image';
@@ -16,8 +15,6 @@ import { useWindowSize } from '@Hooks/useWindowSize';
 import { screenWidthBreakpoint as screenWidthBreakpointConstants } from '@Constants';
 
 export const NavBar: FC = () => {
-    const isAmp = useAmp();
-
     const [menuStatus, setMenuStatus] = useState(false);
     const { resolvedTheme, setTheme } = useTheme();
 
@@ -57,33 +54,23 @@ export const NavBar: FC = () => {
                             role="link"
                             tabIndex={0}
                         >
-                            {isAmp ? (
-                                <amp-img
-                                    width="70"
-                                    height="70"
-                                    src="/profilePic.png"
-                                    alt="Profile Pic"
-                                    className="bg-white rounded-full"
-                                />
-                            ) : (
-                                <Image
-                                    src="/profilePic.png"
-                                    alt="Profile Pic"
-                                    width="70"
-                                    height="70"
-                                    className="bg-white rounded-full"
-                                    onClick={() => {
+                            <Image
+                                src="/profilePic.png"
+                                alt="Profile Pic"
+                                width="70"
+                                height="70"
+                                className="bg-white rounded-full"
+                                onClick={() => {
+                                    setMenuStatus(false);
+                                    event({ name: 'menuItem', category: 'link', label: 'homepage' });
+                                }}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter') {
                                         setMenuStatus(false);
                                         event({ name: 'menuItem', category: 'link', label: 'homepage' });
-                                    }}
-                                    onKeyDown={(e) => {
-                                        if (e.key === 'Enter') {
-                                            setMenuStatus(false);
-                                            event({ name: 'menuItem', category: 'link', label: 'homepage' });
-                                        }
-                                    }}
-                                />
-                            )}
+                                    }
+                                }}
+                            />
                         </a>
                     </Link>
                 </div>
@@ -116,7 +103,9 @@ export const NavBar: FC = () => {
                     <ul className="md:flex md:justify-center">
                         {['Projects', 'Experience', 'About', 'Blog'].map((entry: string) => (
                             <li className="navbar-element" key={entry}>
-                                <Link href={`/${entry.toLowerCase()}`}>
+                                <Link
+                                    href={entry.toLowerCase() !== 'blog' ? `/${entry.toLowerCase()}` : '/blog/category'}
+                                >
                                     <a
                                         className="navbar-text"
                                         onClick={() => {

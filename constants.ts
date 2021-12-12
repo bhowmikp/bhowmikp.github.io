@@ -7,6 +7,7 @@ export const screenWidthBreakpoint = {
 };
 
 export const time = {
+    fifteenMinutesInSeconds: 900,
     oneHourInSeconds: 3600,
     oneDayInSeconds: 86400
 };

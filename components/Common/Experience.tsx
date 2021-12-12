@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { IParagraphs } from '@Interfaces/paragraph';
 import { ICta } from '@Interfaces/cta';
-import { figureSerializer } from '@Sanity/serializers/figure';
+import { figureSerializerFill } from '@Sanity/serializers/figureSerializerFill';
 import Link from 'next/link';
 
 import BlockContent from '@sanity/block-content-to-react';
@@ -12,7 +12,12 @@ import { screenWidthBreakpoint as screenWidthBreakpointConstants } from '@Consta
 
 const serializers = {
     types: {
-        block: (props) => <p className="text-xl md:text-2xl text-secondary">{props.children}</p>
+        block: (props) =>
+            props.children[0] === '' ? (
+                <p>&nbsp;</p>
+            ) : (
+                <p className="text-xl md:text-2xl text-secondary">{props.children}</p>
+            )
     }
 };
 
@@ -34,7 +39,10 @@ export const Experience: FC<{ data: IParagraphs; className: string }> = ({ data,
     };
 
     return (
-        <div className={`${className} py-10 md:py-40`}>
+        <div
+            className={`${className} py-10 md:py-40`}
+            id={data.paragraphHeading.toLocaleLowerCase().replace(/ /g, '-')}
+        >
             <div className="mx-auto w-10/12 md:w-9/12 lg:px-14">
                 <p className="text-nav border-b-2 border-experienceSection font-medium mb-4">{data.paragraphHeading}</p>
 
@@ -44,7 +52,7 @@ export const Experience: FC<{ data: IParagraphs; className: string }> = ({ data,
                             data.image !== undefined && 'md:w-6/12 lg:w-6/12 xl:w-5/12'
                         } mt-5 md:mt-0 flex flex-col justify-between xl:mr-28`}
                     >
-                        <div>
+                        <div className="mb-4">
                             <p className="text-4xl md:text-5xl font-medium mb-4">{data.paragraphTitle}</p>
                             <BlockContent blocks={data.paragraphDescription} serializers={serializers} />
                         </div>
@@ -63,11 +71,11 @@ export const Experience: FC<{ data: IParagraphs; className: string }> = ({ data,
                     {data.image !== undefined && (
                         <div className={`grid w-full md:w-5/12 ${determineImagePosition(data.image.alignment)}`}>
                             <div
-                                className={`mx-auto md:mx-0 w-full ${
+                                className={`mx-auto md:mx-0 w-full relative min-h-[200px] ${
                                     data.image.alignment === 'right' && 'md:justify-self-end'
                                 }`}
                             >
-                                <BlockContent blocks={data.image} serializers={figureSerializer} />
+                                <BlockContent blocks={data.image} serializers={figureSerializerFill} />
                             </div>
                         </div>
                     )}

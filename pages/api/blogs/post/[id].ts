@@ -20,8 +20,23 @@ const validate = async (req: NextApiRequest): Promise<any> => {
     return '';
 };
 
-export const getBlog = async (id: string): Promise<IBlogs> => {
-    const postQuery = `*[_type=="blog" && _id == "${id}"] {...}`;
+export const getPost = async (id: string): Promise<IBlogs> => {
+    const queryFields = `{
+        ...,
+        ctaBlogs {
+           ...,
+           "blog": blog[]->{
+             category,
+             description,
+             _updatedAt,
+             title,
+             _id,
+             blogImage
+           }
+        }
+      }`;
+
+    const postQuery = `*[_type=="blog" && _id == "${id}"] ${queryFields}`;
     const params = { minSeats: 2 };
 
     return client.fetch(postQuery, params);
@@ -34,5 +49,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
         return;
     }
 
-    res.send(await getBlog(String(req.query.id)));
+    const { id } = req.query;
+    const postData = await getPost(id as string);
+    res.send(postData);
 };

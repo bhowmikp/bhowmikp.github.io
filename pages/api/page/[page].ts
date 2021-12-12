@@ -20,8 +20,24 @@ const validate = async (req: NextApiRequest): Promise<any> => {
     return '';
 };
 
-export const getPageData = async (page: string): Promise<void> => {
-    const postQuery = `*[_type=="${page}"][0]`;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const getPageData = async (page: string): Promise<any> => {
+    const queryFields = `{
+        ...,
+        ctaBlogs {
+           ...,
+           "blog": blog[]->{
+             category,
+             description,
+             _updatedAt,
+             title,
+             _id,
+             blogImage
+           }
+        }
+      }`;
+
+    const postQuery = `*[_type=="${page}"][0] ${queryFields}`;
     const params = { minSeats: 2 };
 
     return client.fetch(postQuery, params);
@@ -35,5 +51,6 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
     }
 
     const { page } = req.query;
-    res.send(await getPageData(page as string));
+    const pageData = await getPageData(page as string);
+    res.send(pageData !== null ? pageData : { found: 'false' });
 };

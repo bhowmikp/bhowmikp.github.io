@@ -1,19 +1,19 @@
 module.exports = {
-    purge: {
-        content: [
-            './pages/**/*.{js,ts,jsx,tsx}',
-            './components/**/*.{js,ts,jsx,tsx}',
-            './sanity/serializers/**/*.{js,ts,jsx,tsx}'
-        ],
-        safelist: ['link-button', 'regular-button']
-    },
+    content: [
+        './pages/**/*.{js,ts,jsx,tsx}',
+        './components/**/*.{js,ts,jsx,tsx}',
+        './sanity/serializers/**/*.{js,ts,jsx,tsx}'
+    ],
+    safelist: ['link-button', 'regular-button', 'float-right', 'float-left'],
     darkMode: 'class', // or 'media' or 'class'
     theme: {
         extend: {
             backgroundColor: {
                 primary: 'var(--color-bg-primary)',
                 secondary: 'var(--color-bg-secondary)',
-                button: 'var(--color-bg-button)'
+                tertiary: 'var(--color-bg-tertiary)',
+                button: 'var(--color-bg-button)',
+                blogCard: 'var(--color-bg-blog-card)'
             },
             textColor: {
                 accent: 'var(--color-text-accent)',

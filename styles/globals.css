@@ -11,23 +11,27 @@
 .dark {
     --color-bg-primary: #0B0C10;
     --color-bg-secondary: #1c1e27;
+    --color-bg-tertiary: #1D1D1D;
     --color-text-primary: #FFFFFF;
     --color-text-secondary: #e2e8f0;
     --color-text-accent: #81e6d9;
     --color-text-nav: #63E7DD;
     --color-bg-button: #63E7DD;
     --color-bg-experience-section: #3D8882;
+    --color-bg-blog-card: #0F1317;
 }
 
 .light {
     --color-bg-primary: #FBFCFF;
     --color-bg-secondary: #F1F8FF;;
+    --color-bg-tertiary: #F3F7FF;
     --color-text-primary: #2d3748;
     --color-text-secondary: #4a5568;
     --color-text-accent: #2b6cb0;
     --color-text-nav: #0268CA;
     --color-bg-button: #0268CA;
     --color-bg-experience-section:#0400C6;
+    --color-bg-blog-card: #CAE4FF;
 }
 
 @layer base {

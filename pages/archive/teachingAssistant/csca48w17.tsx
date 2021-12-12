@@ -4,8 +4,6 @@ import CustomLink from '@Components/CustomLink';
 
 import type { ReactNode, ReactElement } from 'react';
 
-export const config = { amp: 'hybrid' };
-
 const CustomLinkLocal: FC<{
     link: string;
     label: string;
@@ -24,7 +22,7 @@ const CustomLinkLocal: FC<{
 );
 
 const Csca48w17: FC & { getLayout: ReactNode } = () => (
-    <div className="mx-5 mb-10">
+    <div className="mx-auto w-10/12 md:w-9/12 lg:px-14 my-20">
         <p className="tutorial-header">Welcome to CSCA48</p>
         <p className="tutorial-default-spacing">
             <b>Tutorial 0002</b>: Monday, 10:00 AM - 11:00 AM, at IC 208.
