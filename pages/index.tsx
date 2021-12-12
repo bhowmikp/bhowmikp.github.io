@@ -1,15 +1,16 @@
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { figureSerializer } from '@Serializers/figure';
+import { figureSerializer } from '@Sanity/serializers/figure';
 import BlockContent from '@sanity/block-content-to-react';
 
-import AppLayout from '@Components/AppLayout';
-import { ExperienceSection } from '@Components/ExperienceSection';
+import type { ReactNode, ReactElement } from 'react';
 
-import { getHomepageData } from '@Api/pages/homepage';
-import { IHomepageData } from '@Interfaces/homepage';
-import { ICta } from '@Interfaces/cta';
+import { AppLayout } from '@Components/AppLayout';
+import { Experience } from '@Components/Common/Experience';
+
+import { getPageData } from '@Api/page/[page]';
+import { IHomepageData } from '@Interfaces/pages/homepage';
 
 import { time as timeConstants } from '@Constants';
 
@@ -17,12 +18,12 @@ export const config = { amp: 'hybrid' };
 
 export const getStaticProps: GetStaticProps = async () => ({
     props: {
-        homepageData: await getHomepageData()
+        homepageData: await getPageData('homepage')
     },
     revalidate: timeConstants.oneDayInSeconds
 });
 
-const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
+const Homepage: FC<{ homepageData: IHomepageData }> & { getLayout: ReactNode } = ({ homepageData }) => {
     const determineImagePosition = (alignment: string): string => {
         if (alignment === 'left') {
             return 'order-first';
@@ -35,7 +36,7 @@ const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
     };
 
     return (
-        <AppLayout title="Homepage" mainClassName="bg-primary" footerClassName="bg-secondary">
+        <>
             <div className="bg-primary pb-10 md:py-40">
                 <div className="flex flex-col mx-auto md:flex-row md:w-9/12 lg:px-14 justify-between">
                     <div className="w-10/12 mx-auto lg:w-5/12">
@@ -43,17 +44,15 @@ const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
                         <p className="text-2xl md:text-3xl mb-5 mt-5 md:mt-10 pb-5 md:pb-10 text-secondary">
                             {homepageData.heading.description}
                         </p>
-                        {homepageData.heading.cta.map((cta: ICta) => (
-                            <Link href={cta.url} key={cta._key}>
-                                <a
-                                    target={cta.target}
-                                    className="bg-button rounded-full text-xl px-3 py-2 md:px-4 md:py-3 hover:bg-primary dark:text-black text-white dark:hover:text-primary hover:text-primary font-semibold border-button border"
-                                    rel="noopener noreferrer"
-                                >
-                                    {cta.urlText}
-                                </a>
-                            </Link>
-                        ))}
+                        <Link href="/api/page/siteSettings/resume">
+                            <a
+                                target="_blank"
+                                className="bg-button rounded-full text-xl px-3 py-2 md:px-4 md:py-3 hover:bg-primary dark:text-black text-white hover:shadow-xl dark:hover:text-primary hover:text-primary font-semibold border-button border"
+                                rel="noopener noreferrer"
+                            >
+                                {homepageData.heading.resumeButtonText}
+                            </a>
+                        </Link>
                     </div>
                     <div
                         className={`${determineImagePosition(
@@ -66,12 +65,26 @@ const Homepage: FC<{ homepageData: IHomepageData }> = ({ homepageData }) => {
             </div>
 
             {homepageData.paragraphs.map((paragraphData, index) => (
-                <ExperienceSection
+                <Experience
                     data={paragraphData}
                     className={`${index % 2 !== 0 ? 'bg-primary' : 'bg-secondary'}`}
                     key={paragraphData._key}
                 />
             ))}
+        </>
+    );
+};
+
+Homepage.getLayout = (page: ReactElement) => {
+    const data = page.props.homepageData;
+
+    return (
+        <AppLayout
+            title="Homepage"
+            mainClassName="bg-primary"
+            footerClassName={`${data.paragraphs.length % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
+        >
+            {page}
         </AppLayout>
     );
 };

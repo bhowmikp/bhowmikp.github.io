@@ -1,20 +1,12 @@
-import { ICta } from '@Interfaces/cta';
 import { IImage } from '@Interfaces/image';
+import { IParagraphs } from '@Interfaces/paragraph';
 
 export interface IHomepageHeading {
-    cta: ICta[];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     description: any[];
     header: string;
     profilePic: IImage;
-}
-
-export interface IParagraphs {
-    cta: ICta[];
-    image: IImage;
-    paragraphDescription: string;
-    paragraphHeading: string;
-    paragraphTitle: string;
-    _key: string;
+    resumeButtonText: string;
 }
 
 export interface IHomepageData {

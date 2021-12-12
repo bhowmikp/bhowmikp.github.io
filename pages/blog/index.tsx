@@ -1,4 +1,4 @@
-import AppLayout from '@Components/AppLayout';
+import { AppLayout } from '@Components/AppLayout';
 import { GetStaticProps } from 'next';
 import { getBlogsByCategory } from '@Api/blog/blogsCategory';
 import { getNumberOfBlogs } from '@Api/blog/numberOfBlogs';
@@ -6,7 +6,9 @@ import { IBlogs } from '@Interfaces/blogs';
 import React, { FC, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { event as gtmEvent } from '@Service/googleService';
-import BlogsTab from '@Components/BlogsTab';
+import { BlogsTab } from '@Components/Blog/BlogsTab';
+
+import type { ReactNode, ReactElement } from 'react';
 
 import AppBar from '@mui/material/AppBar';
 import Tabs from '@mui/material/Tabs';
@@ -28,11 +30,13 @@ export const getStaticProps: GetStaticProps = async () => ({
     revalidate: timeConstants.oneHourInSeconds
 });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const a11yProps = (index: any) => ({
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`
 });
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const TabPanel = (props: { children: React.ReactNode; index: any; value: any }) => {
     const { children, value, index, ...other } = props;
 
@@ -57,7 +61,7 @@ const Blogs: FC<{
     programmingBlogsCount: number;
     miscellaneousBlogsDataSSR: IBlogs[];
     miscellaneousBlogsCount: number;
-}> = ({
+}> & { getLayout: ReactNode } = ({
     investingBlogsDataSSR,
     investingBlogsCount,
     programmingBlogsDataSSR,
@@ -97,68 +101,66 @@ const Blogs: FC<{
     }, [router.query]);
 
     return (
-        <>
-            <AppLayout title="Blogs">
-                <div className="mx-5 mb-10">
-                    <AppBar position="static" className="mt-3">
-                        <Tabs
-                            value={tab}
-                            onChange={handleTabChange}
-                            aria-label="simple tabs example"
-                            variant={screenSize > 640 ? 'fullWidth' : 'scrollable'}
-                            className="bg-purple-600 dark:bg-blue-900 text-white"
-                        >
-                            <Tab
-                                label="Programming"
-                                {...a11yProps(0)}
-                                onClick={() => {
-                                    router.push('/blogs', '/blogs?category=programming', { shallow: true });
-                                    gtmEvent({ name: 'blogItem', category: 'tab', label: 'programming' });
-                                }}
-                            />
-                            <Tab
-                                label="Investing"
-                                {...a11yProps(1)}
-                                onClick={() => {
-                                    router.push('/blogs', '/blogs?category=investing', { shallow: true });
-                                    gtmEvent({ name: 'blogItem', category: 'tab', label: 'investing' });
-                                }}
-                            />
-                            <Tab
-                                label="Miscellaneous"
-                                {...a11yProps(2)}
-                                onClick={() => {
-                                    router.push('/blogs', '/blogs?category=miscellaneous', { shallow: true });
-                                    gtmEvent({ name: 'blogItem', category: 'tab', label: 'miscellaneous' });
-                                }}
-                            />
-                        </Tabs>
-                    </AppBar>
-                    <TabPanel value={tab} index={0}>
-                        <BlogsTab
-                            blogsDataSSR={programmingBlogsDataSSR}
-                            blogsCount={programmingBlogsCount}
-                            categoryOfBlog="programming"
-                        />
-                    </TabPanel>
-                    <TabPanel value={tab} index={1}>
-                        <BlogsTab
-                            blogsDataSSR={investingBlogsDataSSR}
-                            blogsCount={investingBlogsCount}
-                            categoryOfBlog="investing"
-                        />
-                    </TabPanel>
-                    <TabPanel value={tab} index={2}>
-                        <BlogsTab
-                            blogsDataSSR={miscellaneousBlogsDataSSR}
-                            blogsCount={miscellaneousBlogsCount}
-                            categoryOfBlog="miscellaneous"
-                        />
-                    </TabPanel>
-                </div>
-            </AppLayout>
-        </>
+        <div className="mx-5 mb-10">
+            <AppBar position="static" className="mt-3">
+                <Tabs
+                    value={tab}
+                    onChange={handleTabChange}
+                    aria-label="simple tabs example"
+                    variant={screenSize > 640 ? 'fullWidth' : 'scrollable'}
+                    className="bg-purple-600 dark:bg-blue-900 text-white"
+                >
+                    <Tab
+                        label="Programming"
+                        {...a11yProps(0)}
+                        onClick={() => {
+                            router.push('/blogs', '/blogs?category=programming', { shallow: true });
+                            gtmEvent({ name: 'blogItem', category: 'tab', label: 'programming' });
+                        }}
+                    />
+                    <Tab
+                        label="Investing"
+                        {...a11yProps(1)}
+                        onClick={() => {
+                            router.push('/blogs', '/blogs?category=investing', { shallow: true });
+                            gtmEvent({ name: 'blogItem', category: 'tab', label: 'investing' });
+                        }}
+                    />
+                    <Tab
+                        label="Miscellaneous"
+                        {...a11yProps(2)}
+                        onClick={() => {
+                            router.push('/blogs', '/blogs?category=miscellaneous', { shallow: true });
+                            gtmEvent({ name: 'blogItem', category: 'tab', label: 'miscellaneous' });
+                        }}
+                    />
+                </Tabs>
+            </AppBar>
+            <TabPanel value={tab} index={0}>
+                <BlogsTab
+                    blogsDataSSR={programmingBlogsDataSSR}
+                    blogsCount={programmingBlogsCount}
+                    categoryOfBlog="programming"
+                />
+            </TabPanel>
+            <TabPanel value={tab} index={1}>
+                <BlogsTab
+                    blogsDataSSR={investingBlogsDataSSR}
+                    blogsCount={investingBlogsCount}
+                    categoryOfBlog="investing"
+                />
+            </TabPanel>
+            <TabPanel value={tab} index={2}>
+                <BlogsTab
+                    blogsDataSSR={miscellaneousBlogsDataSSR}
+                    blogsCount={miscellaneousBlogsCount}
+                    categoryOfBlog="miscellaneous"
+                />
+            </TabPanel>
+        </div>
     );
 };
+
+Blogs.getLayout = (page: ReactElement) => <AppLayout title="Blogs">{page}</AppLayout>;
 
 export default Blogs;

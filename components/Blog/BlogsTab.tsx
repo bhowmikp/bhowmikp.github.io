@@ -1,10 +1,10 @@
 import React, { FC, useState } from 'react';
 import { useQuery } from 'react-query';
-import BlogCards from '@Components/BlogCards';
+import { BlogCards } from '@Components/Blog/BlogCards';
 import TablePagination from '@mui/material/TablePagination';
 import { IBlogs } from '@Interfaces/blogs';
 
-const BlogsTab: FC<{
+export const BlogsTab: FC<{
     blogsCount: number;
     blogsDataSSR: IBlogs[];
     categoryOfBlog: string;

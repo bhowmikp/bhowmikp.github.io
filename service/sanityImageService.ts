@@ -1,9 +1,8 @@
-import urlBuilder from '@sanity/image-url';
+import imageUrlBuilder from '@sanity/image-url';
+import sanityClient from '@Sanity/sanityClient';
 
-const urlFor = (source: string): any =>
-    urlBuilder({
-        projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-        dataset: process.env.NEXT_PUBLIC_SANITY_DATASET
-    }).image(source);
+const builder = imageUrlBuilder(sanityClient);
+
+const urlFor = (source: string): any => builder.image(source);
 
 export default urlFor;

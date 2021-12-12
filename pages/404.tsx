@@ -1,19 +1,21 @@
-import AppLayout from '@Components/AppLayout';
+import { AppLayout } from '@Components/AppLayout';
 import React, { FC } from 'react';
 import { useAmp } from 'next/amp';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 
+import type { ReactNode, ReactElement } from 'react';
+
 export const config = { amp: 'hybrid' };
 
-const Homepage: FC = () => {
+const PageNotFound: FC & { getLayout: ReactNode } = () => {
     const isAmp = useAmp();
 
     const { resolvedTheme } = useTheme();
 
     return (
-        <AppLayout title="404" mainClassName="bg-secondary">
+        <>
             <div className="flex py-10">
                 <div className="m-auto">
                     <p className="text-center mb-10 text-3xl font-bold my-2 text-black dark:text-white">
@@ -47,8 +49,14 @@ const Homepage: FC = () => {
                     </p>
                 </div>
             </div>
-        </AppLayout>
+        </>
     );
 };
 
-export default Homepage;
+PageNotFound.getLayout = (page: ReactElement) => (
+    <AppLayout title="404" mainClassName="bg-secondary">
+        {page}
+    </AppLayout>
+);
+
+export default PageNotFound;
