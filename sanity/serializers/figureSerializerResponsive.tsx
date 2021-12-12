@@ -8,7 +8,7 @@ import Image from 'next/image';
 export const figureSerializerResponsive = {
     types: {
         // eslint-disable-next-line react/display-name
-        figure: (props: { node: IImage }): ReactElement => (
+        figureResponsive: (props: { node: IImage }): ReactElement => (
             // eslint-disable-next-line react-hooks/rules-of-hooks
 
             <figure>

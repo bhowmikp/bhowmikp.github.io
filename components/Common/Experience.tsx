@@ -66,7 +66,7 @@ export const Experience: FC<{ data: IParagraphs; className: string }> = ({ data,
                     {data.image !== undefined && (
                         <div className={`grid w-full md:w-5/12 ${determineImagePosition(data.image.alignment)}`}>
                             <div
-                                className={`mx-auto md:mx-0 w-full relative min-h-[${data.image.height}px] ${
+                                className={`mx-auto md:mx-0 w-full relative min-h-[300px] ${
                                     data.image.alignment === 'right' && 'md:justify-self-end'
                                 }`}
                             >

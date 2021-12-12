@@ -56,9 +56,7 @@ const Homepage: FC<{ homepageData: IHomepageData }> & { getLayout: ReactNode } =
                     <div
                         className={`${determineImagePosition(
                             homepageData.heading.profilePic.alignment
-                        )} text-center my-10 md:my-0 mx-auto w-8/12 sm:w-5/12 xl:w-3/12 relative min-h-[${
-                            homepageData.heading.profilePic.height
-                        }px]`}
+                        )} text-center my-10 md:my-0 mx-auto w-8/12 sm:w-5/12 xl:w-3/12 relative min-h-[300px]`}
                     >
                         <BlockContent blocks={homepageData.heading.profilePic} serializers={figureSerializerFill} />
                     </div>

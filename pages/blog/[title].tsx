@@ -141,7 +141,7 @@ const Post: FC<{ blogData: IBlogs }> & { getLayout: ReactNode } = ({ blogData })
                 <div className="my-10 w-11/12 mx-auto">
                     <div className="block lg:grid lg:grid-cols-4">
                         <div className="col-span-3">
-                            <div className={`relative min-h-[${blogData.blogImage.height}px] mb-5 lg:mb-10`}>
+                            <div className="relative min-h-[400px] mb-5 lg:mb-10">
                                 <BlockContent blocks={blogData.blogImage} serializers={figureSerializerFill} />
                             </div>
 
