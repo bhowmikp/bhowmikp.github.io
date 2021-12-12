@@ -12,7 +12,12 @@ import { screenWidthBreakpoint as screenWidthBreakpointConstants } from '@Consta
 
 const serializers = {
     types: {
-        block: (props) => <p className="text-xl md:text-2xl text-secondary">{props.children}</p>
+        block: (props) =>
+            props.children[0] === '' ? (
+                <p>&nbsp;</p>
+            ) : (
+                <p className="text-xl md:text-2xl text-secondary">{props.children}</p>
+            )
     }
 };
 
