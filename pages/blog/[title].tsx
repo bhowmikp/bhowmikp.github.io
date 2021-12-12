@@ -2,7 +2,6 @@
 import React, { FC, useState } from 'react';
 import type { ReactNode, ReactElement } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import { AppLayout } from '@Components/AppLayout';
@@ -19,7 +18,6 @@ import { IPageCover, IPageCoverStepper } from '@Interfaces/pageCover';
 import BlockContent from '@sanity/block-content-to-react';
 import blogSerializer from '@Sanity/serializers/blogSerializer';
 import { figureSerializerFill } from '@Sanity/serializers/figureSerializerFill';
-import urlFor from '@Service/sanityImageService';
 
 import { time as timeConstants } from '@Constants';
 import { BlogContext, IBlogContextState } from '@Contexts/blogContext';
