@@ -37,7 +37,7 @@ const AboutMePage: FC<{ aboutMeData: IAboutMeData }> & { getLayout: ReactNode } 
                 <div className="w-11/12 xl:w-10/12 mx-auto">
                     <p className="font-medium text-4xl mb-5">{aboutMeData.paragraphTitle}</p>
 
-                    <div className={`mb-5 sm:mb-0 sm:w-4/12 sm:float-${aboutMeData.profilePic.alignment} mx-5`}>
+                    <div className={`mb-5 sm:mb-0 w-full sm:w-4/12 float-${aboutMeData.profilePic.alignment} sm:mx-5`}>
                         <BlockContent blocks={aboutMeData.profilePic} serializers={figureSerializerResponsive} />
                     </div>
 
