@@ -3,7 +3,7 @@ import { IWindow } from '@Interfaces/window';
 
 declare const window: IWindow;
 
-const AdBanner: FC = () => {
+export const AdBanner: FC = () => {
     useEffect(() => {
         try {
             (window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -16,12 +16,12 @@ const AdBanner: FC = () => {
     return (
         <>
             <ins
-                className="adsbygoogle adbanner-customize"
-                style={{
-                    display: 'block'
-                }}
+                className="adsbygoogle block"
                 data-ad-client={process.env.NEXT_PUBLIC_AD_CLIENT}
                 data-ad-slot={process.env.NEXT_PUBLIC_AD_SLOT}
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+                data-adtest="on"
             />
         </>
     );
