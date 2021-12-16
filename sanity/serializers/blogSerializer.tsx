@@ -17,6 +17,8 @@ import { useOnScreen } from '@Hooks/useOnScreen';
 import { useTheme } from 'next-themes';
 import { BlogContext } from '@Contexts/blogContext';
 
+import { AdBanner } from '@Components/AdBanner';
+
 const blogSerializer = {
     list: (props) => {
         const { type } = props;
@@ -142,7 +144,8 @@ const blogSerializer = {
                     <figcaption className="blog-image-caption">{props.node.caption}</figcaption>
                 </figure>
             );
-        }
+        },
+        adBanner: (): ReactElement => <AdBanner />
     }
 };
 

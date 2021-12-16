@@ -14,16 +14,14 @@ export const AdBanner: FC = () => {
     }, []);
 
     return (
-        <>
-            <ins
-                className="adsbygoogle block"
-                data-ad-client={process.env.NEXT_PUBLIC_AD_CLIENT}
-                data-ad-slot={process.env.NEXT_PUBLIC_AD_SLOT}
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-                data-adtest="on"
-            />
-        </>
+        <ins
+            className="adsbygoogle block"
+            data-ad-client={process.env.NEXT_PUBLIC_AD_CLIENT}
+            data-ad-slot={process.env.NEXT_PUBLIC_AD_SLOT}
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+            data-adtest={process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' ? 'off' : 'on'}
+        />
     );
 };
 

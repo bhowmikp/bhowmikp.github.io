@@ -15,8 +15,6 @@ import { IHomepageData } from '@Interfaces/pages/homepage';
 
 import { time as timeConstants } from '@Constants';
 
-import { AdBanner } from '@Components/AdBanner';
-
 export const getStaticProps: GetStaticProps = async () => ({
     props: {
         homepageData: await getPageData('homepage')
@@ -39,7 +37,6 @@ const Homepage: FC<{ homepageData: IHomepageData }> & { getLayout: ReactNode } =
     return (
         <>
             <div className="bg-primary pb-10 md:py-40">
-                <AdBanner />
                 <div className="flex flex-col mx-auto md:flex-row md:w-9/12 lg:px-14 justify-between">
                     <div className="w-10/12 mx-auto lg:w-5/12">
                         <p className="font-bold text-5xl md:text-6xl">{homepageData.heading.header}</p>
