@@ -15,7 +15,7 @@ export const CtaBlogs: FC<{ ctaBlogsData: ICtaBlogs; className: string; widthFul
 
             <BlogCardsContainer blogsData={ctaBlogsData.blog} />
 
-            {ctaBlogsData.cta !== undefined && (
+            {ctaBlogsData.cta !== undefined && '_key' in ctaBlogsData.cta && (
                 <div className="text-center mt-10 md:mt-20">
                     <Link href={ctaBlogsData.cta.url} key={ctaBlogsData.cta._key}>
                         <a target={ctaBlogsData.cta.target} className={`${ctaBlogsData.cta.style}`}>
