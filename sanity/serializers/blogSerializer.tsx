@@ -32,8 +32,10 @@ const blogSerializer = {
     listItem: (props) => <li key={props.node._key}>{props.children}</li>,
     marks: {
         link: (props) => (
-            <Link href={props.mark.href}>
-                <a className="blog-link">{props.children[0]}</a>
+            <Link href={props.children[0]}>
+                <a className="blog-link" target="_blank">
+                    {props.children[0]}
+                </a>
             </Link>
         )
     },
