@@ -153,7 +153,11 @@ const Post: FC<{ blogData: IBlogs }> & { getLayout: ReactNode } = ({ blogData })
                                     <ul className="list-disc ml-5">
                                         {blogData.relatedArticles.map((entry) => (
                                             <li key={entry._key}>
-                                                <a target={entry.target} href={entry.url} className="blog-link">
+                                                <a
+                                                    target={entry.target}
+                                                    href={entry.url}
+                                                    className="blog-link break-words"
+                                                >
                                                     {entry.urlText}
                                                 </a>
                                             </li>
@@ -174,7 +178,11 @@ const Post: FC<{ blogData: IBlogs }> & { getLayout: ReactNode } = ({ blogData })
                                     <ul className="list-disc ml-5">
                                         {blogData.references.map((entry) => (
                                             <li key={entry._key}>
-                                                <a target={entry.target} href={entry.url} className="blog-link">
+                                                <a
+                                                    target={entry.target}
+                                                    href={entry.url}
+                                                    className="blog-link break-words"
+                                                >
                                                     {entry.urlText}
                                                 </a>
                                             </li>
