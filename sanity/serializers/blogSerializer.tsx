@@ -5,8 +5,7 @@
 import React, { ReactElement, useRef, useContext, useEffect } from 'react';
 import BlockContent from '@sanity/block-content-to-react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-import { coyWithoutShadows } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { a11yDark, a11yLight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import urlFor from '@Service/sanityImageService';
 import { IImage } from '@Interfaces/image';
 import Image from 'next/image';
@@ -114,8 +113,7 @@ const blogSerializer = {
                 <SyntaxHighlighter
                     language={props.node.language}
                     showLineNumbers
-                    wrapLongLines
-                    style={resolvedTheme === 'dark' ? a11yDark : coyWithoutShadows}
+                    style={resolvedTheme === 'dark' ? a11yDark : a11yLight}
                 >
                     {props.node.code}
                 </SyntaxHighlighter>
