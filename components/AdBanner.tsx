@@ -7,7 +7,6 @@ declare const window: IWindow;
 
 export const AdBanner: FC = () => {
     const { resolvedTheme } = useTheme();
-    console.log(resolvedTheme);
 
     useEffect(() => {
         try {
