@@ -185,11 +185,13 @@ const Post: FC<{ blogData: IBlogs }> & { getLayout: ReactNode } = ({ blogData })
 
                             <div className="mt-10">
                                 <p className="text-secondary text-xl mb-3">Tags:</p>
-                                {blogData.tags.map((tag) => (
-                                    <span key={tag} className="blog-tags">
-                                        {tag}
-                                    </span>
-                                ))}
+                                <div className="flex flex-wrap space-y-4">
+                                    {blogData.tags.map((tag) => (
+                                        <span key={tag} className="blog-tags self-end">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
 
                             <CtaBlogs ctaBlogsData={blogData.ctaBlogs} className="py-10 md:py-28" widthFull />
