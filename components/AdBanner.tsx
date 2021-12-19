@@ -19,7 +19,7 @@ export const AdBanner: FC = () => {
 
     return (
         <ins
-            className="adsbygoogle block text-center"
+            className="adsbygoogle block text-center bg-secondary"
             data-ad-layout="in-article"
             data-ad-format="fluid"
             data-ad-client="ca-pub-1306989929207512"
