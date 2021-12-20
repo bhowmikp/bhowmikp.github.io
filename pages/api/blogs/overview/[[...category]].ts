@@ -23,7 +23,7 @@ const validate = async (req: NextApiRequest): Promise<any> => {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getBlogsOverviewData = async (category?: string): Promise<any> => {
-    const queryOrder = ` | order(_createdAt)`;
+    const queryOrder = ` | order(_createdAt desc)`;
     const queryRange = `[0..6]`;
     const queryFields = `{
         category,
