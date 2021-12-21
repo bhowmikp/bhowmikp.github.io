@@ -221,7 +221,7 @@ Post.getLayout = (page: ReactElement) => {
 
     return (
         <>
-            <NextSeo title={data.title} description="Short description" />
+            <NextSeo title={data === undefined ? undefined : data.title} description="Short description" />
 
             <BlogJsonLd
                 url={`${process.env.NEXT_PUBLIC_HOST_URL || 'https://prantar.com'}/${data.title.replace(/ /g, '-')}_${
