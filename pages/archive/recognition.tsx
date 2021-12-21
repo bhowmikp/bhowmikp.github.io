@@ -9,6 +9,8 @@ import { PageCover } from '@Components/Common/PageCover';
 import { getPageData } from '@Api/page/[page]';
 import { IRecognitionData } from '@Interfaces/pages/recognition';
 
+import { NextSeo } from 'next-seo';
+
 import { time as timeConstants } from '@Constants';
 
 export const getStaticProps: GetStaticProps = async () => ({
@@ -57,9 +59,11 @@ const Recognition: FC<{ recognitionData: IRecognitionData }> & { getLayout: Reac
 );
 
 Recognition.getLayout = (page: ReactElement) => (
-    <AppLayout title="Awards &amp; Recognition" mainClassName="bg-secondary">
-        {page}
-    </AppLayout>
+    <>
+        <NextSeo title="Awards &amp; Recognition" description="All the awards and recognition I have received" />
+
+        <AppLayout mainClassName="bg-secondary">{page}</AppLayout>
+    </>
 );
 
 export default Recognition;

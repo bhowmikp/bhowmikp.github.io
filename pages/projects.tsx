@@ -10,6 +10,8 @@ import { Experience } from '@Components/Common/Experience';
 import { getPageData } from '@Api/page/[page]';
 import { IProjectsData } from '@Interfaces/pages/projects';
 
+import { NextSeo } from 'next-seo';
+
 import { time as timeConstants } from '@Constants';
 
 export const getStaticProps: GetStaticProps = async () => ({
@@ -37,13 +39,16 @@ ProjectsPage.getLayout = (page: ReactElement) => {
     const data = page.props.projectsData;
 
     return (
-        <AppLayout
-            title="Projects"
-            mainClassName="bg-primary"
-            footerClassName={`${data.paragraphs.length % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
-        >
-            {page}
-        </AppLayout>
+        <>
+            <NextSeo title="Projects" description="All the interesting personal projects I have worked on" />
+
+            <AppLayout
+                mainClassName="bg-primary"
+                footerClassName={`${data.paragraphs.length % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
+            >
+                {page}
+            </AppLayout>
+        </>
     );
 };
 

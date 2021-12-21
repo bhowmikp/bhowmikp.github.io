@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
+
 import { figureSerializerFill } from '@Sanity/serializers/figureSerializerFill';
 import BlockContent from '@sanity/block-content-to-react';
 
@@ -12,6 +13,8 @@ import { CtaBlogs } from '@Components/Common/CtaBlogs';
 
 import { getPageData } from '@Api/page/[page]';
 import { IHomepageData } from '@Interfaces/pages/homepage';
+
+import { NextSeo } from 'next-seo';
 
 import { time as timeConstants } from '@Constants';
 
@@ -85,13 +88,19 @@ Homepage.getLayout = (page: ReactElement) => {
     const data = page.props.homepageData;
 
     return (
-        <AppLayout
-            title="Homepage"
-            mainClassName="bg-primary"
-            footerClassName={`${(data.paragraphs.length + 1) % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
-        >
-            {page}
-        </AppLayout>
+        <>
+            <NextSeo
+                title="Homepage"
+                description="Welcome to Prantar Bhowmik's Homepage. I am a Full Stack Developer from Toronto, Canada. Site includes resume, projects, and blogs."
+            />
+
+            <AppLayout
+                mainClassName="bg-primary"
+                footerClassName={`${(data.paragraphs.length + 1) % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
+            >
+                {page}
+            </AppLayout>
+        </>
     );
 };
 

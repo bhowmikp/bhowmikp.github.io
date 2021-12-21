@@ -13,6 +13,8 @@ import { CtaBlogs } from '@Components/Common/CtaBlogs';
 import { getPageData } from '@Api/page/[page]';
 import { IAboutMeData } from '@Interfaces/pages/aboutMePage';
 
+import { NextSeo } from 'next-seo';
+
 import { time as timeConstants } from '@Constants';
 
 export const getStaticProps: GetStaticProps = async () => ({
@@ -51,9 +53,11 @@ const AboutMePage: FC<{ aboutMeData: IAboutMeData }> & { getLayout: ReactNode } 
 );
 
 AboutMePage.getLayout = (page: ReactElement) => (
-    <AppLayout title="About Me" mainClassName="bg-primary">
-        {page}
-    </AppLayout>
+    <>
+        <NextSeo title="About Me" description="Information about who I am, where I am from, and what I am all about" />
+
+        <AppLayout mainClassName="bg-primary">{page}</AppLayout>
+    </>
 );
 
 export default AboutMePage;

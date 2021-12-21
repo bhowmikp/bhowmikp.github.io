@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 
+import { NextSeo } from 'next-seo';
+
 import type { ReactNode, ReactElement } from 'react';
 
 const PageNotFound: FC & { getLayout: ReactNode } = () => {
@@ -41,9 +43,11 @@ const PageNotFound: FC & { getLayout: ReactNode } = () => {
 };
 
 PageNotFound.getLayout = (page: ReactElement) => (
-    <AppLayout title="404" mainClassName="bg-secondary">
-        {page}
-    </AppLayout>
+    <>
+        <NextSeo title="404" description="Page not found" />
+
+        <AppLayout mainClassName="bg-secondary">{page}</AppLayout>
+    </>
 );
 
 export default PageNotFound;

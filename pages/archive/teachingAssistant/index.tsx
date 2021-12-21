@@ -6,6 +6,8 @@ import CustomLink from '@Components/CustomLink';
 
 import { IPageCover } from '@Interfaces/pageCover';
 
+import { NextSeo } from 'next-seo';
+
 import type { ReactNode, ReactElement } from 'react';
 
 const CustomLinkLocal: FC<{
@@ -114,9 +116,14 @@ const TeachingAssistant: FC & { getLayout: ReactNode } = () => {
 };
 
 TeachingAssistant.getLayout = (page: ReactElement) => (
-    <AppLayout title="Teaching Assistant Experience" mainClassName="bg-secondary">
-        {page}
-    </AppLayout>
+    <>
+        <NextSeo
+            title="Teaching Assistant Experience"
+            description="All the tutorial notes from when I taught at University of Toronto"
+        />
+
+        <AppLayout mainClassName="bg-secondary">{page}</AppLayout>
+    </>
 );
 
 export default TeachingAssistant;

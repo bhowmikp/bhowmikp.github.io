@@ -2,6 +2,8 @@ import React, { FC } from 'react';
 import { AppLayout } from '@Components/AppLayout';
 import CustomLink from '@Components/CustomLink';
 
+import { NextSeo } from 'next-seo';
+
 import type { ReactNode, ReactElement } from 'react';
 
 const CustomLinkLocal: FC<{
@@ -241,9 +243,14 @@ const Csca08f17: FC & { getLayout: ReactNode } = () => (
 );
 
 Csca08f17.getLayout = (page: ReactElement) => (
-    <AppLayout title="CSCA08f17" mainClassName="bg-secondary">
-        {page}
-    </AppLayout>
+    <>
+        <NextSeo
+            title="CSCA08f17"
+            description="Material I taught in my tutorial for Introduction to Computer Science I (CSCA08) during Fall semester of 2017"
+        />
+
+        <AppLayout mainClassName="bg-secondary">{page}</AppLayout>
+    </>
 );
 
 export default Csca08f17;
