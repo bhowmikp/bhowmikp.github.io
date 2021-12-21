@@ -223,17 +223,20 @@ Post.getLayout = (page: ReactElement) => {
         <>
             <NextSeo title={data === undefined ? undefined : data.title} description="Short description" />
 
-            <BlogJsonLd
-                url={`${process.env.NEXT_PUBLIC_HOST_URL || 'https://prantar.com'}/${data.title.replace(/ /g, '-')}_${
-                    data._id
-                }`}
-                title={data.title}
-                images={[]}
-                datePublished={data._createdAt}
-                dateModified={data._createdAt}
-                authorName="Prantar Bhowmik"
-                description={data.description}
-            />
+            {data !== undefined && (
+                <BlogJsonLd
+                    url={`${process.env.NEXT_PUBLIC_HOST_URL || 'https://prantar.com'}/${data.title.replace(
+                        / /g,
+                        '-'
+                    )}_${data._id}`}
+                    title={data.title}
+                    images={[]}
+                    datePublished={data._createdAt}
+                    dateModified={data._createdAt}
+                    authorName="Prantar Bhowmik"
+                    description={data.description}
+                />
+            )}
 
             <AppLayout mainClassName="bg-secondary">{page}</AppLayout>
         </>
