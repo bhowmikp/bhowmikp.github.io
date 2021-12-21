@@ -28,6 +28,8 @@ import { formatDate } from '@Utils/formatDate';
 
 import { AiFillClockCircle } from 'react-icons/ai';
 
+import { NextSeo, BlogJsonLd } from 'next-seo';
+
 export const getStaticPaths: GetStaticPaths = async () => {
     const getBlogPathsOfCategory = async (category) =>
         (await getBlogsOverviewData(category)).map((entry) => ({
@@ -218,9 +220,26 @@ Post.getLayout = (page: ReactElement) => {
     const data = page.props.blogData;
 
     return (
-        <AppLayout title={data === undefined ? undefined : data.title} mainClassName="bg-secondary">
-            {page}
-        </AppLayout>
+        <>
+            <NextSeo title={data === undefined ? undefined : data.title} description="Short description" />
+
+            {data !== undefined && (
+                <BlogJsonLd
+                    url={`${process.env.NEXT_PUBLIC_HOST_URL || 'https://prantar.com'}/${data.title.replace(
+                        / /g,
+                        '-'
+                    )}_${data._id}`}
+                    title={data.title}
+                    images={[]}
+                    datePublished={data._createdAt}
+                    dateModified={data._createdAt}
+                    authorName="Prantar Bhowmik"
+                    description={data.description}
+                />
+            )}
+
+            <AppLayout mainClassName="bg-secondary">{page}</AppLayout>
+        </>
     );
 };
 

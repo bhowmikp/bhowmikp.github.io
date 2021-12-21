@@ -17,6 +17,8 @@ import { IBlogsOverviewData } from '@Interfaces/blogs/blogsOverviewData';
 
 import { useQuery } from 'react-query';
 
+import { NextSeo } from 'next-seo';
+
 import { time as timeConstants } from '@Constants';
 
 const RECENT_PAGE = 'recent';
@@ -114,9 +116,14 @@ const Blogs: FC<{ blogPageData: IBlogPage; blogsOverviewData: IBlogsOverviewData
 };
 
 Blogs.getLayout = (page: ReactElement) => (
-    <AppLayout title="Blogs" mainClassName="bg-secondary">
-        {page}
-    </AppLayout>
+    <>
+        <NextSeo
+            title="Blogs"
+            description="My thoughts on different topics, mainly related to programming, and investing."
+        />
+
+        <AppLayout mainClassName="bg-secondary">{page}</AppLayout>
+    </>
 );
 
 export default Blogs;

@@ -10,6 +10,8 @@ import { Experience } from '@Components/Common/Experience';
 import { getPageData } from '@Api/page/[page]';
 import { IExperienceData } from '@Interfaces/pages/experience';
 
+import { NextSeo } from 'next-seo';
+
 import { time as timeConstants } from '@Constants';
 
 export const getStaticProps: GetStaticProps = async () => ({
@@ -37,13 +39,16 @@ ExperiencePage.getLayout = (page: ReactElement) => {
     const data = page.props.experienceData;
 
     return (
-        <AppLayout
-            title="Experience"
-            mainClassName="bg-primary"
-            footerClassName={`${data.paragraphs.length % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
-        >
-            {page}
-        </AppLayout>
+        <>
+            <NextSeo title="Experience" description="All the places I worked at" />
+
+            <AppLayout
+                mainClassName="bg-primary"
+                footerClassName={`${data.paragraphs.length % 2 === 0 ? 'bg-secondary' : 'bg-primary'}`}
+            >
+                {page}
+            </AppLayout>
+        </>
     );
 };
 
