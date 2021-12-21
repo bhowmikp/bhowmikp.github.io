@@ -28,8 +28,7 @@ import { formatDate } from '@Utils/formatDate';
 
 import { AiFillClockCircle } from 'react-icons/ai';
 
-import { NextSeo } from 'next-seo';
-import { BlogJsonLd } from 'next-seo';
+import { NextSeo, BlogJsonLd } from 'next-seo';
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const getBlogPathsOfCategory = async (category) =>
