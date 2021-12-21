@@ -9,6 +9,8 @@ import CustomLink from '@Components/CustomLink';
 import { getPageData } from '@Api/page/[page]';
 import { IArchiveData } from '@Interfaces/pages/archive';
 
+import { NextSeo } from 'next-seo';
+
 import { time as timeConstants } from '@Constants';
 
 export const getStaticProps: GetStaticProps = async () => ({
@@ -59,9 +61,11 @@ const Archive: FC<{ archiveData: IArchiveData }> & { getLayout: ReactNode } = ({
 );
 
 Archive.getLayout = (page: ReactElement) => (
-    <AppLayout title="Archive" mainClassName="bg-secondary">
-        {page}
-    </AppLayout>
+    <>
+        <NextSeo title="Archive" description="All the pages I have worked on previously" />
+
+        <AppLayout mainClassName="bg-secondary">{page}</AppLayout>
+    </>
 );
 
 export default Archive;

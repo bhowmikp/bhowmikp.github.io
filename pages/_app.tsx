@@ -13,6 +13,9 @@ import type { ReactElement, ReactNode } from 'react';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 
+import { DefaultSeo, SocialProfileJsonLd } from 'next-seo';
+import Seo from '../next-seo.config';
+
 type NextPageWithLayout = NextPage & {
     getLayout?: (page: ReactElement) => ReactNode;
 };
@@ -40,6 +43,13 @@ const MyApp: ReactNode = ({ Component, pageProps }: AppPropsWithLayout) => {
     return (
         <ThemeProvider attribute="class" defaultTheme="system">
             <QueryClientProvider client={queryClient}>
+                <DefaultSeo {...Seo} />
+                <SocialProfileJsonLd
+                    type="Person"
+                    name="Prantar Bhowmik"
+                    url="https://www.prantar.com"
+                    sameAs={['https://github.com/bhowmikp', 'https://www.linkedin.com/in/prantar/']}
+                />
                 {getLayout(<Component {...pageProps} />)}
                 <ReactQueryDevtools initialIsOpen={false} />
             </QueryClientProvider>

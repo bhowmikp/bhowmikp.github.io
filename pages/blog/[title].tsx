@@ -28,6 +28,8 @@ import { formatDate } from '@Utils/formatDate';
 
 import { AiFillClockCircle } from 'react-icons/ai';
 
+import { NextSeo, BlogJsonLd } from 'next-seo';
+
 export const getStaticPaths: GetStaticPaths = async () => {
     const getBlogPathsOfCategory = async (category) =>
         (await getBlogsOverviewData(category)).map((entry) => ({
@@ -153,7 +155,11 @@ const Post: FC<{ blogData: IBlogs }> & { getLayout: ReactNode } = ({ blogData })
                                     <ul className="list-disc ml-5">
                                         {blogData.relatedArticles.map((entry) => (
                                             <li key={entry._key}>
-                                                <a target={entry.target} href={entry.url} className="blog-link">
+                                                <a
+                                                    target={entry.target}
+                                                    href={entry.url}
+                                                    className="blog-link break-words"
+                                                >
                                                     {entry.urlText}
                                                 </a>
                                             </li>
@@ -174,7 +180,11 @@ const Post: FC<{ blogData: IBlogs }> & { getLayout: ReactNode } = ({ blogData })
                                     <ul className="list-disc ml-5">
                                         {blogData.references.map((entry) => (
                                             <li key={entry._key}>
-                                                <a target={entry.target} href={entry.url} className="blog-link">
+                                                <a
+                                                    target={entry.target}
+                                                    href={entry.url}
+                                                    className="blog-link break-words"
+                                                >
                                                     {entry.urlText}
                                                 </a>
                                             </li>
@@ -185,11 +195,13 @@ const Post: FC<{ blogData: IBlogs }> & { getLayout: ReactNode } = ({ blogData })
 
                             <div className="mt-10">
                                 <p className="text-secondary text-xl mb-3">Tags:</p>
-                                {blogData.tags.map((tag) => (
-                                    <span key={tag} className="blog-tags">
-                                        {tag}
-                                    </span>
-                                ))}
+                                <div className="flex flex-wrap space-y-4">
+                                    {blogData.tags.map((tag) => (
+                                        <span key={tag} className="blog-tags self-end">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
 
                             <CtaBlogs ctaBlogsData={blogData.ctaBlogs} className="py-10 md:py-28" widthFull />
@@ -208,9 +220,26 @@ Post.getLayout = (page: ReactElement) => {
     const data = page.props.blogData;
 
     return (
-        <AppLayout title={data === undefined ? undefined : data.title} mainClassName="bg-secondary">
-            {page}
-        </AppLayout>
+        <>
+            <NextSeo title={data === undefined ? undefined : data.title} description="Short description" />
+
+            {data !== undefined && (
+                <BlogJsonLd
+                    url={`${process.env.NEXT_PUBLIC_HOST_URL || 'https://prantar.com'}/${data.title.replace(
+                        / /g,
+                        '-'
+                    )}_${data._id}`}
+                    title={data.title}
+                    images={[]}
+                    datePublished={data._createdAt}
+                    dateModified={data._createdAt}
+                    authorName="Prantar Bhowmik"
+                    description={data.description}
+                />
+            )}
+
+            <AppLayout mainClassName="bg-secondary">{page}</AppLayout>
+        </>
     );
 };
 

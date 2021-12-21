@@ -5,8 +5,7 @@
 import React, { ReactElement, useRef, useContext, useEffect } from 'react';
 import BlockContent from '@sanity/block-content-to-react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-import { coyWithoutShadows } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { a11yDark, a11yLight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import urlFor from '@Service/sanityImageService';
 import { IImage } from '@Interfaces/image';
 import Image from 'next/image';
@@ -16,6 +15,8 @@ import 'react-medium-image-zoom/dist/styles.css';
 import { useOnScreen } from '@Hooks/useOnScreen';
 import { useTheme } from 'next-themes';
 import { BlogContext } from '@Contexts/blogContext';
+
+import { AdBanner } from '@Components/AdBanner';
 
 const blogSerializer = {
     list: (props) => {
@@ -30,8 +31,10 @@ const blogSerializer = {
     listItem: (props) => <li key={props.node._key}>{props.children}</li>,
     marks: {
         link: (props) => (
-            <Link href={props.mark.href}>
-                <a className="blog-link">{props.children[0]}</a>
+            <Link href={props.children[0]}>
+                <a className="blog-link" target="_blank">
+                    {props.children[0]}
+                </a>
             </Link>
         )
     },
@@ -110,8 +113,7 @@ const blogSerializer = {
                 <SyntaxHighlighter
                     language={props.node.language}
                     showLineNumbers
-                    wrapLongLines
-                    style={resolvedTheme === 'dark' ? a11yDark : coyWithoutShadows}
+                    style={resolvedTheme === 'dark' ? a11yDark : a11yLight}
                 >
                     {props.node.code}
                 </SyntaxHighlighter>
@@ -142,7 +144,8 @@ const blogSerializer = {
                     <figcaption className="blog-image-caption">{props.node.caption}</figcaption>
                 </figure>
             );
-        }
+        },
+        adBanner: (): ReactElement => <AdBanner />
     }
 };
 

@@ -1,6 +1,6 @@
 import { IWindow } from '@Interfaces/window';
 
-export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 declare const window: IWindow;
 
